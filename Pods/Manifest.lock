@@ -54,6 +54,7 @@ PODS:
   - RxSwift (6.8.0)
   - SAMKeychain (1.5.3)
   - SnapKit (5.7.1)
+  - Toast-Swift (5.1.1)
   - TYAlertController (1.2.0)
 
 DEPENDENCIES:
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - RxSwift
   - SAMKeychain
   - SnapKit
+  - Toast-Swift
   - TYAlertController
 
 SPEC REPOS:
@@ -89,6 +91,7 @@ SPEC REPOS:
     - RxSwift
     - SAMKeychain
     - SnapKit
+    - Toast-Swift
     - TYAlertController
 
 SPEC CHECKSUMS:
@@ -110,8 +113,9 @@ SPEC CHECKSUMS:
   RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
   TYAlertController: c121090edb0bea7426f987da94cdddd81eef4231
 
-PODFILE CHECKSUM: d41b6e1414f9bb046d37a5f0489ad1304476d54b
+PODFILE CHECKSUM: 8bbb8d646d78bba7ed86ebefbb883a943a55645a
 
 COCOAPODS: 1.16.2

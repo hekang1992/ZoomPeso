@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 let ArialBlackFont = "Arial-Black"
 
@@ -42,7 +43,7 @@ extension UIColor {
 
 }
 
-class ToastConfig {
+class ViewHudConfig {
     
     private static var loadingView: UIView?
     
@@ -68,5 +69,11 @@ class ToastConfig {
     static func hideLoading() {
         loadingView?.removeFromSuperview()
         loadingView = nil
+    }
+}
+
+class ToastShowConfig {
+    static func showMessage(form view: UIView, message: String) {
+        view.makeToast(message, duration: 2.0, position: .center)
     }
 }

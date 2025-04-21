@@ -6,11 +6,12 @@
 //
 
 struct BaseModel: Codable {
-    var wedge: Int?
+    var wedge: String?
     var circular: String?
     var net: netModel?
 }
 
 struct netModel: Codable {
-    
+    var recollect: String?
+    var attachment: String?
 }

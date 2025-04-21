@@ -27,6 +27,8 @@
 		733DCA232DB63571009AA17E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA222DB63571009AA17E /* HomeView.swift */; };
 		733DCA252DB641CF009AA17E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA242DB641C8009AA17E /* Model.swift */; };
 		733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA262DB6446B009AA17E /* LoginConfig.swift */; };
+		73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB3E022DB6734600085744 /* LocationConfig.swift */; };
+		73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB3E042DB684C400085744 /* DeviceInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,9 @@
 		733DCA222DB63571009AA17E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		733DCA242DB641C8009AA17E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		733DCA262DB6446B009AA17E /* LoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfig.swift; sourceTree = "<group>"; };
+		73BB3E022DB6734600085744 /* LocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfig.swift; sourceTree = "<group>"; };
+		73BB3E042DB684C400085744 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		73BB3E062DB68E5700085744 /* ZoomPeso.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZoomPeso.entitlements; sourceTree = "<group>"; };
 		CEDDA2CBD9C04EE29B8EB8E2 /* Pods-ZoomPeso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.release.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +95,7 @@
 		733DC9F62DB5CF7E009AA17E /* ZoomPeso */ = {
 			isa = PBXGroup;
 			children = (
+				73BB3E062DB68E5700085744 /* ZoomPeso.entitlements */,
 				733DC9EF2DB5CF7E009AA17E /* Info.plist */,
 				733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */,
 				733DCA032DB5DCD5009AA17E /* Main */,
@@ -110,7 +116,10 @@
 				733DCA002DB5DC84009AA17E /* Define.swift */,
 				733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */,
 				733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */,
+				73BB3E022DB6734600085744 /* LocationConfig.swift */,
 				733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */,
+				733DCA262DB6446B009AA17E /* LoginConfig.swift */,
+				73BB3E042DB684C400085744 /* DeviceInfo.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -131,7 +140,6 @@
 			children = (
 				733DCA1A2DB5FDD5009AA17E /* LoginView.swift */,
 				733DCA142DB5FC1D009AA17E /* LoginViewController.swift */,
-				733DCA262DB6446B009AA17E /* LoginConfig.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -313,10 +321,12 @@
 				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
 				733DCA092DB5DDC4009AA17E /* BaseNavigationController.swift in Sources */,
+				73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */,
 				733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
 				733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */,
+				73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */,
 				733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */,
 				733DCA132DB5E04C009AA17E /* LaunchViewController.swift in Sources */,
 				733DCA1B2DB5FDD5009AA17E /* LoginView.swift in Sources */,
@@ -345,6 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZoomPeso/ZoomPeso.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -383,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZoomPeso/ZoomPeso.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;

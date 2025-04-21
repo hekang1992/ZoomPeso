@@ -19,5 +19,5 @@ target 'ZoomPeso' do
   pod 'IQKeyboardManagerSwift'
   pod 'TYAlertController'
   pod 'SAMKeychain'
-  
+  pod 'Toast-Swift'
 end

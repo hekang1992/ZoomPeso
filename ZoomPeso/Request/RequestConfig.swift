@@ -76,10 +76,11 @@ class NetworkManager {
     
     static func getRequest<T: Decodable>(endpoint: String,
                                          parameters: Parameters? = nil,
-                                         responseType: BaseModel,
+                                         responseType: T.Type,
                                          completion: @escaping (Result<T, Error>) -> Void) {
         
-        let url = BASE_URL + endpoint
+        let loginDict = LoginConfig.getLoginInfo()
+        let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
         
         AF.request(url,
                    method: .get,
@@ -98,10 +99,11 @@ class NetworkManager {
     
     static func postRequest<T: Decodable>(endpoint: String,
                                           parameters: Parameters? = nil,
-                                          responseType: BaseModel,
+                                          responseType: T.Type,
                                           completion: @escaping (Result<T, Error>) -> Void) {
         
-        let url = BASE_URL + endpoint
+        let loginDict = LoginConfig.getLoginInfo()
+        let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
         
         AF.request(url,
                    method: .post,
@@ -143,10 +145,10 @@ class NetworkManager {
     static func multipartFormDataRequest<T: Decodable>(endpoint: String,
                                                        parameters: [String: String]? = nil,
                                                        files: [String: Data]? = nil,
-                                                       responseType: BaseModel,
+                                                       responseType: T.Type,
                                                        completion: @escaping (Result<T, Error>) -> Void) {
-        
-        let url = BASE_URL + endpoint
+        let loginDict = LoginConfig.getLoginInfo()
+        let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
         
         AF.upload(multipartFormData: { multipartFormData in
             parameters?.forEach { key, value in

@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Network
 import AppTrackingTransparency
+import AdSupport
 
 let SHOWGUIDE: String = ""
 class LaunchViewController: BaseViewController {
@@ -32,7 +33,7 @@ class LaunchViewController: BaseViewController {
         view.backgroundColor = .white
         let show = UserDefaults.standard.object(forKey: SHOWGUIDE) as? String ?? ""
         if show == "1" {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: CHANGE_ROOT_VC), object: nil)
+            rootInfo()
         }else {
             firstVcInfo()
         }
@@ -50,7 +51,7 @@ extension LaunchViewController: UIScrollViewDelegate {
                     case .restricted:
                         break
                     case .authorized, .notDetermined, .denied:
-                        
+                        self.apiIdfaInfo()
                         break
                     @unknown default:
                         break
@@ -76,7 +77,6 @@ extension LaunchViewController: UIScrollViewDelegate {
     
     func setupPages() {
         for i in 0..<images.count {
-            
             let imageView = UIImageView(frame: CGRect(x: CGFloat(i) * view.frame.width,
                                                       y: 0,
                                                       width: view.frame.width,

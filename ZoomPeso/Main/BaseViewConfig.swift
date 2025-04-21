@@ -15,5 +15,7 @@ class BaseView: UIView {
 }
 
 class BaseViewCell: UITableViewCell {
+    
     let disposeBag = DisposeBag()
+    
 }

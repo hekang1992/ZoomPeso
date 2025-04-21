@@ -25,13 +25,13 @@ var IS_LOGIN: Bool {
 
 class LoginConfig: NSObject {
     
-    private func saveLoginInfo(from phone: String, token: String) {
+    static func saveLoginInfo(from phone: String, token: String) {
         UserDefaults.standard.set(phone, forKey: USER_PHONE)
         UserDefaults.standard.set(token, forKey: LOGINTOKEN)
         UserDefaults.standard.synchronize()
     }
     
-    private func deleteLoginInfo() {
+    static func deleteLoginInfo() {
         UserDefaults.standard.set("", forKey: USER_PHONE)
         UserDefaults.standard.set("", forKey: LOGINTOKEN)
         UserDefaults.standard.synchronize()
@@ -54,7 +54,7 @@ extension LoginConfig {
         let repeatedly = DeviceIDManager.shared.getDeviceID()
         let saliva = Device.current.systemVersion ?? ""
         let attachment = UserDefaults.standard.object(forKey: LOGINTOKEN) as? String ?? ""
-        let contrivance = IDFAManager.shared.getIDFA() ?? ""
+        let contrivance = DeviceIDManager.shared.getIDFA()
         return [
             "applied": applied,
             "raw": raw,
@@ -89,46 +89,19 @@ class DeviceIDManager {
         return newDeviceID
     }
     
-}
-
-class IDFAManager {
-    static let shared = IDFAManager()
-    private let serviceName = "com.zoompeso"
-    private let accountName = "idfa"
-    
-    func getIDFA() -> String? {
-        if #available(iOS 14, *) {
-            return nil
-        } else {
-            guard ASIdentifierManager.shared().isAdvertisingTrackingEnabled else {
-                return nil
-            }
-            return ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        }
+    func getIDFA() -> String {
+        return ASIdentifierManager.shared().advertisingIdentifier.uuidString
     }
     
-    func getIDFA(completion: @escaping (String?) -> Void) {
-        if let cachedIDFA = SAMKeychain.password(forService: serviceName, account: accountName) {
-            completion(cachedIDFA)
-            return
+}
+
+class URLQueryConfig {
+    static func appendQueryDict(to url: String, parameters: [String: String]) -> String? {
+        guard var urlComponents = URLComponents(string: url) else {
+            return nil
         }
-        
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                DispatchQueue.main.async { [self] in
-                    if status == .authorized {
-                        let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-                        SAMKeychain.setPassword(idfa, forService: serviceName, account: accountName)
-                        completion(idfa)
-                    } else {
-                        completion(nil)
-                    }
-                }
-            }
-        } else {
-            let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-            SAMKeychain.setPassword(idfa, forService: serviceName, account: accountName)
-            completion(idfa)
-        }
+        let queryItems = parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
+        urlComponents.queryItems = (urlComponents.queryItems ?? []) + queryItems
+        return urlComponents.url?.absoluteString
     }
 }
