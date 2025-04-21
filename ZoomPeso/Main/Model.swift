@@ -14,4 +14,20 @@ struct BaseModel: Codable {
 struct netModel: Codable {
     var recollect: String?
     var attachment: String?
+    var ruby: [rubyModel]?
+}
+
+struct rubyModel: Codable {
+    var bajada: String?
+    var juices: [juicesModel]?
+}
+
+struct juicesModel: Codable {
+    var vain: String?
+    var perseveringly: String?
+    var entangle: String?
+    var cutting: String?
+    var shropshire: String?
+    var thrusts: String?
+    var orifice: Int?
 }

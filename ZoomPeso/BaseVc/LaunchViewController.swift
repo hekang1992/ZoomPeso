@@ -24,19 +24,19 @@ class LaunchViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        NetworkMonitor.shared.startMonitoring { [weak self] grand in
-            if grand {
-                self?.idfainfo()
-            }
-        }
-        
-        view.backgroundColor = .white
         let show = UserDefaults.standard.object(forKey: SHOWGUIDE) as? String ?? ""
         if show == "1" {
             rootInfo()
         }else {
             firstVcInfo()
         }
+        
+        NetworkMonitor.shared.startMonitoring { [weak self] grand in
+            if grand && show != "1" {
+                self?.idfainfo()
+            }
+        }
+        
     }
     
 }

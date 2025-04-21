@@ -40,8 +40,26 @@ extension UIColor {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0
         self.init(red: red, green: green, blue: blue, alpha: 1.0)
     }
-
 }
+
+extension Double {
+    func pix() -> CGFloat {
+        return CGFloat.init(CGFloat.init(self)/375.0 * SCREEN_WIDTH)
+    }
+}
+
+extension CGFloat {
+    func pix() -> CGFloat {
+        return CGFloat.init(CGFloat.init(self)/375.0 * SCREEN_WIDTH)
+    }
+}
+
+extension Int {
+    func pix() -> CGFloat {
+        return CGFloat.init(CGFloat.init(self)/375.0 * SCREEN_WIDTH)
+    }
+}
+
 
 class ViewHudConfig {
     
@@ -57,7 +75,7 @@ class ViewHudConfig {
         backgroundView.tag = 999
         
         let indicator = UIActivityIndicatorView(style: .large)
-        indicator.color = .darkGray
+        indicator.color = .black
         indicator.center = backgroundView.center
         indicator.startAnimating()
         
