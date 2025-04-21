@@ -18,6 +18,9 @@
 		733DCA092DB5DDC4009AA17E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA082DB5DDC4009AA17E /* BaseNavigationController.swift */; };
 		733DCA112DB5DF36009AA17E /* RequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA102DB5DF36009AA17E /* RequestConfig.swift */; };
 		733DCA132DB5E04C009AA17E /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA122DB5E04C009AA17E /* LaunchViewController.swift */; };
+		733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA142DB5FC1D009AA17E /* LoginViewController.swift */; };
+		733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */; };
+		733DCA1B2DB5FDD5009AA17E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA1A2DB5FDD5009AA17E /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		733DCA082DB5DDC4009AA17E /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		733DCA102DB5DF36009AA17E /* RequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfig.swift; sourceTree = "<group>"; };
 		733DCA122DB5E04C009AA17E /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		733DCA142DB5FC1D009AA17E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfig.swift; sourceTree = "<group>"; };
+		733DCA1A2DB5FDD5009AA17E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CEDDA2CBD9C04EE29B8EB8E2 /* Pods-ZoomPeso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.release.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +59,7 @@
 		733DC9CC2DB5CF76009AA17E = {
 			isa = PBXGroup;
 			children = (
+				733DC9F12DB5CF7E009AA17E /* LaunchScreen.storyboard */,
 				733DC9F62DB5CF7E009AA17E /* ZoomPeso */,
 				733DC9D62DB5CF76009AA17E /* Products */,
 				B5AA296332F9B03D1D0EEB75 /* Pods */,
@@ -73,24 +80,15 @@
 			children = (
 				733DC9EF2DB5CF7E009AA17E /* Info.plist */,
 				733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */,
-				733DC9F12DB5CF7E009AA17E /* LaunchScreen.storyboard */,
 				733DCA032DB5DCD5009AA17E /* Main */,
 				733DCA0F2DB5DE2B009AA17E /* Request */,
-				733DCA022DB5DCD2009AA17E /* Controller */,
-			);
-			path = ZoomPeso;
-			sourceTree = "<group>";
-		};
-		733DCA022DB5DCD2009AA17E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				733DCA0E2DB5DE17009AA17E /* Center */,
 				733DCA0D2DB5DE14009AA17E /* Order */,
 				733DCA0C2DB5DE12009AA17E /* Home */,
 				733DCA0B2DB5DE0C009AA17E /* Login */,
 				733DCA0A2DB5DDFE009AA17E /* BaseVc */,
 			);
-			path = Controller;
+			path = ZoomPeso;
 			sourceTree = "<group>";
 		};
 		733DCA032DB5DCD5009AA17E /* Main */ = {
@@ -99,6 +97,7 @@
 				733DCA002DB5DC84009AA17E /* Define.swift */,
 				733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */,
 				733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */,
+				733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -117,6 +116,8 @@
 		733DCA0B2DB5DE0C009AA17E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				733DCA1A2DB5FDD5009AA17E /* LoginView.swift */,
+				733DCA142DB5FC1D009AA17E /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -291,8 +292,11 @@
 				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
 				733DCA092DB5DDC4009AA17E /* BaseNavigationController.swift in Sources */,
+				733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
+				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
 				733DCA132DB5E04C009AA17E /* LaunchViewController.swift in Sources */,
+				733DCA1B2DB5FDD5009AA17E /* LoginView.swift in Sources */,
 				733DCA112DB5DF36009AA17E /* RequestConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,9 +329,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZoomPeso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,9 +367,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZoomPeso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

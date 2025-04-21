@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        familyNameInfo()
+        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.resignOnTouchOutside = true
+        NotificationCenter.default.addObserver(self, selector: #selector(goRootVc(_ :)), name: NSNotification.Name(CHANGE_ROOT_VC), object: nil)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = LaunchViewController()
         window?.makeKeyAndVisible()
@@ -24,10 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+  
+  @objc func goRootVc(_ noti: Notification) {
+      window?.rootViewController = IS_LOGIN ? BaseNavigationController(rootViewController: BaseTabBarController()) : BaseNavigationController(rootViewController: LoginViewController())
+    }
     
     private func familyNameInfo() {
         for family in UIFont.familyNames {
-            print("字体族: \(family)")
             for name in UIFont.fontNames(forFamilyName: family) {
                 print(" - \(name)")
             }

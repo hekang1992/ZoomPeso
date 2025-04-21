@@ -10,5 +10,14 @@ target 'ZoomPeso' do
   pod 'Alamofire'
   pod 'SnapKit'
   pod 'Kingfisher'
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Kingfisher'
+  pod 'RxGesture'
+  pod 'MJRefresh'
+  pod 'DeviceKit'
+  pod 'IQKeyboardManagerSwift'
+  pod 'TYAlertController'
+  pod 'SAMKeychain'
+  
 end
