@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import Network
+import AppTrackingTransparency
 
 let SHOWGUIDE: String = ""
 class LaunchViewController: BaseViewController {
@@ -21,6 +23,12 @@ class LaunchViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        NetworkMonitor.shared.startMonitoring { [weak self] grand in
+            if grand {
+                self?.idfainfo()
+            }
+        }
+        
         view.backgroundColor = .white
         let show = UserDefaults.standard.object(forKey: SHOWGUIDE) as? String ?? ""
         if show == "1" {
@@ -33,6 +41,24 @@ class LaunchViewController: BaseViewController {
 }
 
 extension LaunchViewController: UIScrollViewDelegate {
+    
+    func idfainfo() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if #available(iOS 14.0, *) {
+                ATTrackingManager.requestTrackingAuthorization { status in
+                    switch status {
+                    case .restricted:
+                        break
+                    case .authorized, .notDetermined, .denied:
+                        
+                        break
+                    @unknown default:
+                        break
+                    }
+                }
+            }
+        }
+    }
     
     private func firstVcInfo() {
         setupScrollView()

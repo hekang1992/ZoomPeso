@@ -21,6 +21,12 @@
 		733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA142DB5FC1D009AA17E /* LoginViewController.swift */; };
 		733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */; };
 		733DCA1B2DB5FDD5009AA17E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA1A2DB5FDD5009AA17E /* LoginView.swift */; };
+		733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA1C2DB62B68009AA17E /* HomeViewController.swift */; };
+		733DCA1F2DB62B71009AA17E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA1E2DB62B71009AA17E /* OrderViewController.swift */; };
+		733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA202DB62B7D009AA17E /* CenterViewController.swift */; };
+		733DCA232DB63571009AA17E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA222DB63571009AA17E /* HomeView.swift */; };
+		733DCA252DB641CF009AA17E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA242DB641C8009AA17E /* Model.swift */; };
+		733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA262DB6446B009AA17E /* LoginConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +47,12 @@
 		733DCA142DB5FC1D009AA17E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfig.swift; sourceTree = "<group>"; };
 		733DCA1A2DB5FDD5009AA17E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		733DCA1C2DB62B68009AA17E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		733DCA1E2DB62B71009AA17E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		733DCA202DB62B7D009AA17E /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		733DCA222DB63571009AA17E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		733DCA242DB641C8009AA17E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		733DCA262DB6446B009AA17E /* LoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfig.swift; sourceTree = "<group>"; };
 		CEDDA2CBD9C04EE29B8EB8E2 /* Pods-ZoomPeso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.release.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +106,7 @@
 		733DCA032DB5DCD5009AA17E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				733DCA242DB641C8009AA17E /* Model.swift */,
 				733DCA002DB5DC84009AA17E /* Define.swift */,
 				733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */,
 				733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */,
@@ -118,6 +131,7 @@
 			children = (
 				733DCA1A2DB5FDD5009AA17E /* LoginView.swift */,
 				733DCA142DB5FC1D009AA17E /* LoginViewController.swift */,
+				733DCA262DB6446B009AA17E /* LoginConfig.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -125,6 +139,8 @@
 		733DCA0C2DB5DE12009AA17E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				733DCA222DB63571009AA17E /* HomeView.swift */,
+				733DCA1C2DB62B68009AA17E /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -132,6 +148,7 @@
 		733DCA0D2DB5DE14009AA17E /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				733DCA1E2DB62B71009AA17E /* OrderViewController.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -139,6 +156,7 @@
 		733DCA0E2DB5DE17009AA17E /* Center */ = {
 			isa = PBXGroup;
 			children = (
+				733DCA202DB62B7D009AA17E /* CenterViewController.swift */,
 			);
 			path = Center;
 			sourceTree = "<group>";
@@ -288,6 +306,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733DCA252DB641CF009AA17E /* Model.swift in Sources */,
+				733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */,
+				733DCA232DB63571009AA17E /* HomeView.swift in Sources */,
 				733DCA072DB5DDA2009AA17E /* BaseTabBarController.swift in Sources */,
 				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
@@ -295,9 +316,12 @@
 				733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
+				733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */,
+				733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */,
 				733DCA132DB5E04C009AA17E /* LaunchViewController.swift in Sources */,
 				733DCA1B2DB5FDD5009AA17E /* LoginView.swift in Sources */,
 				733DCA112DB5DF36009AA17E /* RequestConfig.swift in Sources */,
+				733DCA1F2DB62B71009AA17E /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

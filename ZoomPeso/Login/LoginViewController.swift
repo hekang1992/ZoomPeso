@@ -24,6 +24,8 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dict = LoginConfig.getLoginInfo()
+        
         view.addSubview(loginView)
         loginView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -57,6 +59,7 @@ class LoginViewController: BaseViewController {
             guard let self = self else { return }
             startCountdown()
         }).disposed(by: disposeBag)
+        
     }
     
     deinit {
@@ -82,10 +85,12 @@ extension LoginViewController {
     
     @objc private func updateCountdown() {
         remainingSeconds -= 1
+        ToastConfig.showLoading()
         if remainingSeconds > 0 {
             loginView.sendCodeLabel.text = "\(remainingSeconds)s"
         } else {
             endCountdown()
+            ToastConfig.hideLoading()
         }
     }
     
