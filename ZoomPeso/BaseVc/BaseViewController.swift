@@ -11,6 +11,11 @@ import RxSwift
 class BaseViewController: UIViewController {
     
     let disposeBag = DisposeBag()
+    
+    lazy var headView: VitamainGuideHeadView = {
+        let headView = VitamainGuideHeadView()
+        return headView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +96,34 @@ extension BaseViewController {
             case .success(_):
                 break
             case .failure(_):
+                break
+            }
+        }
+    }
+    
+}
+
+/** productdetailinfo */
+extension BaseViewController {
+    
+    func productDetailInfo(from productID: String, complete: @escaping (netModel) -> Void) {
+        ViewHudConfig.showLoading()
+        let dict = ["barricaded": productID,
+                    "controller": "productDetail",
+                    "floss": "beer"]
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/mendoza", parameters: dict, responseType: BaseModel.self) { result in
+            ViewHudConfig.hideLoading()
+            switch result {
+            case .success(let success):
+                if success.wedge == "0" {
+                    if let model = success.net {
+                        complete(model)
+                    }
+                }
+                break
+            case .failure(_):
+                let model = netModel()
+                complete(model)
                 break
             }
         }

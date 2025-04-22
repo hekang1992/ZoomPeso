@@ -8,6 +8,7 @@
 import Network
 import Alamofire
 
+let SCREME_URL = "pq://zp.oei.m"
 let BASE_URL = "http://47.84.36.196:8235/zigzag"
 
 class NetworkMonitor {

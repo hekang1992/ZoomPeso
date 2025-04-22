@@ -17,16 +17,16 @@ class HomeViewController: BaseViewController {
         let homeView = HomeView()
         return homeView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         view.addSubview(homeView)
         homeView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    
+        
         self.homeView.scrollerView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             guard let self = self else { return }
             idfaAndLocationInfo()
@@ -53,7 +53,7 @@ class HomeViewController: BaseViewController {
         idfaAndLocationInfo()
         getHomeInfo()
     }
-
+    
 }
 
 extension HomeViewController {
@@ -90,15 +90,39 @@ extension HomeViewController {
     private func applyInfo(from productID: Int) {
         ViewHudConfig.showLoading()
         let dict = ["barricaded": String(productID)]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/vertical", parameters: dict, responseType: BaseModel.self) { result in
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/vertical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewHudConfig.hideLoading()
             switch result {
             case .success(let success):
+                if success.wedge == "0" {
+                    if let self = self, let model = success.net {
+                        self.goAnyWhereInfo(from: model)
+                    }
+                }
                 break
-            case .failure(let failure):
+            case .failure(_):
                 break
             }
         }
+    }
+    
+    private func goAnyWhereInfo(from model: netModel) {
+        let sucking = model.sucking ?? ""
+        if sucking.hasPrefix(SCREME_URL) {
+            let dict = URLParameterParser.parse(from: sucking)
+            let barricaded = dict["barricaded"] ?? ""
+            self.productDetailInfo(from: barricaded) { [weak self] model in
+                guard let self = self else { return }
+                let aurl = model.pepsis?.rolled ?? ""
+                vitamainInfo(from: aurl, barricaded: barricaded, model: model)
+            }
+        }
+    }
+    
+    private func vitamainInfo(from vitamain: String, barricaded: String, model: netModel) {
+        let guideVc = VitamainGuideViewController()
+        guideVc.model.accept(model)
+        self.navigationController?.pushViewController(guideVc, animated: true)
     }
     
 }

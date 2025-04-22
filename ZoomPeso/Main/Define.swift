@@ -95,3 +95,26 @@ class ToastShowConfig {
         view.makeToast(message, duration: 2.0, position: .center)
     }
 }
+
+class URLParameterParser {
+    static func parse(from urlString: String) -> [String: String] {
+        guard let url = URL(string: urlString),
+              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let queryItems = components.queryItems else {
+            return [:]
+        }
+        return queryItems.reduce(into: [String: String]()) { result, item in
+            result[item.name] = item.value
+        }
+    }
+    
+    static func parse(from url: URL) -> [String: String] {
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let queryItems = components.queryItems else {
+            return [:]
+        }
+        return queryItems.reduce(into: [String: String]()) { result, item in
+            result[item.name] = item.value
+        }
+    }
+}

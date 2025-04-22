@@ -14,6 +14,9 @@ struct BaseModel: Codable {
 struct netModel: Codable {
     var recollect: String?
     var attachment: String?
+    var sucking: String?
+    var pepsis: pepsisModel?
+    var enlarged: enlargedModel?
     var ruby: [rubyModel]?
 }
 
@@ -30,4 +33,31 @@ struct juicesModel: Codable {
     var shropshire: String?
     var thrusts: String?
     var orifice: Int?
+}
+
+struct pepsisModel: Codable {
+    var rolled: String?
+    var bajada: Int?
+    var sucking: String?
+}
+
+struct enlargedModel: Codable {
+    var orifice: String?
+    var symbol: String?
+    var characterized: Int?
+    var examining: examiningModel?
+}
+
+struct examiningModel: Codable {
+    var adversary: adversaryModel?
+    var stings: stingsModel?
+}
+
+struct adversaryModel: Codable {
+    var uvring: String?
+}
+
+
+struct stingsModel: Codable {
+    var uvring: String?
 }

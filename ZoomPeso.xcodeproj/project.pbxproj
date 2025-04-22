@@ -10,7 +10,6 @@
 		420ED8A214ABD12C0323B7F1 /* Pods_ZoomPeso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3346BCA40071A509D8B6B1CF /* Pods_ZoomPeso.framework */; };
 		733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */; };
 		733DC9FA2DB5CF7E009AA17E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */; };
-		733DC9FC2DB5CF7E009AA17E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 733DC9F12DB5CF7E009AA17E /* LaunchScreen.storyboard */; };
 		733DC9FF2DB5D68E009AA17E /* ArialBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */; };
 		733DCA012DB5DC84009AA17E /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA002DB5DC84009AA17E /* Define.swift */; };
 		733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA042DB5DD75009AA17E /* BaseViewController.swift */; };
@@ -29,6 +28,17 @@
 		733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA262DB6446B009AA17E /* LoginConfig.swift */; };
 		73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB3E022DB6734600085744 /* LocationConfig.swift */; };
 		73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB3E042DB684C400085744 /* DeviceInfo.swift */; };
+		73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */; };
+		73C5A1FB2DB7D19C00105BD3 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */; };
+		73C5A1FD2DB7D3F500105BD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */; };
+		73C5A2002DB7E12C00105BD3 /* VitamainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1FF2DB7E12C00105BD3 /* VitamainListView.swift */; };
+		73C5A2022DB7E14400105BD3 /* VitamainOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */; };
+		73C5A2042DB7E14F00105BD3 /* VitamainTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */; };
+		73C5A2062DB7E17400105BD3 /* VitamainThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */; };
+		73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2072DB7E17E00105BD3 /* VitamainFourViewController.swift */; };
+		73C5A20A2DB7E18700105BD3 /* VitamainFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2092DB7E18700105BD3 /* VitamainFiveViewController.swift */; };
+		73C5A20E2DB7E1F700105BD3 /* VitamainGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */; };
+		73C5A2122DB7E2E900105BD3 /* VitamainGuideHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +48,6 @@
 		733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		733DC9EF2DB5CF7E009AA17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		733DC9F02DB5CF7E009AA17E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArialBlack.ttf; sourceTree = "<group>"; };
 		733DCA002DB5DC84009AA17E /* Define.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 		733DCA042DB5DD75009AA17E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +67,17 @@
 		73BB3E022DB6734600085744 /* LocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfig.swift; sourceTree = "<group>"; };
 		73BB3E042DB684C400085744 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		73BB3E062DB68E5700085744 /* ZoomPeso.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZoomPeso.entitlements; sourceTree = "<group>"; };
+		73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
+		73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		73C5A1FF2DB7E12C00105BD3 /* VitamainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainListView.swift; sourceTree = "<group>"; };
+		73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainOneViewController.swift; sourceTree = "<group>"; };
+		73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainTwoViewController.swift; sourceTree = "<group>"; };
+		73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainThreeViewController.swift; sourceTree = "<group>"; };
+		73C5A2072DB7E17E00105BD3 /* VitamainFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainFourViewController.swift; sourceTree = "<group>"; };
+		73C5A2092DB7E18700105BD3 /* VitamainFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainFiveViewController.swift; sourceTree = "<group>"; };
+		73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainGuideViewController.swift; sourceTree = "<group>"; };
+		73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainGuideHeadView.swift; sourceTree = "<group>"; };
 		CEDDA2CBD9C04EE29B8EB8E2 /* Pods-ZoomPeso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.release.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +96,6 @@
 		733DC9CC2DB5CF76009AA17E = {
 			isa = PBXGroup;
 			children = (
-				733DC9F12DB5CF7E009AA17E /* LaunchScreen.storyboard */,
 				733DC9F62DB5CF7E009AA17E /* ZoomPeso */,
 				733DC9D62DB5CF76009AA17E /* Products */,
 				B5AA296332F9B03D1D0EEB75 /* Pods */,
@@ -98,7 +117,9 @@
 				73BB3E062DB68E5700085744 /* ZoomPeso.entitlements */,
 				733DC9EF2DB5CF7E009AA17E /* Info.plist */,
 				733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */,
+				73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */,
 				733DCA032DB5DCD5009AA17E /* Main */,
+				73C5A1FE2DB7E10500105BD3 /* Vitamain */,
 				733DCA0F2DB5DE2B009AA17E /* Request */,
 				733DCA0E2DB5DE17009AA17E /* Center */,
 				733DCA0D2DB5DE14009AA17E /* Order */,
@@ -156,6 +177,8 @@
 		733DCA0D2DB5DE14009AA17E /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */,
+				73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */,
 				733DCA1E2DB62B71009AA17E /* OrderViewController.swift */,
 			);
 			path = Order;
@@ -175,6 +198,37 @@
 				733DCA102DB5DF36009AA17E /* RequestConfig.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		73C5A1FE2DB7E10500105BD3 /* Vitamain */ = {
+			isa = PBXGroup;
+			children = (
+				73C5A20C2DB7E19C00105BD3 /* View */,
+				73C5A20B2DB7E18D00105BD3 /* Controller */,
+			);
+			path = Vitamain;
+			sourceTree = "<group>";
+		};
+		73C5A20B2DB7E18D00105BD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */,
+				73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */,
+				73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */,
+				73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */,
+				73C5A2072DB7E17E00105BD3 /* VitamainFourViewController.swift */,
+				73C5A2092DB7E18700105BD3 /* VitamainFiveViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		73C5A20C2DB7E19C00105BD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				73C5A1FF2DB7E12C00105BD3 /* VitamainListView.swift */,
+				73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B5AA296332F9B03D1D0EEB75 /* Pods */ = {
@@ -255,8 +309,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73C5A1FD2DB7D3F500105BD3 /* LaunchScreen.storyboard in Resources */,
 				733DC9FA2DB5CF7E009AA17E /* Assets.xcassets in Resources */,
-				733DC9FC2DB5CF7E009AA17E /* LaunchScreen.storyboard in Resources */,
 				733DC9FF2DB5D68E009AA17E /* ArialBlack.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,38 +369,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				733DCA252DB641CF009AA17E /* Model.swift in Sources */,
+				73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */,
 				733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */,
 				733DCA232DB63571009AA17E /* HomeView.swift in Sources */,
 				733DCA072DB5DDA2009AA17E /* BaseTabBarController.swift in Sources */,
 				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
+				73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */,
 				733DCA092DB5DDC4009AA17E /* BaseNavigationController.swift in Sources */,
+				73C5A2022DB7E14400105BD3 /* VitamainOneViewController.swift in Sources */,
 				73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */,
+				73C5A1FB2DB7D19C00105BD3 /* OrderListViewCell.swift in Sources */,
 				733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */,
+				73C5A2062DB7E17400105BD3 /* VitamainThreeViewController.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
 				733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */,
 				73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */,
 				733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */,
 				733DCA132DB5E04C009AA17E /* LaunchViewController.swift in Sources */,
+				73C5A20E2DB7E1F700105BD3 /* VitamainGuideViewController.swift in Sources */,
 				733DCA1B2DB5FDD5009AA17E /* LoginView.swift in Sources */,
+				73C5A2122DB7E2E900105BD3 /* VitamainGuideHeadView.swift in Sources */,
+				73C5A2042DB7E14F00105BD3 /* VitamainTwoViewController.swift in Sources */,
+				73C5A20A2DB7E18700105BD3 /* VitamainFiveViewController.swift in Sources */,
+				73C5A2002DB7E12C00105BD3 /* VitamainListView.swift in Sources */,
 				733DCA112DB5DF36009AA17E /* RequestConfig.swift in Sources */,
 				733DCA1F2DB62B71009AA17E /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		733DC9F12DB5CF7E009AA17E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				733DC9F02DB5CF7E009AA17E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		733DC9E92DB5CF78009AA17E /* Debug */ = {
