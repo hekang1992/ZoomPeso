@@ -15,11 +15,6 @@ class OrderViewController: BaseViewController {
         return listView
     }()
     
-    lazy var emptyView: EmptyView = {
-        let emptyView = EmptyView()
-        return emptyView
-    }()
-    
     var listStr: String = "4"
 
     override func viewDidLoad() {

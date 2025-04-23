@@ -12,9 +12,21 @@ class BaseViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    private var gradientLayer: CAGradientLayer!
+    
     lazy var headView: VitamainGuideHeadView = {
         let headView = VitamainGuideHeadView()
         return headView
+    }()
+    
+    lazy var emptyView: EmptyView = {
+        let emptyView = EmptyView()
+        return emptyView
+    }()
+    
+    lazy var bgView: UIView = {
+        let bgView = UIView()
+        return bgView
     }()
 
     override func viewDidLoad() {
@@ -27,6 +39,35 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController {
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupGradient()
+        bgView.layer.cornerRadius = 30
+        bgView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        bgView.layer.masksToBounds = true
+        gradientLayer.frame = bgView.bounds
+    }
+    
+    private func setupGradient() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(hexStr: "#FFF1CB")!.cgColor,
+            UIColor(hexStr: "#FFDEA4")!.cgColor
+        ]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        bgView.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    func addHeadView() {
+        view.addSubview(headView)
+        headView.snp.makeConstraints { make in
+            make.height.equalTo(40.pix())
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(-5)
+        }
+    }
     
     func rootInfo() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: CHANGE_ROOT_VC), object: nil)

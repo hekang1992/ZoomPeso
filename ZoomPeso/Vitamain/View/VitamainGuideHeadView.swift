@@ -34,7 +34,7 @@ class VitamainGuideHeadView: BaseView {
         nameLabel.snp.makeConstraints { make in
             make.centerY.equalTo(backBtn.snp.centerY)
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 250.pix(), height: 40.pix()))
+            make.size.equalTo(CGSize(width: 300.pix(), height: 40.pix()))
         }
         
         backBtn.rx.tap.subscribe(onNext: { [weak self] in

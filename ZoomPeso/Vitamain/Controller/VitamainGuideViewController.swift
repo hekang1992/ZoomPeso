@@ -97,12 +97,7 @@ class VitamainGuideViewController: BaseViewController {
             make.height.equalTo(151.pix())
         }
         headView.nameLabel.text = "Product Detail"
-        view.addSubview(headView)
-        headView.snp.makeConstraints { make in
-            make.height.equalTo(40.pix())
-            make.left.right.equalToSuperview()
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(-5)
-        }
+        addHeadView()
         headView.backBlock = { [weak self] in
             guard let self = self else { return }
             self.navigationController?.popToRootViewController(animated: true)

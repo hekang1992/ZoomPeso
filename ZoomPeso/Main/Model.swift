@@ -18,6 +18,8 @@ struct netModel: Codable {
     var pepsis: pepsisModel?
     var enlarged: enlargedModel?
     var ruby: [rubyModel]?
+    var horrid: [String]?
+    var larvae: [String]?
 }
 
 struct rubyModel: Codable {

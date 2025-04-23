@@ -39,6 +39,9 @@
 		73C5A20A2DB7E18700105BD3 /* VitamainFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2092DB7E18700105BD3 /* VitamainFiveViewController.swift */; };
 		73C5A20E2DB7E1F700105BD3 /* VitamainGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */; };
 		73C5A2122DB7E2E900105BD3 /* VitamainGuideHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */; };
+		73FAA6522DB9149100D77159 /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6512DB9149100D77159 /* CenterView.swift */; };
+		73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6532DB91D6900D77159 /* SettingViewController.swift */; };
+		73FAA6562DB9216900D77159 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6552DB9216900D77159 /* OrderListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		73C5A2092DB7E18700105BD3 /* VitamainFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainFiveViewController.swift; sourceTree = "<group>"; };
 		73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainGuideViewController.swift; sourceTree = "<group>"; };
 		73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainGuideHeadView.swift; sourceTree = "<group>"; };
+		73FAA6512DB9149100D77159 /* CenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
+		73FAA6532DB91D6900D77159 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		73FAA6552DB9216900D77159 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		CEDDA2CBD9C04EE29B8EB8E2 /* Pods-ZoomPeso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.release.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +193,10 @@
 		733DCA0E2DB5DE17009AA17E /* Center */ = {
 			isa = PBXGroup;
 			children = (
+				73FAA6512DB9149100D77159 /* CenterView.swift */,
 				733DCA202DB62B7D009AA17E /* CenterViewController.swift */,
+				73FAA6532DB91D6900D77159 /* SettingViewController.swift */,
+				73FAA6552DB9216900D77159 /* OrderListViewController.swift */,
 			);
 			path = Center;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 				733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */,
 				733DCA232DB63571009AA17E /* HomeView.swift in Sources */,
 				733DCA072DB5DDA2009AA17E /* BaseTabBarController.swift in Sources */,
+				73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */,
 				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
 				73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */,
@@ -385,6 +395,8 @@
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
 				733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */,
+				73FAA6562DB9216900D77159 /* OrderListViewController.swift in Sources */,
+				73FAA6522DB9149100D77159 /* CenterView.swift in Sources */,
 				73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */,
 				733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */,
 				733DCA132DB5E04C009AA17E /* LaunchViewController.swift in Sources */,
