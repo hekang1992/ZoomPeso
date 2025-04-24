@@ -12,6 +12,8 @@ class VitamainGuideViewController: BaseViewController {
     
     var model = BehaviorRelay<netModel?>(value: nil)
     
+    var photoModel = BehaviorRelay<netModel?>(value: nil)
+    
     lazy var oneImageView: UIImageView = {
         let oneImageView = UIImageView()
         oneImageView.image = UIImage(named: "moiamgeey")
@@ -130,7 +132,24 @@ class VitamainGuideViewController: BaseViewController {
         
         nextBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self, let model = self.model.value else { return }
-            vitaminInfo(from: model)
+            vitaminInfo(from: model) { model in
+                self.photoModel.accept(model)
+            }
+        }).disposed(by: disposeBag)
+        
+        self.photoModel.asObservable().subscribe(onNext: { [weak self] model in
+            guard let self = self, let model = model else { return }
+            let deadlystrength = model.deadly?.strength ?? 0
+            let victimsstrength = model.victims?.strength ?? 0
+            if deadlystrength == 0 {
+                let vitaminVc = VitamainOneViewController()
+                vitaminVc.model.accept(self.model.value)
+                self.navigationController?.pushViewController(vitaminVc, animated: true)
+            }else {
+                let vitaminVc = SFaceViewViewController()
+                vitaminVc.model.accept(self.model.value)
+                self.navigationController?.pushViewController(vitaminVc, animated: true)
+            }
         }).disposed(by: disposeBag)
         
     }
@@ -142,27 +161,28 @@ class VitamainGuideViewController: BaseViewController {
             guard let self = self else { return }
             self.model.accept(model)
         }
+
     }
     
-    private func vitaminInfo(from model: netModel) {
-        let vitamain = model.pepsis?.rolled ?? ""
-        switch vitamain {
-        case "numerous":
-            let vitaminVc = VitamainOneViewController()
-            vitaminVc.model.accept(model)
-            self.navigationController?.pushViewController(vitaminVc, animated: true)
-            break
-        case "the":
-            break
-        case "and":
-            break
-        case "some":
-            break
-        case "both":
-            break
-        default:
-            break
+    private func getAuthInfo() {
+        ViewHudConfig.showLoading()
+        let barricaded = self.model.value?.enlarged?.orifice ?? ""
+        let dict = ["barricaded": barricaded, "vitaman": "c"]
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+            ViewHudConfig.hideLoading()
+            switch result {
+            case .success(let success):
+                guard let self = self else { return }
+                if success.wedge == "0" {
+                    if let model = success.net {
+                        self.photoModel.accept(model)
+                    }
+                }
+                break
+            case .failure(_):
+                break
+            }
         }
     }
-
+    
 }

@@ -26,6 +26,9 @@
 		733DCA232DB63571009AA17E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA222DB63571009AA17E /* HomeView.swift */; };
 		733DCA252DB641CF009AA17E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA242DB641C8009AA17E /* Model.swift */; };
 		733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA262DB6446B009AA17E /* LoginConfig.swift */; };
+		739FA6C72DBA6BF2003C0352 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */; };
+		739FA6C92DBA720A003C0352 /* APView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C82DBA720A003C0352 /* APView.swift */; };
+		739FA6CB2DBA84C7003C0352 /* SFaceViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6CA2DBA84C7003C0352 /* SFaceViewViewController.swift */; };
 		73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB3E022DB6734600085744 /* LocationConfig.swift */; };
 		73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB3E042DB684C400085744 /* DeviceInfo.swift */; };
 		73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */; };
@@ -42,6 +45,8 @@
 		73FAA6522DB9149100D77159 /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6512DB9149100D77159 /* CenterView.swift */; };
 		73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6532DB91D6900D77159 /* SettingViewController.swift */; };
 		73FAA6562DB9216900D77159 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6552DB9216900D77159 /* OrderListViewController.swift */; };
+		73FAA6582DB92F0A00D77159 /* AuthViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */; };
+		73FAA65A2DB93AAB00D77159 /* AuthImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +72,9 @@
 		733DCA222DB63571009AA17E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		733DCA242DB641C8009AA17E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		733DCA262DB6446B009AA17E /* LoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfig.swift; sourceTree = "<group>"; };
+		739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		739FA6C82DBA720A003C0352 /* APView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APView.swift; sourceTree = "<group>"; };
+		739FA6CA2DBA84C7003C0352 /* SFaceViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFaceViewViewController.swift; sourceTree = "<group>"; };
 		73BB3E022DB6734600085744 /* LocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfig.swift; sourceTree = "<group>"; };
 		73BB3E042DB684C400085744 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		73BB3E062DB68E5700085744 /* ZoomPeso.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZoomPeso.entitlements; sourceTree = "<group>"; };
@@ -84,6 +92,8 @@
 		73FAA6512DB9149100D77159 /* CenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
 		73FAA6532DB91D6900D77159 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		73FAA6552DB9216900D77159 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewCell.swift; sourceTree = "<group>"; };
+		73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthImageViewController.swift; sourceTree = "<group>"; };
 		CEDDA2CBD9C04EE29B8EB8E2 /* Pods-ZoomPeso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.release.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +157,7 @@
 				733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */,
 				733DCA262DB6446B009AA17E /* LoginConfig.swift */,
 				73BB3E042DB684C400085744 /* DeviceInfo.swift */,
+				739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -223,6 +234,8 @@
 			children = (
 				73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */,
 				73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */,
+				73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */,
+				739FA6CA2DBA84C7003C0352 /* SFaceViewViewController.swift */,
 				73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */,
 				73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */,
 				73C5A2072DB7E17E00105BD3 /* VitamainFourViewController.swift */,
@@ -236,6 +249,8 @@
 			children = (
 				73C5A1FF2DB7E12C00105BD3 /* VitamainListView.swift */,
 				73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */,
+				73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */,
+				739FA6C82DBA720A003C0352 /* APView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,12 +392,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				739FA6C72DBA6BF2003C0352 /* PermissionManager.swift in Sources */,
+				73FAA65A2DB93AAB00D77159 /* AuthImageViewController.swift in Sources */,
 				733DCA252DB641CF009AA17E /* Model.swift in Sources */,
 				73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */,
 				733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */,
 				733DCA232DB63571009AA17E /* HomeView.swift in Sources */,
 				733DCA072DB5DDA2009AA17E /* BaseTabBarController.swift in Sources */,
 				73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */,
+				739FA6CB2DBA84C7003C0352 /* SFaceViewViewController.swift in Sources */,
 				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
 				73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */,
@@ -392,6 +410,7 @@
 				73C5A1FB2DB7D19C00105BD3 /* OrderListViewCell.swift in Sources */,
 				733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */,
 				73C5A2062DB7E17400105BD3 /* VitamainThreeViewController.swift in Sources */,
+				739FA6C92DBA720A003C0352 /* APView.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
 				733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */,
@@ -403,6 +422,7 @@
 				73C5A20E2DB7E1F700105BD3 /* VitamainGuideViewController.swift in Sources */,
 				733DCA1B2DB5FDD5009AA17E /* LoginView.swift in Sources */,
 				73C5A2122DB7E2E900105BD3 /* VitamainGuideHeadView.swift in Sources */,
+				73FAA6582DB92F0A00D77159 /* AuthViewCell.swift in Sources */,
 				73C5A2042DB7E14F00105BD3 /* VitamainTwoViewController.swift in Sources */,
 				73C5A20A2DB7E18700105BD3 /* VitamainFiveViewController.swift in Sources */,
 				73C5A2002DB7E12C00105BD3 /* VitamainListView.swift in Sources */,

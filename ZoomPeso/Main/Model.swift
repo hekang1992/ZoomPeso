@@ -20,6 +20,12 @@ struct netModel: Codable {
     var ruby: [rubyModel]?
     var horrid: [String]?
     var larvae: [String]?
+    var paralysed: String?
+    var sting: String?
+    var stuff: String?
+    var deadly: deadlyModel?
+    var victims: victimsModel?
+    var intercept: [interceptModel]?
 }
 
 struct rubyModel: Codable {
@@ -62,4 +68,29 @@ struct adversaryModel: Codable {
 
 struct stingsModel: Codable {
     var uvring: String?
+}
+
+struct deadlyModel: Codable {
+    var strength: Int?
+    var sucking: String?
+}
+
+struct victimsModel: Codable {
+    var strength: Int?
+    var sucking: String?
+}
+
+struct interceptModel: Codable {
+    var backs: String?
+    var reascended: String?
+    var files: Int?
+    var tuft: String?
+    var wedge: String?//key
+    var hound: String?//value
+    var extricate: [extricateModel]?
+}
+
+struct extricateModel: Codable {
+    var bajada: Int?
+    var paralysed: String?
 }

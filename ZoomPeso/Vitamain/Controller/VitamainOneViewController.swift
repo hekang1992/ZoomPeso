@@ -24,6 +24,7 @@ class VitamainOneViewController: BaseViewController {
     lazy var oneImageView: UIImageView = {
         let oneImageView = UIImageView()
         oneImageView.image = UIImage(named: "aseuthigme")
+        oneImageView.isUserInteractionEnabled = true
         return oneImageView
     }()
     
@@ -52,6 +53,18 @@ class VitamainOneViewController: BaseViewController {
         return otherView
     }()
     
+    lazy var m3label: UILabel = {
+        let m3label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(hexStr: "#FF992F")!, textAlignment: .left)
+        m3label.text = "Other Options"
+        return m3label
+    }()
+    
+    lazy var m4label: UILabel = {
+        let m4label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .black, textAlignment: .left)
+        m4label.text = "Recommended ID Type"
+        return m4label
+    }()
+    
     lazy var scro: UIScrollView = {
         let scro = UIScrollView()
         scro.backgroundColor = .clear
@@ -71,9 +84,47 @@ class VitamainOneViewController: BaseViewController {
         return nextBtn
     }()
     
+    lazy var table1View: UITableView = {
+        let table1View = UITableView(frame: .zero, style: .plain)
+        table1View.separatorStyle = .none
+        table1View.backgroundColor = .clear
+        table1View.register(AuthViewCell.self, forCellReuseIdentifier: "AuthViewCell")
+        table1View.estimatedRowHeight = 80
+        table1View.showsVerticalScrollIndicator = false
+        table1View.contentInsetAdjustmentBehavior = .never
+        table1View.rowHeight = UITableView.automaticDimension
+        if #available(iOS 15.0, *) {
+            table1View.sectionHeaderTopPadding = 0
+        }
+        return table1View
+    }()
+    
+    lazy var table2View: UITableView = {
+        let table2View = UITableView(frame: .zero, style: .plain)
+        table2View.separatorStyle = .none
+        table2View.backgroundColor = .clear
+        table2View.register(AuthViewCell.self, forCellReuseIdentifier: "AuthViewCell")
+        table2View.estimatedRowHeight = 80
+        table2View.showsVerticalScrollIndicator = false
+        table2View.contentInsetAdjustmentBehavior = .never
+        table2View.rowHeight = UITableView.automaticDimension
+        if #available(iOS 15.0, *) {
+            table2View.sectionHeaderTopPadding = 0
+        }
+        return table2View
+    }()
+    
+    var select1IndexPath: IndexPath?
+    var select2IndexPath: IndexPath?
+    
+    var oneGrand: Bool = false
+    var twoGrand: Bool = false
+    
+    var selectAuthStr: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         view.addSubview(hedImageView)
@@ -102,6 +153,8 @@ class VitamainOneViewController: BaseViewController {
         
         scro.addSubview(oneImageView)
         scro.addSubview(otherView)
+        otherView.addSubview(m3label)
+        otherView.addSubview(m4label)
         scro.addSubview(nextBtn)
         oneImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -139,13 +192,121 @@ class VitamainOneViewController: BaseViewController {
             make.bottom.equalToSuperview().offset(-30.pix())
         }
         
+        oneImageView.addSubview(table1View)
+        table1View.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(m2label.snp.bottom).offset(1)
+            make.bottom.equalToSuperview().offset(-5)
+        }
+        
+        otherView.addSubview(table2View)
+        
+        m3label.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(13)
+            make.right.equalToSuperview()
+            make.top.equalToSuperview().offset(16.pix())
+        }
+        m4label.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(13)
+            make.right.equalToSuperview()
+            make.top.equalTo(m3label.snp.bottom).offset(10.pix())
+        }
+        
+        table2View.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-5)
+            make.top.equalTo(m4label.snp.bottom).offset(1)
+        }
+        
+        horrid.compactMap { $0 }.asObservable().bind(to: table1View.rx.items(cellIdentifier: "AuthViewCell", cellType: AuthViewCell.self)) { row, model, cell in
+            cell.nameLabel.text = model
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            if self.oneGrand && self.select1IndexPath?.row == row {
+                cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+            }else {
+                cell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+            }
+        }.disposed(by: disposeBag)
+        
+        larvae.compactMap { $0 }.asObservable().bind(to: table2View.rx.items(cellIdentifier: "AuthViewCell", cellType: AuthViewCell.self)) { row, model, cell in
+            cell.nameLabel.text = model
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            if self.twoGrand && self.select2IndexPath?.row == row {
+                cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+            }else {
+                cell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+            }
+        }.disposed(by: disposeBag)
+        
+        table1View.rx.setDelegate(self).disposed(by: disposeBag)
+        table2View.rx.setDelegate(self).disposed(by: disposeBag)
+        
+        
+        table1View.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            guard let self = self else { return }
+            self.selectAuthStr = horrid.value?[indexPath.row] ?? ""
+            oneGrand = true
+            twoGrand = false
+            table2View.reloadData()
+            if let previousIndexPath = select1IndexPath {
+                if let previousCell = self.table1View.cellForRow(at: previousIndexPath) as? AuthViewCell {
+                    previousCell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+                }
+            }
+            if let cell = self.table1View.cellForRow(at: indexPath) as? AuthViewCell {
+                cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+            }
+            select1IndexPath = indexPath
+        }).disposed(by: disposeBag)
+        
+        table2View.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            guard let self = self else { return }
+            self.selectAuthStr = larvae.value?[indexPath.row] ?? ""
+            oneGrand = false
+            twoGrand = true
+            table1View.reloadData()
+            if let previousIndexPath = select2IndexPath {
+                if let previousCell = self.table2View.cellForRow(at: previousIndexPath) as? AuthViewCell {
+                    previousCell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+                }
+            }
+            if let cell = self.table2View.cellForRow(at: indexPath) as? AuthViewCell {
+                cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+            }
+            select2IndexPath = indexPath
+        }).disposed(by: disposeBag)
+        
+        nextBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let self = self, let model = self.model.value else { return }
+            if self.selectAuthStr.isEmpty {
+                ToastShowConfig.showMessage(form: view, message: "Please select an authentication method")
+                return
+            }
+            let imageVc = AuthImageViewController()
+            imageVc.model.accept(model)
+            imageVc.enthusiastic = selectAuthStr
+            self.navigationController?.pushViewController(imageVc, animated: true)
+            print("auth=====\(self.selectAuthStr)")
+        }).disposed(by: disposeBag)
+        
         getAuthInfo()
         
     }
-
+    
 }
 
-extension VitamainOneViewController {
+extension VitamainOneViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headView = UIView()
+        return headView
+    }
     
     private func getAuthInfo() {
         ViewHudConfig.showLoading()

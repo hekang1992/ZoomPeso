@@ -45,19 +45,19 @@ class CenterView: BaseView {
     
     lazy var twoBtn: UIButton = {
         let twoBtn = UIButton(type: .custom)
-        twoBtn.setImage(UIImage(named: "alloreiamgece"), for: .normal)
+        twoBtn.setImage(UIImage(named: "centeimagepa"), for: .normal)
         return twoBtn
     }()
     
     lazy var threeBtn: UIButton = {
         let threeBtn = UIButton(type: .custom)
-        threeBtn.setImage(UIImage(named: "alloreiamgece"), for: .normal)
+        threeBtn.setImage(UIImage(named: "repcenteplay"), for: .normal)
         return threeBtn
     }()
     
     lazy var fourBtn: UIButton = {
         let fourBtn = UIButton(type: .custom)
-        fourBtn.setImage(UIImage(named: "alloreiamgece"), for: .normal)
+        fourBtn.setImage(UIImage(named: "centefinshimge"), for: .normal)
         return fourBtn
     }()
     

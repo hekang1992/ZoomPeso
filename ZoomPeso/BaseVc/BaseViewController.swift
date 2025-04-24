@@ -147,6 +147,55 @@ extension BaseViewController {
 /** productdetailinfo */
 extension BaseViewController {
     
+    func vitaminInfo(from model: netModel, complete: @escaping ((netModel) -> Void)) {
+        let vitamain = model.pepsis?.rolled ?? ""
+        switch vitamain {
+        case "numerous":
+            getAuthInfo(from: model, complete: complete)
+            break
+        case "the":
+            let vitamanVc = VitamainTwoViewController()
+            vitamanVc.model.accept(model)
+            self.navigationController?.pushViewController(vitamanVc, animated: true)
+            break
+        case "and":
+            let vitamanVc = VitamainThreeViewController()
+            vitamanVc.model.accept(model)
+            self.navigationController?.pushViewController(vitamanVc, animated: true)
+            break
+        case "some":
+            let vitamanVc = VitamainFourViewController()
+            vitamanVc.model.accept(model)
+            self.navigationController?.pushViewController(vitamanVc, animated: true)
+            break
+        case "both":
+            break
+        default:
+            break
+        }
+    }
+    
+    private func getAuthInfo(from model: netModel, complete: @escaping ((netModel) -> Void)) {
+        ViewHudConfig.showLoading()
+        let barricaded = model.enlarged?.orifice ?? ""
+        let dict = ["barricaded": barricaded, "vitaman": "c"]
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+            ViewHudConfig.hideLoading()
+            switch result {
+            case .success(let success):
+                guard let self = self else { return }
+                if success.wedge == "0" {
+                    if let model = success.net {
+                        complete(model)
+                    }
+                }
+                break
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
     func productDetailInfo(from productID: String, complete: @escaping (netModel) -> Void) {
         ViewHudConfig.showLoading()
         let dict = ["barricaded": productID,
