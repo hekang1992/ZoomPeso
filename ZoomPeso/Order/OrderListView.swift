@@ -22,6 +22,8 @@ class OrderListView: BaseView {
     
     private var gradientLayer: CAGradientLayer!
     
+    var block: ((rubyModel) -> Void)?
+    
     lazy var bgView: UIView = {
         let bgView = UIView()
         return bgView
@@ -204,7 +206,16 @@ extension OrderListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderListViewCell", for: indexPath) as! OrderListViewCell
         cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        let model = self.modelArray.value?[indexPath.row]
+        cell.model.accept(model)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let model = self.modelArray.value?[indexPath.row] {
+            self.block?(model)
+        }
     }
     
 }

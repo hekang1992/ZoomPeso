@@ -55,6 +55,15 @@ class OrderViewController: BaseViewController {
             guard let self = self else { return }
             getListInfo(from: listStr)
         })
+        
+        self.listView.block = { [weak self] model in
+            guard let self = self else { return }
+            let antenn = model.antenn ?? ""
+            var model = netModel()
+            model.sucking = antenn
+            goAnyWhereInfo(from: model)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -105,3 +105,10 @@ class URLQueryConfig {
         return urlComponents.url?.absoluteString
     }
 }
+
+class DataAddressManager {
+    static let shared = DataAddressManager()
+    private init() {}
+    
+    var currentModel: netModel?
+}

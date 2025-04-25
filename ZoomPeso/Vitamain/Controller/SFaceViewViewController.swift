@@ -258,7 +258,7 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
                         self.getAuthInfo()
                     }
                 }
-                ToastShowConfig.showMessage(form: view, message: success.wedge ?? "")
+                ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
                 break
             case .failure(_):
                 ViewHudConfig.hideLoading()

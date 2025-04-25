@@ -11,8 +11,11 @@ import AVFoundation
 import Photos
 import TYAlertController
 import Kingfisher
+import Combine
 
 class VitamainTwoViewController: BaseViewController {
+    
+    var cancellables = Set<AnyCancellable>()
     
     var model = BehaviorRelay<netModel?>(value: nil)
     
@@ -56,7 +59,8 @@ class VitamainTwoViewController: BaseViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.register(ClickViewCell.self, forCellReuseIdentifier: "ClickViewCell")
+        tableView.register(InputViewCell.self, forCellReuseIdentifier: "InputViewCell")
         tableView.estimatedRowHeight = 100
         tableView.showsVerticalScrollIndicator = false
         tableView.contentInsetAdjustmentBehavior = .never
@@ -172,11 +176,59 @@ extension VitamainTwoViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.selectionStyle = .none
-        cell.backgroundColor = .systemBlue
-        return cell
+        let model = self.oneModel.value?.intercept?[indexPath.row]
+        let reascended = model?.reascended ?? ""
+        if reascended == "inflicted" || reascended == "feeble" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ClickViewCell", for: indexPath) as! ClickViewCell
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            cell.model.accept(model)
+            cell.clickBlock = { [weak self] label in
+                guard let self = self, let model = model else { return }
+                popSelectOneViewInfo(from: model, label: label)
+            }
+            return cell
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InputViewCell", for: indexPath) as! InputViewCell
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            cell.model.accept(model)
+            cell.inputTx.publisher(for: \.text)
+                .compactMap { $0 }
+                    .filter { !$0.isEmpty }
+                .sink { text in
+                    model?.hound = text
+                }
+                .store(in: &cancellables)
+            return cell
+        }
     }
     
+}
+
+extension VitamainTwoViewController {
+    
+    private func popSelectOneViewInfo(from model: interceptModel, label: UILabel) {
+        let selectOneView = SelectOneView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
+        selectOneView.modelArray.accept(model.extricate ?? [])
+        let alertVc = TYAlertController(alert: selectOneView, preferredStyle: .alert)!
+        self.present(alertVc, animated: true)
+        
+        selectOneView.dismissBlock = { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+        }
+        
+        selectOneView.comfirmBlock = { [weak self] index, enumModel in
+            guard let self = self else { return }
+            self.dismiss(animated: true) {
+                label.text = enumModel.paralysed ?? ""
+                label.textColor = .init(hexStr: "#FF3824")
+                model.hound = String(enumModel.bajada ?? 0)
+                model.common = enumModel.paralysed ?? ""
+            }
+        }
+        
+    }
     
 }

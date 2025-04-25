@@ -152,6 +152,7 @@ class AuthImageViewController: BaseViewController {
             let index = self.isSuccess.value ?? 0
             if index == 1 {
                 let sfcVc = SFaceViewViewController()
+                sfcVc.model.accept(self.model.value)
                 self.navigationController?.pushViewController(sfcVc, animated: true)
             }else {
                 DispatchQueue.main.async {
@@ -355,7 +356,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                         }
                     }
                 }
-                ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                ToastShowConfig.showMessage(form: authView, message: success.circular ?? "")
                 break
             case .failure(_):
                 break

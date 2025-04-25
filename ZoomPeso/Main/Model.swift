@@ -5,13 +5,13 @@
 //  Created by 何康 on 2025/4/21.
 //
 
-struct BaseModel: Codable {
+class BaseModel: Codable {
     var wedge: String?
     var circular: String?
     var net: netModel?
 }
 
-struct netModel: Codable {
+class netModel: Codable {
     var recollect: String?
     var attachment: String?
     var sucking: String?
@@ -28,12 +28,42 @@ struct netModel: Codable {
     var intercept: [interceptModel]?
 }
 
-struct rubyModel: Codable {
+class rubyModel: Codable {
     var bajada: String?
+    var antagonist: String?
+    var pitying: String?
+    var hymenoptera: String?
+    var thrusts: String?
+    var carrion: String?
+    var rapacious: String?
+    var dont: String?
+    var casts: String?
+    var harpalid: String?
+    var antenn: String?
     var juices: [juicesModel]?
+    var paralysed: String?
+    var ruby: [rubyModel]?
+    
+    enum CodingKeys: String, CodingKey {
+        case ruby
+        case paralysed
+        case bajada
+        case antagonist
+        case pitying
+        case hymenoptera
+        case thrusts
+        case carrion
+        case rapacious
+        case dont = "do"
+        case juices
+        case casts
+        case harpalid
+        case antenn
+    }
+    
 }
 
-struct juicesModel: Codable {
+class juicesModel: Codable {
     var vain: String?
     var perseveringly: String?
     var entangle: String?
@@ -43,54 +73,55 @@ struct juicesModel: Codable {
     var orifice: Int?
 }
 
-struct pepsisModel: Codable {
+class pepsisModel: Codable {
     var rolled: String?
     var bajada: Int?
     var sucking: String?
 }
 
-struct enlargedModel: Codable {
+class enlargedModel: Codable {
     var orifice: String?
     var symbol: String?
     var characterized: Int?
     var examining: examiningModel?
 }
 
-struct examiningModel: Codable {
+class examiningModel: Codable {
     var adversary: adversaryModel?
     var stings: stingsModel?
 }
 
-struct adversaryModel: Codable {
+class adversaryModel: Codable {
     var uvring: String?
 }
 
 
-struct stingsModel: Codable {
+class stingsModel: Codable {
     var uvring: String?
 }
 
-struct deadlyModel: Codable {
+class deadlyModel: Codable {
     var strength: Int?
     var sucking: String?
 }
 
-struct victimsModel: Codable {
+class victimsModel: Codable {
     var strength: Int?
     var sucking: String?
 }
 
-struct interceptModel: Codable {
+class interceptModel: Codable {
     var backs: String?
     var reascended: String?
     var files: Int?
     var tuft: String?
     var wedge: String?//key
     var hound: String?//value
+    var common: String?
     var extricate: [extricateModel]?
 }
 
-struct extricateModel: Codable {
+class extricateModel: Codable {
     var bajada: Int?
     var paralysed: String?
 }

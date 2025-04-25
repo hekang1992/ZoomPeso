@@ -26,6 +26,9 @@
 		733DCA232DB63571009AA17E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA222DB63571009AA17E /* HomeView.swift */; };
 		733DCA252DB641CF009AA17E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA242DB641C8009AA17E /* Model.swift */; };
 		733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA262DB6446B009AA17E /* LoginConfig.swift */; };
+		735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02D2DBB3914003782FC /* ClickViewCell.swift */; };
+		735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02F2DBB3925003782FC /* InputViewCell.swift */; };
+		735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD0342DBB7512003782FC /* SelectOneView.swift */; };
 		739FA6C72DBA6BF2003C0352 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */; };
 		739FA6C92DBA720A003C0352 /* APView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C82DBA720A003C0352 /* APView.swift */; };
 		739FA6CB2DBA84C7003C0352 /* SFaceViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6CA2DBA84C7003C0352 /* SFaceViewViewController.swift */; };
@@ -72,6 +75,9 @@
 		733DCA222DB63571009AA17E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		733DCA242DB641C8009AA17E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		733DCA262DB6446B009AA17E /* LoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfig.swift; sourceTree = "<group>"; };
+		735DD02D2DBB3914003782FC /* ClickViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickViewCell.swift; sourceTree = "<group>"; };
+		735DD02F2DBB3925003782FC /* InputViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewCell.swift; sourceTree = "<group>"; };
+		735DD0342DBB7512003782FC /* SelectOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOneView.swift; sourceTree = "<group>"; };
 		739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		739FA6C82DBA720A003C0352 /* APView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APView.swift; sourceTree = "<group>"; };
 		739FA6CA2DBA84C7003C0352 /* SFaceViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFaceViewViewController.swift; sourceTree = "<group>"; };
@@ -130,10 +136,10 @@
 		733DC9F62DB5CF7E009AA17E /* ZoomPeso */ = {
 			isa = PBXGroup;
 			children = (
+				73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */,
 				73BB3E062DB68E5700085744 /* ZoomPeso.entitlements */,
 				733DC9EF2DB5CF7E009AA17E /* Info.plist */,
 				733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */,
-				73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */,
 				733DCA032DB5DCD5009AA17E /* Main */,
 				73C5A1FE2DB7E10500105BD3 /* Vitamain */,
 				733DCA0F2DB5DE2B009AA17E /* Request */,
@@ -158,6 +164,7 @@
 				733DCA262DB6446B009AA17E /* LoginConfig.swift */,
 				73BB3E042DB684C400085744 /* DeviceInfo.swift */,
 				739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */,
+				735DD0342DBB7512003782FC /* SelectOneView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -251,6 +258,8 @@
 				73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */,
 				73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */,
 				739FA6C82DBA720A003C0352 /* APView.swift */,
+				735DD02D2DBB3914003782FC /* ClickViewCell.swift */,
+				735DD02F2DBB3925003782FC /* InputViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -396,11 +405,13 @@
 				73FAA65A2DB93AAB00D77159 /* AuthImageViewController.swift in Sources */,
 				733DCA252DB641CF009AA17E /* Model.swift in Sources */,
 				73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */,
+				735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */,
 				733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */,
 				733DCA232DB63571009AA17E /* HomeView.swift in Sources */,
 				733DCA072DB5DDA2009AA17E /* BaseTabBarController.swift in Sources */,
 				73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */,
 				739FA6CB2DBA84C7003C0352 /* SFaceViewViewController.swift in Sources */,
+				735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */,
 				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
 				73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */,
@@ -414,6 +425,7 @@
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
 				733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */,
+				735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */,
 				73FAA6562DB9216900D77159 /* OrderListViewController.swift in Sources */,
 				73FAA6522DB9149100D77159 /* CenterView.swift in Sources */,
 				73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */,
@@ -448,6 +460,11 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2F6XZMZ52M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZoomPeso/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -487,6 +504,11 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2F6XZMZ52M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZoomPeso/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

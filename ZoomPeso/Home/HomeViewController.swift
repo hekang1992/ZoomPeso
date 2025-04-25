@@ -46,6 +46,10 @@ class HomeViewController: BaseViewController {
             }
         }
         
+        getAddressInfo { model in
+            DataAddressManager.shared.currentModel = model
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,25 +108,6 @@ extension HomeViewController {
                 break
             }
         }
-    }
-    
-    private func goAnyWhereInfo(from model: netModel) {
-        let sucking = model.sucking ?? ""
-        if sucking.hasPrefix(SCREME_URL) {
-            let dict = URLParameterParser.parse(from: sucking)
-            let barricaded = dict["barricaded"] ?? ""
-            self.productDetailInfo(from: barricaded) { [weak self] model in
-                guard let self = self else { return }
-                let aurl = model.pepsis?.rolled ?? ""
-                vitamainInfo(from: aurl, barricaded: barricaded, model: model)
-            }
-        }
-    }
-    
-    private func vitamainInfo(from vitamain: String, barricaded: String, model: netModel) {
-        let guideVc = VitamainGuideViewController()
-        guideVc.model.accept(model)
-        self.navigationController?.pushViewController(guideVc, animated: true)
     }
     
 }

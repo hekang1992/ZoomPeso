@@ -59,6 +59,12 @@ class VitamainGuideViewController: BaseViewController {
         return nextBtn
     }()
     
+    lazy var footImageView: UIImageView = {
+        let footImageView = UIImageView()
+        footImageView.image = UIImage(named: "dizuoimge")
+        return footImageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -90,9 +96,6 @@ class VitamainGuideViewController: BaseViewController {
             make.height.equalTo(25)
             make.width.equalTo(121.pix())
         }
-        leftLabel.snp.makeConstraints { make in
-            
-        }
         twoImageView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.left.right.equalToSuperview()
@@ -118,6 +121,13 @@ class VitamainGuideViewController: BaseViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
+        }
+        
+        view.addSubview(footImageView)
+        footImageView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 350.pix(), height: 396.pix()))
+            make.top.equalTo(descLabel.snp.bottom).offset(10)
         }
         
         model.asObservable().subscribe(onNext: { [weak self] model in

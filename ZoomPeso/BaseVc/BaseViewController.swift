@@ -28,14 +28,14 @@ class BaseViewController: UIViewController {
         let bgView = UIView()
         return bgView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
     }
-
+    
 }
 
 extension BaseViewController {
@@ -179,11 +179,10 @@ extension BaseViewController {
         ViewHudConfig.showLoading()
         let barricaded = model.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded, "vitaman": "c"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { result in
             ViewHudConfig.hideLoading()
             switch result {
             case .success(let success):
-                guard let self = self else { return }
                 if success.wedge == "0" {
                     if let model = success.net {
                         complete(model)
@@ -214,6 +213,44 @@ extension BaseViewController {
             case .failure(_):
                 let model = netModel()
                 complete(model)
+                break
+            }
+        }
+    }
+    
+    func goAnyWhereInfo(from model: netModel) {
+        let sucking = model.sucking ?? ""
+        if sucking.hasPrefix(SCREME_URL) {
+            let dict = URLParameterParser.parse(from: sucking)
+            let barricaded = dict["barricaded"] ?? ""
+            self.productDetailInfo(from: barricaded) { [weak self] model in
+                guard let self = self else { return }
+                let aurl = model.pepsis?.rolled ?? ""
+                vitamainInfo(from: aurl, barricaded: barricaded, model: model)
+            }
+        }
+    }
+    
+    private func vitamainInfo(from vitamain: String, barricaded: String, model: netModel) {
+        let guideVc = VitamainGuideViewController()
+        guideVc.model.accept(model)
+        self.navigationController?.pushViewController(guideVc, animated: true)
+    }
+    
+}
+
+extension BaseViewController {
+    
+    func getAddressInfo(complete: @escaping ((netModel) -> Void)) {
+        NetworkManager.getRequest(endpoint: "/surely/azara", responseType: BaseModel.self) { result in
+            switch result {
+            case .success(let success):
+                if success.wedge == "0" {
+                    guard let model = success.net else { return }
+                    complete(model)
+                }
+                break
+            case .failure(_):
                 break
             }
         }
