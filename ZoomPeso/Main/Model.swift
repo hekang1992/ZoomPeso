@@ -27,6 +27,7 @@ class netModel: Codable {
     var victims: victimsModel?
     var intercept: [interceptModel]?
     var army: [armyModel]?
+    var cordillera: Int?
 }
 
 class rubyModel: Codable {
@@ -44,8 +45,12 @@ class rubyModel: Codable {
     var juices: [juicesModel]?
     var paralysed: String?
     var ruby: [rubyModel]?
+    var walckanaer: String?
+    var sucking: String?
     
     enum CodingKeys: String, CodingKey {
+        case walckanaer
+        case sucking
         case ruby
         case paralysed
         case bajada

@@ -26,6 +26,7 @@
 		733DCA232DB63571009AA17E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA222DB63571009AA17E /* HomeView.swift */; };
 		733DCA252DB641CF009AA17E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA242DB641C8009AA17E /* Model.swift */; };
 		733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA262DB6446B009AA17E /* LoginConfig.swift */; };
+		734099AB2DBE1A9700B1D1AF /* CenterListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */; };
 		735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02D2DBB3914003782FC /* ClickViewCell.swift */; };
 		735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02F2DBB3925003782FC /* InputViewCell.swift */; };
 		735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD0342DBB7512003782FC /* SelectOneView.swift */; };
@@ -76,6 +77,7 @@
 		733DCA222DB63571009AA17E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		733DCA242DB641C8009AA17E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		733DCA262DB6446B009AA17E /* LoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfig.swift; sourceTree = "<group>"; };
+		734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListViewCell.swift; sourceTree = "<group>"; };
 		735DD02D2DBB3914003782FC /* ClickViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickViewCell.swift; sourceTree = "<group>"; };
 		735DD02F2DBB3925003782FC /* InputViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewCell.swift; sourceTree = "<group>"; };
 		735DD0342DBB7512003782FC /* SelectOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOneView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				733DCA202DB62B7D009AA17E /* CenterViewController.swift */,
 				73FAA6532DB91D6900D77159 /* SettingViewController.swift */,
 				73FAA6552DB9216900D77159 /* OrderListViewController.swift */,
+				734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */,
 			);
 			path = Center;
 			sourceTree = "<group>";
@@ -384,9 +387,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -423,6 +430,7 @@
 				73C5A2062DB7E17400105BD3 /* VitamainThreeViewController.swift in Sources */,
 				739FA6C92DBA720A003C0352 /* APView.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
+				734099AB2DBE1A9700B1D1AF /* CenterListViewCell.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
 				733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */,
 				735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */,

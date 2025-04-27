@@ -10,6 +10,7 @@ import SnapKit
 import Network
 import AppTrackingTransparency
 import AdSupport
+import NetworkExtension
 
 let SHOWGUIDE: String = ""
 class LaunchViewController: BaseViewController {
@@ -32,8 +33,11 @@ class LaunchViewController: BaseViewController {
         }
         
         NetworkMonitor.shared.startMonitoring { [weak self] grand in
-            if grand && show != "1" {
-                self?.idfainfo()
+            if grand {
+                self?.resetLoginIngo()
+                if show != "1" {
+                    self?.idfainfo()
+                }
             }
         }
         
@@ -59,6 +63,51 @@ extension LaunchViewController: UIScrollViewDelegate {
                 }
             }
         }
+    }
+    
+    func resetLoginIngo() {
+        let constructed = DeviceInfo.getCurrentLanguage()
+        let similarly = checkProxySettings()
+        let segment = isVPNConnected()
+        let dict = ["constructed": constructed,
+                    "similarly": similarly,
+                    "segment": segment]
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/constructed", parameters: dict, responseType: BaseModel.self) { result in
+            switch result {
+            case .success(let success):
+                if success.wedge == "0" {
+                    if let model = success.net {
+                        DataLoginManager.shared.currentModel = model
+                    }
+                }
+                break
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
+    func checkProxySettings() -> String {
+        guard let settings = CFNetworkCopySystemProxySettings()?.takeRetainedValue() as? [String: Any],
+              let httpProxy = settings["HTTPProxy"] as? String,
+              !httpProxy.isEmpty else {
+            return "0"
+        }
+        return "1"
+    }
+    
+    func isVPNConnected() -> String {
+        let manager = NEVPNManager.shared()
+        var isConnected = false
+        let semaphore = DispatchSemaphore(value: 0)
+        manager.loadFromPreferences { error in
+            if error == nil {
+                isConnected = (manager.connection.status == .connected)
+            }
+            semaphore.signal()
+        }
+        _ = semaphore.wait(timeout: .now() + 1)
+        return isConnected ? "1" : "0"
     }
     
     private func firstVcInfo() {

@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import RxRelay
 
 class CenterView: BaseView {
+    
+    var modelBlock: ((rubyModel) -> Void)?
+    
+    var modelArry = BehaviorRelay<[rubyModel]?>(value: nil)
     
     let picWidth = SCREEN_WIDTH * 0.25
     
@@ -21,14 +26,6 @@ class CenterView: BaseView {
         let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 18)!, textColor: .black, textAlignment: .center)
         nameLabel.text = "Me"
         return nameLabel
-    }()
-
-    lazy var scro: UIScrollView = {
-        let scro = UIScrollView()
-        scro.showsHorizontalScrollIndicator = false
-        scro.showsVerticalScrollIndicator = false
-        scro.contentInsetAdjustmentBehavior = .never
-        return scro
     }()
     
     lazy var logoImageView: UIImageView = {
@@ -68,39 +65,17 @@ class CenterView: BaseView {
         return phonelabel
     }()
     
-    lazy var aBtn: UIImageView = {
-        let aBtn = UIImageView()
-        aBtn.isUserInteractionEnabled = true
-        aBtn.image = UIImage(named: "ajiamge")
-        return aBtn
-    }()
-    
-    lazy var bBtn: UIImageView = {
-        let bBtn = UIImageView()
-        bBtn.isUserInteractionEnabled = true
-        bBtn.image = UIImage(named: "onelaige")
-        return bBtn
-    }()
-    
-    lazy var cBtn: UIImageView = {
-        let cBtn = UIImageView()
-        cBtn.isUserInteractionEnabled = true
-        cBtn.image = UIImage(named: "seimgeting")
-        return cBtn
-    }()
-    
-    lazy var dBtn: UIImageView = {
-        let dBtn = UIImageView()
-        dBtn.isUserInteractionEnabled = true
-        dBtn.image = UIImage(named: "yprice")
-        return dBtn
-    }()
-    
-    lazy var eBtn: UIImageView = {
-        let eBtn = UIImageView()
-        eBtn.isUserInteractionEnabled = true
-        eBtn.image = UIImage(named: "facebookimge")
-        return eBtn
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+        tableView.register(CenterListViewCell.self, forCellReuseIdentifier: "CenterListViewCell")
+        tableView.showsVerticalScrollIndicator = false
+        tableView.contentInsetAdjustmentBehavior = .never
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
+        return tableView
     }()
     
     override init(frame: CGRect) {
@@ -109,7 +84,7 @@ class CenterView: BaseView {
         logoImageView.addSubview(phonelabel)
         logoImageView.addSubview(nameLabel)
         addSubview(bgView)
-        addSubview(scro)
+        addSubview(tableView)
         bgView.addSubview(oneBtn)
         bgView.addSubview(twoBtn)
         bgView.addSubview(threeBtn)
@@ -164,45 +139,27 @@ class CenterView: BaseView {
             make.height.equalTo(92.pix())
         }
         
-        scro.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.top.equalTo(oneBtn.snp.bottom).offset(5)
             make.left.equalToSuperview()
             make.width.equalTo(SCREEN_WIDTH)
             make.bottom.equalToSuperview().offset(-90)
         }
         
-        scro.addSubview(aBtn)
-        scro.addSubview(bBtn)
-        scro.addSubview(cBtn)
-        scro.addSubview(dBtn)
-        scro.addSubview(eBtn)
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+
+        modelArry.compactMap { $0 }.asObservable().bind(to: tableView.rx.items(cellIdentifier: "CenterListViewCell", cellType: CenterListViewCell.self)) { row, model, cell in
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            let walckanaer = model.walckanaer ?? ""
+            cell.listImageView.kf.setImage(with: URL(string: walckanaer), placeholder: UIImage(named: "onelaige"))
+        }.disposed(by: disposeBag)
         
-        aBtn.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(12)
-            make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
-            make.centerX.equalToSuperview()
-        }
-        bBtn.snp.makeConstraints { make in
-            make.top.equalTo(aBtn.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
-            make.centerX.equalToSuperview()
-        }
-        cBtn.snp.makeConstraints { make in
-            make.top.equalTo(bBtn.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
-            make.centerX.equalToSuperview()
-        }
-        dBtn.snp.makeConstraints { make in
-            make.top.equalTo(cBtn.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
-            make.centerX.equalToSuperview()
-        }
-        eBtn.snp.makeConstraints { make in
-            make.top.equalTo(dBtn.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-5)
-        }
+        tableView.rx.modelSelected(rubyModel.self).subscribe(onNext: { [weak self] model in
+            guard let self = self else { return }
+            self.modelBlock?(model)
+        }).disposed(by: disposeBag)
+        
     }
     
     @MainActor required init?(coder: NSCoder) {
@@ -225,4 +182,9 @@ class CenterView: BaseView {
     
 }
 
-
+extension CenterView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 101.pix()
+    }
+}

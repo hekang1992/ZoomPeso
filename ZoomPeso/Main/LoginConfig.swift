@@ -112,3 +112,10 @@ class DataAddressManager {
     
     var currentModel: netModel?
 }
+
+class DataLoginManager {
+    static let shared = DataLoginManager()
+    private init() {}
+    
+    var currentModel: netModel?
+}

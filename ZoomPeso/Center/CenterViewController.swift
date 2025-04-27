@@ -23,29 +23,6 @@ class CenterViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
         
-        centerView.aBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-        }).disposed(by: disposeBag)
-        
-        centerView.bBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-        }).disposed(by: disposeBag)
-        
-        centerView.cBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            let settingVc = SettingViewController()
-            self.navigationController?.pushViewController(settingVc, animated: true)
-        }).disposed(by: disposeBag)
-        
-        centerView.dBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-        }).disposed(by: disposeBag)
-        
-        centerView.eBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-        }).disposed(by: disposeBag)
-        
-        
         centerView.oneBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
             let oVc = OrderListViewController()
@@ -78,17 +55,82 @@ class CenterViewController: BaseViewController {
             self.navigationController?.pushViewController(oVc, animated: true)
         }).disposed(by: disposeBag)
         
+        centerView.modelBlock = { [weak self] model in
+            guard let self = self else { return }
+            let sucking = model.sucking ?? ""
+            if sucking.contains(SCREME_URL) {
+                scUrlGoVc(with: sucking)
+            }else {
+                let webVc = VitamainFiveViewController()
+                webVc.pageUrl = model.sucking ?? ""
+                self.navigationController?.pushViewController(webVc, animated: true)
+            }
+        }
+        
+        getApiInfo()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func scUrlGoVc(with suck: String) {
+        if suck.contains("finds") {
+            let setVc = SettingViewController()
+            self.navigationController?.pushViewController(setVc, animated: true)
+        }else if suck.contains("Emperor") {
+            self.rootInfo()
+        }else if suck.contains("this") {
+            LoginConfig.deleteLoginInfo()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                self.rootInfo()
+            }
+        }else if suck.contains("itself") {
+            let dict = URLParameterParser.parse(from: suck)
+            let fitted = dict["fitted"] ?? ""
+            let listVc = OrderListViewController()
+            if fitted == "0" {
+                listVc.orderType = "4"
+                listVc.nameType = "All"
+            }else if fitted == "1" {
+                listVc.orderType = "7"
+                listVc.nameType = "Apply"
+            }else if fitted == "2" {
+                listVc.orderType = "6"
+                listVc.nameType = "Repayment"
+            }else if fitted == "3" {
+                listVc.orderType = "5"
+                listVc.nameType = "Finished"
+            }
+            self.navigationController?.pushViewController(listVc, animated: true)
+        }else if suck.contains("during") {
+            let dict = URLParameterParser.parse(from: suck)
+            let barricaded = dict["barricaded"] ?? ""
+            self.productDetailInfo(from: barricaded) { model in
+                self.vitaminInfo(from: model) { model in
+                    
+                }
+            }
+        }
     }
-    */
 
+}
+
+extension CenterViewController {
+    
+    private func getApiInfo() {
+        ViewHudConfig.showLoading()
+        NetworkManager.getRequest(endpoint: "/surely/walckanaer", responseType: BaseModel.self) { result in
+            switch result {
+            case .success(let success):
+                if success.wedge == "0" {
+                    if let modelArray = success.net?.ruby {
+                        self.centerView.modelArry.accept(modelArray)
+                    }
+                }
+                ViewHudConfig.hideLoading()
+                break
+            case .failure(_):
+                ViewHudConfig.hideLoading()
+                break
+            }
+        }
+    }
+    
 }

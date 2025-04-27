@@ -68,10 +68,17 @@ class LoginViewController: BaseViewController {
             }
         }).disposed(by: disposeBag)
         
-        DispatchQueue.main.async {
-            let location = LocationConfig()
-            location.getLocationInfo { [weak self] model in
-                self?.apiLoacationInfo(from: model)
+        if let model = DataLoginManager.shared.currentModel {
+            let cordillera = model.cordillera ?? 0
+            if cordillera == 1 {
+                DispatchQueue.main.async {
+                    let location = LocationConfig()
+                    location.getLocationInfo { [weak self] model in
+                        self?.apiLoacationInfo(from: model)
+                    }
+                }
+            }else {
+                deviceApiInfo()
             }
         }
         
