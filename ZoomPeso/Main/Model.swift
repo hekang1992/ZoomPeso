@@ -122,11 +122,6 @@ class interceptModel: Codable {
     var extricate: [extricateModel]?
 }
 
-class extricateModel: Codable {
-    var bajada: Int?
-    var paralysed: String?
-}
-
 class armyModel: Codable {
     var astonished: String?
     var backs: String?
@@ -136,9 +131,13 @@ class armyModel: Codable {
     var paralysed: String?
     var paths: String?
     var beaten: String?
-    var extricate: [extrModel]?
+    var common: String?
+    var coname: String?
+    var cophone: String?
+    var extricate: [extricateModel]?
     
     enum CodingKeys: String, CodingKey {
+        case common = "common"
         case astonished = "astonished"
         case backs = "backs"
         case bees = "bees"
@@ -151,7 +150,23 @@ class armyModel: Codable {
     }
 }
 
-class extrModel: Codable {
+class extricateModel: Codable {
     var bajada: String?
     var paralysed: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case bajada = "bajada"
+        case paralysed = "paralysed"
+    }
+    required init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.paralysed = try container.decodeIfPresent(String.self, forKey: .paralysed)
+        if let intValue = try? container.decodeIfPresent(Int.self, forKey: .bajada) {
+            self.bajada = String(intValue)
+        } else if let stringValue = try? container.decodeIfPresent(String.self, forKey: .bajada) {
+            self.bajada = stringValue
+        } else {
+            self.bajada = ""
+        }
+    }
 }

@@ -152,6 +152,22 @@ extension BaseViewController {
         }
     }
     
+    func showPermissionDeniedAlert(for permission: String) {
+        let alert = UIAlertController(
+            title: "Permission required",
+            message: "Go to Settings to allow \(permission) access for this feature.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Setting", style: .default) { _ in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        })
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 /** productdetailinfo */
@@ -179,6 +195,10 @@ extension BaseViewController {
             self.navigationController?.pushViewController(vitamanVc, animated: true)
             break
         case "both":
+            let vitamanVc = VitamainFiveViewController()
+            vitamanVc.model.accept(model)
+            vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
+            self.navigationController?.pushViewController(vitamanVc, animated: true)
             break
         default:
             break

@@ -45,7 +45,6 @@ class MyLoveViewCell: BaseViewCell {
         contaceView.backgroundColor = .init(hexStr: "#FFF5C3")
         contaceView.layer.cornerRadius = 10.pix()
         contaceView.layer.masksToBounds = true
-        contaceView.isUserInteractionEnabled = true
         return contaceView
     }()
     
@@ -70,7 +69,6 @@ class MyLoveViewCell: BaseViewCell {
         phoenView.backgroundColor = .init(hexStr: "#FFF5C3")
         phoenView.layer.cornerRadius = 10.pix()
         phoenView.layer.masksToBounds = true
-        phoenView.isUserInteractionEnabled = true
         return phoenView
     }()
     
@@ -161,7 +159,12 @@ class MyLoveViewCell: BaseViewCell {
             backs.addAttributes([.font: UIFont(name: ArialBlackFont, size: 15)!], range: range)
             desclabel.attributedText = backs
             contentLabel.text = model.labours ?? ""
-            clickLabel.text = model.astonished ?? ""
+            let common = model.common ?? ""
+            if common.isEmpty {
+                clickLabel.text = model.astonished ?? ""
+            }else {
+                clickLabel.text = common
+            }
             phoenLabel.text = model.excepted ?? ""
             cpLabel.text = model.bees ?? ""
         }).disposed(by: disposeBag)

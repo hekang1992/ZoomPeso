@@ -213,22 +213,6 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
         
     }
     
-    func showPermissionDeniedAlert(for permission: String) {
-        let alert = UIAlertController(
-            title: "Permission required",
-            message: "Go to Settings to allow \(permission) access for this feature.",
-            preferredStyle: .alert
-        )
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Setting", style: .default) { _ in
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        })
-        present(alert, animated: true, completion: nil)
-    }
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true) {
             

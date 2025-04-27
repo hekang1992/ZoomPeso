@@ -261,7 +261,7 @@ extension VitamainThreeViewController {
             self.dismiss(animated: true) {
                 label.text = enumModel.paralysed ?? ""
                 label.textColor = .init(hexStr: "#FF3824")
-                model.hound = String(enumModel.bajada ?? 0)
+                model.hound = enumModel.bajada ?? "0"
                 model.common = enumModel.paralysed ?? ""
             }
         }
