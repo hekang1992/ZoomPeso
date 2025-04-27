@@ -29,6 +29,7 @@
 		734099AB2DBE1A9700B1D1AF /* CenterListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */; };
 		7350F17C2DBE70BF0084D9AE /* OutLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350F17B2DBE70BF0084D9AE /* OutLogView.swift */; };
 		7350F17E2DBE70D10084D9AE /* AccDelLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350F17D2DBE70D10084D9AE /* AccDelLogView.swift */; };
+		7350F1802DBE7B960084D9AE /* AuthDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350F17F2DBE7B960084D9AE /* AuthDateView.swift */; };
 		735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02D2DBB3914003782FC /* ClickViewCell.swift */; };
 		735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02F2DBB3925003782FC /* InputViewCell.swift */; };
 		735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD0342DBB7512003782FC /* SelectOneView.swift */; };
@@ -82,6 +83,7 @@
 		734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListViewCell.swift; sourceTree = "<group>"; };
 		7350F17B2DBE70BF0084D9AE /* OutLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutLogView.swift; sourceTree = "<group>"; };
 		7350F17D2DBE70D10084D9AE /* AccDelLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccDelLogView.swift; sourceTree = "<group>"; };
+		7350F17F2DBE7B960084D9AE /* AuthDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDateView.swift; sourceTree = "<group>"; };
 		735DD02D2DBB3914003782FC /* ClickViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickViewCell.swift; sourceTree = "<group>"; };
 		735DD02F2DBB3925003782FC /* InputViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewCell.swift; sourceTree = "<group>"; };
 		735DD0342DBB7512003782FC /* SelectOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOneView.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				735DD02D2DBB3914003782FC /* ClickViewCell.swift */,
 				735DD02F2DBB3925003782FC /* InputViewCell.swift */,
 				7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */,
+				7350F17F2DBE7B960084D9AE /* AuthDateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				733DCA132DB5E04C009AA17E /* LaunchViewController.swift in Sources */,
 				73C5A20E2DB7E1F700105BD3 /* VitamainGuideViewController.swift in Sources */,
 				733DCA1B2DB5FDD5009AA17E /* LoginView.swift in Sources */,
+				7350F1802DBE7B960084D9AE /* AuthDateView.swift in Sources */,
 				73C5A2122DB7E2E900105BD3 /* VitamainGuideHeadView.swift in Sources */,
 				73FAA6582DB92F0A00D77159 /* AuthViewCell.swift in Sources */,
 				73C5A2042DB7E14F00105BD3 /* VitamainTwoViewController.swift in Sources */,

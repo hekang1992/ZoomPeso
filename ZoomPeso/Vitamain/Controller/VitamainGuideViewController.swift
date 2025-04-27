@@ -277,7 +277,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         guard let model = self.model.value else { return }
         if index == 0 {
-            if stepIndex > 0 {
+            if stepIndex >= 0 {
                 getAuthInfo()
             }
         }else if index == 1 {

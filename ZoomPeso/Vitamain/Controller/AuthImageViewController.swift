@@ -319,6 +319,43 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
             sageInfo(form: authView)
         }).disposed(by: disposeBag)
         
+        
+        authView.block = { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+        }
+        
+        authView.timeBlock = { [weak self] in
+            guard let self = self else { return }
+            let dateView = AuthDateView(frame: .zero)
+            toastShowViewWithWindow(with: dateView, superView: authView)
+        }
+        
+    }
+    
+    private func toastShowViewWithWindow(with dateView: AuthDateView, superView: APView) {
+        DispatchQueue.main.async {
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
+                return
+            }
+            window.addSubview(dateView)
+            dateView.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.size.equalTo(CGSize(width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+            }
+            
+            dateView.saveBlock = { time in
+                superView.timeBtn.setTitle(time, for: .normal)
+                DispatchQueue.main.async {
+                    dateView.removeFromSuperview()
+                }
+            }
+            
+            dateView.cancelBtn.rx.tap.subscribe(onNext: {
+                dateView.removeFromSuperview()
+            }).disposed(by: self.disposeBag)
+        }
     }
     
     private func sageInfo(form tcView: APView) {
@@ -326,7 +363,6 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
         let name = authView.nameTx.text ?? ""
         let idnum = authView.idTx.text ?? ""
         let time = authView.timeBtn.titleLabel?.text ?? ""
-        
         let dict = ["stuff": time,
                     "sting": idnum,
                     "grand": "1",
@@ -340,10 +376,8 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
             case .success(let success):
                 guard let self = self else { return }
                 if success.wedge == "0" {
-                    if let model = success.net {
-                        self.dismiss(animated: true) {
-                            self.getAuthInfo()
-                        }
+                    self.dismiss(animated: true) {
+                        self.getAuthInfo()
                     }
                 }
                 ToastShowConfig.showMessage(form: authView, message: success.circular ?? "")
