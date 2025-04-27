@@ -159,7 +159,6 @@ class OrderListView: BaseView {
             self.fourBlock?()
             selectButton(fourBtn)
         }).disposed(by: disposeBag)
-        
     }
     
     @MainActor required init?(coder: NSCoder) {
@@ -217,5 +216,4 @@ extension OrderListView: UITableViewDelegate, UITableViewDataSource {
             self.block?(model)
         }
     }
-    
 }

@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.10.2)
   - ASGradientLabel (1.0.0)
   - DeviceKit (5.5.0)
+  - FSPagerView (0.8.3)
   - IQKeyboardCore (1.0.5)
   - IQKeyboardManagerSwift (8.0.0):
     - IQKeyboardManagerSwift/Appearance (= 8.0.0)
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - Alamofire
   - ASGradientLabel
   - DeviceKit
+  - FSPagerView
   - IQKeyboardManagerSwift
   - Kingfisher
   - MJRefresh
@@ -78,6 +80,7 @@ SPEC REPOS:
     - Alamofire
     - ASGradientLabel
     - DeviceKit
+    - FSPagerView
     - IQKeyboardCore
     - IQKeyboardManagerSwift
     - IQKeyboardNotification
@@ -101,6 +104,7 @@ SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   ASGradientLabel: 40a26da240c487ec6908825636688b652156d1f3
   DeviceKit: d83e38ca196a4ebf0cc5f37d6f0316a24b794d5b
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
   IQKeyboardManagerSwift: 0c6fbbaa2e60739e48d7cf59f25661471a7a3a65
   IQKeyboardNotification: d7382c4466c5a5adef92c7452ebf861b36050088
@@ -120,6 +124,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
   TYAlertController: c121090edb0bea7426f987da94cdddd81eef4231
 
-PODFILE CHECKSUM: d02aecb28cb9b17cb039db2edfc62526290d77fd
+PODFILE CHECKSUM: 6dd6cf9ad2e702f283ca2f2ef4fd0f1057e33f6d
 
 COCOAPODS: 1.16.2

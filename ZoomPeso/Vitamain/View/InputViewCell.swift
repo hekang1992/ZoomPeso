@@ -70,6 +70,17 @@ class InputViewCell: BaseViewCell {
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
             desclabel.text = model.backs ?? ""
+            let common = model.common ?? ""
+            let hound = model.hound ?? ""
+            if common.isEmpty {
+                if hound.isEmpty {
+                    inputTx.text = ""
+                }else {
+                    inputTx.text = hound
+                }
+            }else {
+                inputTx.text = common
+            }
             inputTx.attributedPlaceholder = NSAttributedString(string: model.tuft ?? "")
             let files = model.files ?? 0
             self.keyboardTypeInfo(from: files)

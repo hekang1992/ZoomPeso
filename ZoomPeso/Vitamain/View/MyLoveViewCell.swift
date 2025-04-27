@@ -21,7 +21,7 @@ class MyLoveViewCell: BaseViewCell {
         desclabel.colors = [UIColor.init(hexStr: "#FF3824")!.cgColor, UIColor.init(hexStr: "#FF992F")!.cgColor]
         return desclabel
     }()
-
+    
     lazy var bgView: UIView = {
         let bgView = UIView()
         bgView.backgroundColor = .init(hexStr: "#FFFAED")
@@ -160,13 +160,31 @@ class MyLoveViewCell: BaseViewCell {
             desclabel.attributedText = backs
             contentLabel.text = model.labours ?? ""
             let common = model.common ?? ""
+            let paths = model.paths ?? ""
             if common.isEmpty {
-                clickLabel.text = model.astonished ?? ""
+                if paths.isEmpty {
+                    clickLabel.text = model.astonished ?? ""
+                    clickLabel.textColor = .init(hexStr: "#E2D38B")
+                }else {
+                    clickLabel.text = paths
+                    clickLabel.textColor = .init(hexStr: "#FF3824")
+                }
             }else {
                 clickLabel.text = common
+                clickLabel.textColor = .init(hexStr: "#FF3824")
             }
+            
+            let phone = model.beaten ?? ""
+            let name = model.paralysed ?? ""
             phoenLabel.text = model.excepted ?? ""
-            cpLabel.text = model.bees ?? ""
+            if phone.isEmpty {
+                cpLabel.text = model.bees ?? ""
+                cpLabel.textColor = .init(hexStr: "#E2D38B")
+            }else {
+                cpLabel.text = "\(name) - \(phone)"
+                cpLabel.textColor = .init(hexStr: "#FF3824")
+            }
+            
         }).disposed(by: disposeBag)
         
     }

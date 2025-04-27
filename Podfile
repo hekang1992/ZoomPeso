@@ -9,7 +9,6 @@ target 'ZoomPeso' do
 
   pod 'Alamofire'
   pod 'SnapKit'
-  pod 'Kingfisher'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Kingfisher'
@@ -21,4 +20,5 @@ target 'ZoomPeso' do
   pod 'SAMKeychain'
   pod 'Toast-Swift'
   pod 'ASGradientLabel'
+  pod 'FSPagerView'
 end

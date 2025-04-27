@@ -163,6 +163,4 @@ class OrderListViewCell: BaseViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-
 }

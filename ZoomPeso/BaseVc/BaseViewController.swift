@@ -205,7 +205,7 @@ extension BaseViewController {
         }
     }
     
-    private func getAuthInfo(from model: netModel, complete: @escaping ((netModel) -> Void)) {
+    func getAuthInfo(from model: netModel, complete: @escaping ((netModel) -> Void)) {
         ViewHudConfig.showLoading()
         let barricaded = model.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded, "vitaman": "c"]

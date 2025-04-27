@@ -94,7 +94,7 @@ class VitamainFourViewController: BaseViewController {
         self.headView.nameLabel.text = "Emergency contact"
         addHeadView()
         self.headView.backBlock = { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
+            self?.popToVitamainGuideOrRoot()
         }
         
         view.addSubview(bgView)

@@ -87,7 +87,7 @@ class VitamainTwoViewController: BaseViewController {
         self.headView.nameLabel.text = "Basic information"
         addHeadView()
         self.headView.backBlock = { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
+            self?.popToVitamainGuideOrRoot()
         }
         
         view.addSubview(bgView)

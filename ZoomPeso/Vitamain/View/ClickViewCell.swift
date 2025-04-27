@@ -78,9 +78,15 @@ class ClickViewCell: BaseViewCell {
             guard let self = self, let model = model else { return }
             desclabel.text = model.backs ?? ""
             let common = model.common ?? ""
+            let hound = model.hound ?? ""
             if common.isEmpty {
-                clickLabel.text = model.tuft ?? ""
-                clickLabel.textColor = .init(hexStr: "#E2D38B")
+                if hound.isEmpty {
+                    clickLabel.text = model.tuft ?? ""
+                    clickLabel.textColor = .init(hexStr: "#E2D38B")
+                }else {
+                    clickLabel.text = hound
+                    clickLabel.textColor = .init(hexStr: "#FF3824")
+                }
             }else {
                 clickLabel.text = common
                 clickLabel.textColor = .init(hexStr: "#FF3824")

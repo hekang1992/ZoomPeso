@@ -137,8 +137,6 @@ class armyModel: Codable {
     var paths: String?
     var beaten: String?
     var common: String?
-    var coname: String?
-    var cophone: String?
     var extricate: [extricateModel]?
     
     enum CodingKeys: String, CodingKey {
