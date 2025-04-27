@@ -27,6 +27,8 @@
 		733DCA252DB641CF009AA17E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA242DB641C8009AA17E /* Model.swift */; };
 		733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA262DB6446B009AA17E /* LoginConfig.swift */; };
 		734099AB2DBE1A9700B1D1AF /* CenterListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */; };
+		7350F17C2DBE70BF0084D9AE /* OutLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350F17B2DBE70BF0084D9AE /* OutLogView.swift */; };
+		7350F17E2DBE70D10084D9AE /* AccDelLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350F17D2DBE70D10084D9AE /* AccDelLogView.swift */; };
 		735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02D2DBB3914003782FC /* ClickViewCell.swift */; };
 		735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02F2DBB3925003782FC /* InputViewCell.swift */; };
 		735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD0342DBB7512003782FC /* SelectOneView.swift */; };
@@ -78,6 +80,8 @@
 		733DCA242DB641C8009AA17E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		733DCA262DB6446B009AA17E /* LoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfig.swift; sourceTree = "<group>"; };
 		734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListViewCell.swift; sourceTree = "<group>"; };
+		7350F17B2DBE70BF0084D9AE /* OutLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutLogView.swift; sourceTree = "<group>"; };
+		7350F17D2DBE70D10084D9AE /* AccDelLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccDelLogView.swift; sourceTree = "<group>"; };
 		735DD02D2DBB3914003782FC /* ClickViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickViewCell.swift; sourceTree = "<group>"; };
 		735DD02F2DBB3925003782FC /* InputViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewCell.swift; sourceTree = "<group>"; };
 		735DD0342DBB7512003782FC /* SelectOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOneView.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				73BB3E042DB684C400085744 /* DeviceInfo.swift */,
 				739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */,
 				735DD0342DBB7512003782FC /* SelectOneView.swift */,
+				7350F17B2DBE70BF0084D9AE /* OutLogView.swift */,
+				7350F17D2DBE70D10084D9AE /* AccDelLogView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -387,9 +393,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,12 +415,14 @@
 			files = (
 				739FA6C72DBA6BF2003C0352 /* PermissionManager.swift in Sources */,
 				73FAA65A2DB93AAB00D77159 /* AuthImageViewController.swift in Sources */,
+				7350F17E2DBE70D10084D9AE /* AccDelLogView.swift in Sources */,
 				733DCA252DB641CF009AA17E /* Model.swift in Sources */,
 				73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */,
 				735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */,
 				733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */,
 				733DCA232DB63571009AA17E /* HomeView.swift in Sources */,
 				733DCA072DB5DDA2009AA17E /* BaseTabBarController.swift in Sources */,
+				7350F17C2DBE70BF0084D9AE /* OutLogView.swift in Sources */,
 				73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */,
 				739FA6CB2DBA84C7003C0352 /* SFaceViewViewController.swift in Sources */,
 				735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */,

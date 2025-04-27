@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TYAlertController
 
 class SettingViewController: BaseViewController {
     
@@ -93,6 +94,31 @@ class SettingViewController: BaseViewController {
             make.bottom.equalToSuperview().offset(-27.pix())
             make.size.equalTo(CGSize(width: 200, height: 15))
         }
+        
+        
+        cImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            let outView = OutLogView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
+            let alertVc = TYAlertController(alert: outView, preferredStyle: .alert)!
+            self.present(alertVc, animated: true)
+            outView.block = { [weak self] type in
+                guard let self = self else { return }
+                accOutInfo(with: type)
+            }
+        }).disposed(by: disposeBag)
+        
+        bImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            let accdelView = AccDelLogView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
+            let alertVc = TYAlertController(alert: accdelView, preferredStyle: .alert)!
+            self.present(alertVc, animated: true)
+            accdelView.block = { [weak self] type in
+                guard let self = self else { return }
+                accDelInfo(with: type)
+            }
+        }).disposed(by: disposeBag)
+        
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -104,3 +130,64 @@ class SettingViewController: BaseViewController {
     
 }
 
+extension SettingViewController {
+    
+    private func accOutInfo(with type: String) {
+        if type == "0" {
+            self.dismiss(animated: true)
+        }else {
+            self.dismiss(animated: true) {
+                ViewHudConfig.showLoading()
+                let dict = ["coca": "out", "clean": "0"]
+                NetworkManager.getRequest(endpoint: "/surely/retreating", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+                    switch result {
+                    case .success(let success):
+                        guard let self = self else { return }
+                        if success.wedge == "0" {
+                            LoginConfig.deleteLoginInfo()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                                self.rootInfo()
+                            }
+                        }
+                        ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                        ViewHudConfig.hideLoading()
+                        break
+                    case .failure(_):
+                        ViewHudConfig.hideLoading()
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
+    private func accDelInfo(with type: String) {
+        if type == "0" {
+            self.dismiss(animated: true)
+        }else {
+            self.dismiss(animated: true) {
+                ViewHudConfig.showLoading()
+                let dict = ["coca": "del", "mask": "1"]
+                NetworkManager.getRequest(endpoint: "/surely/marks", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+                    switch result {
+                    case .success(let success):
+                        guard let self = self else { return }
+                        if success.wedge == "0" {
+                            LoginConfig.deleteLoginInfo()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                                self.rootInfo()
+                            }
+                        }
+                        ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                        ViewHudConfig.hideLoading()
+                        break
+                    case .failure(_):
+                        ViewHudConfig.hideLoading()
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
+}
