@@ -84,7 +84,8 @@ class SFaceViewViewController: BaseViewController {
         self.headView.nameLabel.text = "Face recognition"
         addHeadView()
         self.headView.backBlock = { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
+            guard let self = self else { return }
+            popToVitamainGuideOrRoot()
         }
         
         view.addSubview(bgView)

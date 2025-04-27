@@ -26,6 +26,7 @@ class netModel: Codable {
     var deadly: deadlyModel?
     var victims: victimsModel?
     var intercept: [interceptModel]?
+    var army: [armyModel]?
 }
 
 class rubyModel: Codable {
@@ -123,5 +124,34 @@ class interceptModel: Codable {
 
 class extricateModel: Codable {
     var bajada: Int?
+    var paralysed: String?
+}
+
+class armyModel: Codable {
+    var astonished: String?
+    var backs: String?
+    var bees: String?
+    var excepted: String?
+    var labours: String?
+    var paralysed: String?
+    var paths: String?
+    var beaten: String?
+    var extricate: [extrModel]?
+    
+    enum CodingKeys: String, CodingKey {
+        case astonished = "astonished"
+        case backs = "backs"
+        case bees = "bees"
+        case excepted = "excepted"
+        case labours = "labours"
+        case paralysed = "paralysed"
+        case paths = "paths"
+        case beaten = "beaten"
+        case extricate = "extricate"
+    }
+}
+
+class extrModel: Codable {
+    var bajada: String?
     var paralysed: String?
 }

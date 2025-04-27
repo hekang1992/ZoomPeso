@@ -29,6 +29,7 @@
 		735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02D2DBB3914003782FC /* ClickViewCell.swift */; };
 		735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02F2DBB3925003782FC /* InputViewCell.swift */; };
 		735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD0342DBB7512003782FC /* SelectOneView.swift */; };
+		7368E60A2DBBDDEC00427C04 /* MyLoveViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */; };
 		739FA6C72DBA6BF2003C0352 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */; };
 		739FA6C92DBA720A003C0352 /* APView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C82DBA720A003C0352 /* APView.swift */; };
 		739FA6CB2DBA84C7003C0352 /* SFaceViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6CA2DBA84C7003C0352 /* SFaceViewViewController.swift */; };
@@ -78,6 +79,7 @@
 		735DD02D2DBB3914003782FC /* ClickViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickViewCell.swift; sourceTree = "<group>"; };
 		735DD02F2DBB3925003782FC /* InputViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewCell.swift; sourceTree = "<group>"; };
 		735DD0342DBB7512003782FC /* SelectOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOneView.swift; sourceTree = "<group>"; };
+		7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLoveViewCell.swift; sourceTree = "<group>"; };
 		739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		739FA6C82DBA720A003C0352 /* APView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APView.swift; sourceTree = "<group>"; };
 		739FA6CA2DBA84C7003C0352 /* SFaceViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFaceViewViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				739FA6C82DBA720A003C0352 /* APView.swift */,
 				735DD02D2DBB3914003782FC /* ClickViewCell.swift */,
 				735DD02F2DBB3925003782FC /* InputViewCell.swift */,
+				7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,13 +384,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -415,6 +414,7 @@
 				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
 				73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */,
+				7368E60A2DBBDDEC00427C04 /* MyLoveViewCell.swift in Sources */,
 				733DCA092DB5DDC4009AA17E /* BaseNavigationController.swift in Sources */,
 				73C5A2022DB7E14400105BD3 /* VitamainOneViewController.swift in Sources */,
 				73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */,

@@ -20,4 +20,5 @@ target 'ZoomPeso' do
   pod 'TYAlertController'
   pod 'SAMKeychain'
   pod 'Toast-Swift'
+  pod 'ASGradientLabel'
 end

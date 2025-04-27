@@ -67,9 +67,9 @@ class RequestConfig: NSObject {
     static let shared = RequestConfig()
     
     var headers: HTTPHeaders = [
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-    ]
+        "Accept": "application/json;",
+        "Connection": "keep-alive",
+        "Content-Type": "application/x-www-form-urlencoded;text/json;text/javascript;text/html;text/plain;multipart/form-data"]
     
 }
 

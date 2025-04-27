@@ -40,6 +40,16 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController {
     
+    func popToVitamainGuideOrRoot() {
+        if let viewControllers = navigationController?.viewControllers {
+            if let targetVC = viewControllers.first(where: { $0 is VitamainGuideViewController }) {
+                navigationController?.popToViewController(targetVC, animated: true)
+            } else {
+                navigationController?.popToRootViewController(animated: true)
+            }
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupGradient()

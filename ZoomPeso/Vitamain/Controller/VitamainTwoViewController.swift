@@ -128,6 +128,18 @@ class VitamainTwoViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
         
+        nextBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let self = self,
+                  let model = self.model.value,
+                  let oneModel = self.oneModel.value,
+                  let modelArray = oneModel.intercept else { return }
+            let dict = modelArray.reduce(into: ["barricaded": model.enlarged?.orifice ?? ""]) { result, model in
+                guard let key = model.wedge else { return }
+                result[key] = model.hound ?? ""
+            }
+            safeBingoInfo(with: dict)
+        }).disposed(by: disposeBag)
+        
         getApiInfo()
     }
     
@@ -166,6 +178,31 @@ extension VitamainTwoViewController {
         }
     }
     
+    private func safeBingoInfo(with dict: [String: String]) {
+        ViewHudConfig.showLoading()
+        let barricaded = dict["barricaded"] ?? ""
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/typical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+            ViewHudConfig.hideLoading()
+            switch result {
+            case .success(let success):
+                guard let self = self else { return }
+                if success.wedge == "0" {
+                    productDetailInfo(from: barricaded) { model in
+                        self.model.accept(model)
+                        self.vitaminInfo(from: model) { model in
+                            
+                        }
+                    }
+                }else {
+                    ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                }
+                break
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
 }
 
 extension VitamainTwoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -178,7 +215,7 @@ extension VitamainTwoViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = self.oneModel.value?.intercept?[indexPath.row]
         let reascended = model?.reascended ?? ""
-        if reascended == "inflicted" || reascended == "feeble" {
+        if reascended == "inflicted" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ClickViewCell", for: indexPath) as! ClickViewCell
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
@@ -195,7 +232,7 @@ extension VitamainTwoViewController: UITableViewDelegate, UITableViewDataSource 
             cell.model.accept(model)
             cell.inputTx.publisher(for: \.text)
                 .compactMap { $0 }
-                    .filter { !$0.isEmpty }
+                .filter { !$0.isEmpty }
                 .sink { text in
                     model?.hound = text
                 }

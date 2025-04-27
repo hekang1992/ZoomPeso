@@ -91,7 +91,13 @@ class AuthImageViewController: BaseViewController {
         self.headView.nameLabel.text = "Authentication Security"
         addHeadView()
         self.headView.backBlock = { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
+            guard let self = self else { return }
+            let index = self.isSuccess.value ?? 0
+            if index == 1 {
+                popToVitamainGuideOrRoot()
+            }else {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         
         view.addSubview(bgView)
