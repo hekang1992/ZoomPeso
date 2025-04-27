@@ -35,10 +35,69 @@ class MyLoveViewCell: BaseViewCell {
         return bgView
     }()
     
+    lazy var contentLabel: UILabel = {
+        let contentLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .black, textAlignment: .left)
+        return contentLabel
+    }()
+    
+    lazy var contaceView: UIView = {
+        let contaceView = UIView()
+        contaceView.backgroundColor = .init(hexStr: "#FFF5C3")
+        contaceView.layer.cornerRadius = 10.pix()
+        contaceView.layer.masksToBounds = true
+        contaceView.isUserInteractionEnabled = true
+        return contaceView
+    }()
+    
+    lazy var rightImageView: UIImageView = {
+        let rightImageView = UIImageView()
+        rightImageView.image = UIImage(named: "rightimagebal")
+        return rightImageView
+    }()
+    
+    lazy var clickLabel: UILabel = {
+        let clickLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(hexStr: "#E2D38B")!, textAlignment: .left)
+        return clickLabel
+    }()
+    
+    lazy var phoenLabel: UILabel = {
+        let phoenLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .black, textAlignment: .left)
+        return phoenLabel
+    }()
+    
+    lazy var phoenView: UIView = {
+        let phoenView = UIView()
+        phoenView.backgroundColor = .init(hexStr: "#FFF5C3")
+        phoenView.layer.cornerRadius = 10.pix()
+        phoenView.layer.masksToBounds = true
+        phoenView.isUserInteractionEnabled = true
+        return phoenView
+    }()
+    
+    lazy var phoneImageView: UIImageView = {
+        let phoneImageView = UIImageView()
+        phoneImageView.image = UIImage(named: "phoneiconigme")
+        return phoneImageView
+    }()
+    
+    lazy var cpLabel: UILabel = {
+        let cpLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(hexStr: "#E2D38B")!, textAlignment: .left)
+        return cpLabel
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(bgView)
         bgView.addSubview(desclabel)
+        bgView.addSubview(contentLabel)
+        bgView.addSubview(contaceView)
+        contaceView.addSubview(clickLabel)
+        contaceView.addSubview(rightImageView)
+        bgView.addSubview(phoenLabel)
+        bgView.addSubview(phoenView)
+        phoenView.addSubview(phoneImageView)
+        phoenView.addSubview(cpLabel)
+        
         bgView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10.pix())
             make.centerX.equalToSuperview()
@@ -49,6 +108,51 @@ class MyLoveViewCell: BaseViewCell {
             make.left.equalToSuperview().offset(13.pix())
             make.height.equalTo(21.pix())
         }
+        contentLabel.snp.makeConstraints { make in
+            make.top.equalTo(desclabel.snp.bottom).offset(10.pix())
+            make.left.equalToSuperview().offset(13.pix())
+            make.height.equalTo(21.pix())
+        }
+        contaceView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(contentLabel.snp.bottom).offset(5.pix())
+            make.left.equalTo(contentLabel.snp.left)
+            make.height.equalTo(44.pix())
+        }
+        rightImageView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview().offset(-5.pix())
+            make.size.equalTo(CGSize(width: 14, height: 14))
+        }
+        clickLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(15.pix())
+            make.right.equalTo(rightImageView.snp.left).offset(-2.pix())
+            make.height.equalTo(44.pix())
+        }
+        
+        phoenLabel.snp.makeConstraints { make in
+            make.top.equalTo(contaceView.snp.bottom).offset(10.pix())
+            make.left.equalToSuperview().offset(13.pix())
+            make.height.equalTo(21.pix())
+        }
+        phoenView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(phoenLabel.snp.bottom).offset(5.pix())
+            make.left.equalTo(phoenLabel.snp.left)
+            make.height.equalTo(44.pix())
+        }
+        phoneImageView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview().offset(-5.pix())
+            make.size.equalTo(CGSize(width: 14, height: 14))
+        }
+        cpLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(15.pix())
+            make.right.equalTo(phoneImageView.snp.left).offset(-2.pix())
+            make.height.equalTo(44.pix())
+        }
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
@@ -56,6 +160,10 @@ class MyLoveViewCell: BaseViewCell {
             let range = NSRange(location: 0, length: backs.length)
             backs.addAttributes([.font: UIFont(name: ArialBlackFont, size: 15)!], range: range)
             desclabel.attributedText = backs
+            contentLabel.text = model.labours ?? ""
+            clickLabel.text = model.astonished ?? ""
+            phoenLabel.text = model.excepted ?? ""
+            cpLabel.text = model.bees ?? ""
         }).disposed(by: disposeBag)
         
     }
