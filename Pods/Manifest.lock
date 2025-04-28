@@ -1,6 +1,32 @@
 PODS:
   - Alamofire (5.10.2)
   - ASGradientLabel (1.0.0)
+  - BRPickerView (2.9.1):
+    - BRPickerView/All (= 2.9.1)
+  - BRPickerView/All (2.9.1):
+    - BRPickerView/Default
+    - BRPickerView/Deprecated
+  - BRPickerView/Core (2.9.1)
+  - BRPickerView/DatePicker (2.9.1):
+    - BRPickerView/Core
+  - BRPickerView/Default (2.9.1):
+    - BRPickerView/DatePicker
+    - BRPickerView/TextPicker
+  - BRPickerView/Deprecated (2.9.1):
+    - BRPickerView/Core
+    - BRPickerView/Deprecated/AddressPickerView (= 2.9.1)
+    - BRPickerView/Deprecated/Base (= 2.9.1)
+    - BRPickerView/Deprecated/StringPickerView (= 2.9.1)
+  - BRPickerView/Deprecated/AddressPickerView (2.9.1):
+    - BRPickerView/Core
+    - BRPickerView/Deprecated/Base
+  - BRPickerView/Deprecated/Base (2.9.1):
+    - BRPickerView/Core
+  - BRPickerView/Deprecated/StringPickerView (2.9.1):
+    - BRPickerView/Core
+    - BRPickerView/Deprecated/Base
+  - BRPickerView/TextPicker (2.9.1):
+    - BRPickerView/Core
   - DeviceKit (5.5.0)
   - FSPagerView (0.8.3)
   - IQKeyboardCore (1.0.5)
@@ -62,6 +88,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - ASGradientLabel
+  - BRPickerView
   - DeviceKit
   - FSPagerView
   - IQKeyboardManagerSwift
@@ -79,6 +106,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - ASGradientLabel
+    - BRPickerView
     - DeviceKit
     - FSPagerView
     - IQKeyboardCore
@@ -103,6 +131,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   ASGradientLabel: 40a26da240c487ec6908825636688b652156d1f3
+  BRPickerView: 6dd69ea2c48e0a0abf1d197a705050e13143ee63
   DeviceKit: d83e38ca196a4ebf0cc5f37d6f0316a24b794d5b
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
@@ -124,6 +153,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
   TYAlertController: c121090edb0bea7426f987da94cdddd81eef4231
 
-PODFILE CHECKSUM: 6dd6cf9ad2e702f283ca2f2ef4fd0f1057e33f6d
+PODFILE CHECKSUM: 9ce4ec9335986cd948df6f564e37cedc79416033
 
 COCOAPODS: 1.16.2

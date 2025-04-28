@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/ASGradientLabel/ASGradientLabel.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/BRPickerView/BRPickerView.framework
 ${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework
 ${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardCore/IQKeyboardCore.framework

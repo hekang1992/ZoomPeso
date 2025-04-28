@@ -21,4 +21,5 @@ target 'ZoomPeso' do
   pod 'Toast-Swift'
   pod 'ASGradientLabel'
   pod 'FSPagerView'
+  pod 'BRPickerView'
 end

@@ -87,7 +87,7 @@ class VitamainThreeViewController: BaseViewController {
         self.headView.nameLabel.text = "Job information"
         addHeadView()
         self.headView.backBlock = { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
+            self?.popToVitamainGuideOrRoot()
         }
         
         view.addSubview(bgView)
@@ -225,6 +225,16 @@ extension VitamainThreeViewController: UITableViewDelegate, UITableViewDataSourc
                 popSelectOneViewInfo(from: model, label: label)
             }
             return cell
+        }else if reascended == "feeble" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ClickViewCell", for: indexPath) as! ClickViewCell
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            cell.model.accept(model)
+            cell.clickBlock = { [weak self] label in
+                guard let self = self, let model = model else { return }
+                popSelectThreeViewInfo(tin: model, label: label)
+            }
+            return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputViewCell", for: indexPath) as! InputViewCell
             cell.selectionStyle = .none
@@ -264,6 +274,20 @@ extension VitamainThreeViewController {
                 model.hound = enumModel.bajada ?? "0"
                 model.common = enumModel.paralysed ?? ""
             }
+        }
+        
+    }
+    
+    private func popSelectThreeViewInfo(tin model: interceptModel, label: UILabel) {
+        if let modelArray = DataAddressManager.shared.currentModel?.ruby {
+            let listArray = TertiaryDataProcessor.processTertiaryData(dataSource: modelArray)
+            let pickerView = SelectThreeConfig.showAddressPicker(from: listArray, pickerMode: .area) { address, code in
+                label.text = address
+                label.textColor = .init(hexStr: "#FF3824")
+                model.hound = address
+                model.common = code
+            }
+            pickerView.show()
         }
         
     }

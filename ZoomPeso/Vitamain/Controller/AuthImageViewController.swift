@@ -293,14 +293,15 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
             switch result {
             case .success(let success):
                 ViewHudConfig.hideLoading()
+                guard let self = self else { return }
+                if let model = success.net {
                 if success.wedge == "0" {
-                    guard let self = self else { return }
-                    if let model = success.net {
                         DispatchQueue.main.async {
                             self.tcViewInfo(from: model)
                         }
                     }
                 }
+                ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
                 break
             case .failure(_):
                 ViewHudConfig.hideLoading()

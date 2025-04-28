@@ -225,6 +225,16 @@ extension VitamainTwoViewController: UITableViewDelegate, UITableViewDataSource 
                 popSelectOneViewInfo(from: model, label: label)
             }
             return cell
+        }else if reascended == "feeble" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ClickViewCell", for: indexPath) as! ClickViewCell
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            cell.model.accept(model)
+            cell.clickBlock = { [weak self] label in
+                guard let self = self, let model = model else { return }
+                popSelectThreeViewInfo(tin: model, label: label)
+            }
+            return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputViewCell", for: indexPath) as! InputViewCell
             cell.selectionStyle = .none
@@ -265,7 +275,21 @@ extension VitamainTwoViewController {
                 model.common = enumModel.paralysed ?? ""
             }
         }
+    }
+    
+    private func popSelectThreeViewInfo(tin model: interceptModel, label: UILabel) {
+        if let modelArray = DataAddressManager.shared.currentModel?.ruby {
+            let listArray = TertiaryDataProcessor.processTertiaryData(dataSource: modelArray)
+            let pickerView = SelectThreeConfig.showAddressPicker(from: listArray, pickerMode: .area) { address, code in
+                label.text = address
+                label.textColor = .init(hexStr: "#FF3824")
+                model.hound = address
+                model.common = code
+            }
+            pickerView.show()
+        }
         
     }
+    
     
 }

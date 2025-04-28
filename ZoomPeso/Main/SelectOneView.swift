@@ -61,6 +61,7 @@ class SelectOneView: BaseView {
         }
         return tableView
     }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(bgImageView)

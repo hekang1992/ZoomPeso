@@ -47,8 +47,10 @@ class rubyModel: Codable {
     var ruby: [rubyModel]?
     var walckanaer: String?
     var sucking: String?
+    var orifice: Int?
     
     enum CodingKeys: String, CodingKey {
+        case orifice
         case walckanaer
         case sucking
         case ruby
