@@ -9,83 +9,99 @@ import UIKit
 import BRPickerView
 
 class SelectThreeConfig {
-    static func showAddressPicker(from dataSource: [BRProvinceModel], pickerMode: BRAddressPickerMode, complete: @escaping ((String, String) -> Void)) -> BRAddressPickerView {
-        let addressPicker = BRAddressPickerView()
-        addressPicker.pickerMode = pickerMode
-        addressPicker.dataSourceArr = dataSource
-        addressPicker.selectIndexs = [0, 0, 0]
-        addressPicker.resultBlock = { province, city, area in
-            let (address, code) = generateAddressAndCode(province: province, city: city, area: area)
-            complete(address, code)
+    
+    static func showAddressPicker(
+        from dataSource: [BRProvinceModel],
+        pickerMode: BRAddressPickerMode,
+        completion: @escaping (String, String) -> Void
+    ) -> BRAddressPickerView {
+        let picker = BRAddressPickerView()
+        picker.pickerMode = pickerMode
+        picker.dataSourceArr = dataSource
+        picker.selectIndexs = [0, 0, 0]
+        
+        picker.resultBlock = { province, city, area in
+            let result = composeAddressComponents(province: province, city: city, area: area)
+            completion(result.address, result.code)
         }
-        return addressPicker
+        
+        return picker
     }
     
-    private static func generateAddressAndCode(province: BRProvinceModel?,
-                                               city: BRCityModel?,
-                                               area: BRAreaModel?) -> (String, String) {
-        let oneName = province?.name ?? ""
-        let twoName = city?.name ?? ""
-        let threeName = area?.name ?? ""
-        let name: String
-        let code: String
-        switch (oneName.isEmpty, twoName.isEmpty, threeName.isEmpty) {
-        case (false, true, _):
-            name = oneName
-            code = province?.code ?? ""
-        case (false, false, true):
-            let nameStr = "\(oneName)" + "|" + "\(twoName)"
-            name = nameStr
-            let codeStr = "\(province?.code ?? "")" + "|" + "\(city?.code ?? "")"
-            code = codeStr
-        case (false, false, false):
-            name = "\(oneName)|\(twoName)|\(threeName)"
-            code = "\(province?.code ?? "")|\(city?.code ?? "")|\(area?.code ?? "")"
-        default:
-            name = ""
-            code = ""
+    private static func composeAddressComponents(
+        province: BRProvinceModel?,
+        city: BRCityModel?,
+        area: BRAreaModel?
+    ) -> (address: String, code: String) {
+
+        guard let province = province else { return ("", "") }
+        
+        let provinceName = province.name ?? ""
+        let provinceCode = province.code ?? ""
+        
+        guard let city = city, let cityName = city.name, !cityName.isEmpty else {
+            return (provinceName, provinceCode)
         }
-        return (name, code)
+        
+        let cityCode = city.code ?? ""
+        
+        guard let area = area, let areaName = area.name, !areaName.isEmpty else {
+            let address = joinComponents([provinceName, cityName])
+            let code = joinComponents([provinceCode, cityCode])
+            return (address, code)
+        }
+        
+        let areaCode = area.code ?? ""
+        let address = joinComponents([provinceName, cityName, areaName])
+        let code = joinComponents([provinceCode, cityCode, areaCode])
+        
+        return (address, code)
     }
     
-    
+    private static func joinComponents(_ components: [String]) -> String {
+        return components.filter { !$0.isEmpty }.joined(separator: "|")
+    }
 }
 
-class TertiaryDataProcessor {
-    static func processTertiaryData(dataSource: [Any]) -> [BRProvinceModel] {
-        var processedRegions = [BRProvinceModel]()
-        for dataItem in dataSource {
-            guard let regionData = dataItem as? rubyModel else {
-                continue
-            }
-            let region = BRProvinceModel()
-            region.code = String(regionData.orifice ?? 0)
-            region.name = regionData.paralysed ?? ""
-            region.index = dataSource.firstIndex(where: { $0 as AnyObject === regionData as AnyObject }) ?? 0
-            
-            let citiesData = regionData.ruby ?? []
-            var processedCities = [BRCityModel]()
-            for cityData in citiesData {
-                let city = BRCityModel()
-                city.code = String(regionData.orifice ?? 0)
-                city.name = cityData.paralysed
-                city.index = citiesData.firstIndex(where: { $0 as AnyObject === cityData as AnyObject }) ?? 0
-                
-                let areasData = cityData.ruby ?? []
-                var processedAreas = [BRAreaModel]()
-                for areaData in areasData {
-                    let area = BRAreaModel()
-                    area.code = String(regionData.orifice ?? 0)
-                    area.name = areaData.paralysed
-                    area.index = areasData.firstIndex(where: { $0 as AnyObject === areaData as AnyObject }) ?? 0
-                    processedAreas.append(area)
-                }
-                city.arealist = processedAreas
-                processedCities.append(city)
-            }
-            region.citylist = processedCities
-            processedRegions.append(region)
+class ThrottleModelConig {
+
+    static func processThroData(dataSource: [Any]) -> [BRProvinceModel] {
+        return dataSource.compactMap { item in
+            guard let regionData = item as? rubyModel else { return nil }
+            return createProvince(from: regionData)
         }
-        return processedRegions
+    }
+    
+    private static func createProvince(from data: rubyModel) -> BRProvinceModel {
+        let province = BRProvinceModel()
+        province.code = String(data.orifice ?? 0)
+        province.name = data.paralysed ?? ""
+        province.citylist = processCities(data.ruby, provinceCode: province.code ?? "")
+        return province
+    }
+    
+    private static func processCities(_ citiesData: [rubyModel]?, provinceCode: String) -> [BRCityModel] {
+        guard let citiesData = citiesData else { return [] }
+        
+        return citiesData.enumerated().map { index, cityData in
+            let city = BRCityModel()
+            city.code = provinceCode // 注意：这里使用省份编码作为城市编码
+            city.name = cityData.paralysed
+            city.index = index
+            city.arealist = processAreas(cityData.ruby, areaCode: city.code ?? "")
+            return city
+        }
+    }
+    
+    private static func processAreas(_ areasData: [rubyModel]?, areaCode: String) -> [BRAreaModel] {
+        guard let areasData = areasData else { return [] }
+        
+        return areasData.enumerated().map { index, areaData in
+            let area = BRAreaModel()
+            area.code = areaCode
+            area.name = areaData.paralysed
+            area.index = index
+            return area
+        }
     }
 }

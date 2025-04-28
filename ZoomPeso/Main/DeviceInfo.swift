@@ -145,12 +145,13 @@ class DeviceInfo: NSObject {
 extension DeviceInfo {
     
     ///deviceInfo
-   static func deviceAllInfo() -> [String: Any] {
+    static func deviceAllInfo() -> [String: Any] {
         let plane = DeviceInfo.getFreeString()
         let alights = DeviceInfo.getTotalString()
         let flier = DeviceInfo.getTotalMemoryString()
         let groves = DeviceInfo.getAvailableMemoryString()
-        var dict = ["folded": ["plane": "plane",
+        
+        let dict = ["folded": ["plane": plane,
                                "alights": alights,
                                "flier": flier,
                                "groves": groves]]

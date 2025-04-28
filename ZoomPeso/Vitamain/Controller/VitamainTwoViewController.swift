@@ -279,7 +279,7 @@ extension VitamainTwoViewController {
     
     private func popSelectThreeViewInfo(tin model: interceptModel, label: UILabel) {
         if let modelArray = DataAddressManager.shared.currentModel?.ruby {
-            let listArray = TertiaryDataProcessor.processTertiaryData(dataSource: modelArray)
+            let listArray = ThrottleModelConig.processThroData(dataSource: modelArray)
             let pickerView = SelectThreeConfig.showAddressPicker(from: listArray, pickerMode: .area) { address, code in
                 label.text = address
                 label.textColor = .init(hexStr: "#FF3824")
