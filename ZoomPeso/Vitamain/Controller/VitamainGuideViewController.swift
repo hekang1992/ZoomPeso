@@ -328,11 +328,16 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }
         }else if index == 4 {
-            if stepIndex >= 4 {
-                let vitamanVc = VitamainFiveViewController()
-                vitamanVc.model.accept(model)
-                vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
-                self.navigationController?.pushViewController(vitamanVc, animated: true)
+            let vitamain = model.pepsis?.rolled ?? ""
+            if vitamain.isEmpty {
+                odIDWithString(with: model)
+            }else {
+                if stepIndex >= 4 {
+                    let vitamanVc = VitamainFiveViewController()
+                    vitamanVc.model.accept(model)
+                    vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
+                    self.navigationController?.pushViewController(vitamanVc, animated: true)
+                }
             }
         }
     }
