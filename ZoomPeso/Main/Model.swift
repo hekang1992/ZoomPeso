@@ -91,6 +91,9 @@ class enlargedModel: Codable {
     var orifice: String?
     var symbol: String?
     var characterized: Int?
+    var tyrant: String?
+    var casts: String?
+    var semicircular: Int?
     var examining: examiningModel?
 }
 

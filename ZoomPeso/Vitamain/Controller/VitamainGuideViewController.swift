@@ -190,8 +190,13 @@ class VitamainGuideViewController: BaseViewController {
         
         nextBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self, let model = self.model.value else { return }
-            vitaminInfo(from: model) { model in
-                self.photoModel.accept(model)
+            let vitamain = model.pepsis?.rolled ?? ""
+            if vitamain.isEmpty {
+                odIDWithString(with: model)
+            }else {
+                vitaminInfo(from: model) { model in
+                    self.photoModel.accept(model)
+                }
             }
         }).disposed(by: disposeBag)
         
@@ -238,6 +243,30 @@ class VitamainGuideViewController: BaseViewController {
                 }
                 break
             case .failure(_):
+                break
+            }
+        }
+    }
+    
+    private func odIDWithString(with model: netModel) {
+        ViewHudConfig.showLoading()
+        let odID = model.enlarged?.tyrant ?? ""
+        let mon = String(model.enlarged?.characterized ?? 0)
+        let uvring = model.enlarged?.casts ?? ""
+        let semicircular = String(model.enlarged?.semicircular ?? 0)
+        let dict = ["contest": odID, "characterized": mon, "casts": uvring, "semicircular": semicircular]
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/mine", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+            switch result {
+            case .success(let success):
+                ViewHudConfig.hideLoading()
+                if success.wedge == "0" {
+                    let fievc = VitamainFiveViewController()
+                    fievc.pageUrl = success.net?.sucking ?? ""
+                    self?.navigationController?.pushViewController(fievc, animated: true)
+                }
+                break
+            case .failure(_):
+                ViewHudConfig.hideLoading()
                 break
             }
         }
@@ -302,6 +331,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
             if stepIndex >= 4 {
                 let vitamanVc = VitamainFiveViewController()
                 vitamanVc.model.accept(model)
+                vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }
         }

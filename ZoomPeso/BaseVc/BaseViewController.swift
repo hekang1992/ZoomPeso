@@ -258,6 +258,10 @@ extension BaseViewController {
                 let aurl = model.pepsis?.rolled ?? ""
                 vitamainInfo(from: aurl, barricaded: barricaded, model: model)
             }
+        }else {
+            let fiveVc = VitamainFiveViewController()
+            fiveVc.pageUrl = sucking
+            self.navigationController?.pushViewController(fiveVc, animated: true)
         }
     }
     
