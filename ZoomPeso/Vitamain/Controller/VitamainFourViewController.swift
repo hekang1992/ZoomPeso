@@ -31,6 +31,8 @@ class VitamainFourViewController: BaseViewController {
     
     var dictArray: [[String: String]] = []
     
+    var contractTime: String = ""
+    
     lazy var hedImageView: UIImageView = {
         let hedImageView = UIImageView()
         hedImageView.image = UIImage(named: "seigmeiage")
@@ -84,7 +86,7 @@ class VitamainFourViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        contractTime = DeviceInfo.currentTimestamp
         view.addSubview(hedImageView)
         hedImageView.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
@@ -178,6 +180,7 @@ extension VitamainFourViewController {
                         self.model.accept(model)
                         self.vitaminInfo(from: model) { model in }
                     }
+                    BuyPointConfig.pointToPageWithModel(with: "7", kstime: contractTime, jstime: DeviceInfo.currentTimestamp)
                 }
                 ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
                 ViewHudConfig.hideLoading()

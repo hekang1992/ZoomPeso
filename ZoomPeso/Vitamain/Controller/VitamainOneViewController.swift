@@ -15,6 +15,8 @@ class VitamainOneViewController: BaseViewController {
     var horrid = BehaviorRelay<[String]?>(value: nil)
     var larvae = BehaviorRelay<[String]?>(value: nil)
     
+    var time: String = ""
+    
     lazy var hedImageView: UIImageView = {
         let hedImageView = UIImageView()
         hedImageView.image = UIImage(named: "seigmeiage")
@@ -246,6 +248,7 @@ class VitamainOneViewController: BaseViewController {
         
         table1View.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             guard let self = self else { return }
+            time = DeviceInfo.currentTimestamp
             self.selectAuthStr = horrid.value?[indexPath.row] ?? ""
             oneGrand = true
             twoGrand = false
@@ -263,6 +266,7 @@ class VitamainOneViewController: BaseViewController {
         
         table2View.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             guard let self = self else { return }
+            time = DeviceInfo.currentTimestamp
             self.selectAuthStr = larvae.value?[indexPath.row] ?? ""
             oneGrand = false
             twoGrand = true
@@ -289,6 +293,7 @@ class VitamainOneViewController: BaseViewController {
             imageVc.enthusiastic = selectAuthStr
             self.navigationController?.pushViewController(imageVc, animated: true)
             print("auth=====\(self.selectAuthStr)")
+            BuyPointConfig.pointToPageWithModel(with: "2", kstime: time, jstime: DeviceInfo.currentTimestamp)
         }).disposed(by: disposeBag)
         
         getAuthInfo()

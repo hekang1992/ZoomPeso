@@ -314,18 +314,30 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                 let vitamanVc = VitamainTwoViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
+            }else {
+                vitaminInfo(from: model) { model in
+                    self.photoModel.accept(model)
+                }
             }
         }else if index == 2 {
             if stepIndex >= 2 {
                 let vitamanVc = VitamainThreeViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
+            }else {
+                vitaminInfo(from: model) { model in
+                    self.photoModel.accept(model)
+                }
             }
         }else if index == 3 {
             if stepIndex >= 3 {
                 let vitamanVc = VitamainFourViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
+            }else {
+                vitaminInfo(from: model) { model in
+                    self.photoModel.accept(model)
+                }
             }
         }else if index == 4 {
             let vitamain = model.pepsis?.rolled ?? ""
@@ -337,6 +349,10 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                     vitamanVc.model.accept(model)
                     vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
                     self.navigationController?.pushViewController(vitamanVc, animated: true)
+                }else {
+                    vitaminInfo(from: model) { model in
+                        self.photoModel.accept(model)
+                    }
                 }
             }
         }

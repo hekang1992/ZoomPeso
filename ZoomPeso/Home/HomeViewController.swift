@@ -15,7 +15,14 @@ class HomeViewController: BaseViewController {
     
     lazy var homeView: HomeView = {
         let homeView = HomeView()
+        homeView.isHidden = true
         return homeView
+    }()
+    
+    lazy var paraView: ParaMeraView = {
+        let paraView = ParaMeraView()
+        paraView.isHidden = true
+        return paraView
     }()
     
     override func viewDidLoad() {
@@ -72,6 +79,17 @@ extension HomeViewController {
             case .success(let success):
                 if success.wedge == "0" {
                     if let model = success.net {
+                        let ruby = model.ruby ?? []
+                        for model in ruby {
+                            let bajada = model.bajada ?? ""
+                            if bajada == "compared" {
+                                self?.paraView.isHidden = false
+                                self?.homeView.isHidden = true
+                            }else {
+                                self?.paraView.isHidden = true
+                                self?.homeView.isHidden = false
+                            }
+                        }
                         self?.homeModel.accept(model)
                         self?.homeView.model.accept(model)
                     }

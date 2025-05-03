@@ -22,6 +22,8 @@ class SFaceViewViewController: BaseViewController {
     
     var isSuccess = BehaviorRelay<Int?>(value: nil)
     
+    var facetime: String = ""
+    
     lazy var hedImageView: UIImageView = {
         let hedImageView = UIImageView()
         hedImageView.image = UIImage(named: "seigmeiage")
@@ -135,6 +137,7 @@ class SFaceViewViewController: BaseViewController {
         
         popImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
+            facetime = DeviceInfo.currentTimestamp
             DispatchQueue.main.async {
                 self.showImageSourceSelection()
             }
@@ -142,6 +145,7 @@ class SFaceViewViewController: BaseViewController {
         
         nextBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
+            facetime = DeviceInfo.currentTimestamp
             let index = self.isSuccess.value ?? 0
             if index == 1 {
                 let barricaded = self.model.value?.enlarged?.orifice ?? ""
@@ -242,6 +246,7 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
                     DispatchQueue.main.async {
                         self.getAuthInfo()
                     }
+                    BuyPointConfig.pointToPageWithModel(with: "4", kstime: facetime, jstime: DeviceInfo.currentTimestamp)
                 }
                 ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
                 break

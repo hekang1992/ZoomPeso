@@ -24,6 +24,8 @@ class AuthImageViewController: BaseViewController {
     
     var isSuccess = BehaviorRelay<Int?>(value: nil)
     
+    var selectTime: String = ""
+    
     lazy var hedImageView: UIImageView = {
         let hedImageView = UIImageView()
         hedImageView.image = UIImage(named: "seigmeiage")
@@ -147,6 +149,7 @@ class AuthImageViewController: BaseViewController {
         
         popImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
+            selectTime = DeviceInfo.currentTimestamp
             DispatchQueue.main.async {
                 self.showImageSourceSelection()
             }
@@ -155,6 +158,7 @@ class AuthImageViewController: BaseViewController {
         
         nextBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
+            selectTime = DeviceInfo.currentTimestamp
             let index = self.isSuccess.value ?? 0
             if index == 1 {
                 let sfcVc = SFaceViewViewController()
@@ -380,6 +384,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                     self.dismiss(animated: true) {
                         self.getAuthInfo()
                     }
+                    BuyPointConfig.pointToPageWithModel(with: "3", kstime: selectTime, jstime: DeviceInfo.currentTimestamp)
                 }
                 ToastShowConfig.showMessage(form: authView, message: success.circular ?? "")
                 break

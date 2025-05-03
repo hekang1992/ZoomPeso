@@ -12,6 +12,11 @@ import SystemConfiguration.CaptiveNetwork
 
 class DeviceInfo: NSObject {
     
+    static var currentTimestamp: String {
+        let currentTime = Date().timeIntervalSince1970
+        return String(Int64(currentTime * 1000))
+    }
+    
     static func getFreeString() -> String {
         let fileURL = URL(fileURLWithPath: NSHomeDirectory())
         do {

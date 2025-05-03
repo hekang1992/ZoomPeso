@@ -21,6 +21,8 @@ class VitamainTwoViewController: BaseViewController {
     
     var oneModel = BehaviorRelay<netModel?>(value: nil)
     
+    var kstime: String = ""
+    
     lazy var hedImageView: UIImageView = {
         let hedImageView = UIImageView()
         hedImageView.image = UIImage(named: "seigmeiage")
@@ -77,7 +79,7 @@ class VitamainTwoViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        kstime = DeviceInfo.currentTimestamp
         view.addSubview(hedImageView)
         hedImageView.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
@@ -193,6 +195,7 @@ extension VitamainTwoViewController {
                             
                         }
                     }
+                    BuyPointConfig.pointToPageWithModel(with: "5", kstime: kstime, jstime: DeviceInfo.currentTimestamp)
                 }else {
                     ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
                 }

@@ -12,6 +12,9 @@ import RxGesture
 
 class LoginViewController: BaseViewController {
     
+    var ksTime: String = ""
+    var jsTime: String = ""
+    
     var grand: Bool = false
     private var countdownTimer: Timer?
     private var remainingSeconds = 60
@@ -47,6 +50,7 @@ class LoginViewController: BaseViewController {
         loginView.voiceBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
             voiceInfo()
+            ksTime = DeviceInfo.currentTimestamp
         }).disposed(by: disposeBag)
         
         loginView.loginBtn.rx.tap.subscribe(onNext: { [weak self] in
@@ -66,6 +70,7 @@ class LoginViewController: BaseViewController {
             }else {
                 codeInfo()
             }
+            ksTime = DeviceInfo.currentTimestamp
         }).disposed(by: disposeBag)
         
         if let model = DataLoginManager.shared.currentModel {
@@ -215,9 +220,11 @@ extension LoginViewController {
             case .success(let success):
                 guard let self = self else { return }
                 if success.wedge == "0" {
+                    jsTime = DeviceInfo.currentTimestamp
                     let phone = success.net?.recollect ?? ""
                     let token = success.net?.attachment ?? ""
                     LoginConfig.saveLoginInfo(from: phone, token: token)
+                    BuyPointConfig.pointToPageWithModel(with: "1", kstime: ksTime, jstime: jsTime)
                     DispatchQueue.main.async {
                         self.rootInfo()
                     }
