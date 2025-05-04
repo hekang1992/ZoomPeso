@@ -52,16 +52,14 @@ class ParaMeraCell: BaseViewCell {
     }()
     
     lazy var oneLabel: UILabel = {
-        let oneLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(hexStr: "#832F17")!, textAlignment: .right)
-        oneLabel.transform = CGAffineTransform(rotationAngle: 5 * .pi / 180)
-        oneLabel.text = "fdafdafadf"
+        let oneLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(hexStr: "#FFFFFF")!, textAlignment: .center)
+        oneLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-9 * Double.pi / 180))
         return oneLabel
     }()
     
     lazy var twoLabel: UILabel = {
-        let twoLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(hexStr: "#832F17")!, textAlignment: .right)
-        twoLabel.transform = CGAffineTransform(rotationAngle: 5 * .pi / 180)
-        twoLabel.text = "fdaf"
+        let twoLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(hexStr: "#FFFFFF")!, textAlignment: .center)
+        twoLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-9 * Double.pi / 180))
         return twoLabel
     }()
     
@@ -112,6 +110,18 @@ class ParaMeraCell: BaseViewCell {
             make.height.equalTo(29.pix())
             make.top.equalTo(topLabel.snp.bottom).offset(18.pix())
         }
+        oneLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(17.pix())
+            make.top.equalTo(moneyLabel.snp.bottom)
+            make.height.equalTo(44.pix())
+            make.width.equalTo(124.pix())
+        }
+        twoLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(17.pix())
+            make.top.equalTo(oneLabel.snp.bottom).offset(4.pix())
+            make.height.equalTo(44.pix())
+            make.width.equalTo(85.pix())
+        }
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
             let ogo = model.antagonist ?? ""
@@ -122,6 +132,8 @@ class ParaMeraCell: BaseViewCell {
             moneyLabel.text = model.vain ?? ""
             topLabel.text = model.perseveringly ?? ""
             bottomLabel.text = model.liberate ?? ""
+            oneLabel.text = model.entangle ?? ""
+            twoLabel.text = model.jerks ?? ""
         }).disposed(by: disposeBag)
         
     }
@@ -130,4 +142,9 @@ class ParaMeraCell: BaseViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension ParaMeraCell {
+    
+   
 }

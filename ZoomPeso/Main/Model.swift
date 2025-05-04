@@ -82,6 +82,7 @@ class juicesModel: Codable {
     var antagonist: String?
     var pitying: String?
     var liberate: String?
+    var jerks: String?
 }
 
 class pepsisModel: Codable {
