@@ -34,7 +34,18 @@ class HomeViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
         
+        view.addSubview(paraView)
+        paraView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         self.homeView.scrollerView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+            guard let self = self else { return }
+            idfaAndLocationInfo()
+            getHomeInfo()
+        })
+        
+        self.paraView.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             guard let self = self else { return }
             idfaAndLocationInfo()
             getHomeInfo()
@@ -51,6 +62,18 @@ class HomeViewController: BaseViewController {
                     self.applyInfo(from: orifice)
                 }
             }
+        }
+        
+        self.paraView.headBlock = { [weak self] model in
+            guard let self = self else { return }
+            let orifice = model.orifice ?? 0
+            self.applyInfo(from: orifice)
+        }
+        
+        self.paraView.cellBlock = { [weak self] model in
+            guard let self = self else { return }
+            let orifice = model.orifice ?? 0
+            self.applyInfo(from: orifice)
         }
         
         getAddressInfo { model in
@@ -75,6 +98,7 @@ extension HomeViewController {
         NetworkManager.getRequest(endpoint: "/surely/station", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewHudConfig.hideLoading()
             self?.homeView.scrollerView.mj_header?.endRefreshing()
+            self?.paraView.tableView.mj_header?.endRefreshing()
             switch result {
             case .success(let success):
                 if success.wedge == "0" {
@@ -92,6 +116,8 @@ extension HomeViewController {
                         }
                         self?.homeModel.accept(model)
                         self?.homeView.model.accept(model)
+                        self?.paraView.model.accept(model)
+                        self?.paraView.tableView.reloadData()
                     }
                 }
                 break
@@ -111,7 +137,9 @@ extension HomeViewController {
     
     private func applyInfo(from productID: Int) {
         ViewHudConfig.showLoading()
-        let dict = ["barricaded": String(productID)]
+        let dict = ["barricaded": String(productID),
+                    "coca": "1",
+                    "recyle": "1"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/vertical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewHudConfig.hideLoading()
             switch result {

@@ -9,11 +9,14 @@ import UIKit
 import RxRelay
 import WebKit
 import RxSwift
+import StoreKit
 
 class VitamainFiveViewController: BaseViewController {
     
     var ksTime: String = ""
     var jsTime: String = ""
+    
+    var od: String = ""
     
     lazy var webView: WKWebView = {
         let userContentController = WKUserContentController()
@@ -140,8 +143,61 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
         }else if messageName == "edge" {
             jsTime = DeviceInfo.currentTimestamp
             BuyPointConfig.pointToPageWithModel(with: "8", kstime: ksTime, jstime: jsTime, orNo: "")
+            let proID = model.value?.enlarged?.orifice ?? ""
+            productDetailInfo(from: proID) { [weak self] model in
+                let vitamain = model.pepsis?.rolled ?? ""
+                if vitamain.isEmpty {
+                    self?.odIDWithString(with: model)
+                }
+            }
+        }else if messageName == "backwards" {
+            let tenTime = DeviceInfo.currentTimestamp
+            BuyPointConfig.pointToPageWithModel(with: "10", kstime: tenTime, jstime: tenTime, orNo: od)
+        }else if messageName == "thorax" {
+            requestAppReview()
+        }else if messageName == "preparing" {
+            self.navigationController?.popToRootViewController(animated: true)
+        }else if messageName == "moved" {
+            self.rootInfo()
         }
-        
+    }
+    
+    func requestAppReview() {
+        if #available(iOS 14.0, *), let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
+        }
+    }
+    
+    private func odIDWithString(with model: netModel) {
+        ViewHudConfig.showLoading()
+        let odID = model.enlarged?.tyrant ?? ""
+        let mon = String(model.enlarged?.characterized ?? 0)
+        let uvring = model.enlarged?.casts ?? ""
+        let semicircular = String(model.enlarged?.semicircular ?? 0)
+        let dict = ["contest": odID, "characterized": mon, "casts": uvring, "semicircular": semicircular]
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/mine", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+            switch result {
+            case .success(let success):
+                guard let self = self else { return }
+                ViewHudConfig.hideLoading()
+                if success.wedge == "0" {
+                    let pageUrl = success.net?.sucking ?? ""
+                    var urlString = ""
+                    let loginDict = LoginConfig.getLoginInfo()
+                    let url = URLQueryConfig.appendQueryDict(to: pageUrl, parameters: loginDict)!
+                    urlString = url.replacingOccurrences(of: " ", with: "%20")
+                    if let url = URL(string: urlString) {
+                        webView.load(URLRequest(url: url))
+                    }
+                    let time = DeviceInfo.currentTimestamp
+                    BuyPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)
+                }
+                break
+            case .failure(_):
+                ViewHudConfig.hideLoading()
+                break
+            }
+        }
     }
     
 }

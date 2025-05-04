@@ -79,6 +79,9 @@ class juicesModel: Codable {
     var shropshire: String?
     var thrusts: String?
     var orifice: Int?
+    var antagonist: String?
+    var pitying: String?
+    var liberate: String?
 }
 
 class pepsisModel: Codable {

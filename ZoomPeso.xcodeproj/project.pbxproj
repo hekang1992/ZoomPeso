@@ -35,6 +35,7 @@
 		735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD0342DBB7512003782FC /* SelectOneView.swift */; };
 		7368E60A2DBBDDEC00427C04 /* MyLoveViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */; };
 		73786BAA2DC5D6EA00523D24 /* ParaMeraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73786BA92DC5D6EA00523D24 /* ParaMeraView.swift */; };
+		73786BAC2DC6684C00523D24 /* ParaMeraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73786BAB2DC6684C00523D24 /* ParaMeraCell.swift */; };
 		739852F42DBF613C00255216 /* SelectThreeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739852F32DBF613C00255216 /* SelectThreeConfig.swift */; };
 		739FA6C72DBA6BF2003C0352 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */; };
 		739FA6C92DBA720A003C0352 /* APView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C82DBA720A003C0352 /* APView.swift */; };
@@ -91,6 +92,7 @@
 		735DD0342DBB7512003782FC /* SelectOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOneView.swift; sourceTree = "<group>"; };
 		7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLoveViewCell.swift; sourceTree = "<group>"; };
 		73786BA92DC5D6EA00523D24 /* ParaMeraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaMeraView.swift; sourceTree = "<group>"; };
+		73786BAB2DC6684C00523D24 /* ParaMeraCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaMeraCell.swift; sourceTree = "<group>"; };
 		739852F32DBF613C00255216 /* SelectThreeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThreeConfig.swift; sourceTree = "<group>"; };
 		739FA6C62DBA6BF2003C0352 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		739FA6C82DBA720A003C0352 /* APView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APView.swift; sourceTree = "<group>"; };
@@ -210,8 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				733DCA222DB63571009AA17E /* HomeView.swift */,
-				733DCA1C2DB62B68009AA17E /* HomeViewController.swift */,
 				73786BA92DC5D6EA00523D24 /* ParaMeraView.swift */,
+				733DCA1C2DB62B68009AA17E /* HomeViewController.swift */,
+				73786BAB2DC6684C00523D24 /* ParaMeraCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				739FA6C92DBA720A003C0352 /* APView.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
 				734099AB2DBE1A9700B1D1AF /* CenterListViewCell.swift in Sources */,
+				73786BAC2DC6684C00523D24 /* ParaMeraCell.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
 				733DCA1D2DB62B68009AA17E /* HomeViewController.swift in Sources */,
 				735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */,

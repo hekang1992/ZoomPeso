@@ -260,9 +260,12 @@ class VitamainGuideViewController: BaseViewController {
             case .success(let success):
                 ViewHudConfig.hideLoading()
                 if success.wedge == "0" {
+                    let time = DeviceInfo.currentTimestamp
                     let fievc = VitamainFiveViewController()
+                    fievc.od = odID
                     fievc.pageUrl = success.net?.sucking ?? ""
                     self?.navigationController?.pushViewController(fievc, animated: true)
+                    BuyPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)
                 }
                 break
             case .failure(_):

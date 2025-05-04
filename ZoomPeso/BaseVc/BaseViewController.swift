@@ -230,14 +230,17 @@ extension BaseViewController {
         let dict = ["barricaded": productID,
                     "controller": "productDetail",
                     "floss": "beer"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/mendoza", parameters: dict, responseType: BaseModel.self) { result in
+        NetworkManager.multipartFormDataRequest(endpoint: "/surely/mendoza", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewHudConfig.hideLoading()
             switch result {
             case .success(let success):
+                guard let self = self else { return }
                 if success.wedge == "0" {
                     if let model = success.net {
                         complete(model)
                     }
+                }else {
+                    ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
                 }
                 break
             case .failure(_):
