@@ -36,9 +36,7 @@ class LaunchViewController: BaseViewController {
         NetworkMonitor.shared.startMonitoring { [weak self] grand in
             if grand {
                 self?.resetLoginIngo()
-                if show != "1" {
-                    self?.idfainfo()
-                }
+                self?.idfainfo()
             }
         }
         
