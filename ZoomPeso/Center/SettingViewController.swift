@@ -149,7 +149,7 @@ extension SettingViewController {
                         if success.wedge == "0" {
                             LoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                self.notiRootManager()
+                                self.notiLastRootVcManager()
                             }
                         }
                         ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
@@ -181,7 +181,7 @@ extension SettingViewController {
                         if success.wedge == "0" {
                             LoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                self.notiRootManager()
+                                self.notiLastRootVcManager()
                             }
                         }
                         ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")

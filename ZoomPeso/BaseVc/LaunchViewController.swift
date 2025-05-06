@@ -85,7 +85,7 @@ extension LaunchViewController: UIScrollViewDelegate {
                     }
                 }
                 if show == "1" {
-                    notiRootManager()
+                    notiLastRootVcManager()
                 }
                 break
             case .failure(_):

@@ -76,11 +76,11 @@ class CenterViewController: BaseViewController {
             let setVc = SettingViewController()
             self.navigationController?.pushViewController(setVc, animated: true)
         }else if suck.contains("Emperor") {
-            self.notiRootManager()
+            self.notiLastRootVcManager()
         }else if suck.contains("this") {
             LoginConfig.deleteLoginInfo()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                self.notiRootManager()
+                self.notiLastRootVcManager()
             }
         }else if suck.contains("itself") {
             let dict = URLParameterParser.parse(from: suck)

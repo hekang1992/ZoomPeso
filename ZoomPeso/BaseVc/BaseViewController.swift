@@ -83,7 +83,7 @@ extension BaseViewController {
         }
     }
     
-    func notiRootManager() {
+    func notiLastRootVcManager() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: CHANGE_ROOT_VC), object: nil)
     }
     

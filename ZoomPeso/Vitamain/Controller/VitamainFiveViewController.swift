@@ -156,7 +156,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
         }else if messageName == "preparing" {
             self.navigationController?.popToRootViewController(animated: true)
         }else if messageName == "moved" {
-            self.notiRootManager()
+            self.notiLastRootVcManager()
         }
     }
     

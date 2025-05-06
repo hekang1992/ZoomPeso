@@ -154,7 +154,7 @@ extension HomeViewController {
                     }
                 }else if wedge == "-2" {
                     LoginConfig.deleteLoginInfo()
-                    self?.notiRootManager()
+                    self?.notiLastRootVcManager()
                 }
                 break
             case .failure(_):

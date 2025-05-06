@@ -231,7 +231,7 @@ extension LoginViewController {
                     LoginConfig.saveLoginInfo(phone: phone, token: token)
                     BuyPointConfig.pointToPageWithModel(with: "1", kstime: ksTime, jstime: jsTime)
                     DispatchQueue.main.async {
-                        self.notiRootManager()
+                        self.notiLastRootVcManager()
                     }
                 }
                 let circular = success.circular ?? ""
