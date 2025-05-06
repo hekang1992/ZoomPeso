@@ -236,7 +236,8 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
                     "bajada": "10",
                     "dental": "false",
                     "sf": "1"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/attack", parameters: dict, files: ["image": imageData], responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/attack", parameters: dict, files: ["image": imageData], responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
                 ViewCycleManager.hideLoading()
@@ -259,8 +260,9 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
     private func getAuthInfo() {
         ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
-        let dict = ["barricaded": barricaded, "vitaman": "c"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let dict = ["barricaded": barricaded, "vitaman": "d"]
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):

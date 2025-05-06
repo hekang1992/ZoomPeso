@@ -95,7 +95,8 @@ extension HomeViewController {
     private func getHomeInfo() {
         ViewCycleManager.showLoading()
         let dict = [String: String]()
-        NetworkManager.getRequest(endpoint: "/surely/station", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.getRequest(endpoint: "/surely/station", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             self?.homeView.scrollerView.mj_header?.endRefreshing()
             self?.paraView.tableView.mj_header?.endRefreshing()
@@ -141,7 +142,8 @@ extension HomeViewController {
                     "barricaded": String(productID),
                     "coca": "1",
                     "recyle": "1"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/vertical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/vertical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):

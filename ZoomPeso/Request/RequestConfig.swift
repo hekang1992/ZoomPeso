@@ -81,12 +81,12 @@ class RequestConfig: NSObject {
     
 }
 
-class NetworkManager {
+class NetworkRequstManager {
     
-    static func getRequest<T: Decodable>(endpoint: String,
-                                         parameters: Parameters? = nil,
-                                         responseType: T.Type,
-                                         completion: @escaping (Result<T, Error>) -> Void) {
+    func getRequest<T: Decodable>(endpoint: String,
+                                  parameters: Parameters? = nil,
+                                  responseType: T.Type,
+                                  completion: @escaping (Result<T, Error>) -> Void) {
         
         let loginDict = LoginConfig.getLoginInfo().toDictionary
         let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
@@ -106,11 +106,11 @@ class NetworkManager {
         }
     }
     
-    static func multipartFormDataRequest<T: Decodable>(endpoint: String,
-                                                       parameters: [String: String]? = nil,
-                                                       files: [String: Data]? = nil,
-                                                       responseType: T.Type,
-                                                       completion: @escaping (Result<T, Error>) -> Void) {
+    func multipartFormDataRequest<T: Decodable>(endpoint: String,
+                                                parameters: [String: String]? = nil,
+                                                files: [String: Data]? = nil,
+                                                responseType: T.Type,
+                                                completion: @escaping (Result<T, Error>) -> Void) {
         let loginDict = LoginConfig.getLoginInfo().toDictionary
         let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
         

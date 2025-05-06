@@ -226,8 +226,11 @@ class VitamainGuideViewController: BaseViewController {
     private func getAuthInfo() {
         ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
-        let dict = ["barricaded": barricaded, "vitaman": "c"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let dict = ["barricaded": barricaded,
+                    "vitaman": "e",
+                    "peso": "1"]
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -256,7 +259,8 @@ class VitamainGuideViewController: BaseViewController {
                     "casts": uvring,
                     "semicircular": semicircular,
                     "date": date]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/mine", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/mine", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
                 ViewCycleManager.hideLoading()

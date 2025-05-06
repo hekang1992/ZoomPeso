@@ -166,7 +166,8 @@ extension LoginViewController {
         ViewCycleManager.showLoading()
         let hat = self.loginView.phoneTx.text ?? ""
         let dict = ["hat": hat]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/similarly", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/similarly", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -187,7 +188,8 @@ extension LoginViewController {
         ViewCycleManager.showLoading()
         let hat = self.loginView.phoneTx.text ?? ""
         let dict = ["hat": hat]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/segment", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/segment", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -216,7 +218,8 @@ extension LoginViewController {
         let dict = ["recollect": recollect,
                     "mine": mine,
                     "page": "login"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/wedge", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/wedge", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):

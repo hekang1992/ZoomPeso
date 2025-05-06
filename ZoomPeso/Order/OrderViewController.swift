@@ -80,8 +80,10 @@ extension OrderViewController {
         let dict = ["refer": refer,
                     "page": "1",
                     "pageSize": "100",
-                    "tips": "1"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/theridion", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+                    "tips": "1",
+                    "focus": "0"]
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/theridion", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             self?.listView.tableView.mj_header?.endRefreshing()
             switch result {

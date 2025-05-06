@@ -138,8 +138,11 @@ extension SettingViewController {
         }else {
             self.dismiss(animated: true) {
                 ViewCycleManager.showLoading()
-                let dict = ["coca": "out", "clean": "0"]
-                NetworkManager.getRequest(endpoint: "/surely/retreating", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+                let dict = ["coca": "out",
+                            "clean": "0",
+                            "search": "1"]
+                let man = NetworkRequstManager()
+                man.getRequest(endpoint: "/surely/retreating", parameters: dict, responseType: BaseModel.self) { [weak self] result in
                     switch result {
                     case .success(let success):
                         guard let self = self else { return }
@@ -167,8 +170,11 @@ extension SettingViewController {
         }else {
             self.dismiss(animated: true) {
                 ViewCycleManager.showLoading()
-                let dict = ["coca": "del", "mask": "1"]
-                NetworkManager.getRequest(endpoint: "/surely/marks", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+                let dict = ["coca": "del",
+                            "mask": "1",
+                            "share": "0"]
+                let man = NetworkRequstManager()
+                man.getRequest(endpoint: "/surely/marks", parameters: dict, responseType: BaseModel.self) { [weak self] result in
                     switch result {
                     case .success(let success):
                         guard let self = self else { return }

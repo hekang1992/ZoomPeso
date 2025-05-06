@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxRelay
+import FBSDKCoreKit
 
 class BaseViewController: UIViewController {
     
@@ -91,17 +92,28 @@ extension BaseViewController {
         let toothed = DeviceIDManager.shared.getDeviceID()
         let clicking = DeviceIDManager.shared.getIDFA()
         let dict = ["toothed": toothed, "clicking": clicking]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/backs",
-                                                parameters: dict,
-                                                responseType: BaseModel.self) {
-            result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/backs", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
-                print(success)
+                guard let self = self else { return }
+                if success.wedge == "0" || success.wedge == "00" {
+                    if let sexesModel = DataLoginManager.shared.currentModel?.sexes {
+                        zoomPesoFaceBook(from: sexesModel)
+                    }
+                }
             case .failure(let failure):
                 print(failure.localizedDescription)
             }
         }
+    }
+    
+    private func zoomPesoFaceBook(from model: sexesModel) {
+        Settings.shared.appID = model.typical ?? ""
+        Settings.shared.clientToken = model.die ?? ""
+        Settings.shared.displayName = model.says ?? ""
+        Settings.shared.appURLSchemeSuffix = model.bloodthirsty ?? ""
+        ApplicationDelegate.shared.application(UIApplication.shared, didFinishLaunchingWithOptions: nil)
     }
     
     ///location
@@ -124,7 +136,8 @@ extension BaseViewController {
                     "observation": observation,
                     "error": error]
         
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/encompassed",
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/encompassed",
                                                 parameters: dict,
                                                 responseType: BaseModel.self) {
             result in
@@ -145,7 +158,8 @@ extension BaseViewController {
         let databyte = try? JSONSerialization.data(withJSONObject: deviceDict)
         let jsonStr = databyte?.base64EncodedString() ?? ""
         let dict = ["net": jsonStr]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/community", parameters: dict, responseType: BaseModel.self) { result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/community", parameters: dict, responseType: BaseModel.self) { result in
             switch result {
             case .success(_):
                 break
@@ -214,7 +228,8 @@ extension BaseViewController {
         ViewCycleManager.showLoading()
         let barricaded = model.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded, "vitaman": "c"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -235,7 +250,8 @@ extension BaseViewController {
         let dict = ["barricaded": productID,
                     "controller": "productDetail",
                     "floss": "beer"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/mendoza", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/mendoza", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -284,7 +300,8 @@ extension BaseViewController {
 extension BaseViewController {
     
     func getAddressInfo(complete: @escaping ((netModel) -> Void)) {
-        NetworkManager.getRequest(endpoint: "/surely/azara", responseType: BaseModel.self) { result in
+        let man = NetworkRequstManager()
+        man.getRequest(endpoint: "/surely/azara", responseType: BaseModel.self) { result in
             switch result {
             case .success(let success):
                 if success.wedge == "0" {

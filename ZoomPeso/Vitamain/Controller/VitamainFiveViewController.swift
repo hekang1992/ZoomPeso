@@ -178,7 +178,8 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
                     "casts": uvring,
                     "semicircular": semicircular,
                     "soul": soul]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/mine", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/mine", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -227,7 +228,8 @@ class BuyPointConfig {
     }
     
     static func apiInfo(wit dict: [String: String]) {
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/paraguay", parameters: dict, responseType: BaseModel.self) { result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/paraguay", parameters: dict, responseType: BaseModel.self) { result in
             switch result {
             case .success(_):
                 break

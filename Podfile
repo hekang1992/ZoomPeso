@@ -22,4 +22,5 @@ target 'ZoomPeso' do
   pod 'ASGradientLabel'
   pod 'FSPagerView'
   pod 'BRPickerView'
+  pod 'FBSDKCoreKit'
 end

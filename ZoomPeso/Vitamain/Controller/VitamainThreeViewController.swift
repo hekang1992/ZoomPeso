@@ -160,7 +160,8 @@ extension VitamainThreeViewController {
         let dict = ["barricaded": barricaded,
                     "bear": "1",
                     "cotton": "0"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/standing", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/standing", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -181,7 +182,8 @@ extension VitamainThreeViewController {
     private func safeBingoInfo(with dict: [String: String]) {
         ViewCycleManager.showLoading()
         let barricaded = dict["barricaded"] ?? ""
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/uvre", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/uvre", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):

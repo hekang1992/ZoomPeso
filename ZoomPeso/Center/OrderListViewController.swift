@@ -81,8 +81,11 @@ extension OrderListViewController {
     
     private func getListInfo(from refer: String) {
         ViewCycleManager.showLoading()
-        let dict = ["refer": refer]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/theridion", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let dict = ["refer": refer,
+                    "ems": "1",
+                    "order": "1"]
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/theridion", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             self?.tableView.mj_header?.endRefreshing()
             switch result {

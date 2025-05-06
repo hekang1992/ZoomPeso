@@ -28,6 +28,14 @@ class netModel: Codable {
     var intercept: [interceptModel]?
     var army: [armyModel]?
     var cordillera: Int?
+    var sexes: sexesModel?
+}
+
+class sexesModel: Codable {
+    var bloodthirsty: String?
+    var die: String?
+    var says: String?
+    var typical: String?
 }
 
 class rubyModel: Codable {

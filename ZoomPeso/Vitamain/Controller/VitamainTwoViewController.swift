@@ -160,7 +160,8 @@ extension VitamainTwoViewController {
         let dict = ["barricaded": barricaded,
                     "bear": "1",
                     "cotton": "0"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/bloodthirsty", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/bloodthirsty", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -181,7 +182,8 @@ extension VitamainTwoViewController {
     private func safeBingoInfo(with dict: [String: String]) {
         ViewCycleManager.showLoading()
         let barricaded = dict["barricaded"] ?? ""
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/typical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/typical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):

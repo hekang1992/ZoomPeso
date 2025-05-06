@@ -316,9 +316,10 @@ extension VitamainOneViewController: UITableViewDelegate {
         ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded,
-                    "vitaman": "c",
-                    "zoom": "v"]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+                    "vitaman": "q",
+                    "zoom": "video"]
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):

@@ -21,14 +21,15 @@ class LaunchViewController: BaseViewController {
     let pageControl = UIPageControl()
     let images = ["Higimageone", "Higimagetwo", "Higimagethree"]
     
+    var show: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         let show = UserDefaults.standard.object(forKey: SHOWGUIDE) as? String ?? ""
-        if show == "1" {
-            notiRootManager()
-        }else {
+        self.show = show
+        if show != "1" {
             firstVcInfo()
         }
         
@@ -71,14 +72,20 @@ extension LaunchViewController: UIScrollViewDelegate {
         let segment = isVPNConnected()
         let dict = ["constructed": constructed,
                     "similarly": similarly,
-                    "segment": segment]
-        NetworkManager.multipartFormDataRequest(endpoint: "/surely/constructed", parameters: dict, responseType: BaseModel.self) { result in
+                    "segment": segment,
+                    "relationShip": "1"]
+        let man = NetworkRequstManager()
+        man.multipartFormDataRequest(endpoint: "/surely/constructed", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
+                guard let self = self else { return }
                 if success.wedge == "0" {
                     if let model = success.net {
                         DataLoginManager.shared.currentModel = model
                     }
+                }
+                if show == "1" {
+                    notiRootManager()
                 }
                 break
             case .failure(_):

@@ -114,7 +114,8 @@ extension CenterViewController {
     
     private func getApiInfo() {
         ViewCycleManager.showLoading()
-        NetworkManager.getRequest(endpoint: "/surely/walckanaer", responseType: BaseModel.self) { result in
+        let man = NetworkRequstManager()
+        man.getRequest(endpoint: "/surely/walckanaer", responseType: BaseModel.self) { result in
             switch result {
             case .success(let success):
                 if success.wedge == "0" {
