@@ -2,7 +2,7 @@
 //  VitamainGuideViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/22.
+//  Created by Quaker on 2025/4/22.
 //
 
 import UIKit
@@ -10,9 +10,7 @@ import RxRelay
 import FSPagerView
 
 class VitamainGuideViewController: BaseViewController {
-    
-    var model = BehaviorRelay<netModel?>(value: nil)
-    
+        
     var photoModel = BehaviorRelay<netModel?>(value: nil)
     
     let imageNames = ["authone", "authtwo", "auththree", "authfour", "authfive"]
@@ -206,11 +204,9 @@ class VitamainGuideViewController: BaseViewController {
             let victimsstrength = model.victims?.strength ?? 0
             if deadlystrength == 0 {
                 let vitaminVc = VitamainOneViewController()
-                vitaminVc.model.accept(self.model.value)
                 self.navigationController?.pushViewController(vitaminVc, animated: true)
             }else {
                 let vitaminVc = SFaceViewViewController()
-                vitaminVc.model.accept(self.model.value)
                 self.navigationController?.pushViewController(vitaminVc, animated: true)
             }
         }).disposed(by: disposeBag)
@@ -228,11 +224,11 @@ class VitamainGuideViewController: BaseViewController {
     }
     
     private func getAuthInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded, "vitaman": "c"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -249,16 +245,21 @@ class VitamainGuideViewController: BaseViewController {
     }
     
     private func odIDWithString(with model: netModel) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let odID = model.enlarged?.tyrant ?? ""
         let mon = String(model.enlarged?.characterized ?? 0)
         let uvring = model.enlarged?.casts ?? ""
         let semicircular = String(model.enlarged?.semicircular ?? 0)
-        let dict = ["contest": odID, "characterized": mon, "casts": uvring, "semicircular": semicircular]
+        let date = DeviceInfo.currentTimestamp
+        let dict = ["contest": odID,
+                    "characterized": mon,
+                    "casts": uvring,
+                    "semicircular": semicircular,
+                    "date": date]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/mine", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 if success.wedge == "0" {
                     let time = DeviceInfo.currentTimestamp
                     let fievc = VitamainFiveViewController()
@@ -269,7 +270,7 @@ class VitamainGuideViewController: BaseViewController {
                 }
                 break
             case .failure(_):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 break
             }
         }
@@ -325,7 +326,6 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
         }else if index == 2 {
             if stepIndex >= 2 {
                 let vitamanVc = VitamainThreeViewController()
-                vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }else {
                 vitaminInfo(from: model) { model in
@@ -335,7 +335,6 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
         }else if index == 3 {
             if stepIndex >= 3 {
                 let vitamanVc = VitamainFourViewController()
-                vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }else {
                 vitaminInfo(from: model) { model in
@@ -349,7 +348,6 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
             }else {
                 if stepIndex >= 4 {
                     let vitamanVc = VitamainFiveViewController()
-                    vitamanVc.model.accept(model)
                     vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
                     self.navigationController?.pushViewController(vitamanVc, animated: true)
                 }else {

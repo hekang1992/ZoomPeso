@@ -2,13 +2,21 @@
 //  RequestConfig.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import Network
 import Alamofire
 
-let SCREME_URL = "pq://zp.oei.m"
+enum AppURL {
+    private static let scheme = "pq://"
+    private static let domain = "zp.oei.m"
+    
+    static var schemeURL: String {
+        return scheme + domain
+    }
+}
+
 let BASE_URL = "http://47.84.36.196:8235/zigzag"
 
 class NetworkMonitor {
@@ -80,7 +88,7 @@ class NetworkManager {
                                          responseType: T.Type,
                                          completion: @escaping (Result<T, Error>) -> Void) {
         
-        let loginDict = LoginConfig.getLoginInfo()
+        let loginDict = LoginConfig.getLoginInfo().toDictionary
         let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
         
         AF.request(url,
@@ -98,57 +106,12 @@ class NetworkManager {
         }
     }
     
-    static func postRequest<T: Decodable>(endpoint: String,
-                                          parameters: Parameters? = nil,
-                                          responseType: T.Type,
-                                          completion: @escaping (Result<T, Error>) -> Void) {
-        
-        let loginDict = LoginConfig.getLoginInfo()
-        let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
-        
-        AF.request(url,
-                   method: .post,
-                   parameters: parameters,
-                   encoding: JSONEncoding.default,
-                   headers: RequestConfig.shared.headers)
-        .validate()
-        .responseDecodable(of: T.self) { response in
-            switch response.result {
-            case .success(let value):
-                completion(.success(value))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    static func dataRequest(endpoint: String,
-                            data: Data,
-                            completion: @escaping (Result<Data?, Error>) -> Void) {
-        
-        let url = BASE_URL + endpoint
-        
-        AF.upload(data,
-                  to: url,
-                  method: .post,
-                  headers: RequestConfig.shared.headers)
-        .validate()
-        .response { response in
-            switch response.result {
-            case .success(let data):
-                completion(.success(data))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
     static func multipartFormDataRequest<T: Decodable>(endpoint: String,
                                                        parameters: [String: String]? = nil,
                                                        files: [String: Data]? = nil,
                                                        responseType: T.Type,
                                                        completion: @escaping (Result<T, Error>) -> Void) {
-        let loginDict = LoginConfig.getLoginInfo()
+        let loginDict = LoginConfig.getLoginInfo().toDictionary
         let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
         
         AF.upload(multipartFormData: { multipartFormData in

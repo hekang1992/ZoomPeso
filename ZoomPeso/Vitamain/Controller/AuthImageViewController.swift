@@ -2,7 +2,7 @@
 //  AuthImageViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/22.
+//  Created by Quaker on 2025/4/22.
 //
 
 import UIKit
@@ -13,9 +13,7 @@ import TYAlertController
 import Kingfisher
 
 class AuthImageViewController: BaseViewController {
-    
-    var model = BehaviorRelay<netModel?>(value: nil)
-    
+        
     var enthusiastic: String = ""
     
     var hatched: String = ""
@@ -287,7 +285,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
     }
     
     private func upImageApiInfo(from imageData: Data) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let dict = ["hatched": hatched,
                     "swab": "zero",
                     "enthusiastic": enthusiastic,
@@ -296,7 +294,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/attack", parameters: dict, files: ["image": imageData], responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 guard let self = self else { return }
                 if let model = success.net {
                 if success.wedge == "0" {
@@ -305,10 +303,10 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                         }
                     }
                 }
-                ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 break
             case .failure(_):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 break
             }
         }
@@ -364,7 +362,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
     }
     
     private func sageInfo(form tcView: APView) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let name = authView.nameTx.text ?? ""
         let idnum = authView.idTx.text ?? ""
         let time = authView.timeBtn.titleLabel?.text ?? ""
@@ -376,7 +374,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                     "bajada": "11",
                     "enthusiastic": enthusiastic]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/sexes", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -386,7 +384,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                     }
                     BuyPointConfig.pointToPageWithModel(with: "3", kstime: selectTime, jstime: DeviceInfo.currentTimestamp)
                 }
-                ToastShowConfig.showMessage(form: authView, message: success.circular ?? "")
+                ToastManagerConfig.showToastText(form: authView, message: success.circular ?? "")
                 break
             case .failure(_):
                 break
@@ -395,11 +393,11 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
     }
     
     private func getAuthInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded, "vitaman": "c"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }

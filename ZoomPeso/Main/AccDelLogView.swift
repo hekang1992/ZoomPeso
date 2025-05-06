@@ -2,7 +2,7 @@
 //  AccDelLogView.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/27.
+//  Created by Quaker on 2025/4/27.
 //
 
 import UIKit
@@ -11,11 +11,11 @@ class AccDelLogView: BaseView {
     
     var block: ((String) -> Void)?
 
-    lazy var ctImageView: UIImageView = {
-        let ctImageView = UIImageView()
-        ctImageView.image = UIImage(named: "degimge")
-        ctImageView.isUserInteractionEnabled = true
-        return ctImageView
+    lazy var vindaImageView: UIImageView = {
+        let vindaImageView = UIImageView()
+        vindaImageView.image = UIImage(named: "degimge")
+        vindaImageView.isUserInteractionEnabled = true
+        return vindaImageView
     }()
     
     lazy var sureBtn: UIButton = {
@@ -31,14 +31,14 @@ class AccDelLogView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(ctImageView)
-        ctImageView.snp.makeConstraints { make in
+        addSubview(vindaImageView)
+        vindaImageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(CGSize(width: 278.pix(), height: 518.pix()))
         }
         
-        ctImageView.addSubview(sureBtn)
-        ctImageView.addSubview(cancelBtn)
+        vindaImageView.addSubview(sureBtn)
+        vindaImageView.addSubview(cancelBtn)
         
         cancelBtn.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 25, height: 25))

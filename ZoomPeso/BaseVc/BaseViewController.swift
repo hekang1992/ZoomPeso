@@ -2,15 +2,18 @@
 //  BaseViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import UIKit
 import RxSwift
+import RxRelay
 
 class BaseViewController: UIViewController {
     
     let disposeBag = DisposeBag()
+    
+    var model = BehaviorRelay<netModel?>(value: nil)
     
     private var gradientLayer: CAGradientLayer!
     
@@ -79,7 +82,7 @@ extension BaseViewController {
         }
     }
     
-    func rootInfo() {
+    func notiRootManager() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: CHANGE_ROOT_VC), object: nil)
     }
     
@@ -174,43 +177,45 @@ extension BaseViewController {
 extension BaseViewController {
     
     func vitaminInfo(from model: netModel, complete: @escaping ((netModel) -> Void)) {
-        let vitamain = model.pepsis?.rolled ?? ""
-        switch vitamain {
-        case "numerous":
+        guard let action = VitaminAction(rawValue: model.pepsis?.rolled ?? "") else { return }
+        
+        switch action {
+        case .numerous:
             getAuthInfo(from: model, complete: complete)
-            break
-        case "the":
-            let vitamanVc = VitamainTwoViewController()
-            vitamanVc.model.accept(model)
-            self.navigationController?.pushViewController(vitamanVc, animated: true)
-            break
-        case "and":
-            let vitamanVc = VitamainThreeViewController()
-            vitamanVc.model.accept(model)
-            self.navigationController?.pushViewController(vitamanVc, animated: true)
-            break
-        case "some":
-            let vitamanVc = VitamainFourViewController()
-            vitamanVc.model.accept(model)
-            self.navigationController?.pushViewController(vitamanVc, animated: true)
-            break
-        case "both":
-            let vitamanVc = VitamainFiveViewController()
-            vitamanVc.model.accept(model)
-            vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
-            self.navigationController?.pushViewController(vitamanVc, animated: true)
-            break
-        default:
-            break
+        case .the, .and, .some, .both:
+            let vc = action.makeViewController()
+            vc.model.accept(model)
+            if case .both = action, let vc = vc as? VitamainFiveViewController {
+                vc.pageUrl = model.pepsis?.sucking ?? ""
+            }
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
+    private enum VitaminAction: String {
+        case numerous = "numerous"
+        case the = "the"
+        case and = "and"
+        case some = "some"
+        case both = "both"
+        
+        func makeViewController() -> BaseViewController {
+            switch self {
+            case .the: return VitamainTwoViewController()
+            case .and: return VitamainThreeViewController()
+            case .some: return VitamainFourViewController()
+            case .both: return VitamainFiveViewController()
+            default: fatalError("Unsupported type")
+            }
         }
     }
     
     func getAuthInfo(from model: netModel, complete: @escaping ((netModel) -> Void)) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let barricaded = model.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded, "vitaman": "c"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 if success.wedge == "0" {
@@ -226,12 +231,12 @@ extension BaseViewController {
     }
     
     func productDetailInfo(from productID: String, complete: @escaping (netModel) -> Void) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let dict = ["barricaded": productID,
                     "controller": "productDetail",
                     "floss": "beer"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/mendoza", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -240,7 +245,7 @@ extension BaseViewController {
                         complete(model)
                     }
                 }else {
-                    ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                    ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 }
                 break
             case .failure(_):
@@ -253,7 +258,8 @@ extension BaseViewController {
     
     func goAnyWhereInfo(from model: netModel) {
         let sucking = model.sucking ?? ""
-        if sucking.hasPrefix(SCREME_URL) {
+        let schemeURL = AppURL.schemeURL
+        if sucking.hasPrefix(schemeURL) {
             let dict = URLParameterParser.parse(from: sucking)
             let barricaded = dict["barricaded"] ?? ""
             self.productDetailInfo(from: barricaded) { [weak self] model in
@@ -270,7 +276,6 @@ extension BaseViewController {
     
     private func vitamainInfo(from vitamain: String, barricaded: String, model: netModel) {
         let guideVc = VitamainGuideViewController()
-        guideVc.model.accept(model)
         self.navigationController?.pushViewController(guideVc, animated: true)
     }
     

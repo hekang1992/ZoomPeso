@@ -45,7 +45,6 @@
 		73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */; };
 		73C5A1FB2DB7D19C00105BD3 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */; };
 		73C5A1FD2DB7D3F500105BD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */; };
-		73C5A2002DB7E12C00105BD3 /* VitamainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1FF2DB7E12C00105BD3 /* VitamainListView.swift */; };
 		73C5A2022DB7E14400105BD3 /* VitamainOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */; };
 		73C5A2042DB7E14F00105BD3 /* VitamainTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */; };
 		73C5A2062DB7E17400105BD3 /* VitamainThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */; };
@@ -103,7 +102,6 @@
 		73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
 		73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		73C5A1FF2DB7E12C00105BD3 /* VitamainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainListView.swift; sourceTree = "<group>"; };
 		73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainOneViewController.swift; sourceTree = "<group>"; };
 		73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainTwoViewController.swift; sourceTree = "<group>"; };
 		73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainThreeViewController.swift; sourceTree = "<group>"; };
@@ -276,7 +274,6 @@
 		73C5A20C2DB7E19C00105BD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				73C5A1FF2DB7E12C00105BD3 /* VitamainListView.swift */,
 				73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */,
 				73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */,
 				739FA6C82DBA720A003C0352 /* APView.swift */,
@@ -467,7 +464,6 @@
 				73FAA6582DB92F0A00D77159 /* AuthViewCell.swift in Sources */,
 				73C5A2042DB7E14F00105BD3 /* VitamainTwoViewController.swift in Sources */,
 				73C5A20A2DB7E18700105BD3 /* VitamainFiveViewController.swift in Sources */,
-				73C5A2002DB7E12C00105BD3 /* VitamainListView.swift in Sources */,
 				733DCA112DB5DF36009AA17E /* RequestConfig.swift in Sources */,
 				73786BAA2DC5D6EA00523D24 /* ParaMeraView.swift in Sources */,
 				733DCA1F2DB62B71009AA17E /* OrderViewController.swift in Sources */,

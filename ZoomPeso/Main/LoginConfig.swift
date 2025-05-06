@@ -2,7 +2,7 @@
 //  LoginConfig.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import Foundation
@@ -11,34 +11,26 @@ import SAMKeychain
 import AdSupport
 import AppTrackingTransparency
 
-let USER_PHONE = "recollect"
-
-let LOGINTOKEN = "attachment"
-
 var IS_LOGIN: Bool {
-    if let token = UserDefaults.standard.object(forKey: LOGINTOKEN) as? String {
-        return !token.isEmpty
-    } else {
-        return false
-    }
+    (UserDefaults.standard.object(forKey: LoginConfig.Keys.loginToken) as? String)?.isEmpty == false
 }
 
-class LoginConfig: NSObject {
+class LoginConfig {
+    enum Keys {
+        static let userPhone = "USER_PHONE"
+        static let loginToken = "LOGINTOKEN"
+    }
     
-    static func saveLoginInfo(from phone: String, token: String) {
-        UserDefaults.standard.set(phone, forKey: USER_PHONE)
-        UserDefaults.standard.set(token, forKey: LOGINTOKEN)
-        UserDefaults.standard.synchronize()
+    static func saveLoginInfo(phone: String, token: String) {
+        UserDefaults.standard.set(phone, forKey: Keys.userPhone)
+        UserDefaults.standard.set(token, forKey: Keys.loginToken)
     }
     
     static func deleteLoginInfo() {
-        UserDefaults.standard.set("", forKey: USER_PHONE)
-        UserDefaults.standard.set("", forKey: LOGINTOKEN)
-        UserDefaults.standard.synchronize()
+        UserDefaults.standard.removeObject(forKey: Keys.userPhone)
+        UserDefaults.standard.removeObject(forKey: Keys.loginToken)
     }
-    
 }
-
 
 extension Bundle {
     var releaseVersionNumber: String? {
@@ -46,25 +38,40 @@ extension Bundle {
     }
 }
 
-extension LoginConfig {
+struct LoginInfo: Codable {
+    let appVersion: String
+    let deviceModel: String
+    let deviceId: String
+    let osVersion: String
+    let authToken: String
+    let advertisingId: String
     
-    static func getLoginInfo() -> [String: String] {
-        let applied = Bundle.main.releaseVersionNumber ?? ""
-        let raw = Device.current.description
-        let repeatedly = DeviceIDManager.shared.getDeviceID()
-        let saliva = Device.current.systemVersion ?? ""
-        let attachment = UserDefaults.standard.object(forKey: LOGINTOKEN) as? String ?? ""
-        let contrivance = DeviceIDManager.shared.getIDFA()
+    var toDictionary: [String: String] {
         return [
-            "applied": applied,
-            "raw": raw,
-            "repeatedly": repeatedly,
-            "saliva": saliva,
-            "attachment": attachment,
-            "contrivance": contrivance
+            "applied": appVersion,
+            "raw": deviceModel,
+            "login": "1",
+            "repeatedly": deviceId,
+            "saliva": osVersion,
+            "main": "1",
+            "attachment": authToken,
+            "contrivance": advertisingId,
+            "code": "0",
         ]
     }
-    
+}
+
+extension LoginConfig {
+    static func getLoginInfo() -> LoginInfo {
+        return LoginInfo(
+            appVersion: Bundle.main.releaseVersionNumber ?? "",
+            deviceModel: Device.current.description,
+            deviceId: DeviceIDManager.shared.getDeviceID(),
+            osVersion: Device.current.systemVersion ?? "",
+            authToken: UserDefaults.standard.string(forKey: LoginConfig.Keys.loginToken) ?? "",
+            advertisingId: DeviceIDManager.shared.getIDFA()
+        )
+    }
 }
 
 class DeviceIDManager {
@@ -96,13 +103,19 @@ class DeviceIDManager {
 }
 
 class URLQueryConfig {
-    static func appendQueryDict(to url: String, parameters: [String: String]) -> String? {
-        guard var urlComponents = URLComponents(string: url) else {
-            return nil
-        }
-        let queryItems = parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
-        urlComponents.queryItems = (urlComponents.queryItems ?? []) + queryItems
-        return urlComponents.url?.absoluteString
+    static func appendQueryDict(to urlString: String, parameters: [String: String]) -> String? {
+        URLComponents(string: urlString)?
+            .appendingQueryItems(parameters.map(URLQueryItem.init))
+            .url?
+            .absoluteString
+    }
+}
+
+extension URLComponents {
+    fileprivate func appendingQueryItems(_ items: [URLQueryItem]) -> URLComponents {
+        var copy = self
+        copy.queryItems = (queryItems ?? []) + items
+        return copy
     }
 }
 

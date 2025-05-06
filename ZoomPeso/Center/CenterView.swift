@@ -2,7 +2,7 @@
 //  CenterView.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/23.
+//  Created by Quaker on 2025/4/23.
 //
 
 import UIKit
@@ -60,7 +60,7 @@ class CenterView: BaseView {
     
     lazy var phonelabel: UILabel = {
         let phonelabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .white, textAlignment: .center)
-        let phone = UserDefaults.standard.object(forKey: USER_PHONE) as? String ?? ""
+        let phone = UserDefaults.standard.object(forKey: LoginConfig.Keys.userPhone) as? String ?? ""
         phonelabel.text = maskPhoneNumber(phone)
         return phonelabel
     }()

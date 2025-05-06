@@ -2,7 +2,7 @@
 //  ParaMeraView.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/5/3.
+//  Created by Quaker on 2025/5/3.
 //
 
 import UIKit
@@ -29,10 +29,10 @@ class ParaMeraView: BaseView {
         return tableView
     }()
     
-    lazy var ctImageView: UIImageView = {
-        let ctImageView = UIImageView()
-        ctImageView.image = UIImage(named: "loiamgepic")
-        return ctImageView
+    lazy var vindaImageView: UIImageView = {
+        let vindaImageView = UIImageView()
+        vindaImageView.image = UIImage(named: "loiamgepic")
+        return vindaImageView
     }()
     
     lazy var namelabel: UILabel = {
@@ -48,19 +48,19 @@ class ParaMeraView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(tableView)
-        addSubview(ctImageView)
+        addSubview(vindaImageView)
         addSubview(namelabel)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        ctImageView.snp.makeConstraints { make in
+        vindaImageView.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(2.pix())
             make.left.equalToSuperview().offset(15.pix())
             make.size.equalTo(CGSize(width: 28.pix(), height: 28.pix()))
         }
         namelabel.snp.makeConstraints { make in
-            make.centerY.equalTo(ctImageView.snp.centerY)
-            make.left.equalTo(ctImageView.snp.right).offset(5.pix())
+            make.centerY.equalTo(vindaImageView.snp.centerY)
+            make.left.equalTo(vindaImageView.snp.right).offset(5.pix())
             make.height.equalTo(22.pix())
         }
     }

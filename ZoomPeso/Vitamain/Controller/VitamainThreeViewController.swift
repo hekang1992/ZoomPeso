@@ -2,7 +2,7 @@
 //  VitamainThreeViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/22.
+//  Created by Quaker on 2025/4/22.
 //
 
 import UIKit
@@ -16,9 +16,7 @@ import Combine
 class VitamainThreeViewController: BaseViewController {
     
     var cancellables = Set<AnyCancellable>()
-    
-    var model = BehaviorRelay<netModel?>(value: nil)
-    
+        
     var oneModel = BehaviorRelay<netModel?>(value: nil)
     
     var kstime: String = ""
@@ -157,13 +155,13 @@ extension VitamainThreeViewController {
     }
     
     private func getApiInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded,
                     "bear": "1",
                     "cotton": "0"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/standing", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -181,10 +179,10 @@ extension VitamainThreeViewController {
     }
     
     private func safeBingoInfo(with dict: [String: String]) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let barricaded = dict["barricaded"] ?? ""
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/uvre", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -197,7 +195,7 @@ extension VitamainThreeViewController {
                     }
                     BuyPointConfig.pointToPageWithModel(with: "6", kstime: kstime, jstime: DeviceInfo.currentTimestamp)
                 }else {
-                    ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                    ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 }
                 break
             case .failure(_):

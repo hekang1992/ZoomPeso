@@ -2,7 +2,7 @@
 //  LaunchViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import UIKit
@@ -27,7 +27,7 @@ class LaunchViewController: BaseViewController {
         // Do any additional setup after loading the view.
         let show = UserDefaults.standard.object(forKey: SHOWGUIDE) as? String ?? ""
         if show == "1" {
-            rootInfo()
+            notiRootManager()
         }else {
             firstVcInfo()
         }

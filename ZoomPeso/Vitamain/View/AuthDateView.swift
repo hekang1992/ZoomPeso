@@ -2,7 +2,7 @@
 //  AuthDateView.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/27.
+//  Created by Quaker on 2025/4/27.
 //
 
 import UIKit

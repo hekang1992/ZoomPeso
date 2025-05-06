@@ -2,7 +2,7 @@
 //  VitamainFourViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/22.
+//  Created by Quaker on 2025/4/22.
 //
 
 import UIKit
@@ -16,11 +16,7 @@ import Contacts
 import ContactsUI
 
 class VitamainFourViewController: BaseViewController {
-    
-    var cancellables = Set<AnyCancellable>()
-    
-    var model = BehaviorRelay<netModel?>(value: nil)
-    
+            
     var oneModel = BehaviorRelay<netModel?>(value: nil)
     
     let contactStore = CNContactStore()
@@ -169,7 +165,7 @@ extension VitamainFourViewController {
         } catch {
             print("Failed to convert phoneArray to JSON: \(error)")
         }
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let dict = ["barricaded": barricaded, "net": jstring]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/die", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
@@ -182,11 +178,11 @@ extension VitamainFourViewController {
                     }
                     BuyPointConfig.pointToPageWithModel(with: "7", kstime: contractTime, jstime: DeviceInfo.currentTimestamp)
                 }
-                ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
-                ViewHudConfig.hideLoading()
+                ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
+                ViewCycleManager.hideLoading()
                 break
             case .failure(_):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 break
             }
         }
@@ -200,13 +196,13 @@ extension VitamainFourViewController {
     }
     
     private func getApiInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded,
                     "bear": "1",
                     "cotton": "0"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/says", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -360,7 +356,7 @@ extension VitamainFourViewController: CNContactPickerDelegate {
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         let fullName = "\(contact.familyName) \(contact.givenName)"
         if fullName.isEmpty {
-            ToastShowConfig.showMessage(form: view, message: "Emergency contact name cannot be empty.")
+            ToastManagerConfig.showToastText(form: view, message: "Emergency contact name cannot be empty.")
             return
         }
         if let phoneNumber = contact.phoneNumbers.first?.value.stringValue {
@@ -373,7 +369,7 @@ extension VitamainFourViewController: CNContactPickerDelegate {
                 }
             }
         } else {
-            ToastShowConfig.showMessage(form: view, message: "Emergency contact phone number cannot be empty.")
+            ToastManagerConfig.showToastText(form: view, message: "Emergency contact phone number cannot be empty.")
         }
     }
     

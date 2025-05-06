@@ -2,7 +2,7 @@
 //  SettingViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/23.
+//  Created by Quaker on 2025/4/23.
 //
 
 import UIKit
@@ -137,7 +137,7 @@ extension SettingViewController {
             self.dismiss(animated: true)
         }else {
             self.dismiss(animated: true) {
-                ViewHudConfig.showLoading()
+                ViewCycleManager.showLoading()
                 let dict = ["coca": "out", "clean": "0"]
                 NetworkManager.getRequest(endpoint: "/surely/retreating", parameters: dict, responseType: BaseModel.self) { [weak self] result in
                     switch result {
@@ -146,14 +146,14 @@ extension SettingViewController {
                         if success.wedge == "0" {
                             LoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                self.rootInfo()
+                                self.notiRootManager()
                             }
                         }
-                        ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
-                        ViewHudConfig.hideLoading()
+                        ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
+                        ViewCycleManager.hideLoading()
                         break
                     case .failure(_):
-                        ViewHudConfig.hideLoading()
+                        ViewCycleManager.hideLoading()
                         break
                     }
                 }
@@ -166,7 +166,7 @@ extension SettingViewController {
             self.dismiss(animated: true)
         }else {
             self.dismiss(animated: true) {
-                ViewHudConfig.showLoading()
+                ViewCycleManager.showLoading()
                 let dict = ["coca": "del", "mask": "1"]
                 NetworkManager.getRequest(endpoint: "/surely/marks", parameters: dict, responseType: BaseModel.self) { [weak self] result in
                     switch result {
@@ -175,14 +175,14 @@ extension SettingViewController {
                         if success.wedge == "0" {
                             LoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                self.rootInfo()
+                                self.notiRootManager()
                             }
                         }
-                        ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
-                        ViewHudConfig.hideLoading()
+                        ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
+                        ViewCycleManager.hideLoading()
                         break
                     case .failure(_):
-                        ViewHudConfig.hideLoading()
+                        ViewCycleManager.hideLoading()
                         break
                     }
                 }

@@ -2,7 +2,7 @@
 //  OrderListViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/23.
+//  Created by Quaker on 2025/4/23.
 //
 
 import UIKit
@@ -80,10 +80,10 @@ class OrderListViewController: BaseViewController {
 extension OrderListViewController {
     
     private func getListInfo(from refer: String) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let dict = ["refer": refer]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/theridion", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             self?.tableView.mj_header?.endRefreshing()
             switch result {
             case .success(let success):

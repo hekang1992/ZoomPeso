@@ -2,17 +2,16 @@
 //  VitamainOneViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/22.
+//  Created by Quaker on 2025/4/22.
 //
 
 import UIKit
 import RxRelay
 
 class VitamainOneViewController: BaseViewController {
-    
-    var model = BehaviorRelay<netModel?>(value: nil)
-    
+        
     var horrid = BehaviorRelay<[String]?>(value: nil)
+    
     var larvae = BehaviorRelay<[String]?>(value: nil)
     
     var time: String = ""
@@ -285,7 +284,7 @@ class VitamainOneViewController: BaseViewController {
         nextBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self, let model = self.model.value else { return }
             if self.selectAuthStr.isEmpty {
-                ToastShowConfig.showMessage(form: view, message: "Please select an authentication method")
+                ToastManagerConfig.showToastText(form: view, message: "Please select an authentication method")
                 return
             }
             let imageVc = AuthImageViewController()
@@ -314,11 +313,13 @@ extension VitamainOneViewController: UITableViewDelegate {
     }
     
     private func getAuthInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
-        let dict = ["barricaded": barricaded, "vitaman": "c"]
+        let dict = ["barricaded": barricaded,
+                    "vitaman": "c",
+                    "zoom": "v"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }

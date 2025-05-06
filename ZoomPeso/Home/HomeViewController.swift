@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import UIKit
@@ -59,7 +59,7 @@ class HomeViewController: BaseViewController {
                 if bajada == "allowing" {
                     let model = model.juices?.first
                     let orifice = model?.orifice ?? 0
-                    self.applyInfo(from: orifice)
+                    self.sqProductInfo(from: orifice)
                 }
             }
         }
@@ -67,13 +67,13 @@ class HomeViewController: BaseViewController {
         self.paraView.headBlock = { [weak self] model in
             guard let self = self else { return }
             let orifice = model.orifice ?? 0
-            self.applyInfo(from: orifice)
+            self.sqProductInfo(from: orifice)
         }
         
         self.paraView.cellBlock = { [weak self] model in
             guard let self = self else { return }
             let orifice = model.orifice ?? 0
-            self.applyInfo(from: orifice)
+            self.sqProductInfo(from: orifice)
         }
         
         getAddressInfo { model in
@@ -93,10 +93,10 @@ class HomeViewController: BaseViewController {
 extension HomeViewController {
     
     private func getHomeInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let dict = [String: String]()
         NetworkManager.getRequest(endpoint: "/surely/station", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             self?.homeView.scrollerView.mj_header?.endRefreshing()
             self?.paraView.tableView.mj_header?.endRefreshing()
             switch result {
@@ -135,19 +135,24 @@ extension HomeViewController {
         }
     }
     
-    private func applyInfo(from productID: Int) {
-        ViewHudConfig.showLoading()
-        let dict = ["barricaded": String(productID),
+    private func sqProductInfo(from productID: Int) {
+        ViewCycleManager.showLoading()
+        let dict = ["app": "1",
+                    "barricaded": String(productID),
                     "coca": "1",
                     "recyle": "1"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/vertical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
-                if success.wedge == "0" {
+                let wedge = success.wedge ?? ""
+                if wedge == "0" {
                     if let self = self, let model = success.net {
                         self.goAnyWhereInfo(from: model)
                     }
+                }else if wedge == "-2" {
+                    LoginConfig.deleteLoginInfo()
+                    self?.notiRootManager()
                 }
                 break
             case .failure(_):

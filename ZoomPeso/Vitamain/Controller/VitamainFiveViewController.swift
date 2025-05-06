@@ -2,7 +2,7 @@
 //  VitamainFiveViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/22.
+//  Created by Quaker on 2025/4/22.
 //
 
 import UIKit
@@ -42,9 +42,7 @@ class VitamainFiveViewController: BaseViewController {
         webView.navigationDelegate = self
         return webView
     }()
-    
-    var model = BehaviorRelay<netModel?>(value: nil)
-    
+        
     var pageUrl: String?
     
     lazy var progressView: UIProgressView = {
@@ -83,7 +81,7 @@ class VitamainFiveViewController: BaseViewController {
         
         if let pageUrl = pageUrl {
             var urlString = ""
-            let loginDict = LoginConfig.getLoginInfo()
+            let loginDict = LoginConfig.getLoginInfo().toDictionary
             let url = URLQueryConfig.appendQueryDict(to: pageUrl, parameters: loginDict)!
             urlString = url.replacingOccurrences(of: " ", with: "%20")
             if let url = URL(string: urlString) {
@@ -125,15 +123,15 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        ViewHudConfig.hideLoading()
+        ViewCycleManager.hideLoading()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        ViewHudConfig.hideLoading()
+        ViewCycleManager.hideLoading()
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -158,7 +156,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
         }else if messageName == "preparing" {
             self.navigationController?.popToRootViewController(animated: true)
         }else if messageName == "moved" {
-            self.rootInfo()
+            self.notiRootManager()
         }
     }
     
@@ -169,21 +167,26 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
     }
     
     private func odIDWithString(with model: netModel) {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let odID = model.enlarged?.tyrant ?? ""
         let mon = String(model.enlarged?.characterized ?? 0)
         let uvring = model.enlarged?.casts ?? ""
         let semicircular = String(model.enlarged?.semicircular ?? 0)
-        let dict = ["contest": odID, "characterized": mon, "casts": uvring, "semicircular": semicircular]
+        let soul = "mate"
+        let dict = ["contest": odID,
+                    "characterized": mon,
+                    "casts": uvring,
+                    "semicircular": semicircular,
+                    "soul": soul]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/mine", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 if success.wedge == "0" {
                     let pageUrl = success.net?.sucking ?? ""
                     var urlString = ""
-                    let loginDict = LoginConfig.getLoginInfo()
+                    let loginDict = LoginConfig.getLoginInfo().toDictionary
                     let url = URLQueryConfig.appendQueryDict(to: pageUrl, parameters: loginDict)!
                     urlString = url.replacingOccurrences(of: " ", with: "%20")
                     if let url = URL(string: urlString) {
@@ -194,7 +197,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
                 }
                 break
             case .failure(_):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 break
             }
         }

@@ -2,7 +2,7 @@
 //  CenterViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import UIKit
@@ -58,7 +58,8 @@ class CenterViewController: BaseViewController {
         centerView.modelBlock = { [weak self] model in
             guard let self = self else { return }
             let sucking = model.sucking ?? ""
-            if sucking.contains(SCREME_URL) {
+            let schemeURL = AppURL.schemeURL
+            if sucking.contains(schemeURL) {
                 scUrlGoVc(with: sucking)
             }else {
                 let webVc = VitamainFiveViewController()
@@ -75,28 +76,25 @@ class CenterViewController: BaseViewController {
             let setVc = SettingViewController()
             self.navigationController?.pushViewController(setVc, animated: true)
         }else if suck.contains("Emperor") {
-            self.rootInfo()
+            self.notiRootManager()
         }else if suck.contains("this") {
             LoginConfig.deleteLoginInfo()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                self.rootInfo()
+                self.notiRootManager()
             }
         }else if suck.contains("itself") {
             let dict = URLParameterParser.parse(from: suck)
             let fitted = dict["fitted"] ?? ""
             let listVc = OrderListViewController()
-            if fitted == "0" {
-                listVc.orderType = "4"
-                listVc.nameType = "All"
-            }else if fitted == "1" {
-                listVc.orderType = "7"
-                listVc.nameType = "Apply"
-            }else if fitted == "2" {
-                listVc.orderType = "6"
-                listVc.nameType = "Repayment"
-            }else if fitted == "3" {
-                listVc.orderType = "5"
-                listVc.nameType = "Finished"
+            let statusMap: [String: (orderType: String, nameType: String)] = [
+                "0": ("4", "All"),
+                "1": ("7", "Apply"),
+                "2": ("6", "Repayment"),
+                "3": ("5", "Finished")
+            ]
+            if let mapped = statusMap[fitted] {
+                listVc.orderType = mapped.orderType
+                listVc.nameType = mapped.nameType
             }
             self.navigationController?.pushViewController(listVc, animated: true)
         }else if suck.contains("during") {
@@ -115,7 +113,7 @@ class CenterViewController: BaseViewController {
 extension CenterViewController {
     
     private func getApiInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         NetworkManager.getRequest(endpoint: "/surely/walckanaer", responseType: BaseModel.self) { result in
             switch result {
             case .success(let success):
@@ -124,10 +122,10 @@ extension CenterViewController {
                         self.centerView.modelArry.accept(modelArray)
                     }
                 }
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 break
             case .failure(_):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 break
             }
         }

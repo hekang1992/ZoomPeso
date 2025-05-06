@@ -2,7 +2,7 @@
 //  Define.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import UIKit
@@ -61,7 +61,7 @@ extension Int {
 }
 
 
-class ViewHudConfig {
+class ViewCycleManager {
     
     private static var loadingView: UIView?
     
@@ -70,9 +70,7 @@ class ViewHudConfig {
         if loadingView != nil { return }
         
         let backgroundView = UIView(frame: window.bounds)
-        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        backgroundView.isUserInteractionEnabled = true
-        backgroundView.tag = 999
+        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.45)
         
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.color = .black
@@ -90,8 +88,8 @@ class ViewHudConfig {
     }
 }
 
-class ToastShowConfig {
-    static func showMessage(form view: UIView, message: String) {
+class ToastManagerConfig {
+    static func showToastText(form view: UIView, message: String) {
         view.makeToast(message, duration: 2.0, position: .center)
     }
 }

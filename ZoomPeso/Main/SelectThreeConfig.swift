@@ -2,7 +2,7 @@
 //  SelectThreeConfig.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/28.
+//  Created by Quaker on 2025/4/28.
 //
 
 import UIKit
@@ -85,7 +85,7 @@ class ThrottleModelConig {
         
         return citiesData.enumerated().map { index, cityData in
             let city = BRCityModel()
-            city.code = provinceCode // 注意：这里使用省份编码作为城市编码
+            city.code = provinceCode
             city.name = cityData.paralysed
             city.index = index
             city.arealist = processAreas(cityData.ruby, areaCode: city.code ?? "")

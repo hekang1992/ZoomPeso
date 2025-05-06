@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import UIKit
@@ -58,7 +58,7 @@ class LoginViewController: BaseViewController {
             if grand {
                 loginInfo()
             }else {
-                ToastShowConfig.showMessage(form: view, message: "Please review and accept the user agreement first.")
+                ToastManagerConfig.showToastText(form: view, message: "Please review and accept the user agreement first.")
             }
         }).disposed(by: disposeBag)
         
@@ -66,7 +66,7 @@ class LoginViewController: BaseViewController {
             guard let self = self else { return }
             let phone = self.loginView.phoneTx.text ?? ""
             if phone.isEmpty {
-                ToastShowConfig.showMessage(form: self.view, message: "Please Input Your Phone")
+                ToastManagerConfig.showToastText(form: self.view, message: "Please Input Your Phone")
             }else {
                 codeInfo()
             }
@@ -163,11 +163,11 @@ extension LoginViewController {
     }
     
     private func codeInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let hat = self.loginView.phoneTx.text ?? ""
         let dict = ["hat": hat]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/similarly", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -175,7 +175,7 @@ extension LoginViewController {
                     self.startCountdown()
                 }
                 let circular = success.circular ?? ""
-                ToastShowConfig.showMessage(form: self.view, message: circular)
+                ToastManagerConfig.showToastText(form: self.view, message: circular)
                 break
             case .failure(_):
                 break
@@ -184,16 +184,16 @@ extension LoginViewController {
     }
     
     private func voiceInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let hat = self.loginView.phoneTx.text ?? ""
         let dict = ["hat": hat]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/segment", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
                 let circular = success.circular ?? ""
-                ToastShowConfig.showMessage(form: self.view, message: circular)
+                ToastManagerConfig.showToastText(form: self.view, message: circular)
                 break
             case .failure(_):
                 break
@@ -205,17 +205,19 @@ extension LoginViewController {
         let recollect = self.loginView.phoneTx.text ?? ""
         let mine = self.loginView.codeTx.text ?? ""
         if recollect.isEmpty {
-            ToastShowConfig.showMessage(form: self.view, message: "Please Input Your Phone")
+            ToastManagerConfig.showToastText(form: self.view, message: "Please Input Your Phone")
             return
         }
         if mine.isEmpty {
-            ToastShowConfig.showMessage(form: self.view, message: "Please Input Your Code")
+            ToastManagerConfig.showToastText(form: self.view, message: "Please Input Your Code")
             return
         }
-        ViewHudConfig.showLoading()
-        let dict = ["recollect": recollect, "mine": mine]
+        ViewCycleManager.showLoading()
+        let dict = ["recollect": recollect,
+                    "mine": mine,
+                    "page": "login"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/wedge", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
@@ -223,14 +225,14 @@ extension LoginViewController {
                     jsTime = DeviceInfo.currentTimestamp
                     let phone = success.net?.recollect ?? ""
                     let token = success.net?.attachment ?? ""
-                    LoginConfig.saveLoginInfo(from: phone, token: token)
+                    LoginConfig.saveLoginInfo(phone: phone, token: token)
                     BuyPointConfig.pointToPageWithModel(with: "1", kstime: ksTime, jstime: jsTime)
                     DispatchQueue.main.async {
-                        self.rootInfo()
+                        self.notiRootManager()
                     }
                 }
                 let circular = success.circular ?? ""
-                ToastShowConfig.showMessage(form: self.view, message: circular)
+                ToastManagerConfig.showToastText(form: self.view, message: circular)
                 break
             case .failure(_):
                 break

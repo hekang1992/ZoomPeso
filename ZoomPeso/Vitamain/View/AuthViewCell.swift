@@ -2,7 +2,7 @@
 //  AuthViewCell.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/23.
+//  Created by Quaker on 2025/4/23.
 //
 
 import UIKit

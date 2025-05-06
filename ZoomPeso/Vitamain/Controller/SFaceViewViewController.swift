@@ -2,7 +2,7 @@
 //  SFaceViewViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/22.
+//  Created by Quaker on 2025/4/22.
 //
 
 import UIKit
@@ -13,9 +13,7 @@ import TYAlertController
 import Kingfisher
 
 class SFaceViewViewController: BaseViewController {
-    
-    var model = BehaviorRelay<netModel?>(value: nil)
-    
+        
     var hatched: String = ""
     
     var sfaceModel = BehaviorRelay<netModel?>(value: nil)
@@ -231,8 +229,9 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
     }
     
     private func upImageApiInfo(from imageData: Data) {
-        ViewHudConfig.showLoading()
-        let dict = ["hatched": hatched,
+        ViewCycleManager.showLoading()
+        let dict = ["stage": "1",
+                    "hatched": hatched,
                     "swab": "zero",
                     "bajada": "10",
                     "dental": "false",
@@ -240,7 +239,7 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/attack", parameters: dict, files: ["image": imageData], responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 guard let self = self else { return }
                 if success.wedge == "0" {
                     DispatchQueue.main.async {
@@ -248,21 +247,21 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
                     }
                     BuyPointConfig.pointToPageWithModel(with: "4", kstime: facetime, jstime: DeviceInfo.currentTimestamp)
                 }
-                ToastShowConfig.showMessage(form: view, message: success.circular ?? "")
+                ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 break
             case .failure(_):
-                ViewHudConfig.hideLoading()
+                ViewCycleManager.hideLoading()
                 break
             }
         }
     }
     
     private func getAuthInfo() {
-        ViewHudConfig.showLoading()
+        ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
         let dict = ["barricaded": barricaded, "vitaman": "c"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
                 guard let self = self else { return }

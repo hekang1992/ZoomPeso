@@ -2,7 +2,7 @@
 //  OrderViewController.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/4/21.
+//  Created by Quaker on 2025/4/21.
 //
 
 import UIKit
@@ -59,9 +59,9 @@ class OrderViewController: BaseViewController {
         self.listView.block = { [weak self] model in
             guard let self = self else { return }
             let antenn = model.antenn ?? ""
-            var model = netModel()
-            model.sucking = antenn
-            goAnyWhereInfo(from: model)
+            let model1 = netModel()
+            model1.sucking = antenn
+            goAnyWhereInfo(from: model1)
         }
         
     }
@@ -76,10 +76,13 @@ class OrderViewController: BaseViewController {
 extension OrderViewController {
     
     private func getListInfo(from refer: String) {
-        ViewHudConfig.showLoading()
-        let dict = ["refer": refer]
+        ViewCycleManager.showLoading()
+        let dict = ["refer": refer,
+                    "page": "1",
+                    "pageSize": "100",
+                    "tips": "1"]
         NetworkManager.multipartFormDataRequest(endpoint: "/surely/theridion", parameters: dict, responseType: BaseModel.self) { [weak self] result in
-            ViewHudConfig.hideLoading()
+            ViewCycleManager.hideLoading()
             self?.listView.tableView.mj_header?.endRefreshing()
             switch result {
             case .success(let success):
