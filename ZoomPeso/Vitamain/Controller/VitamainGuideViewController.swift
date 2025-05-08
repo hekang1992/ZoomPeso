@@ -13,6 +13,8 @@ class VitamainGuideViewController: BaseViewController {
         
     var photoModel = BehaviorRelay<netModel?>(value: nil)
     
+    var model = BehaviorRelay<netModel?>(value: nil)
+    
     let imageNames = ["authone", "authtwo", "auththree", "authfour", "authfive"]
     let oneImageNames = ["authone_sel", "authtwo", "auththree", "authfour", "authfive"]
     let twoImageNames = ["authone_sel", "authtwo_sel", "auththree", "authfour", "authfive"]
@@ -201,12 +203,18 @@ class VitamainGuideViewController: BaseViewController {
         self.photoModel.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
             let deadlystrength = model.deadly?.strength ?? 0
-            let victimsstrength = model.victims?.strength ?? 0
+//            let victimsstrength = model.victims?.strength ?? 0
             if deadlystrength == 0 {
                 let vitaminVc = VitamainOneViewController()
+                if let model = self.model.value {
+                    vitaminVc.model.accept(model)
+                }
                 self.navigationController?.pushViewController(vitaminVc, animated: true)
             }else {
                 let vitaminVc = SFaceViewViewController()
+                if let model = self.model.value {
+                    vitaminVc.model.accept(model)
+                }
                 self.navigationController?.pushViewController(vitaminVc, animated: true)
             }
         }).disposed(by: disposeBag)
@@ -235,7 +243,7 @@ class VitamainGuideViewController: BaseViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let model = success.net {
                         self.photoModel.accept(model)
                     }
@@ -264,7 +272,7 @@ class VitamainGuideViewController: BaseViewController {
             switch result {
             case .success(let success):
                 ViewCycleManager.hideLoading()
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     let time = DeviceInfo.currentTimestamp
                     let fievc = VitamainFiveViewController()
                     fievc.od = odID
@@ -330,6 +338,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
         }else if index == 2 {
             if stepIndex >= 2 {
                 let vitamanVc = VitamainThreeViewController()
+                vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }else {
                 vitaminInfo(from: model) { model in
@@ -339,6 +348,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
         }else if index == 3 {
             if stepIndex >= 3 {
                 let vitamanVc = VitamainFourViewController()
+                vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }else {
                 vitaminInfo(from: model) { model in
@@ -353,6 +363,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                 if stepIndex >= 4 {
                     let vitamanVc = VitamainFiveViewController()
                     vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
+                    vitamanVc.model.accept(model)
                     self.navigationController?.pushViewController(vitamanVc, animated: true)
                 }else {
                     vitaminInfo(from: model) { model in

@@ -90,7 +90,7 @@ extension LaunchViewController: UIScrollViewDelegate {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let model = success.net {
                         DataLoginManager.shared.currentModel = model
                     }
@@ -137,17 +137,19 @@ extension LaunchViewController: UIScrollViewDelegate {
         scrollView.frame = view.bounds
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
+        scrollView.bounces = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(images.count), height: view.frame.height)
+        scrollView.contentSize = CGSize(width: SCREEN_WIDTH * CGFloat(images.count), height: SCREEN_HEIGHT)
         view.addSubview(scrollView)
+        
     }
     
     func setupPages() {
         for i in 0..<images.count {
-            let imageView = UIImageView(frame: CGRect(x: CGFloat(i) * view.frame.width,
+            let imageView = UIImageView(frame: CGRect(x: CGFloat(i) * SCREEN_WIDTH,
                                                       y: 0,
-                                                      width: view.frame.width,
-                                                      height: view.frame.height))
+                                                      width: SCREEN_WIDTH,
+                                                      height: SCREEN_HEIGHT))
             imageView.image = UIImage(named: images[i])
             imageView.contentMode = .scaleAspectFit
             imageView.isUserInteractionEnabled = true

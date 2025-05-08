@@ -29,6 +29,11 @@ class netModel: Codable {
     var army: [armyModel]?
     var cordillera: Int?
     var sexes: sexesModel?
+    var walckanaer: walckanaerModel?
+}
+
+class walckanaerModel: Codable {
+    var azara: String?
 }
 
 class sexesModel: Codable {
@@ -91,6 +96,7 @@ class juicesModel: Codable {
     var pitying: String?
     var liberate: String?
     var jerks: String?
+    var aimed: String?
 }
 
 class pepsisModel: Codable {

@@ -15,7 +15,7 @@ class LoginViewController: BaseViewController {
     var ksTime: String = ""
     var jsTime: String = ""
     
-    var grand: Bool = false
+    var grand: Bool = true
     private var countdownTimer: Timer?
     private var remainingSeconds = 60
     
@@ -172,8 +172,9 @@ extension LoginViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     self.startCountdown()
+                    self.loginView.codeTx.becomeFirstResponder()
                 }
                 let circular = success.circular ?? ""
                 ToastManagerConfig.showToastText(form: self.view, message: circular)
@@ -194,6 +195,9 @@ extension LoginViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
+                if success.wedge == "0" || success.wedge == "00" {
+                    self.loginView.codeTx.becomeFirstResponder()
+                }
                 let circular = success.circular ?? ""
                 ToastManagerConfig.showToastText(form: self.view, message: circular)
                 break
@@ -224,7 +228,7 @@ extension LoginViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     jsTime = DeviceInfo.currentTimestamp
                     let phone = success.net?.recollect ?? ""
                     let token = success.net?.attachment ?? ""

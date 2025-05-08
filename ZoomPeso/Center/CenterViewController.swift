@@ -118,7 +118,7 @@ extension CenterViewController {
         man.getRequest(endpoint: "/surely/walckanaer", responseType: BaseModel.self) { result in
             switch result {
             case .success(let success):
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let modelArray = success.net?.ruby {
                         self.centerView.modelArry.accept(modelArray)
                     }

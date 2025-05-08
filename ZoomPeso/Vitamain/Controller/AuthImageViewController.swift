@@ -13,6 +13,8 @@ import TYAlertController
 import Kingfisher
 
 class AuthImageViewController: BaseViewController {
+    
+    var model = BehaviorRelay<netModel?>(value: nil)
         
     var enthusiastic: String = ""
     
@@ -298,7 +300,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                 ViewCycleManager.hideLoading()
                 guard let self = self else { return }
                 if let model = success.net {
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                         DispatchQueue.main.async {
                             self.tcViewInfo(from: model)
                         }
@@ -380,7 +382,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     self.dismiss(animated: true) {
                         self.getAuthInfo()
                     }
@@ -406,7 +408,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let model = success.net?.deadly {
                         self.isSuccess.accept(model.strength ?? 0)
                         let picUrl = model.sucking ?? ""

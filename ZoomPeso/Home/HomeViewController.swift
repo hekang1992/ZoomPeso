@@ -80,6 +80,27 @@ class HomeViewController: BaseViewController {
             DataAddressManager.shared.currentModel = model
         }
         
+        homeView.threeImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            let conUrl = self.homeModel.value?.walckanaer?.azara ?? ""
+            let webVc = VitamainFiveViewController()
+            webVc.pageUrl = conUrl
+            self.navigationController?.pushViewController(webVc, animated: true)
+        }).disposed(by: disposeBag)
+        
+        homeView.fourImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            let ruby = self.homeModel.value?.ruby ?? []
+            for model in ruby {
+                let bajada = model.bajada ?? ""
+                if bajada == "allowing" {
+                    let model = model.juices?.first
+                    let orifice = model?.orifice ?? 0
+                    self.sqProductInfo(from: orifice)
+                }
+            }
+        }).disposed(by: disposeBag)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,7 +123,7 @@ extension HomeViewController {
             self?.paraView.tableView.mj_header?.endRefreshing()
             switch result {
             case .success(let success):
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let model = success.net {
                         let ruby = model.ruby ?? []
                         for model in ruby {

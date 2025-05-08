@@ -22,6 +22,8 @@ class SFaceViewViewController: BaseViewController {
     
     var facetime: String = ""
     
+    var model = BehaviorRelay<netModel?>(value: nil)
+    
     lazy var hedImageView: UIImageView = {
         let hedImageView = UIImageView()
         hedImageView.image = UIImage(named: "seigmeiage")
@@ -242,7 +244,7 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
             case .success(let success):
                 ViewCycleManager.hideLoading()
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     DispatchQueue.main.async {
                         self.getAuthInfo()
                     }
@@ -267,7 +269,7 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let model = success.net?.victims {
                         self.isSuccess.accept(model.strength ?? 0)
                         let picUrl = model.sucking ?? ""

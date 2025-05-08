@@ -40,19 +40,18 @@ class HomeView: BaseView {
     
     lazy var logoImageView: UIImageView = {
         let logoImageView = UIImageView()
-        logoImageView.image = UIImage(named: "loiamgepic")
+        logoImageView.layer.cornerRadius = 5
+        logoImageView.layer.masksToBounds = true
         return logoImageView
     }()
     
     lazy var nameLabel: UILabel = {
         let nameLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .semibold), textColor: .white, textAlignment: .left)
-        nameLabel.text = "ZoomPeso"
         return nameLabel
     }()
     
     lazy var oneLabel: UILabel = {
         let oneLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 20.pix())!, textColor: .init(hexStr: "#2A1512")!, textAlignment: .center)
-        oneLabel.text = "Loan amount"
         return oneLabel
     }()
     
@@ -102,12 +101,14 @@ class HomeView: BaseView {
     
     lazy var threeImageView: UIImageView = {
         let threeImageView = UIImageView()
+        threeImageView.isUserInteractionEnabled = true
         threeImageView.image = UIImage(named: "legimge")
         return threeImageView
     }()
     
     lazy var fourImageView: UIImageView = {
         let fourImageView = UIImageView()
+        fourImageView.isUserInteractionEnabled = true
         fourImageView.image = UIImage(named: "rightimage")
         return fourImageView
     }()
@@ -226,7 +227,7 @@ class HomeView: BaseView {
         }
         nameLabel.snp.makeConstraints { make in
             make.centerY.equalTo(logoImageView.snp.centerY)
-            make.left.equalTo(logoImageView.snp.right)
+            make.left.equalTo(logoImageView.snp.right).offset(2.pix())
             make.height.equalTo(25)
         }
         oneLabel.snp.makeConstraints { make in
@@ -240,8 +241,8 @@ class HomeView: BaseView {
             make.height.equalTo(82.pix())
         }
         twoLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(125.pix())
-            make.top.equalTo(moneyLabel.snp.bottom).offset(38.pix())
+            make.left.equalToSuperview().offset(122.pix())
+            make.top.equalToSuperview().offset(233.pix())
             make.height.equalTo(20.pix())
             make.width.equalTo(94.pix())
         }
@@ -278,7 +279,7 @@ class HomeView: BaseView {
             make.size.equalTo(CGSize(width: 240.pix(), height: 54.pix()))
         }
         threeImageView.snp.makeConstraints { make in
-            make.left.equalToSuperview()
+            make.left.equalToSuperview().offset(15.pix())
             make.top.equalTo(twoImageView.snp.bottom).offset(13)
             make.size.equalTo(CGSize(width: 168.pix(), height: 92.pix()))
         }
@@ -351,6 +352,7 @@ class HomeView: BaseView {
                 let bajada = model.bajada ?? ""
                 if bajada == "allowing" {
                     let model = model.juices?.first
+                    oneLabel.text = model?.aimed ?? ""
                     moneyLabel.text = model?.vain ?? ""
                     twoLabel.text = model?.perseveringly ?? ""
                     threeLabel.text = model?.entangle ?? ""
@@ -358,6 +360,9 @@ class HomeView: BaseView {
                     fiveLabel.text = model?.cutting ?? ""
                     let applyStr = model?.thrusts ?? ""
                     applyLabel.text = "\(applyStr) >"
+                    nameLabel.text = model?.pitying ?? ""
+                    let logoUrl = URL(string: model?.antagonist ?? "")
+                    logoImageView.kf.setImage(with: logoUrl)
                 }
             }
         }).disposed(by: disposeBag)

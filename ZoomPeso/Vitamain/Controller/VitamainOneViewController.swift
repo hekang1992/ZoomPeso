@@ -16,6 +16,8 @@ class VitamainOneViewController: BaseViewController {
     
     var time: String = ""
     
+    var model = BehaviorRelay<netModel?>(value: nil)
+    
     lazy var hedImageView: UIImageView = {
         let hedImageView = UIImageView()
         hedImageView.image = UIImage(named: "seigmeiage")
@@ -324,7 +326,7 @@ extension VitamainOneViewController: UITableViewDelegate {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     //ma
                     self.horrid.accept(success.net?.horrid ?? [])
                     //mc

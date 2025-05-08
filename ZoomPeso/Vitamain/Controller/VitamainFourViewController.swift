@@ -16,6 +16,8 @@ import Contacts
 import ContactsUI
 
 class VitamainFourViewController: BaseViewController {
+    
+    var model = BehaviorRelay<netModel?>(value: nil)
             
     var oneModel = BehaviorRelay<netModel?>(value: nil)
     
@@ -174,7 +176,7 @@ extension VitamainFourViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     self.productDetailInfo(from: barricaded) { model in
                         self.model.accept(model)
                         self.vitaminInfo(from: model) { model in }
@@ -210,7 +212,7 @@ extension VitamainFourViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let model = success.net {
                         self.oneModel.accept(model)
                         self.tableView.reloadData()

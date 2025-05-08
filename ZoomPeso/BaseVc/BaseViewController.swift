@@ -14,8 +14,6 @@ class BaseViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    var model = BehaviorRelay<netModel?>(value: nil)
-    
     private var gradientLayer: CAGradientLayer!
     
     lazy var headView: VitamainGuideHeadView = {
@@ -97,7 +95,7 @@ extension BaseViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if success.wedge == "0" || success.wedge == "00" || success.wedge == "00" {
                     if let sexesModel = DataLoginManager.shared.currentModel?.sexes {
                         zoomPesoFaceBook(from: sexesModel)
                     }
@@ -197,9 +195,21 @@ extension BaseViewController {
         case .numerous:
             getAuthInfo(from: model, complete: complete)
         case .the, .and, .some, .both:
+            
             let vc = action.makeViewController()
-            vc.model.accept(model)
+            
+            if case .the = action, let vc = vc as? VitamainTwoViewController {
+                vc.model.accept(model)
+            }
+            if case .and = action, let vc = vc as? VitamainThreeViewController {
+                vc.model.accept(model)
+            }
+            if case .some = action, let vc = vc as? VitamainFourViewController {
+                vc.model.accept(model)
+            }
+            
             if case .both = action, let vc = vc as? VitamainFiveViewController {
+                vc.model.accept(model)
                 vc.pageUrl = model.pepsis?.sucking ?? ""
             }
             navigationController?.pushViewController(vc, animated: true)
@@ -233,7 +243,7 @@ extension BaseViewController {
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let model = success.net {
                         complete(model)
                     }
@@ -256,7 +266,7 @@ extension BaseViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     if let model = success.net {
                         complete(model)
                     }
@@ -292,6 +302,7 @@ extension BaseViewController {
     
     private func vitamainInfo(from vitamain: String, barricaded: String, model: netModel) {
         let guideVc = VitamainGuideViewController()
+        guideVc.model.accept(model)
         self.navigationController?.pushViewController(guideVc, animated: true)
     }
     
@@ -304,7 +315,7 @@ extension BaseViewController {
         man.getRequest(endpoint: "/surely/azara", responseType: BaseModel.self) { result in
             switch result {
             case .success(let success):
-                if success.wedge == "0" {
+                if success.wedge == "0" || success.wedge == "00" {
                     guard let model = success.net else { return }
                     complete(model)
                 }

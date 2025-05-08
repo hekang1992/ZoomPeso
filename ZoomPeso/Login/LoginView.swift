@@ -121,6 +121,7 @@ class LoginView: BaseView {
     
     lazy var cycleBtn: UIButton = {
         let cycleBtn = UIButton(type: .custom)
+        cycleBtn.isSelected = true
         cycleBtn.setImage(UIImage(named: "cyclenormail"), for: .normal)
         cycleBtn.setImage(UIImage(named: "cycleselect"), for: .selected)
         return cycleBtn
@@ -219,10 +220,9 @@ class LoginView: BaseView {
             make.top.equalTo(twoView.snp.bottom).offset(77)
         }
         
-        
         loginImageView.addSubview(cycleBtn)
         cycleBtn.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(62)
+            make.left.equalToSuperview().offset(58)
             make.top.equalTo(loginBtn.snp.bottom).offset(22)
             make.size.equalTo(CGSize(width: 12, height: 12))
         }

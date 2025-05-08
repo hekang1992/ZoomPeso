@@ -146,7 +146,7 @@ extension SettingViewController {
                     switch result {
                     case .success(let success):
                         guard let self = self else { return }
-                        if success.wedge == "0" {
+                        if success.wedge == "0" || success.wedge == "00" {
                             LoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                                 self.notiLastRootVcManager()
@@ -178,7 +178,7 @@ extension SettingViewController {
                     switch result {
                     case .success(let success):
                         guard let self = self else { return }
-                        if success.wedge == "0" {
+                        if success.wedge == "0" || success.wedge == "00" {
                             LoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                                 self.notiLastRootVcManager()
