@@ -128,11 +128,11 @@ class LoginView: BaseView {
     
     lazy var privacyLabel: UILabel = {
         let privacyLabel = UILabel()
-        let attributedString = NSMutableAttributedString(string: "I've read and agreed with  <Loan Agreement> ")
+        let attributedString = NSMutableAttributedString(string: "I've read and agreed with  <Privacy Agreement> ")
         attributedString.addAttribute(
             .underlineStyle,
             value: NSUnderlineStyle.single.rawValue,
-            range: NSRange(location: 27, length: "<Loan Agreement>".count)
+            range: NSRange(location: 27, length: "<Privacy Agreement>".count)
         )
         privacyLabel.attributedText = attributedString
         privacyLabel.textColor = UIColor.black

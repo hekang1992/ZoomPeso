@@ -23,11 +23,24 @@ class LaunchViewController: BaseViewController {
     
     var show: String = ""
     
+    lazy var bgImageView: UIImageView = {
+        let bgImageView = UIImageView()
+        bgImageView.contentMode = .scaleAspectFit
+        bgImageView.image = UIImage(named: "lanucmimage")
+        return bgImageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         let show = UserDefaults.standard.object(forKey: SHOWGUIDE) as? String ?? ""
+        
+        view.addSubview(bgImageView)
+        bgImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         self.show = show
         if show != "1" {
             firstVcInfo()
