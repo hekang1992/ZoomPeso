@@ -42,9 +42,14 @@ class LoginViewController: BaseViewController {
             }
         }).disposed(by: disposeBag)
         
-        loginView.phonelabel.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+        loginView.privacyLabel.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
-            
+            if let model = DataLoginManager.shared.currentModel {
+                let pageUrl = model.pocket_private_url ?? ""
+                let fiveVc = VitamainFiveViewController()
+                fiveVc.pageUrl = pageUrl
+                self.navigationController?.pushViewController(fiveVc, animated: true)
+            }
         }).disposed(by: disposeBag)
         
         loginView.voiceBtn.rx.tap.subscribe(onNext: { [weak self] in

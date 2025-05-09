@@ -30,6 +30,7 @@ class netModel: Codable {
     var cordillera: Int?
     var sexes: sexesModel?
     var walckanaer: walckanaerModel?
+    var pocket_private_url: String?
 }
 
 class walckanaerModel: Codable {

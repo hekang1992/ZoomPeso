@@ -326,4 +326,11 @@ extension BaseViewController {
         }
     }
     
+    func judgeIsLogin() {
+        if !IS_LOGIN {
+            self.notiLastRootVcManager()
+            return
+        }
+    }
+    
 }

@@ -13,9 +13,9 @@ import CoreLocation
 class LocationModel {
     var disturb: String?
     var boast: String?
+    var coleoptera: Double?
     var cabinets: String?
     var obscurely: String?
-    var coleoptera: Double?
     var disappointed: Double?
     var observation: String?
     var error: String?
@@ -88,25 +88,19 @@ extension LocationConfig: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         let model = LocationModel()
-        model.disappointed = location.coordinate.longitude
         model.coleoptera = location.coordinate.latitude
+        model.disappointed = location.coordinate.longitude
         let geocoder = CLGeocoder()
-        let lion = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        geocoder.reverseGeocodeLocation(lion) { [weak self] placemarks, error in
-            guard let self = self else { return }
-            if let error = error {
-                return
-            }
-            guard let placemark = placemarks?.first else {
-                return
-            }
-            self.onModel(model, with: placemark)
+        let locationInfo = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        geocoder.reverseGeocodeLocation(locationInfo) { [weak self] placemarks, error in
+            guard let self = self, let placemark = placemarks?.first else { return }
+            self.locationToModel(model, with: placemark)
             self.model.accept(model)
             self.locationConfig.stopUpdatingLocation()
         }
     }
 
-    private func onModel(_ model: LocationModel, with placemark: CLPlacemark) {
+    private func locationToModel(_ model: LocationModel, with placemark: CLPlacemark) {
         let countryCode = placemark.isoCountryCode ?? ""
         let country = placemark.country ?? ""
         var provice = placemark.administrativeArea ?? ""

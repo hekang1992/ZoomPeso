@@ -220,19 +220,20 @@ class LoginView: BaseView {
             make.top.equalTo(twoView.snp.bottom).offset(77)
         }
         
+        loginImageView.addSubview(privacyLabel)
+        privacyLabel.snp.makeConstraints { make in
+            make.top.equalTo(loginBtn.snp.bottom).offset(22)
+            make.centerX.equalToSuperview().offset(14)
+            make.height.equalTo(17)
+        }
+        
         loginImageView.addSubview(cycleBtn)
         cycleBtn.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(58)
-            make.top.equalTo(loginBtn.snp.bottom).offset(22)
+            make.centerY.equalTo(privacyLabel.snp.centerY)
+            make.right.equalTo(privacyLabel.snp.left).offset(-2)
             make.size.equalTo(CGSize(width: 12, height: 12))
         }
         
-        loginImageView.addSubview(privacyLabel)
-        privacyLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(cycleBtn.snp.centerY)
-            make.left.equalTo(cycleBtn.snp.right).offset(5)
-            make.height.equalTo(17)
-        }
     }
     
     @MainActor required init?(coder: NSCoder) {

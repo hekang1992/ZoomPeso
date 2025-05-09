@@ -53,6 +53,7 @@ class HomeViewController: BaseViewController {
         
         self.homeView.applyBlock = { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             let ruby = self.homeModel.value?.ruby ?? []
             for model in ruby {
                 let bajada = model.bajada ?? ""
@@ -82,6 +83,7 @@ class HomeViewController: BaseViewController {
         
         homeView.threeImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
+            judgeIsLogin()
             let conUrl = self.homeModel.value?.walckanaer?.azara ?? ""
             let webVc = VitamainFiveViewController()
             webVc.pageUrl = conUrl
@@ -90,6 +92,7 @@ class HomeViewController: BaseViewController {
         
         homeView.fourImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
+            judgeIsLogin()
             let ruby = self.homeModel.value?.ruby ?? []
             for model in ruby {
                 let bajada = model.bajada ?? ""

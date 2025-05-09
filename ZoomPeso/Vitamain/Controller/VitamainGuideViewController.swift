@@ -87,7 +87,6 @@ class VitamainGuideViewController: BaseViewController {
         pagerView.transformer = FSPagerViewTransformer(type: .linear)
         pagerView.itemSize = CGSize(width: 210.pix(), height: 222.pix())
         pagerView.interitemSpacing = 15.pix()
-        pagerView.backgroundColor = .clear
         return pagerView
     }()
     
@@ -310,8 +309,6 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
         }
         cell.imageView?.image = UIImage(named: imageArray[index])
         cell.imageView?.contentMode = .scaleAspectFit
-        cell.isHighlighted = false
-        cell.contentView.backgroundColor = .clear
         return cell
     }
     

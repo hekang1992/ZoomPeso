@@ -29,24 +29,28 @@ class OrderViewController: BaseViewController {
         
         self.listView.oneBlock = { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             self.listStr = "4"
             getListInfo(from: "4")
         }
         
         self.listView.twoBlock = { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             self.listStr = "7"
             getListInfo(from: "7")
         }
         
         self.listView.threeBlock = { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             self.listStr = "6"
             getListInfo(from: "6")
         }
         
         self.listView.fourBlock = { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             self.listStr = "5"
             getListInfo(from: "5")
         }
@@ -58,6 +62,7 @@ class OrderViewController: BaseViewController {
         
         self.listView.block = { [weak self] model in
             guard let self = self else { return }
+            judgeIsLogin()
             let antenn = model.antenn ?? ""
             let model1 = netModel()
             model1.sucking = antenn

@@ -25,6 +25,7 @@ class CenterViewController: BaseViewController {
         
         centerView.oneBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             let oVc = OrderListViewController()
             oVc.orderType = "4"
             oVc.nameType = "All"
@@ -33,6 +34,7 @@ class CenterViewController: BaseViewController {
         
         centerView.twoBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             let oVc = OrderListViewController()
             oVc.orderType = "7"
             oVc.nameType = "Apply"
@@ -41,6 +43,7 @@ class CenterViewController: BaseViewController {
         
         centerView.threeBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             let oVc = OrderListViewController()
             oVc.orderType = "6"
             oVc.nameType = "Repayment"
@@ -49,6 +52,7 @@ class CenterViewController: BaseViewController {
         
         centerView.fourBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
+            judgeIsLogin()
             let oVc = OrderListViewController()
             oVc.orderType = "5"
             oVc.nameType = "Finished"
@@ -57,6 +61,7 @@ class CenterViewController: BaseViewController {
         
         centerView.modelBlock = { [weak self] model in
             guard let self = self else { return }
+            judgeIsLogin()
             let sucking = model.sucking ?? ""
             let schemeURL = AppURL.schemeURL
             if sucking.contains(schemeURL) {

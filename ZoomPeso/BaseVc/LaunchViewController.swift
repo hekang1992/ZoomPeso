@@ -42,9 +42,6 @@ class LaunchViewController: BaseViewController {
         }
         
         self.show = show
-        if show != "1" {
-            firstVcInfo()
-        }
         
         NetworkMonitor.shared.startMonitoring { [weak self] grand in
             if grand {
@@ -94,9 +91,11 @@ extension LaunchViewController: UIScrollViewDelegate {
                     if let model = success.net {
                         DataLoginManager.shared.currentModel = model
                     }
-                }
-                if show == "1" {
-                    notiLastRootVcManager()
+                    if show != "1" {
+                        firstVcInfo()
+                    }else {
+                        notiLastRootVcManager()
+                    }
                 }
                 break
             case .failure(_):
