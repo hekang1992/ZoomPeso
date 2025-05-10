@@ -18,7 +18,7 @@ class VitamainFiveViewController: BaseViewController {
     var ksTime: String = ""
     var jsTime: String = ""
     
-    var od: String = ""
+    var odNum: String = ""
     
     lazy var webView: WKWebView = {
         let userContentController = WKUserContentController()
@@ -152,11 +152,11 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
             }
         }else if messageName == "backwards" {
             let tenTime = DeviceInfo.currentTimestamp
-            BuyPointConfig.pointToPageWithModel(with: "10", kstime: tenTime, jstime: tenTime, orNo: od)
+            BuyPointConfig.pointToPageWithModel(with: "10", kstime: tenTime, jstime: tenTime, orNo: odNum)
         }else if messageName == "thorax" {
             requestAppReview()
         }else if messageName == "preparing" {
-            self.navigationController?.popToRootViewController(animated: true)
+            self.popToVitamainGuideOrRoot()
         }else if messageName == "moved" {
             self.notiLastRootVcManager()
         }
@@ -195,8 +195,10 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
                     if let url = URL(string: urlString) {
                         webView.load(URLRequest(url: url))
                     }
-                    let time = DeviceInfo.currentTimestamp
-                    BuyPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                        let time = DeviceInfo.currentTimestamp
+                        BuyPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)
+                    }
                 }
                 break
             case .failure(_):
@@ -225,7 +227,9 @@ class BuyPointConfig {
         location.getLocationInfo { model in
             let locationDict = ["disappointed": String(model.disappointed ?? 0.0), "coleoptera": String(model.coleoptera ?? 0.0)]
             dict.merge(locationDict) { current, _ in current }
-            BuyPointConfig.apiInfo(wit: dict)
+            DispatchQueue.global(qos: .background).async {
+                BuyPointConfig.apiInfo(wit: dict)
+            }
         }
     }
     

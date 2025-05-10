@@ -137,7 +137,12 @@ class VitamainThreeViewController: BaseViewController {
                   let modelArray = oneModel.intercept else { return }
             let dict = modelArray.reduce(into: ["barricaded": model.enlarged?.orifice ?? ""]) { result, model in
                 guard let key = model.wedge else { return }
-                result[key] = model.hound ?? ""
+                let reascended = model.reascended ?? ""
+                if reascended == "Some" || reascended == "feeble" {
+                    result[key] = model.hound ?? ""
+                }else {
+                    result[key] = model.bajada ?? ""
+                }
             }
             safeBingoInfo(with: dict)
         }).disposed(by: disposeBag)
@@ -276,7 +281,8 @@ extension VitamainThreeViewController {
             self.dismiss(animated: true) {
                 label.text = enumModel.paralysed ?? ""
                 label.textColor = .init(hexStr: "#FF3824")
-                model.hound = enumModel.bajada ?? "0"
+                model.bajada = enumModel.bajada ?? ""
+                model.hound = enumModel.paralysed ?? ""
                 model.common = enumModel.paralysed ?? ""
             }
         }

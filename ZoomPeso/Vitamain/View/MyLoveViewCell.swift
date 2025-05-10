@@ -166,8 +166,14 @@ class MyLoveViewCell: BaseViewCell {
                     clickLabel.text = model.astonished ?? ""
                     clickLabel.textColor = .init(hexStr: "#E2D38B")
                 }else {
-                    clickLabel.text = paths
-                    clickLabel.textColor = .init(hexStr: "#FF3824")
+                    let extricate = model.extricate ?? []
+                    for model in extricate {
+                        let bajada = model.bajada ?? ""
+                        if paths == bajada {
+                            clickLabel.text = model.paralysed ?? ""
+                            clickLabel.textColor = .init(hexStr: "#FF3824")
+                        }
+                    }
                 }
             }else {
                 clickLabel.text = common

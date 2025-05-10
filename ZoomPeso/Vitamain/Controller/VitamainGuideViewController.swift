@@ -274,7 +274,7 @@ class VitamainGuideViewController: BaseViewController {
                 if success.wedge == "0" || success.wedge == "00" {
                     let time = DeviceInfo.currentTimestamp
                     let fievc = VitamainFiveViewController()
-                    fievc.od = odID
+                    fievc.odNum = odID
                     fievc.pageUrl = success.net?.sucking ?? ""
                     self?.navigationController?.pushViewController(fievc, animated: true)
                     BuyPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)

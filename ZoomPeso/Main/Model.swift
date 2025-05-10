@@ -148,7 +148,40 @@ class interceptModel: Codable {
     var wedge: String?//key
     var hound: String?//value
     var common: String?
+    var bajada: String?
     var extricate: [extricateModel]?
+    
+    enum CodingKeys: String, CodingKey {
+        case backs = "backs"
+        case reascended = "reascended"
+        case files = "files"
+        case tuft = "tuft"
+        case wedge = "wedge"
+        case hound = "hound"
+        case common = "common"
+        case bajada = "bajada"
+        case extricate = "extricate"
+    }
+    
+    required init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.backs = try container.decodeIfPresent(String.self, forKey: .backs)
+        self.reascended = try container.decodeIfPresent(String.self, forKey: .reascended)
+        self.files = try container.decodeIfPresent(Int.self, forKey: .files)
+        self.tuft = try container.decodeIfPresent(String.self, forKey: .tuft)
+        self.wedge = try container.decodeIfPresent(String.self, forKey: .wedge)
+        self.hound = try container.decodeIfPresent(String.self, forKey: .hound)
+        self.common = try container.decodeIfPresent(String.self, forKey: .common)
+        self.extricate = try container.decodeIfPresent([extricateModel].self, forKey: .extricate)
+        if let intValue = try? container.decodeIfPresent(Int.self, forKey: .bajada) {
+            self.bajada = String(intValue)
+        } else if let stringValue = try? container.decodeIfPresent(String.self, forKey: .bajada) {
+            self.bajada = stringValue
+        } else {
+            self.bajada = ""
+        }
+    }
+    
 }
 
 class armyModel: Codable {
