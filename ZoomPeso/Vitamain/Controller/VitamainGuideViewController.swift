@@ -126,7 +126,6 @@ class VitamainGuideViewController: BaseViewController {
             make.left.right.equalToSuperview()
             make.height.equalTo(151.pix())
         }
-        headView.nameLabel.text = "Product Detail"
         addHeadView()
         headView.backBlock = { [weak self] in
             guard let self = self else { return }
@@ -165,6 +164,7 @@ class VitamainGuideViewController: BaseViewController {
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
+            headView.nameLabel.text = model.enlarged?.pitying ?? ""
             let characterized = model.enlarged?.characterized ?? 0
             let symbol = model.enlarged?.symbol ?? ""
             moneyLabel.text = "\(symbol)\(characterized)"

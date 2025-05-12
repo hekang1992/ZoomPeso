@@ -125,15 +125,15 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        ViewCycleManager.showLoading()
+//        ViewCycleManager.showLoading()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        ViewCycleManager.hideLoading()
+//        ViewCycleManager.hideLoading()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        ViewCycleManager.hideLoading()
+//        ViewCycleManager.hideLoading()
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -169,7 +169,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
     }
     
     private func odIDWithString(with model: netModel) {
-        ViewCycleManager.showLoading()
+//        ViewCycleManager.showLoading()
         let odID = model.enlarged?.tyrant ?? ""
         let mon = String(model.enlarged?.characterized ?? 0)
         let uvring = model.enlarged?.casts ?? ""
@@ -185,7 +185,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                ViewCycleManager.hideLoading()
+//                ViewCycleManager.hideLoading()
                 if success.wedge == "0" || success.wedge == "00" {
                     let pageUrl = success.net?.sucking ?? ""
                     var urlString = ""
@@ -202,7 +202,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
                 }
                 break
             case .failure(_):
-                ViewCycleManager.hideLoading()
+//                ViewCycleManager.hideLoading()
                 break
             }
         }
@@ -226,7 +226,11 @@ class BuyPointConfig {
         var dict = ["closing": type, "instrument": "2", "shuffled": shuffled, "forceps": forceps, "cautiously": kstime, "uses": jstime, "vertically": orNo]
         let location = LocationConfig()
         location.getLocationInfo { model in
-            let locationDict = ["disappointed": String(model.disappointed ?? 0.0), "coleoptera": String(model.coleoptera ?? 0.0)]
+            let disappointed = model.disappointed ?? 0.0
+            let disappointedString = String(format: "%.6f", disappointed)
+            let coleoptera = model.coleoptera ?? 0.0
+            let coleopteraString = String(format: "%.6f", coleoptera)
+            let locationDict = ["disappointed": disappointedString, "coleoptera": coleopteraString]
             dict.merge(locationDict) { current, _ in current }
             DispatchQueue.global(qos: .background).async {
                 BuyPointConfig.apiInfo(wit: dict)

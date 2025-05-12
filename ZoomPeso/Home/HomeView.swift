@@ -119,10 +119,25 @@ class HomeView: BaseView {
         return fiveImageView
     }()
     
+    lazy var scrollMinView: UIScrollView = {
+        let scrollMinView = UIScrollView()
+        scrollMinView.contentSize = CGSize(width: SCREEN_WIDTH * 2, height: 233.pix())
+        scrollMinView.bounces = false
+        scrollMinView.isPagingEnabled = true
+        scrollMinView.showsHorizontalScrollIndicator = false
+        return scrollMinView
+    }()
+    
     lazy var sixImageView: UIImageView = {
         let sixImageView = UIImageView()
         sixImageView.image = UIImage(named: "adimgetwo")
         return sixImageView
+    }()
+    
+    lazy var sixLsImageView: UIImageView = {
+        let sixLsImageView = UIImageView()
+        sixLsImageView.image = UIImage(named: "adimgeledtimage")
+        return sixLsImageView
     }()
     
     lazy var footImageView: UIImageView = {
@@ -205,7 +220,9 @@ class HomeView: BaseView {
         fourImageView.addSubview(suck2Label)
         scrollerView.addSubview(fiveImageView)
         fiveImageView.addSubview(suckLabel)
-        scrollerView.addSubview(sixImageView)
+        scrollerView.addSubview(scrollMinView)
+        scrollMinView.addSubview(sixImageView)
+        scrollMinView.addSubview(sixLsImageView)
         scrollerView.addSubview(footImageView)
         loanImageView.addSubview(applyLabel)
         
@@ -223,7 +240,7 @@ class HomeView: BaseView {
         logoImageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.equalToSuperview().offset(130.pix())
-            make.size.equalTo(CGSize(width: 28.pix(), height: 28.pix()))
+            make.size.equalTo(CGSize(width: 25.pix(), height: 25.pix()))
         }
         nameLabel.snp.makeConstraints { make in
             make.centerY.equalTo(logoImageView.snp.centerY)
@@ -299,13 +316,24 @@ class HomeView: BaseView {
             make.top.equalTo(fourImageView.snp.bottom).offset(38)
             make.size.equalTo(CGSize(width: 310.pix(), height: 54.pix()))
         }
-        sixImageView.snp.makeConstraints { make in
+        scrollMinView.snp.makeConstraints { make in
             make.top.equalTo(fiveImageView.snp.bottom).offset(12.pix())
-            make.size.equalTo(CGSize(width: 371.pix(), height: 233.pix()))
+            make.size.equalTo(CGSize(width: SCREEN_WIDTH, height: 233.pix()))
             make.centerX.equalToSuperview()
         }
+        sixImageView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(5.pix())
+            make.top.bottom.equalToSuperview()
+            make.width.equalTo(SCREEN_WIDTH - 10.pix())
+        }
+        sixLsImageView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(SCREEN_WIDTH + 5.pix())
+            make.width.equalTo(SCREEN_WIDTH - 10.pix())
+            make.right.equalToSuperview().offset(-5.pix())
+        }
         footImageView.snp.makeConstraints { make in
-            make.top.equalTo(sixImageView.snp.bottom).offset(17.pix())
+            make.top.equalTo(scrollMinView.snp.bottom).offset(17.pix())
             make.size.equalTo(CGSize(width: 346.pix(), height: 280.pix()))
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-95)

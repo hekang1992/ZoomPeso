@@ -93,7 +93,13 @@ extension LocationConfig: CLLocationManagerDelegate{
         let geocoder = CLGeocoder()
         let locationInfo = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         geocoder.reverseGeocodeLocation(locationInfo) { [weak self] placemarks, error in
-            guard let self = self, let placemark = placemarks?.first else { return }
+            guard let self = self, let placemark = placemarks?.first else {
+                let latitude = String(location.coordinate.latitude)
+                if !latitude.isEmpty {
+                    self?.model.accept(model)
+                }
+                return
+            }
             self.locationToModel(model, with: placemark)
             self.model.accept(model)
             self.locationConfig.stopUpdatingLocation()

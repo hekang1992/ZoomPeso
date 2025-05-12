@@ -14,7 +14,7 @@ class DeviceInfo: NSObject {
     
     static var currentTimestamp: String {
         let currentTime = Date().timeIntervalSince1970
-        return String(Int64(currentTime * 1))
+        return String(Int(currentTime))
     }
     
     static func getFreeString() -> String {

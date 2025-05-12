@@ -140,7 +140,6 @@ extension LaunchViewController: UIScrollViewDelegate {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.contentSize = CGSize(width: SCREEN_WIDTH * CGFloat(images.count), height: SCREEN_HEIGHT)
         view.addSubview(scrollView)
-        
     }
     
     func setupPages() {

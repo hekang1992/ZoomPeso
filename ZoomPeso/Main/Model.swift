@@ -121,6 +121,7 @@ class enlargedModel: Codable {
     var casts: String?
     var semicircular: Int?
     var examining: examiningModel?
+    var pitying: String?
 }
 
 class examiningModel: Codable {

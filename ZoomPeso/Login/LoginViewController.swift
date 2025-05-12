@@ -196,8 +196,12 @@ extension LoginViewController {
     }
     
     private func voiceInfo() {
-        ViewCycleManager.showLoading()
         let hat = self.loginView.phoneTx.text ?? ""
+        if hat.isEmpty {
+            ToastManagerConfig.showToastText(form: self.view, message: "Please Input Your Phone")
+            return
+        }
+        ViewCycleManager.showLoading()
         let dict = ["hat": hat]
         let man = NetworkRequstManager()
         man.multipartFormDataRequest(endpoint: "/surely/segment", parameters: dict, responseType: BaseModel.self) { [weak self] result in

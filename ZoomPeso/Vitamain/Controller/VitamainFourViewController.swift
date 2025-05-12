@@ -300,7 +300,12 @@ extension VitamainFourViewController: CNContactPickerDelegate {
                     if !granted {
                         self?.showPermissionDeniedAlert(for: "Contact")
                     } else {
-                        self?.accessContacts()
+                        let authorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
+                        if authorizationStatus == .authorized {
+                            self?.accessContacts()
+                        }else {
+                            self?.showPermissionDeniedAlert(for: "Contact")
+                        }
                     }
                 }
             }
@@ -350,11 +355,8 @@ extension VitamainFourViewController: CNContactPickerDelegate {
     func showSystemContactPicker() {
         let picker = CNContactPickerViewController()
         picker.delegate = self
-        
         picker.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0")
-        
         picker.displayedPropertyKeys = [CNContactPhoneNumbersKey]
-        
         present(picker, animated: true)
     }
     
