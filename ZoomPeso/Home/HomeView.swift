@@ -233,8 +233,9 @@ class HomeView: BaseView {
             make.edges.equalToSuperview()
         }
         oneImageView.snp.makeConstraints { make in
-            make.top.left.equalToSuperview()
-            make.width.equalTo(SCREEN_WIDTH)
+            make.top.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.width.equalTo(375.pix())
             make.height.equalTo(370.pix())
         }
         logoImageView.snp.makeConstraints { make in
@@ -248,7 +249,7 @@ class HomeView: BaseView {
             make.height.equalTo(25)
         }
         oneLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(21.pix())
+            make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
             make.centerX.equalToSuperview()
             make.height.equalTo(22.pix())
         }
@@ -412,7 +413,7 @@ class HomeView: BaseView {
         gradientLayer.frame = bgView.bounds
         let topSafeArea = self.safeAreaInsets.top
         logoImageView.snp.updateConstraints { make in
-            make.top.equalToSuperview().offset(topSafeArea)
+            make.top.equalToSuperview().offset(topSafeArea - 8.pix())
         }
     }
     
