@@ -31,13 +31,13 @@ class ParaMeraView: BaseView {
     
     lazy var vindaImageView: UIImageView = {
         let vindaImageView = UIImageView()
-        vindaImageView.image = UIImage(named: "loiamgepic")
+        vindaImageView.layer.cornerRadius = 5
+        vindaImageView.layer.masksToBounds = true
         return vindaImageView
     }()
     
     lazy var namelabel: UILabel = {
         let namelabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .black, textAlignment: .left)
-        namelabel.text = "ZoomPeso"
         return namelabel
     }()
     
@@ -63,6 +63,7 @@ class ParaMeraView: BaseView {
             make.left.equalTo(vindaImageView.snp.right).offset(5.pix())
             make.height.equalTo(22.pix())
         }
+        
     }
     
     @MainActor required init?(coder: NSCoder) {
@@ -145,6 +146,10 @@ extension ParaMeraView: UITableViewDelegate, UITableViewDataSource {
                     mtlabel.text = model.juices?.first?.vain ?? ""
                     let tyi = model.juices?.first?.thrusts ?? ""
                     headBtn.setTitle("\(tyi) >", for: .normal)
+                    
+                    let logoUrl = self.juices?.antagonist ?? ""
+                    vindaImageView.kf.setImage(with: URL(string: logoUrl))
+                    namelabel.text = self.juices?.pitying ?? ""
                 }
             }
         }).disposed(by: disposeBag)

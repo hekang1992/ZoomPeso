@@ -31,6 +31,11 @@ class netModel: Codable {
     var sexes: sexesModel?
     var walckanaer: walckanaerModel?
     var pocket_private_url: String?
+    var finding: [findingModel]?
+}
+
+class findingModel: Codable {
+    var sucking: String?
 }
 
 class walckanaerModel: Codable {
@@ -62,6 +67,7 @@ class rubyModel: Codable {
     var walckanaer: String?
     var sucking: String?
     var orifice: Int?
+    var backs: String?
     
     enum CodingKeys: String, CodingKey {
         case orifice
@@ -81,6 +87,7 @@ class rubyModel: Codable {
         case casts
         case harpalid
         case antenn
+        case backs
     }
     
 }

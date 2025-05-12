@@ -11,7 +11,17 @@ class AuthDateView: BaseView {
     
     var saveBlock: ((String) -> Void)?
     
-    var selectStr: String = ""
+    var selectStr: String? {
+        didSet {
+            guard let selectStr = selectStr else { return }
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            guard let defaultDate = formatter.date(from: selectStr) else {
+                fatalError("error========！")
+            }
+            datePicker.date = defaultDate
+        }
+    }
     
     lazy var bgView: UIView = {
         let bgView = UIView()
@@ -97,8 +107,13 @@ class AuthDateView: BaseView {
         }
         
         nextBtn.rx.tap.subscribe(onNext: { [weak self] in
-            guard let self = self else { return }
-            self.saveBlock?(selectStr)
+            guard let self = self, let selectStr = selectStr else { return }
+            if !selectStr.isEmpty {
+                self.saveBlock?(selectStr)
+            }
+            DispatchQueue.main.async {
+                self.removeFromSuperview()
+            }
         }).disposed(by: disposeBag)
         
     }
@@ -109,7 +124,7 @@ class AuthDateView: BaseView {
     
     @objc private func dateChanged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "yyyy/MM/dd"
         formatter.locale = Locale(identifier: "en_PH")
         let selectedDate = sender.date
         let formattedDate = formatter.string(from: selectedDate)

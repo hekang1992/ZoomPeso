@@ -202,15 +202,21 @@ class VitamainGuideViewController: BaseViewController {
         self.photoModel.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
             let deadlystrength = model.deadly?.strength ?? 0
-//            let victimsstrength = model.victims?.strength ?? 0
-            if deadlystrength == 0 {
+            let victimsstrength = model.victims?.strength ?? 0
+            if deadlystrength == 0 && victimsstrength == 0 {
                 let vitaminVc = VitamainOneViewController()
                 if let model = self.model.value {
                     vitaminVc.model.accept(model)
                 }
                 self.navigationController?.pushViewController(vitaminVc, animated: true)
-            }else {
+            }else if deadlystrength == 1 && victimsstrength == 0 {
                 let vitaminVc = SFaceViewViewController()
+                if let model = self.model.value {
+                    vitaminVc.model.accept(model)
+                }
+                self.navigationController?.pushViewController(vitaminVc, animated: true)
+            }else if deadlystrength == 1 && victimsstrength == 1   {
+                let vitaminVc = AuthImageViewController()
                 if let model = self.model.value {
                     vitaminVc.model.accept(model)
                 }
@@ -354,8 +360,12 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
             }
         }else if index == 4 {
             let vitamain = model.pepsis?.rolled ?? ""
+            let sucking = model.finding?[index].sucking
             if vitamain.isEmpty {
-                odIDWithString(with: model)
+//                odIDWithString(with: model)
+                let webVc = VitamainFiveViewController()
+                webVc.pageUrl = sucking
+                self.navigationController?.pushViewController(webVc, animated: true)
             }else {
                 if stepIndex >= 4 {
                     let vitamanVc = VitamainFiveViewController()

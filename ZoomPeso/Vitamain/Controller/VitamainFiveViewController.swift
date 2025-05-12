@@ -147,7 +147,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
             productDetailInfo(from: proID) { [weak self] model in
                 let vitamain = model.pepsis?.rolled ?? ""
                 if vitamain.isEmpty {
-                    self?.odIDWithString(with: model)
+//                    self?.odIDWithString(with: model)
                 }
             }
         }else if messageName == "backwards" {
@@ -220,6 +220,7 @@ extension UIScrollView {
 class BuyPointConfig {
     
     static func pointToPageWithModel(with type: String, kstime: String, jstime: String, orNo: String = "") {
+        print("买点(\(type))=====开始时间:\(kstime)======结束时间:\(jstime)")
         let shuffled = DeviceIDManager.shared.getDeviceID()
         let forceps = DeviceIDManager.shared.getIDFA()
         var dict = ["closing": type, "instrument": "2", "shuffled": shuffled, "forceps": forceps, "cautiously": kstime, "uses": jstime, "vertically": orNo]

@@ -153,6 +153,7 @@ class CenterView: BaseView {
             cell.backgroundColor = .clear
             let walckanaer = model.walckanaer ?? ""
             cell.listImageView.kf.setImage(with: URL(string: walckanaer), placeholder: UIImage(named: "onelaige"))
+            cell.nameLabel.text = model.backs ?? ""
         }.disposed(by: disposeBag)
         
         tableView.rx.modelSelected(rubyModel.self).subscribe(onNext: { [weak self] model in

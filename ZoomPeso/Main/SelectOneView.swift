@@ -77,7 +77,7 @@ class SelectOneView: BaseView {
         }
         
         bgView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(70.pix())
+            make.top.equalToSuperview().offset(87.pix())
             make.left.equalToSuperview().offset(3.pix())
             make.centerX.equalToSuperview()
             make.height.equalTo(180.pix())

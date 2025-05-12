@@ -360,7 +360,7 @@ extension VitamainFourViewController: CNContactPickerDelegate {
     
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-        let fullName = "\(contact.familyName) \(contact.givenName)"
+        let fullName = "\(contact.givenName) \(contact.familyName)"
         if fullName.isEmpty {
             ToastManagerConfig.showToastText(form: view, message: "Emergency contact name cannot be empty.")
             return

@@ -200,7 +200,7 @@ class APView: BaseView {
             inputFormatter.dateFormat = "yyyy-MM-dd"
 
             let outputFormatter = DateFormatter()
-            outputFormatter.dateFormat = "dd/MM/yyyy"
+            outputFormatter.dateFormat = "yyyy/MM/dd"
             
             let time = model.stuff ?? ""
             

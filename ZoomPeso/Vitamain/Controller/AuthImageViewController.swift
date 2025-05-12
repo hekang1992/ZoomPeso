@@ -306,7 +306,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                         }
                     }
                 }
-                ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
+                ToastManagerConfig.showToastText(form: authView, message: success.circular ?? "")
                 break
             case .failure(_):
                 ViewCycleManager.hideLoading()
@@ -350,12 +350,11 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                 make.center.equalToSuperview()
                 make.size.equalTo(CGSize(width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
             }
+            let selectStr = superView.timeBtn.titleLabel?.text ?? ""
+            dateView.selectStr = selectStr
             
             dateView.saveBlock = { time in
                 superView.timeBtn.setTitle(time, for: .normal)
-                DispatchQueue.main.async {
-                    dateView.removeFromSuperview()
-                }
             }
             
             dateView.cancelBtn.rx.tap.subscribe(onNext: {
