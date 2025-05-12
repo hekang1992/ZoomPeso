@@ -8,6 +8,8 @@
 import UIKit
 
 class LoginView: BaseView {
+    
+    var backBlock: (() -> Void)?
 
     lazy var loginImageView: UIImageView = {
         let loginImageView = UIImageView()
@@ -127,6 +129,12 @@ class LoginView: BaseView {
         return cycleBtn
     }()
     
+    lazy var backBtn: UIButton = {
+        let backBtn = UIButton(type: .custom)
+        backBtn.setImage(UIImage(named: "backimage"), for: .normal)
+        return backBtn
+    }()
+    
     lazy var privacyLabel: UILabel = {
         let privacyLabel = UILabel()
         let attributedString = NSMutableAttributedString(string: "I've read and agreed with  <Privacy Agreement> ")
@@ -157,6 +165,8 @@ class LoginView: BaseView {
         
         loginImageView.addSubview(voiceBtn)
         loginImageView.addSubview(loginBtn)
+        
+        loginImageView.addSubview(backBtn)
         
         loginImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -233,6 +243,18 @@ class LoginView: BaseView {
             make.right.equalTo(privacyLabel.snp.left).offset(-2)
             make.size.equalTo(CGSize(width: 12, height: 12))
         }
+        
+        backBtn.snp.makeConstraints { make in
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(5)
+            make.left.equalToSuperview().offset(5)
+            make.size.equalTo(CGSize(width: 30, height: 30))
+        }
+        
+        
+        backBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            self.backBlock?()
+        }).disposed(by: disposeBag)
         
     }
     

@@ -153,17 +153,21 @@ extension BaseViewController {
     
     func deviceApiInfo() {
         let deviceDict = DeviceInfo.deviceAllInfo()
-        let databyte = try? JSONSerialization.data(withJSONObject: deviceDict)
-        let jsonStr = databyte?.base64EncodedString() ?? ""
-        let dict = ["net": jsonStr]
-        let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/community", parameters: dict, responseType: BaseModel.self) { result in
-            switch result {
-            case .success(_):
-                break
-            case .failure(_):
-                break
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: deviceDict, options: [.prettyPrinted])
+            let jsonString = String(data: jsonData, encoding: .utf8) ?? ""
+            let dict = ["net": jsonString]
+            let man = NetworkRequstManager()
+            man.multipartFormDataRequest(endpoint: "/surely/community", parameters: dict, responseType: BaseModel.self) { result in
+                switch result {
+                case .success(_):
+                    break
+                case .failure(_):
+                    break
+                }
             }
+        } catch {
+            print("JSON failure: \(error)")
         }
     }
     
@@ -327,10 +331,7 @@ extension BaseViewController {
     }
     
     func judgeIsLogin() {
-        if !IS_LOGIN {
-            self.notiLastRootVcManager()
-            return
-        }
+        
     }
     
 }

@@ -390,7 +390,6 @@ extension VitamainFourViewController: CNContactPickerDelegate {
                 let dict = ["net": jsonString]
                 sageVinfo(with: dict)
             }
-            
         } catch {
             print("Failed to convert phoneArray to JSON: \(error)")
         }

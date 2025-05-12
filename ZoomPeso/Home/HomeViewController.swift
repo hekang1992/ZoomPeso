@@ -53,7 +53,6 @@ class HomeViewController: BaseViewController {
         
         self.homeView.applyBlock = { [weak self] in
             guard let self = self else { return }
-            judgeIsLogin()
             let ruby = self.homeModel.value?.ruby ?? []
             for model in ruby {
                 let bajada = model.bajada ?? ""
@@ -83,7 +82,12 @@ class HomeViewController: BaseViewController {
         
         homeView.threeImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
-            judgeIsLogin()
+            if !IS_LOGIN {
+                let loginVc = BaseNavigationController(rootViewController: LoginViewController())
+                loginVc.modalPresentationStyle = .overFullScreen
+                self.present(loginVc, animated: true)
+                return
+            }
             let conUrl = self.homeModel.value?.walckanaer?.azara ?? ""
             let webVc = VitamainFiveViewController()
             webVc.pageUrl = conUrl
@@ -92,7 +96,6 @@ class HomeViewController: BaseViewController {
         
         homeView.fourImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
-            judgeIsLogin()
             let ruby = self.homeModel.value?.ruby ?? []
             for model in ruby {
                 let bajada = model.bajada ?? ""
@@ -161,6 +164,12 @@ extension HomeViewController {
     }
     
     private func sqProductInfo(from productID: Int) {
+        if !IS_LOGIN {
+            let loginVc = BaseNavigationController(rootViewController: LoginViewController())
+            loginVc.modalPresentationStyle = .overFullScreen
+            self.present(loginVc, animated: true)
+            return
+        }
         ViewCycleManager.showLoading()
         let dict = ["app": "1",
                     "barricaded": String(productID),

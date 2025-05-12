@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
   
   @objc func goRootVc(_ noti: Notification) {
-      window?.rootViewController = IS_LOGIN ? BaseNavigationController(rootViewController: BaseTabBarController()) : BaseNavigationController(rootViewController: LoginViewController())
+      window?.rootViewController = BaseNavigationController(rootViewController: BaseTabBarController())
     }
     
     private func familyNameInfo() {

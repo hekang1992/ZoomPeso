@@ -112,6 +112,11 @@ class LoginViewController: BaseViewController {
                 self.handleTextChange(from: text, count: 6, type: "code")
             }).disposed(by: disposeBag)
         
+        self.loginView.backBlock = { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+        }
+        
     }
     
     deinit {

@@ -60,6 +60,12 @@ class BaseTabBarController: UITabBarController {
     }
     
     @objc private func tabButtonTapped(_ sender: UIButton) {
+        if !IS_LOGIN {
+            let loginVc = BaseNavigationController(rootViewController: LoginViewController())
+            loginVc.modalPresentationStyle = .overFullScreen
+            self.present(loginVc, animated: true)
+            return
+        }
         selectedIndex = sender.tag
         // 更新按钮选中状态（比如切换图片）
         updateTabBarButtons()
