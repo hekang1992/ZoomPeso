@@ -11,6 +11,7 @@ import RxRelay
 class SelectOneView: BaseView {
     
     var dismissBlock: (() -> Void)?
+    
     var comfirmBlock: ((Int, extricateModel) -> Void)?
     
     var selectIndexPath: IndexPath?
@@ -100,7 +101,12 @@ class SelectOneView: BaseView {
         }
         
         saveBtn.rx.tap.subscribe(onNext: { [weak self] in
-            guard let self = self, let selectIndexPath = selectIndexPath else { return }
+            guard let self = self, let selectIndexPath = selectIndexPath else {
+                if let self = self {
+                    ToastManagerConfig.showToastText(form: self, message: "Please select one of the options.")
+                }
+                return
+            }
             if let model = self.modelArray.value?[selectIndexPath.row] {
                 self.comfirmBlock?(selectIndexPath.row, model)
             }

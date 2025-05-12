@@ -1,5 +1,5 @@
 //
-//  LocationConfig.swift
+//  LocationManagerConfig.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/21.
@@ -21,20 +21,21 @@ class LocationModel {
     var error: String?
 }
 
-class LocationConfig: NSObject {
+class LocationManagerConfig: NSObject {
     
-    var completion: ((LocationModel) -> Void)?
     
     var model = BehaviorRelay<LocationModel?>(value: nil)
     
     let disposeBag = DisposeBag()
     
-    var locationConfig = CLLocationManager()
+    var completion: ((LocationModel) -> Void)?
+    
+    var LocationManagerConfig = CLLocationManager()
     
     override init() {
         super.init()
-        locationConfig.delegate = self
-        locationConfig.desiredAccuracy = kCLLocationAccuracyBest
+        LocationManagerConfig.delegate = self
+        LocationManagerConfig.desiredAccuracy = kCLLocationAccuracyBest
         model.asObservable()
             .debounce(RxTimeInterval.milliseconds(500),
                        scheduler: MainScheduler.instance)
@@ -48,16 +49,16 @@ class LocationConfig: NSObject {
     
 }
 
-extension LocationConfig: CLLocationManagerDelegate{
+extension LocationManagerConfig: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
-            locationConfig.startUpdatingLocation()
+            LocationManagerConfig.startUpdatingLocation()
         case .denied, .restricted:
             let model = LocationModel()
             self.model.accept(model)
-            locationConfig.stopUpdatingLocation()
+            LocationManagerConfig.stopUpdatingLocation()
         default:
             break
         }
@@ -74,13 +75,13 @@ extension LocationConfig: CLLocationManagerDelegate{
                 status = CLLocationManager.authorizationStatus()
             }
             if status == .notDetermined {
-                locationConfig.requestAlwaysAuthorization()
-                locationConfig.requestWhenInUseAuthorization()
+                LocationManagerConfig.requestAlwaysAuthorization()
+                LocationManagerConfig.requestWhenInUseAuthorization()
             }else if status == .restricted || status == .denied {
                 let model = LocationModel()
                 self.model.accept(model)
             }else {
-                locationConfig.startUpdatingLocation()
+                LocationManagerConfig.startUpdatingLocation()
             }
         }
     }
@@ -102,7 +103,7 @@ extension LocationConfig: CLLocationManagerDelegate{
             }
             self.locationToModel(model, with: placemark)
             self.model.accept(model)
-            self.locationConfig.stopUpdatingLocation()
+            self.LocationManagerConfig.stopUpdatingLocation()
         }
     }
 

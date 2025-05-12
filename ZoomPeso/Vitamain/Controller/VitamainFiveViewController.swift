@@ -220,11 +220,11 @@ extension UIScrollView {
 class BuyPointConfig {
     
     static func pointToPageWithModel(with type: String, kstime: String, jstime: String, orNo: String = "") {
-        print("买点(\(type))=====开始时间:\(kstime)======结束时间:\(jstime)")
+        print("埋点数据请求(\(type))=====开始时间:\(kstime)======结束时间:\(jstime)")
         let shuffled = DeviceIDManager.shared.getDeviceID()
         let forceps = DeviceIDManager.shared.getIDFA()
         var dict = ["closing": type, "instrument": "2", "shuffled": shuffled, "forceps": forceps, "cautiously": kstime, "uses": jstime, "vertically": orNo]
-        let location = LocationConfig()
+        let location = LocationManagerConfig()
         location.getLocationInfo { model in
             let disappointed = model.disappointed ?? 0.0
             let disappointedString = String(format: "%.6f", disappointed)
@@ -232,9 +232,7 @@ class BuyPointConfig {
             let coleopteraString = String(format: "%.6f", coleoptera)
             let locationDict = ["disappointed": disappointedString, "coleoptera": coleopteraString]
             dict.merge(locationDict) { current, _ in current }
-            DispatchQueue.global(qos: .background).async {
-                BuyPointConfig.apiInfo(wit: dict)
-            }
+            BuyPointConfig.apiInfo(wit: dict)
         }
     }
     

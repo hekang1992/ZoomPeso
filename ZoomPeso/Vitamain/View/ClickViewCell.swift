@@ -88,7 +88,7 @@ class ClickViewCell: BaseViewCell {
                     clickLabel.textColor = .init(hexStr: "#FF3824")
                 }
             }else {
-                clickLabel.text = common
+                clickLabel.text = hound
                 clickLabel.textColor = .init(hexStr: "#FF3824")
             }
         }).disposed(by: disposeBag)

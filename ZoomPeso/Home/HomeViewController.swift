@@ -36,7 +36,8 @@ class HomeViewController: BaseViewController {
         
         view.addSubview(paraView)
         paraView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-90)
         }
         
         self.homeView.scrollerView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
@@ -157,7 +158,7 @@ extension HomeViewController {
     
     private func idfaAndLocationInfo() {
         self.apiIdfaInfo()
-        let location = LocationConfig()
+        let location = LocationManagerConfig()
         location.getLocationInfo { model in
             self.apiLoacationInfo(from: model)
         }
@@ -188,6 +189,10 @@ extension HomeViewController {
                 }else if wedge == "-2" {
                     LoginConfig.deleteLoginInfo()
                     self?.notiLastRootVcManager()
+                }else if wedge == "01" {
+                    if let self = self {
+                        ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
+                    }
                 }
                 break
             case .failure(_):

@@ -82,7 +82,7 @@ class LoginViewController: BaseViewController {
             let cordillera = model.cordillera ?? 0
             if cordillera == 1 {
                 DispatchQueue.main.async {
-                    let location = LocationConfig()
+                    let location = LocationManagerConfig()
                     location.getLocationInfo { [weak self] model in
                         self?.apiLoacationInfo(from: model)
                     }
