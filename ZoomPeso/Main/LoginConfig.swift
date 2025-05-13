@@ -11,7 +11,7 @@ import SAMKeychain
 import AdSupport
 import AppTrackingTransparency
 
-var IS_LOGIN: Bool {
+var IS_VISIBLE_LOGIN: Bool {
     (UserDefaults.standard.object(forKey: LoginConfig.Keys.loginToken) as? String)?.isEmpty == false
 }
 
@@ -51,9 +51,11 @@ struct LoginInfo: Codable {
             "applied": appVersion,
             "raw": deviceModel,
             "login": "1",
+            "index": "10",
             "repeatedly": deviceId,
             "saliva": osVersion,
             "main": "1",
+            "carouselView": "vertical",
             "attachment": authToken,
             "contrivance": advertisingId,
             "code": "0",

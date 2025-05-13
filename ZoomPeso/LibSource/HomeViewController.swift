@@ -83,7 +83,7 @@ class HomeViewController: BaseViewController {
         
         homeView.threeImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
-            if !IS_LOGIN {
+            if !IS_VISIBLE_LOGIN {
                 let loginVc = BaseNavigationController(rootViewController: LoginViewController())
                 loginVc.modalPresentationStyle = .overFullScreen
                 self.present(loginVc, animated: true)
@@ -165,7 +165,7 @@ extension HomeViewController {
     }
     
     private func sqProductInfo(from productID: Int) {
-        if !IS_LOGIN {
+        if !IS_VISIBLE_LOGIN {
             let loginVc = BaseNavigationController(rootViewController: LoginViewController())
             loginVc.modalPresentationStyle = .overFullScreen
             self.present(loginVc, animated: true)

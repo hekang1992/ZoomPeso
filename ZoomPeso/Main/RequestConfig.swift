@@ -9,8 +9,8 @@ import Network
 import Alamofire
 
 enum AppURL {
-    private static let scheme = "pq://"
-    private static let domain = "zp.oei.m"
+    private static let scheme = "pq://zp.o"
+    private static let domain = "ei.m"
     
     static var schemeURL: String {
         return scheme + domain
@@ -77,7 +77,7 @@ class RequestConfig: NSObject {
     var headers: HTTPHeaders = [
         "Accept": "application/json;",
         "Connection": "keep-alive",
-        "Content-Type": "application/x-www-form-urlencoded;text/json;text/javascript;text/html;text/plain;multipart/form-data"]
+        "Content-Type": "application/x-www-form-urlencoded;text/json;text/plain;multipart/form-data"]
     
 }
 

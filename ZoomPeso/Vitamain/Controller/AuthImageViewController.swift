@@ -110,7 +110,6 @@ class AuthImageViewController: BaseViewController {
         view.addSubview(oneImageView)
         oneImageView.addSubview(mlabel)
         oneImageView.addSubview(m1label)
-        oneImageView.addSubview(mlringlabel)
         oneImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(headView.snp.bottom).offset(10)

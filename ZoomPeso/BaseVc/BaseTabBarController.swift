@@ -56,7 +56,7 @@ class BaseTabBarController: UITabBarController {
     }
     
     @objc private func tabButtonTapped(_ sender: UIButton) {
-        if !IS_LOGIN {
+        if !IS_VISIBLE_LOGIN {
             let loginVc = BaseNavigationController(rootViewController: LoginViewController())
             loginVc.modalPresentationStyle = .overFullScreen
             self.present(loginVc, animated: true)

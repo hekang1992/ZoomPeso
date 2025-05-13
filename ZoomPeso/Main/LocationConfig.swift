@@ -88,11 +88,21 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+        
         let model = LocationModel()
-        model.coleoptera = location.coordinate.latitude
-        model.disappointed = location.coordinate.longitude
+        
+        let coleoptera = location.coordinate.latitude
+        
+        let disappointed = location.coordinate.longitude
+        
+        model.coleoptera = coleoptera
+        
+        model.disappointed = disappointed
+        
         let geocoder = CLGeocoder()
+        
         let locationInfo = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        
         geocoder.reverseGeocodeLocation(locationInfo) { [weak self] placemarks, error in
             guard let self = self, let placemark = placemarks?.first else {
                 let latitude = String(location.coordinate.latitude)
@@ -101,13 +111,13 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
                 }
                 return
             }
-            self.locationToModel(model, with: placemark)
+            self.locationToModel(with: model, placemark: placemark)
             self.model.accept(model)
             self.LocationManagerConfig.stopUpdatingLocation()
         }
     }
 
-    private func locationToModel(_ model: LocationModel, with placemark: CLPlacemark) {
+    private func locationToModel(with model: LocationModel, placemark: CLPlacemark) {
         let country = placemark.country ?? ""
         var provice = placemark.administrativeArea ?? ""
         let city = placemark.locality ?? ""
@@ -117,16 +127,16 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
         if provice.isEmpty {
             provice = city
         }
-        model.disturb = provice
-        model.boast = countryCode
-        model.cabinets = country
         model.obscurely = street
         model.observation = city
         model.error = region
+        model.disturb = provice
+        model.boast = countryCode
+        model.cabinets = country
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+        print("error:\(error.localizedDescription)")
     }
     
 }

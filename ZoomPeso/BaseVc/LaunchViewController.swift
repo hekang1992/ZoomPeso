@@ -75,7 +75,7 @@ extension LaunchViewController: UIScrollViewDelegate {
     }
     
     func resetLoginIngo() {
-        let constructed = DeviceInfo.getCurrentLanguage()
+        let constructed = DeviceInfo.childrenMeseage()
         let similarly = checkProxySettings()
         let segment = isVPNConnected()
         let dict = ["constructed": constructed,

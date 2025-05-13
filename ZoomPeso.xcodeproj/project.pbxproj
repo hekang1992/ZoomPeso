@@ -11,7 +11,7 @@
 		733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */; };
 		733DC9FA2DB5CF7E009AA17E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */; };
 		733DC9FF2DB5D68E009AA17E /* ArialBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */; };
-		733DCA012DB5DC84009AA17E /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA002DB5DC84009AA17E /* Define.swift */; };
+		733DCA012DB5DC84009AA17E /* OppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA002DB5DC84009AA17E /* OppDefine.swift */; };
 		733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA042DB5DD75009AA17E /* BaseViewController.swift */; };
 		733DCA072DB5DDA2009AA17E /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA062DB5DDA2009AA17E /* BaseTabBarController.swift */; };
 		733DCA092DB5DDC4009AA17E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA082DB5DDC4009AA17E /* BaseNavigationController.swift */; };
@@ -24,7 +24,7 @@
 		733DCA1F2DB62B71009AA17E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA1E2DB62B71009AA17E /* OrderViewController.swift */; };
 		733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA202DB62B7D009AA17E /* CenterViewController.swift */; };
 		733DCA232DB63571009AA17E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA222DB63571009AA17E /* HomeView.swift */; };
-		733DCA252DB641CF009AA17E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA242DB641C8009AA17E /* Model.swift */; };
+		733DCA252DB641CF009AA17E /* FullyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA242DB641C8009AA17E /* FullyModel.swift */; };
 		733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DCA262DB6446B009AA17E /* LoginConfig.swift */; };
 		734099AB2DBE1A9700B1D1AF /* CenterListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */; };
 		7350F17C2DBE70BF0084D9AE /* OutLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350F17B2DBE70BF0084D9AE /* OutLogView.swift */; };
@@ -56,6 +56,8 @@
 		73FAA6562DB9216900D77159 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6552DB9216900D77159 /* OrderListViewController.swift */; };
 		73FAA6582DB92F0A00D77159 /* AuthViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */; };
 		73FAA65A2DB93AAB00D77159 /* AuthImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */; };
+		73FBABB72DD333CE00F31824 /* OccupyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FBABB62DD333B200F31824 /* OccupyConfig.swift */; };
+		73FBABB92DD3346E00F31824 /* DrawerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FBABB82DD3345000F31824 /* DrawerConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +68,7 @@
 		733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		733DC9EF2DB5CF7E009AA17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArialBlack.ttf; sourceTree = "<group>"; };
-		733DCA002DB5DC84009AA17E /* Define.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
+		733DCA002DB5DC84009AA17E /* OppDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppDefine.swift; sourceTree = "<group>"; };
 		733DCA042DB5DD75009AA17E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		733DCA062DB5DDA2009AA17E /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		733DCA082DB5DDC4009AA17E /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -79,7 +81,7 @@
 		733DCA1E2DB62B71009AA17E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		733DCA202DB62B7D009AA17E /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		733DCA222DB63571009AA17E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		733DCA242DB641C8009AA17E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		733DCA242DB641C8009AA17E /* FullyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullyModel.swift; sourceTree = "<group>"; };
 		733DCA262DB6446B009AA17E /* LoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfig.swift; sourceTree = "<group>"; };
 		734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterListViewCell.swift; sourceTree = "<group>"; };
 		7350F17B2DBE70BF0084D9AE /* OutLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutLogView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,8 @@
 		73FAA6552DB9216900D77159 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewCell.swift; sourceTree = "<group>"; };
 		73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthImageViewController.swift; sourceTree = "<group>"; };
+		73FBABB62DD333B200F31824 /* OccupyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccupyConfig.swift; sourceTree = "<group>"; };
+		73FBABB82DD3345000F31824 /* DrawerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfig.swift; sourceTree = "<group>"; };
 		CEDDA2CBD9C04EE29B8EB8E2 /* Pods-ZoomPeso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.release.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,11 +157,9 @@
 				733DC9EF2DB5CF7E009AA17E /* Info.plist */,
 				733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */,
 				733DCA032DB5DCD5009AA17E /* Main */,
+				73FBABB42DD3307900F31824 /* LibSource */,
 				73C5A1FE2DB7E10500105BD3 /* Vitamain */,
-				733DCA0F2DB5DE2B009AA17E /* Request */,
-				733DCA0E2DB5DE17009AA17E /* Center */,
-				733DCA0D2DB5DE14009AA17E /* Order */,
-				733DCA0C2DB5DE12009AA17E /* Home */,
+				73FBABB52DD3338200F31824 /* DeviceScreen */,
 				733DCA0A2DB5DDFE009AA17E /* BaseVc */,
 			);
 			path = ZoomPeso;
@@ -166,18 +168,18 @@
 		733DCA032DB5DCD5009AA17E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				733DCA242DB641C8009AA17E /* Model.swift */,
-				733DCA002DB5DC84009AA17E /* Define.swift */,
-				733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */,
 				733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */,
+				733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */,
+				733DCA002DB5DC84009AA17E /* OppDefine.swift */,
+				733DCA242DB641C8009AA17E /* FullyModel.swift */,
 				73BB3E022DB6734600085744 /* LocationConfig.swift */,
 				733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */,
 				733DCA262DB6446B009AA17E /* LoginConfig.swift */,
-				73BB3E042DB684C400085744 /* DeviceInfo.swift */,
 				735DD0342DBB7512003782FC /* SelectOneView.swift */,
 				7350F17B2DBE70BF0084D9AE /* OutLogView.swift */,
 				7350F17D2DBE70D10084D9AE /* AccDelLogView.swift */,
 				739852F32DBF613C00255216 /* SelectThreeConfig.swift */,
+				733DCA102DB5DF36009AA17E /* RequestConfig.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -191,47 +193,6 @@
 				733DCA122DB5E04C009AA17E /* LaunchViewController.swift */,
 			);
 			path = BaseVc;
-			sourceTree = "<group>";
-		};
-		733DCA0C2DB5DE12009AA17E /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				733DCA222DB63571009AA17E /* HomeView.swift */,
-				73786BA92DC5D6EA00523D24 /* ParaMeraView.swift */,
-				733DCA1C2DB62B68009AA17E /* HomeViewController.swift */,
-				73786BAB2DC6684C00523D24 /* ParaMeraCell.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		733DCA0D2DB5DE14009AA17E /* Order */ = {
-			isa = PBXGroup;
-			children = (
-				73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */,
-				73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */,
-				733DCA1E2DB62B71009AA17E /* OrderViewController.swift */,
-			);
-			path = Order;
-			sourceTree = "<group>";
-		};
-		733DCA0E2DB5DE17009AA17E /* Center */ = {
-			isa = PBXGroup;
-			children = (
-				73FAA6512DB9149100D77159 /* CenterView.swift */,
-				733DCA202DB62B7D009AA17E /* CenterViewController.swift */,
-				73FAA6532DB91D6900D77159 /* SettingViewController.swift */,
-				73FAA6552DB9216900D77159 /* OrderListViewController.swift */,
-				734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */,
-			);
-			path = Center;
-			sourceTree = "<group>";
-		};
-		733DCA0F2DB5DE2B009AA17E /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				733DCA102DB5DF36009AA17E /* RequestConfig.swift */,
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		73C5A1FE2DB7E10500105BD3 /* Vitamain */ = {
@@ -272,6 +233,35 @@
 				7350F17F2DBE7B960084D9AE /* AuthDateView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		73FBABB42DD3307900F31824 /* LibSource */ = {
+			isa = PBXGroup;
+			children = (
+				73FAA6512DB9149100D77159 /* CenterView.swift */,
+				733DCA202DB62B7D009AA17E /* CenterViewController.swift */,
+				73FAA6532DB91D6900D77159 /* SettingViewController.swift */,
+				73FAA6552DB9216900D77159 /* OrderListViewController.swift */,
+				734099AA2DBE1A9700B1D1AF /* CenterListViewCell.swift */,
+				73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */,
+				73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */,
+				733DCA1E2DB62B71009AA17E /* OrderViewController.swift */,
+				733DCA222DB63571009AA17E /* HomeView.swift */,
+				73786BA92DC5D6EA00523D24 /* ParaMeraView.swift */,
+				733DCA1C2DB62B68009AA17E /* HomeViewController.swift */,
+				73786BAB2DC6684C00523D24 /* ParaMeraCell.swift */,
+			);
+			path = LibSource;
+			sourceTree = "<group>";
+		};
+		73FBABB52DD3338200F31824 /* DeviceScreen */ = {
+			isa = PBXGroup;
+			children = (
+				73FBABB82DD3345000F31824 /* DrawerConfig.swift */,
+				73FBABB62DD333B200F31824 /* OccupyConfig.swift */,
+				73BB3E042DB684C400085744 /* DeviceInfo.swift */,
+			);
+			path = DeviceScreen;
 			sourceTree = "<group>";
 		};
 		B5AA296332F9B03D1D0EEB75 /* Pods */ = {
@@ -413,7 +403,7 @@
 			files = (
 				73FAA65A2DB93AAB00D77159 /* AuthImageViewController.swift in Sources */,
 				7350F17E2DBE70D10084D9AE /* AccDelLogView.swift in Sources */,
-				733DCA252DB641CF009AA17E /* Model.swift in Sources */,
+				733DCA252DB641CF009AA17E /* FullyModel.swift in Sources */,
 				73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */,
 				735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */,
 				733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */,
@@ -423,18 +413,20 @@
 				73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */,
 				739FA6CB2DBA84C7003C0352 /* SFaceViewViewController.swift in Sources */,
 				735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */,
-				733DCA012DB5DC84009AA17E /* Define.swift in Sources */,
+				733DCA012DB5DC84009AA17E /* OppDefine.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
 				73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */,
 				7368E60A2DBBDDEC00427C04 /* MyLoveViewCell.swift in Sources */,
 				733DCA092DB5DDC4009AA17E /* BaseNavigationController.swift in Sources */,
 				73C5A2022DB7E14400105BD3 /* VitamainOneViewController.swift in Sources */,
 				73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */,
+				73FBABB92DD3346E00F31824 /* DrawerConfig.swift in Sources */,
 				73C5A1FB2DB7D19C00105BD3 /* OrderListViewCell.swift in Sources */,
 				733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */,
 				73C5A2062DB7E17400105BD3 /* VitamainThreeViewController.swift in Sources */,
 				739FA6C92DBA720A003C0352 /* AppleAuthSubView.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
+				73FBABB72DD333CE00F31824 /* OccupyConfig.swift in Sources */,
 				734099AB2DBE1A9700B1D1AF /* CenterListViewCell.swift in Sources */,
 				73786BAC2DC6684C00523D24 /* ParaMeraCell.swift in Sources */,
 				733DCA172DB5FC6B009AA17E /* BaseViewConfig.swift in Sources */,
