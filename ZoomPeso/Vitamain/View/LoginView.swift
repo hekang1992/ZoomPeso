@@ -37,24 +37,24 @@ class LoginView: BaseView {
         return phonelabel
     }()
     
-    lazy var oneView: UIView = {
-        let oneView = UIView()
-        oneView.backgroundColor = .white
-        oneView.layer.cornerRadius = 26
-        return oneView
+    lazy var wedgeView: UIView = {
+        let wedgeView = UIView()
+        wedgeView.backgroundColor = .white
+        wedgeView.layer.cornerRadius = 26
+        return wedgeView
     }()
     
-    lazy var phoneTx: UITextField = {
-        let phoneTx = UITextField()
-        phoneTx.keyboardType = .numberPad
+    lazy var quakerTopTextField: UITextField = {
+        let quakerTopTextField = UITextField()
+        quakerTopTextField.keyboardType = .numberPad
         let attrString = NSMutableAttributedString(string: "Enter mobile number", attributes: [
             .foregroundColor: UIColor.init(hexStr: "#BFBEBE") as Any,
             .font: UIFont.systemFont(ofSize: 14)
         ])
-        phoneTx.attributedPlaceholder = attrString
-        phoneTx.font = UIFont.systemFont(ofSize: 14)
-        phoneTx.textColor = UIColor.black
-        return phoneTx
+        quakerTopTextField.attributedPlaceholder = attrString
+        quakerTopTextField.font = UIFont.systemFont(ofSize: 14)
+        quakerTopTextField.textColor = UIColor.black
+        return quakerTopTextField
     }()
     
     lazy var codelabel: UILabel = {
@@ -66,39 +66,39 @@ class LoginView: BaseView {
         return codelabel
     }()
     
-    lazy var twoView: UIView = {
-        let twoView = UIView()
-        twoView.backgroundColor = .white
-        twoView.layer.cornerRadius = 26
-        return twoView
+    lazy var platFormView: UIView = {
+        let platFormView = UIView()
+        platFormView.backgroundColor = .white
+        platFormView.layer.cornerRadius = 26
+        return platFormView
     }()
     
-    lazy var codeTx: UITextField = {
-        let codeTx = UITextField()
-        codeTx.keyboardType = .numberPad
+    lazy var typicTextField: UITextField = {
+        let typicTextField = UITextField()
+        typicTextField.keyboardType = .numberPad
         let attrString = NSMutableAttributedString(string: "Verification code", attributes: [
             .foregroundColor: UIColor.init(hexStr: "#BFBEBE") as Any,
             .font: UIFont.systemFont(ofSize: 14)
         ])
-        codeTx.attributedPlaceholder = attrString
-        codeTx.font = UIFont.systemFont(ofSize: 14)
-        codeTx.textColor = UIColor.black
-        return codeTx
+        typicTextField.attributedPlaceholder = attrString
+        typicTextField.font = UIFont.systemFont(ofSize: 14)
+        typicTextField.textColor = UIColor.black
+        return typicTextField
     }()
     
-    lazy var sendCodeLabel: UILabel = {
-        let sendCodeLabel = UILabel()
+    lazy var visibleLabel: UILabel = {
+        let visibleLabel = UILabel()
         let attributedString = NSMutableAttributedString(string: "Get code")
         attributedString.addAttribute(
             .underlineStyle,
             value: NSUnderlineStyle.single.rawValue,
             range: NSRange(location: 0, length: "Get code".count)
         )
-        sendCodeLabel.attributedText = attributedString
-        sendCodeLabel.textColor = UIColor(hexStr: "#FF992F")
-        sendCodeLabel.textAlignment = .right
-        sendCodeLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        return sendCodeLabel
+        visibleLabel.attributedText = attributedString
+        visibleLabel.textColor = UIColor(hexStr: "#FF992F")
+        visibleLabel.textAlignment = .right
+        visibleLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        return visibleLabel
     }()
     
     lazy var voiceBtn: UIButton = {
@@ -155,13 +155,13 @@ class LoginView: BaseView {
         addSubview(loginImageView)
         loginImageView.addSubview(desclabel)
         loginImageView.addSubview(phonelabel)
-        loginImageView.addSubview(oneView)
-        oneView.addSubview(phoneTx)
+        loginImageView.addSubview(wedgeView)
+        wedgeView.addSubview(quakerTopTextField)
         
         loginImageView.addSubview(codelabel)
-        loginImageView.addSubview(twoView)
-        twoView.addSubview(codeTx)
-        twoView.addSubview(sendCodeLabel)
+        loginImageView.addSubview(platFormView)
+        platFormView.addSubview(typicTextField)
+        platFormView.addSubview(visibleLabel)
         
         loginImageView.addSubview(voiceBtn)
         loginImageView.addSubview(loginBtn)
@@ -181,35 +181,35 @@ class LoginView: BaseView {
             make.top.equalTo(desclabel.snp.bottom).offset(72)
             make.width.equalTo(250)
         }
-        oneView.snp.makeConstraints { make in
+        wedgeView.snp.makeConstraints { make in
             make.top.equalTo(phonelabel.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
             make.left.equalToSuperview().offset(33)
             make.height.equalTo(46)
         }
-        phoneTx.snp.makeConstraints { make in
+        quakerTopTextField.snp.makeConstraints { make in
             make.top.bottom.right.equalToSuperview()
             make.left.equalToSuperview().offset(17)
         }
         
         codelabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(33)
-            make.top.equalTo(oneView.snp.bottom).offset(20)
+            make.top.equalTo(wedgeView.snp.bottom).offset(20)
             make.width.equalTo(250)
         }
-        twoView.snp.makeConstraints { make in
+        platFormView.snp.makeConstraints { make in
             make.top.equalTo(codelabel.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
             make.left.equalToSuperview().offset(33)
             make.height.equalTo(46)
         }
-        codeTx.snp.makeConstraints { make in
+        typicTextField.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.width.equalTo(150)
             make.left.equalToSuperview().offset(17)
         }
         
-        sendCodeLabel.snp.makeConstraints { make in
+        visibleLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().offset(-18)
             make.height.equalTo(30)
@@ -218,7 +218,7 @@ class LoginView: BaseView {
         
         voiceBtn.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-40)
-            make.top.equalTo(twoView.snp.bottom).offset(15)
+            make.top.equalTo(platFormView.snp.bottom).offset(15)
             make.height.equalTo(20)
             make.width.equalTo(90)
         }
@@ -227,7 +227,7 @@ class LoginView: BaseView {
             make.centerX.equalToSuperview()
             make.left.equalToSuperview().offset(66)
             make.height.equalTo(46)
-            make.top.equalTo(twoView.snp.bottom).offset(77)
+            make.top.equalTo(platFormView.snp.bottom).offset(77)
         }
         
         loginImageView.addSubview(privacyLabel)

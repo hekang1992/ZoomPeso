@@ -67,9 +67,9 @@ class LoginViewController: BaseViewController {
             }
         }).disposed(by: disposeBag)
         
-        loginView.sendCodeLabel.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+        loginView.visibleLabel.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
-            let phone = self.loginView.phoneTx.text ?? ""
+            let phone = self.loginView.quakerTopTextField.text ?? ""
             if phone.isEmpty {
                 ToastManagerConfig.showToastText(form: self.view, message: "Please Input Your Phone")
             }else {
@@ -92,7 +92,7 @@ class LoginViewController: BaseViewController {
             }
         }
         
-        self.loginView.phoneTx
+        self.loginView.quakerTopTextField
             .rx
             .text
             .orEmpty
@@ -102,7 +102,7 @@ class LoginViewController: BaseViewController {
                 self.handleTextChange(from: text, count: 15, type: "phone")
             }).disposed(by: disposeBag)
         
-        self.loginView.codeTx
+        self.loginView.typicTextField
             .rx
             .text
             .orEmpty
@@ -130,15 +130,15 @@ extension LoginViewController {
     private func handleTextChange(from text: String, count: Int, type: String) {
         if text.count > count {
             if type == "phone" {
-                self.loginView.phoneTx.text = String(text.prefix(count))
+                self.loginView.quakerTopTextField.text = String(text.prefix(count))
             }else {
-                self.loginView.codeTx.text = String(text.prefix(count))
+                self.loginView.typicTextField.text = String(text.prefix(count))
             }
         }
     }
     
     private func startCountdown() {
-        loginView.sendCodeLabel.isUserInteractionEnabled = false
+        loginView.visibleLabel.isUserInteractionEnabled = false
         remainingSeconds = 60
         countdownTimer = Timer.scheduledTimer(
             timeInterval: 1,
@@ -153,7 +153,7 @@ extension LoginViewController {
     @objc private func updateCountdown() {
         remainingSeconds -= 1
         if remainingSeconds > 0 {
-            loginView.sendCodeLabel.text = "\(remainingSeconds)s"
+            loginView.visibleLabel.text = "\(remainingSeconds)s"
         } else {
             endCountdown()
         }
@@ -162,19 +162,19 @@ extension LoginViewController {
     private func endCountdown() {
         countdownTimer?.invalidate()
         countdownTimer = nil
-        loginView.sendCodeLabel.isUserInteractionEnabled = true
+        loginView.visibleLabel.isUserInteractionEnabled = true
         let attributedString = NSMutableAttributedString(string: "Get code")
         attributedString.addAttribute(
             .underlineStyle,
             value: NSUnderlineStyle.single.rawValue,
             range: NSRange(location: 0, length: "Get code".count)
         )
-        loginView.sendCodeLabel.attributedText = attributedString
+        loginView.visibleLabel.attributedText = attributedString
     }
     
     private func codeInfo() {
         ViewCycleManager.showLoading()
-        let hat = self.loginView.phoneTx.text ?? ""
+        let hat = self.loginView.quakerTopTextField.text ?? ""
         let dict = ["hat": hat]
         let man = NetworkRequstManager()
         man.multipartFormDataRequest(endpoint: "/surely/similarly", parameters: dict, responseType: BaseModel.self) { [weak self] result in
@@ -184,7 +184,7 @@ extension LoginViewController {
                 guard let self = self else { return }
                 if ["0", "00"].contains(success.wedge) {
                     self.startCountdown()
-                    self.loginView.codeTx.becomeFirstResponder()
+                    self.loginView.typicTextField.becomeFirstResponder()
                 }
                 let circular = success.circular ?? ""
                 ToastManagerConfig.showToastText(form: self.view, message: circular)
@@ -196,7 +196,7 @@ extension LoginViewController {
     }
     
     private func voiceInfo() {
-        let hat = self.loginView.phoneTx.text ?? ""
+        let hat = self.loginView.quakerTopTextField.text ?? ""
         if hat.isEmpty {
             ToastManagerConfig.showToastText(form: self.view, message: "Please Input Your Phone")
             return
@@ -210,7 +210,7 @@ extension LoginViewController {
             case .success(let success):
                 guard let self = self else { return }
                 if ["0", "00"].contains(success.wedge) {
-                    self.loginView.codeTx.becomeFirstResponder()
+                    self.loginView.typicTextField.becomeFirstResponder()
                 }
                 let circular = success.circular ?? ""
                 ToastManagerConfig.showToastText(form: self.view, message: circular)
@@ -222,8 +222,8 @@ extension LoginViewController {
     }
     
     private func loginInfo() {
-        let recollect = self.loginView.phoneTx.text ?? ""
-        let mine = self.loginView.codeTx.text ?? ""
+        let recollect = self.loginView.quakerTopTextField.text ?? ""
+        let mine = self.loginView.typicTextField.text ?? ""
         if recollect.isEmpty {
             ToastManagerConfig.showToastText(form: self.view, message: "Please Input Your Phone")
             return

@@ -158,7 +158,6 @@
 				733DCA0E2DB5DE17009AA17E /* Center */,
 				733DCA0D2DB5DE14009AA17E /* Order */,
 				733DCA0C2DB5DE12009AA17E /* Home */,
-				733DCA0B2DB5DE0C009AA17E /* Login */,
 				733DCA0A2DB5DDFE009AA17E /* BaseVc */,
 			);
 			path = ZoomPeso;
@@ -192,15 +191,6 @@
 				733DCA122DB5E04C009AA17E /* LaunchViewController.swift */,
 			);
 			path = BaseVc;
-			sourceTree = "<group>";
-		};
-		733DCA0B2DB5DE0C009AA17E /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				733DCA1A2DB5FDD5009AA17E /* LoginView.swift */,
-				733DCA142DB5FC1D009AA17E /* LoginViewController.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		733DCA0C2DB5DE12009AA17E /* Home */ = {
@@ -256,6 +246,7 @@
 		73C5A20B2DB7E18D00105BD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				733DCA142DB5FC1D009AA17E /* LoginViewController.swift */,
 				73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */,
 				73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */,
 				73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */,
@@ -271,6 +262,7 @@
 		73C5A20C2DB7E19C00105BD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				733DCA1A2DB5FDD5009AA17E /* LoginView.swift */,
 				73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */,
 				73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */,
 				739FA6C82DBA720A003C0352 /* AppleAuthSubView.swift */,
