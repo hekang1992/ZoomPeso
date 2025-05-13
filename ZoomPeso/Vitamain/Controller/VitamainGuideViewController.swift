@@ -10,7 +10,7 @@ import RxRelay
 import FSPagerView
 
 class VitamainGuideViewController: BaseViewController {
-        
+    
     var photoModel = BehaviorRelay<netModel?>(value: nil)
     
     var model = BehaviorRelay<netModel?>(value: nil)
@@ -132,7 +132,6 @@ class VitamainGuideViewController: BaseViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }
         
-        
         view.addSubview(descLabel)
         descLabel.snp.makeConstraints { make in
             make.top.equalTo(twoImageView.snp.bottom)
@@ -170,20 +169,15 @@ class VitamainGuideViewController: BaseViewController {
             moneyLabel.text = "\(symbol)\(characterized)"
             rightLabel.text = model.enlarged?.examining?.adversary?.uvring ?? ""
             leftLabel.text = model.enlarged?.examining?.stings?.uvring ?? ""
-            let step = model.pepsis?.rolled ?? ""
-            if step == "numerous" {
-                self.stepIndex = 0
-            }else if step == "the" {
-                self.stepIndex = 1
-            }else if step == "and" {
-                self.stepIndex = 2
-            }else if step == "some" {
-                self.stepIndex = 3
-            }else if step == "both" {
-                self.stepIndex = 4
-            }else if step == "" {
-                self.stepIndex = 5
-            }
+            let stepMapping: [String: Int] = [
+                "numerous": 0,
+                "the": 1,
+                "and": 2,
+                "some": 3,
+                "both": 4,
+                "": 5
+            ]
+            self.stepIndex = stepMapping[model.pepsis?.rolled ?? ""] ?? 5
             pagerView.reloadData()
         }).disposed(by: disposeBag)
         
@@ -248,7 +242,7 @@ class VitamainGuideViewController: BaseViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         self.photoModel.accept(model)
                     }
@@ -277,7 +271,7 @@ class VitamainGuideViewController: BaseViewController {
             switch result {
             case .success(let success):
                 ViewCycleManager.hideLoading()
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     let time = DeviceInfo.currentTimestamp
                     let fievc = VitamainFiveViewController()
                     fievc.odNum = odID
@@ -362,7 +356,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
             let vitamain = model.pepsis?.rolled ?? ""
             let sucking = model.finding?[index].sucking
             if vitamain.isEmpty {
-//                odIDWithString(with: model)
+                //odIDWithString(with: model)
                 let webVc = VitamainFiveViewController()
                 webVc.pageUrl = sucking
                 self.navigationController?.pushViewController(webVc, animated: true)

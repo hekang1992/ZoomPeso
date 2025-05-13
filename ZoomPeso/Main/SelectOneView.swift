@@ -122,7 +122,7 @@ class SelectOneView: BaseView {
             cell.nameLabel.text = model.paralysed ?? ""
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
-            cell.cImageView.isHidden = true
+            cell.rightImageMainView.isHidden = true
             cell.nameLabel.textAlignment = .center
             if let selectIndexPath = self.selectIndexPath {
                 if selectIndexPath.row == row {

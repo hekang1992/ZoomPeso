@@ -9,19 +9,18 @@ import UIKit
 import RxSwift
 
 class BaseView: UIView {
-    
     let disposeBag = DisposeBag()
-    
 }
 
 class BaseViewCell: UITableViewCell {
-    
     let disposeBag = DisposeBag()
-    
+}
+
+class BaseCollectionViewCell: UICollectionViewCell {
+    let disposeBag = DisposeBag()
 }
 
 class EmptyView: UIView {
-    
     lazy var emptyImageView: UIImageView = {
         let emptyImageView = UIImageView()
         emptyImageView.image = UIImage(named: "emputiamge")

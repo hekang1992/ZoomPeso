@@ -31,13 +31,5 @@ extension AppDelegate {
   @objc func goRootVc(_ noti: Notification) {
       window?.rootViewController = BaseNavigationController(rootViewController: BaseTabBarController())
     }
-    
-    private func familyNameInfo() {
-        for family in UIFont.familyNames {
-            for name in UIFont.fontNames(forFamilyName: family) {
-                print(" - \(name)")
-            }
-        }
-    }
-    
+
 }

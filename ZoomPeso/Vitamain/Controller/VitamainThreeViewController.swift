@@ -173,7 +173,7 @@ extension VitamainThreeViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         self.oneModel.accept(model)
                         self.tableView.reloadData()
@@ -195,7 +195,7 @@ extension VitamainThreeViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     productDetailInfo(from: barricaded) { model in
                         self.model.accept(model)
                         self.vitaminInfo(from: model) { model in

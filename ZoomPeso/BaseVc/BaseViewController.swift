@@ -95,7 +95,7 @@ extension BaseViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) || success.wedge == "00" {
                     if let sexesModel = DataLoginManager.shared.currentModel?.sexes {
                         zoomPesoFaceBook(from: sexesModel)
                     }
@@ -196,6 +196,8 @@ extension BaseViewController {
         guard let action = VitaminAction(rawValue: model.pepsis?.rolled ?? "") else { return }
         
         switch action {
+        case .adc:
+            popToVitamainGuideOrRoot()
         case .numerous:
             getAuthInfo(from: model, complete: complete)
         case .the, .and, .some, .both:
@@ -226,13 +228,14 @@ extension BaseViewController {
         case and = "and"
         case some = "some"
         case both = "both"
-        
+        case adc = ""
         func makeViewController() -> BaseViewController {
             switch self {
             case .the: return VitamainTwoViewController()
             case .and: return VitamainThreeViewController()
             case .some: return VitamainFourViewController()
             case .both: return VitamainFiveViewController()
+            case .adc: return VitamainGuideViewController()
             default: fatalError("Unsupported type")
             }
         }
@@ -247,7 +250,7 @@ extension BaseViewController {
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         complete(model)
                     }
@@ -270,7 +273,7 @@ extension BaseViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         complete(model)
                     }
@@ -319,7 +322,7 @@ extension BaseViewController {
         man.getRequest(endpoint: "/surely/azara", responseType: BaseModel.self) { result in
             switch result {
             case .success(let success):
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     guard let model = success.net else { return }
                     complete(model)
                 }

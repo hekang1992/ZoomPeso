@@ -41,7 +41,6 @@ class OutLogView: BaseView {
         vindaImageView.addSubview(sureBtn)
         vindaImageView.addSubview(cancelBtn)
         
-        
         cancelBtn.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 25, height: 25))
             make.centerX.equalToSuperview()

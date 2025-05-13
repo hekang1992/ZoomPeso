@@ -30,11 +30,11 @@ class SettingViewController: BaseViewController {
         return bImageView
     }()
     
-    lazy var cImageView: UIImageView = {
-        let cImageView = UIImageView()
-        cImageView.isUserInteractionEnabled = true
-        cImageView.image = UIImage(named: "logimged")
-        return cImageView
+    lazy var rightImageMainView: UIImageView = {
+        let rightImageMainView = UIImageView()
+        rightImageMainView.isUserInteractionEnabled = true
+        rightImageMainView.image = UIImage(named: "logimged")
+        return rightImageMainView
     }()
     
     lazy var vLabel: UILabel = {
@@ -67,7 +67,7 @@ class SettingViewController: BaseViewController {
         
         bgView.addSubview(aImageView)
         bgView.addSubview(bImageView)
-        bgView.addSubview(cImageView)
+        bgView.addSubview(rightImageMainView)
         
         aImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(12)
@@ -81,7 +81,7 @@ class SettingViewController: BaseViewController {
             make.centerX.equalToSuperview()
         }
         
-        cImageView.snp.makeConstraints { make in
+        rightImageMainView.snp.makeConstraints { make in
             make.top.equalTo(bImageView.snp.bottom).offset(10)
             make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
             make.centerX.equalToSuperview()
@@ -96,7 +96,7 @@ class SettingViewController: BaseViewController {
         }
         
         
-        cImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+        rightImageMainView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
             let outView = OutLogView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
             let alertVc = TYAlertController(alert: outView, preferredStyle: .alert)!
@@ -146,7 +146,7 @@ extension SettingViewController {
                     switch result {
                     case .success(let success):
                         guard let self = self else { return }
-                        if success.wedge == "0" || success.wedge == "00" {
+                        if ["0", "00"].contains(success.wedge) {
                             LoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                                 self.notiLastRootVcManager()
@@ -178,7 +178,7 @@ extension SettingViewController {
                     switch result {
                     case .success(let success):
                         guard let self = self else { return }
-                        if success.wedge == "0" || success.wedge == "00" {
+                        if ["0", "00"].contains(success.wedge) {
                             LoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                                 self.notiLastRootVcManager()

@@ -186,7 +186,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
             case .success(let success):
                 guard let self = self else { return }
 //                ViewCycleManager.hideLoading()
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     let pageUrl = success.net?.sucking ?? ""
                     var urlString = ""
                     let loginDict = LoginConfig.getLoginInfo().toDictionary

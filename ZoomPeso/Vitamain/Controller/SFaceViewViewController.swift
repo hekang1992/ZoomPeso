@@ -56,10 +56,10 @@ class SFaceViewViewController: BaseViewController {
         return popImageView
     }()
     
-    lazy var scImageView: UIImageView = {
-        let scImageView = UIImageView()
-        scImageView.image = UIImage(named: "caimgesfa")
-        return scImageView
+    lazy var srightImageMainView: UIImageView = {
+        let srightImageMainView = UIImageView()
+        srightImageMainView.image = UIImage(named: "caimgesfa")
+        return srightImageMainView
     }()
     
     lazy var nextBtn: UIButton = {
@@ -121,8 +121,8 @@ class SFaceViewViewController: BaseViewController {
             make.size.equalTo(CGSize(width: 313.pix(), height: 167.pix()))
         }
         
-        oneImageView.addSubview(scImageView)
-        scImageView.snp.makeConstraints { make in
+        oneImageView.addSubview(srightImageMainView)
+        srightImageMainView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-15.pix())
             make.size.equalTo(CGSize(width: 315.pix(), height: 115.pix()))
@@ -244,7 +244,7 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
             case .success(let success):
                 ViewCycleManager.hideLoading()
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     DispatchQueue.main.async {
                         self.getAuthInfo()
                     }
@@ -269,7 +269,7 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net?.victims {
                         self.isSuccess.accept(model.strength ?? 0)
                         let picUrl = model.sucking ?? ""

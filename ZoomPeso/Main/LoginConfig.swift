@@ -122,13 +122,11 @@ extension URLComponents {
 class DataAddressManager {
     static let shared = DataAddressManager()
     private init() {}
-    
     var currentModel: netModel?
 }
 
 class DataLoginManager {
     static let shared = DataLoginManager()
     private init() {}
-    
     var currentModel: netModel?
 }

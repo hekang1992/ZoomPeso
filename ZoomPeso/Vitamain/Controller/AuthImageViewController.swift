@@ -58,10 +58,10 @@ class AuthImageViewController: BaseViewController {
         return popImageView
     }()
     
-    lazy var scImageView: UIImageView = {
-        let scImageView = UIImageView()
-        scImageView.image = UIImage(named: "imagekind")
-        return scImageView
+    lazy var srightImageMainView: UIImageView = {
+        let srightImageMainView = UIImageView()
+        srightImageMainView.image = UIImage(named: "imagekind")
+        return srightImageMainView
     }()
     
     lazy var nextBtn: UIButton = {
@@ -74,8 +74,8 @@ class AuthImageViewController: BaseViewController {
         return nextBtn
     }()
     
-    lazy var authView: APView = {
-        let authView = APView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
+    lazy var authView: AppleAuthSubView = {
+        let authView = AppleAuthSubView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
         return authView
     }()
     
@@ -110,6 +110,7 @@ class AuthImageViewController: BaseViewController {
         view.addSubview(oneImageView)
         oneImageView.addSubview(mlabel)
         oneImageView.addSubview(m1label)
+        oneImageView.addSubview(mlringlabel)
         oneImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(headView.snp.bottom).offset(10)
@@ -125,7 +126,6 @@ class AuthImageViewController: BaseViewController {
             make.right.equalToSuperview()
             make.top.equalTo(mlabel.snp.bottom).offset(28.pix())
         }
-        
         oneImageView.addSubview(popImageView)
         popImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -133,8 +133,8 @@ class AuthImageViewController: BaseViewController {
             make.size.equalTo(CGSize(width: 313.pix(), height: 167.pix()))
         }
         
-        oneImageView.addSubview(scImageView)
-        scImageView.snp.makeConstraints { make in
+        oneImageView.addSubview(srightImageMainView)
+        srightImageMainView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-15.pix())
             make.size.equalTo(CGSize(width: 315.pix(), height: 115.pix()))
@@ -300,7 +300,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                 ViewCycleManager.hideLoading()
                 guard let self = self else { return }
                 if let model = success.net {
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                         DispatchQueue.main.async {
                             self.tcViewInfo(from: model)
                         }
@@ -333,13 +333,15 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
         
         authView.timeBlock = { [weak self] in
             guard let self = self else { return }
+            authView.nameTx.resignFirstResponder()
+            authView.idTx.resignFirstResponder()
             let dateView = AuthDateView(frame: .zero)
             toastShowViewWithWindow(with: dateView, superView: authView)
         }
         
     }
     
-    private func toastShowViewWithWindow(with dateView: AuthDateView, superView: APView) {
+    private func toastShowViewWithWindow(with dateView: AuthDateView, superView: AppleAuthSubView) {
         DispatchQueue.main.async {
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                   let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
@@ -363,7 +365,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
         }
     }
     
-    private func sageInfo(form tcView: APView) {
+    private func sageInfo(form tcView: AppleAuthSubView) {
         ViewCycleManager.showLoading()
         let name = authView.nameTx.text ?? ""
         let idnum = authView.idTx.text ?? ""
@@ -381,7 +383,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     self.dismiss(animated: true) {
                         self.getAuthInfo()
                     }
@@ -407,7 +409,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net?.deadly {
                         self.isSuccess.accept(model.strength ?? 0)
                         let picUrl = model.sucking ?? ""

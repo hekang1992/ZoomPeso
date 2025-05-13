@@ -21,17 +21,17 @@ class AuthViewCell: BaseViewCell {
         return nameLabel
     }()
     
-    lazy var cImageView: UIImageView = {
-        let cImageView = UIImageView()
-        cImageView.image = UIImage(named: "rightimagebal")
-        return cImageView
+    lazy var rightImageMainView: UIImageView = {
+        let rightImageMainView = UIImageView()
+        rightImageMainView.image = UIImage(named: "rightimagebal")
+        return rightImageMainView
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(bgView)
         contentView.addSubview(nameLabel)
-        contentView.addSubview(cImageView)
+        contentView.addSubview(rightImageMainView)
         
         bgView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -48,7 +48,7 @@ class AuthViewCell: BaseViewCell {
             make.bottom.equalToSuperview().offset(-16.5)
         }
         
-        cImageView.snp.makeConstraints { make in
+        rightImageMainView.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-30)
             make.centerY.equalTo(nameLabel.snp.centerY)
             make.size.equalTo(CGSize(width: 14, height: 14))

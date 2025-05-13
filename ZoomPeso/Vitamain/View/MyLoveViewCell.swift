@@ -83,6 +83,9 @@ class MyLoveViewCell: BaseViewCell {
         return cpLabel
     }()
     
+    var relationBlock: (() -> Void)?
+    var nameBlock: (() -> Void)?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(bgView)
@@ -151,6 +154,16 @@ class MyLoveViewCell: BaseViewCell {
             make.right.equalTo(phoneImageView.snp.left).offset(-2.pix())
             make.height.equalTo(44.pix())
         }
+        
+        contaceView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            self.relationBlock?()
+        }).disposed(by: disposeBag)
+        
+        phoenView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            self.nameBlock?()
+        }).disposed(by: disposeBag)
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }

@@ -87,10 +87,10 @@ class HomeView: BaseView {
         return loanImageView
     }()
     
-    lazy var descImageView: UIImageView = {
-        let descImageView = UIImageView()
-        descImageView.image = UIImage(named: "threeimage")
-        return descImageView
+    lazy var desrightImageMainView: UIImageView = {
+        let desrightImageMainView = UIImageView()
+        desrightImageMainView.image = UIImage(named: "threeimage")
+        return desrightImageMainView
     }()
     
     lazy var twoImageView: UIImageView = {
@@ -208,7 +208,7 @@ class HomeView: BaseView {
         oneImageView.addSubview(fourLabel)
         oneImageView.addSubview(fiveLabel)
         scrollerView.addSubview(loanImageView)
-        scrollerView.addSubview(descImageView)
+        scrollerView.addSubview(desrightImageMainView)
         scrollerView.addSubview(whiteView)
         scrollerView.addSubview(twoImageView)
         twoImageView.addSubview(fuckLabel)
@@ -285,7 +285,7 @@ class HomeView: BaseView {
             make.width.equalTo(SCREEN_WIDTH)
             make.height.equalTo(96.pix())
         }
-        descImageView.snp.makeConstraints { make in
+        desrightImageMainView.snp.makeConstraints { make in
             make.top.equalTo(loanImageView.snp.bottom)
             make.left.equalToSuperview()
             make.width.equalTo(SCREEN_WIDTH)
@@ -293,7 +293,7 @@ class HomeView: BaseView {
         }
         twoImageView.snp.makeConstraints { make in
             make.left.equalToSuperview()
-            make.top.equalTo(descImageView.snp.bottom)
+            make.top.equalTo(desrightImageMainView.snp.bottom)
             make.size.equalTo(CGSize(width: 240.pix(), height: 54.pix()))
         }
         threeImageView.snp.makeConstraints { make in

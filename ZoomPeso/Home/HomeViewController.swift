@@ -130,7 +130,7 @@ extension HomeViewController {
             self?.paraView.tableView.mj_header?.endRefreshing()
             switch result {
             case .success(let success):
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         let ruby = model.ruby ?? []
                         for model in ruby {
@@ -182,7 +182,7 @@ extension HomeViewController {
             switch result {
             case .success(let success):
                 let wedge = success.wedge ?? ""
-                if wedge == "0" {
+                if ["0", "00"].contains(wedge) {
                     if let self = self, let model = success.net {
                         self.goAnyWhereInfo(from: model)
                     }

@@ -250,7 +250,6 @@ class LoginView: BaseView {
             make.size.equalTo(CGSize(width: 30, height: 30))
         }
         
-        
         backBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
             self.backBlock?()

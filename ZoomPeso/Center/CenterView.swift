@@ -148,18 +148,22 @@ class CenterView: BaseView {
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
 
-        modelArry.compactMap { $0 }.asObservable().bind(to: tableView.rx.items(cellIdentifier: "CenterListViewCell", cellType: CenterListViewCell.self)) { row, model, cell in
+        modelArry.compactMap { $0 }.asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "CenterListViewCell", cellType: CenterListViewCell.self)) { row, model, cell in
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             let walckanaer = model.walckanaer ?? ""
             cell.listImageView.kf.setImage(with: URL(string: walckanaer), placeholder: UIImage(named: "onelaige"))
             cell.nameLabel.text = model.backs ?? ""
-        }.disposed(by: disposeBag)
+        }
+            .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(rubyModel.self).subscribe(onNext: { [weak self] model in
+        tableView.rx.modelSelected(rubyModel.self)
+            .subscribe(onNext: { [weak self] model in
             guard let self = self else { return }
             self.modelBlock?(model)
-        }).disposed(by: disposeBag)
+        })
+            .disposed(by: disposeBag)
         
     }
     

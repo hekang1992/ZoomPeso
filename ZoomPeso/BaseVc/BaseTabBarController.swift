@@ -25,10 +25,8 @@ class BaseTabBarController: UITabBarController {
     }
     
     private func setupCustomTabBar() {
-        // 隐藏系统 TabBar
         tabBar.isHidden = true
         
-        // 创建自定义 TabBar
         customTabBar.backgroundColor = .clear
         customTabBar.frame = CGRect(
             x: 0,
@@ -37,8 +35,7 @@ class BaseTabBarController: UITabBarController {
             height: 88
         )
         view.addSubview(customTabBar)
-        
-        // 添加按钮
+
         let buttonWidth = view.bounds.width / 3
         for i in 0..<3 {
             let button = UIButton(type: .custom)
@@ -51,7 +48,6 @@ class BaseTabBarController: UITabBarController {
             button.tag = i
             button.addTarget(self, action: #selector(tabButtonTapped(_:)), for: .touchUpInside)
             
-            // 设置图片（填充整个按钮）
             let imageName = i == 0 ? "homesel" : (i == 1 ? "ordernor" : "centernor")
             button.setImage(UIImage(named: imageName), for: .normal)
             button.imageView?.contentMode = .scaleAspectFill
@@ -67,7 +63,6 @@ class BaseTabBarController: UITabBarController {
             return
         }
         selectedIndex = sender.tag
-        // 更新按钮选中状态（比如切换图片）
         updateTabBarButtons()
     }
     

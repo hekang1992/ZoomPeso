@@ -108,10 +108,10 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
     }
 
     private func locationToModel(_ model: LocationModel, with placemark: CLPlacemark) {
-        let countryCode = placemark.isoCountryCode ?? ""
         let country = placemark.country ?? ""
         var provice = placemark.administrativeArea ?? ""
         let city = placemark.locality ?? ""
+        let countryCode = placemark.isoCountryCode ?? ""
         let region = placemark.subLocality ?? ""
         let street = (placemark.subLocality ?? "") + (placemark.thoroughfare ?? "")
         if provice.isEmpty {

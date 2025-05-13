@@ -158,7 +158,7 @@ class VitamainOneViewController: BaseViewController {
         scro.addSubview(otherView)
         otherView.addSubview(m3label)
         otherView.addSubview(m4label)
-        scro.addSubview(nextBtn)
+        view.addSubview(nextBtn)
         oneImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(5)
@@ -187,12 +187,12 @@ class VitamainOneViewController: BaseViewController {
             make.top.equalTo(oneImageView.snp.bottom).offset(10)
             make.size.equalTo(CGSize(width: 345.pix(), height: 333.pix()))
             make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-70.pix())
         }
         nextBtn.snp.makeConstraints { make in
-            make.top.equalTo(otherView.snp.bottom).offset(47)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
-            make.bottom.equalToSuperview().offset(-30.pix())
         }
         
         oneImageView.addSubview(table1View)
@@ -326,7 +326,7 @@ extension VitamainOneViewController: UITableViewDelegate {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     //ma
                     self.horrid.accept(success.net?.horrid ?? [])
                     //mc

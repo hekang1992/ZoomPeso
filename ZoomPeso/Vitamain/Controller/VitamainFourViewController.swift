@@ -176,7 +176,7 @@ extension VitamainFourViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     self.productDetailInfo(from: barricaded) { model in
                         self.model.accept(model)
                         self.vitaminInfo(from: model) { model in }
@@ -212,7 +212,7 @@ extension VitamainFourViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         self.oneModel.accept(model)
                         self.tableView.reloadData()
@@ -244,17 +244,24 @@ extension VitamainFourViewController: UITableViewDelegate, UITableViewDataSource
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
         cell.model.accept(model)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = self.oneModel.value?.army?[indexPath.row]
-        let cell = tableView.cellForRow(at: indexPath) as! MyLoveViewCell
-        self.selectCell = cell
-        self.selectIndex = indexPath.row
-        if let model = model {
+        cell.relationBlock = { [weak self] in
+            guard let self = self, let model = model else { return }
+            self.selectIndex = indexPath.row
+            self.selectCell = cell
             popSelectOneViewInfo(from: model, cell: cell)
         }
+        cell.nameBlock = { [weak self] in
+            guard let self = self, let model = model, let selectCell = self.selectCell  else { return }
+            DispatchQueue.main.async {
+                let common = model.common ?? ""
+                if common.isEmpty {
+                    ToastManagerConfig.showToastText(form: self.view, message: "Please select your relationship to the emergency contact first.")
+                    return
+                }
+                self.comtactMeaageInfo(from: model, cell: selectCell)
+            }
+        }
+        return cell
     }
     
 }
@@ -300,12 +307,7 @@ extension VitamainFourViewController: CNContactPickerDelegate {
                     if !granted {
                         self?.showPermissionDeniedAlert(for: "Contact")
                     } else {
-                        let authorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
-                        if authorizationStatus == .authorized {
-                            self?.accessContacts()
-                        }else {
-                            self?.showPermissionDeniedAlert(for: "Contact")
-                        }
+                        self?.accessContacts()
                     }
                 }
             }
@@ -319,7 +321,9 @@ extension VitamainFourViewController: CNContactPickerDelegate {
             }
             break
         case .limited:
-            self.showPermissionDeniedAlert(for: "Contact")
+            DispatchQueue.main.async {
+                self.accessContacts()
+            }
             break
         @unknown default:
             break

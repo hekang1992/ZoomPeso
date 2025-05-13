@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 import Network
-import AppTrackingTransparency
 import AdSupport
 import NetworkExtension
+import AppTrackingTransparency
 
 let SHOWGUIDE: String = ""
 class LaunchViewController: BaseViewController {
@@ -87,7 +87,7 @@ extension LaunchViewController: UIScrollViewDelegate {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         DataLoginManager.shared.currentModel = model
                     }

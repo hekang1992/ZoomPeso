@@ -28,6 +28,13 @@ class AccDelLogView: BaseView {
         return cancelBtn
     }()
     
+    lazy var cycleBtn: UIButton = {
+        let cycleBtn = UIButton(type: .custom)
+        cycleBtn.setImage(UIImage(named: "cyclenormail"), for: .normal)
+        cycleBtn.setImage(UIImage(named: "cycleselect"), for: .selected)
+        return cycleBtn
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -39,6 +46,7 @@ class AccDelLogView: BaseView {
         
         vindaImageView.addSubview(sureBtn)
         vindaImageView.addSubview(cancelBtn)
+        vindaImageView.addSubview(cycleBtn)
         
         cancelBtn.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 25, height: 25))
@@ -53,6 +61,12 @@ class AccDelLogView: BaseView {
             make.height.equalTo(50)
         }
         
+        cycleBtn.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-140.pix())
+            make.left.equalToSuperview().offset(20.pix())
+            make.size.equalTo(CGSize(width: 22.pix(), height: 22.pix()))
+        }
+        
         cancelBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
             self.block?("0")
@@ -60,7 +74,16 @@ class AccDelLogView: BaseView {
         
         sureBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
+            if cycleBtn.isSelected == false {
+                ToastManagerConfig.showToastText(form: self, message: "Please read and confirm the account cancellation agreement.")
+                return
+            }
             self.block?("1")
+        }).disposed(by: disposeBag)
+        
+        cycleBtn.rx.tap.subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            cycleBtn.isSelected.toggle()
         }).disposed(by: disposeBag)
         
     }

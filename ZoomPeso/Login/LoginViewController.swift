@@ -182,7 +182,7 @@ extension LoginViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     self.startCountdown()
                     self.loginView.codeTx.becomeFirstResponder()
                 }
@@ -209,7 +209,7 @@ extension LoginViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     self.loginView.codeTx.becomeFirstResponder()
                 }
                 let circular = success.circular ?? ""
@@ -242,7 +242,7 @@ extension LoginViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.wedge == "0" || success.wedge == "00" {
+                if ["0", "00"].contains(success.wedge) {
                     jsTime = DeviceInfo.currentTimestamp
                     let phone = success.net?.recollect ?? ""
                     let token = success.net?.attachment ?? ""

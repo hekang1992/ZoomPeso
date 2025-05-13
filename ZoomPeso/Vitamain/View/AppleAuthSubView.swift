@@ -1,5 +1,5 @@
 //
-//  APView.swift
+//  AppleAuthSubView.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/24.
@@ -8,11 +8,12 @@
 import UIKit
 import RxRelay
 
-class APView: BaseView {
+class AppleAuthSubView: BaseView {
     
     var model = BehaviorRelay<netModel?>(value: nil)
     
     var block: (() -> Void)?
+    
     var timeBlock: (() -> Void)?
     
     lazy var oneImageView: UIImageView = {
@@ -134,7 +135,7 @@ class APView: BaseView {
         nameTx.snp.makeConstraints { make in
             make.top.equalTo(namelabel.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 190.pix(), height: 40.pix()))
+            make.size.equalTo(CGSize(width: 210.pix(), height: 40.pix()))
         }
         
         idlabel.snp.makeConstraints { make in
@@ -147,7 +148,7 @@ class APView: BaseView {
         idTx.snp.makeConstraints { make in
             make.top.equalTo(idlabel.snp.bottom).offset(10.pix())
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 190.pix(), height: 40.pix()))
+            make.size.equalTo(CGSize(width: 210.pix(), height: 40.pix()))
         }
         
         timelabel.snp.makeConstraints { make in
@@ -160,7 +161,7 @@ class APView: BaseView {
         timeBtn.snp.makeConstraints { make in
             make.top.equalTo(timelabel.snp.bottom).offset(10.pix())
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 190.pix(), height: 40.pix()))
+            make.size.equalTo(CGSize(width: 210.pix(), height: 40.pix()))
         }
         
         desclabel.snp.makeConstraints { make in

@@ -92,7 +92,7 @@ extension OrderListViewController {
             case .success(let success):
                 guard let self = self else { return }
                 let wedge = success.wedge ?? ""
-                if wedge == "0" {
+                if ["0", "00"].contains(wedge) {
                     let ruby = success.net?.ruby ?? []
                     self.modelArray.accept(ruby)
                     self.tableView.reloadData()

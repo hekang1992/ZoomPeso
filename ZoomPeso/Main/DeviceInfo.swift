@@ -121,8 +121,8 @@ class DeviceInfo: NSObject {
     }
     
     static func getCurrentLanguage() -> String {
-        let languageCode = Locale.current.languageCode ?? "Unknown"
-        return languageCode
+        let preferredLanguage = Locale.preferredLanguages.first ?? ""
+        return preferredLanguage
     }
     
     static func getWiFiBSSID() -> String? {
@@ -149,7 +149,6 @@ class DeviceInfo: NSObject {
 
 extension DeviceInfo {
     
-    ///deviceInfo
     static func deviceAllInfo() -> [String: Any] {
         let plane = DeviceInfo.getFreeString()
         let alights = DeviceInfo.getTotalString()
