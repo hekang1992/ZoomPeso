@@ -277,7 +277,7 @@ class VitamainGuideViewController: BaseViewController {
                     fievc.odNum = odID
                     fievc.pageUrl = success.net?.sucking ?? ""
                     self?.navigationController?.pushViewController(fievc, animated: true)
-                    BuyPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)
+                    ScroPortionPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)
                 }
                 break
             case .failure(_):

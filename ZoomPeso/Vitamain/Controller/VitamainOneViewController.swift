@@ -294,7 +294,7 @@ class VitamainOneViewController: BaseViewController {
             imageVc.enthusiastic = selectAuthStr
             self.navigationController?.pushViewController(imageVc, animated: true)
             print("auth=====\(self.selectAuthStr)")
-            BuyPointConfig.pointToPageWithModel(with: "2", kstime: time, jstime: DeviceInfo.currentTimestamp)
+            ScroPortionPointConfig.pointToPageWithModel(with: "2", kstime: time, jstime: DeviceInfo.currentTimestamp)
         }).disposed(by: disposeBag)
         
         getAuthInfo()

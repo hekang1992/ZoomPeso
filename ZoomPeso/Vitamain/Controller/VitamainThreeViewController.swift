@@ -202,7 +202,7 @@ extension VitamainThreeViewController {
                             
                         }
                     }
-                    BuyPointConfig.pointToPageWithModel(with: "6", kstime: kstime, jstime: DeviceInfo.currentTimestamp)
+                    ScroPortionPointConfig.pointToPageWithModel(with: "6", kstime: kstime, jstime: DeviceInfo.currentTimestamp)
                 }else {
                     ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 }

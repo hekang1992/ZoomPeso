@@ -247,7 +247,7 @@ extension LoginViewController {
                     let phone = success.net?.recollect ?? ""
                     let token = success.net?.attachment ?? ""
                     LoginConfig.saveLoginInfo(phone: phone, token: token)
-                    BuyPointConfig.pointToPageWithModel(with: "1", kstime: ksTime, jstime: jsTime)
+                    ScroPortionPointConfig.pointToPageWithModel(with: "1", kstime: ksTime, jstime: jsTime)
                     DispatchQueue.main.async {
                         self.notiLastRootVcManager()
                     }

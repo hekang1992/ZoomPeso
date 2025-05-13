@@ -204,7 +204,7 @@ extension VitamainTwoViewController {
                             
                         }
                     }
-                    BuyPointConfig.pointToPageWithModel(with: "5", kstime: kstime, jstime: DeviceInfo.currentTimestamp)
+                    ScroPortionPointConfig.pointToPageWithModel(with: "5", kstime: kstime, jstime: DeviceInfo.currentTimestamp)
                 }else {
                     ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 }

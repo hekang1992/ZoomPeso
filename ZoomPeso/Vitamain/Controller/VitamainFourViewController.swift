@@ -176,12 +176,12 @@ extension VitamainFourViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.wedge) {
+                if success.wedge == "0" || success.wedge == "00" {
                     self.productDetailInfo(from: barricaded) { model in
                         self.model.accept(model)
                         self.vitaminInfo(from: model) { model in }
                     }
-                    BuyPointConfig.pointToPageWithModel(with: "7", kstime: contractTime, jstime: DeviceInfo.currentTimestamp)
+                    ScroPortionPointConfig.pointToPageWithModel(with: "7", kstime: contractTime, jstime: DeviceInfo.currentTimestamp)
                 }
                 ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 ViewCycleManager.hideLoading()
@@ -251,14 +251,16 @@ extension VitamainFourViewController: UITableViewDelegate, UITableViewDataSource
             popSelectOneViewInfo(from: model, cell: cell)
         }
         cell.nameBlock = { [weak self] in
-            guard let self = self, let model = model, let selectCell = self.selectCell  else { return }
+            guard let self = self, let model = model else { return }
             DispatchQueue.main.async {
                 let common = model.common ?? ""
                 if common.isEmpty {
                     ToastManagerConfig.showToastText(form: self.view, message: "Please select your relationship to the emergency contact first.")
                     return
                 }
-                self.comtactMeaageInfo(from: model, cell: selectCell)
+                self.selectIndex = indexPath.row
+                self.selectCell = cell
+                self.comtactMeaageInfo(from: model, cell: cell)
             }
         }
         return cell

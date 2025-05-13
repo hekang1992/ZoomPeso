@@ -248,7 +248,7 @@ extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigation
                     DispatchQueue.main.async {
                         self.getAuthInfo()
                     }
-                    BuyPointConfig.pointToPageWithModel(with: "4", kstime: facetime, jstime: DeviceInfo.currentTimestamp)
+                    ScroPortionPointConfig.pointToPageWithModel(with: "4", kstime: facetime, jstime: DeviceInfo.currentTimestamp)
                 }
                 ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 break

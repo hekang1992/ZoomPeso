@@ -142,7 +142,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
             ksTime = DeviceInfo.currentTimestamp
         }else if messageName == "edge" {
             jsTime = DeviceInfo.currentTimestamp
-            BuyPointConfig.pointToPageWithModel(with: "8", kstime: ksTime, jstime: jsTime, orNo: "")
+            ScroPortionPointConfig.pointToPageWithModel(with: "8", kstime: ksTime, jstime: jsTime, orNo: "")
             let proID = model.value?.enlarged?.orifice ?? ""
             productDetailInfo(from: proID) { [weak self] model in
                 let vitamain = model.pepsis?.rolled ?? ""
@@ -151,8 +151,10 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
                 }
             }
         }else if messageName == "backwards" {
-            let tenTime = DeviceInfo.currentTimestamp
-            BuyPointConfig.pointToPageWithModel(with: "10", kstime: tenTime, jstime: tenTime, orNo: odNum)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                let tenTime = DeviceInfo.currentTimestamp
+                ScroPortionPointConfig.pointToPageWithModel(with: "10", kstime: tenTime, jstime: tenTime, orNo: self.odNum)
+            }
         }else if messageName == "thorax" {
             requestAppReview()
         }else if messageName == "preparing" {
@@ -197,7 +199,7 @@ extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelega
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                         let time = DeviceInfo.currentTimestamp
-                        BuyPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)
+                        ScroPortionPointConfig.pointToPageWithModel(with: "9", kstime: time, jstime: time, orNo: odID)
                     }
                 }
                 break
@@ -217,22 +219,31 @@ extension UIScrollView {
 }
 
 
-class BuyPointConfig {
+class ScroPortionPointConfig {
     
-    static func pointToPageWithModel(with type: String, kstime: String, jstime: String, orNo: String = "") {
-        print("埋点数据请求(\(type))=====开始时间:\(kstime)======结束时间:\(jstime)")
+    static func pointToPageWithModel(with type: String,
+                                     kstime: String,
+                                     jstime: String,
+                                     orNo: String = "") {
         let shuffled = DeviceIDManager.shared.getDeviceID()
         let forceps = DeviceIDManager.shared.getIDFA()
-        var dict = ["closing": type, "instrument": "2", "shuffled": shuffled, "forceps": forceps, "cautiously": kstime, "uses": jstime, "vertically": orNo]
+        var dict = ["closing": type,
+                    "instrument": "2",
+                    "shuffled": shuffled,
+                    "forceps": forceps,
+                    "cautiously": kstime,
+                    "uses": jstime,
+                    "vertically": orNo]
         let location = LocationManagerConfig()
         location.getLocationInfo { model in
+            print("disturb========\(model.disturb ?? "")")
             let disappointed = model.disappointed ?? 0.0
             let disappointedString = String(format: "%.6f", disappointed)
             let coleoptera = model.coleoptera ?? 0.0
             let coleopteraString = String(format: "%.6f", coleoptera)
             let locationDict = ["disappointed": disappointedString, "coleoptera": coleopteraString]
             dict.merge(locationDict) { current, _ in current }
-            BuyPointConfig.apiInfo(wit: dict)
+            ScroPortionPointConfig.apiInfo(wit: dict)
         }
     }
     

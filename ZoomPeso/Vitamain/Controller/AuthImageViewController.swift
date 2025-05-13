@@ -386,7 +386,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                     self.dismiss(animated: true) {
                         self.getAuthInfo()
                     }
-                    BuyPointConfig.pointToPageWithModel(with: "3", kstime: selectTime, jstime: DeviceInfo.currentTimestamp)
+                    ScroPortionPointConfig.pointToPageWithModel(with: "3", kstime: selectTime, jstime: DeviceInfo.currentTimestamp)
                 }
                 ToastManagerConfig.showToastText(form: authView, message: success.circular ?? "")
                 break

@@ -37,13 +37,15 @@ class LocationManagerConfig: NSObject {
         LocationManagerConfig.delegate = self
         LocationManagerConfig.desiredAccuracy = kCLLocationAccuracyBest
         model.asObservable()
-            .debounce(RxTimeInterval.milliseconds(500),
-                       scheduler: MainScheduler.instance)
-           .subscribe(onNext: { locationModel in
-                if let locationModel = locationModel {
-                    self.completion?(locationModel)
-                }
-            }).disposed(by: disposeBag)
+            .compactMap { $0 }
+            .buffer(timeSpan: .milliseconds(800), count: Int.max, scheduler: MainScheduler.instance)
+            .compactMap { $0.last }
+            .take(1)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { locationModel in
+                self.completion?(locationModel)
+            })
+            .disposed(by: disposeBag)
         
     }
     
@@ -105,10 +107,6 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
         
         geocoder.reverseGeocodeLocation(locationInfo) { [weak self] placemarks, error in
             guard let self = self, let placemark = placemarks?.first else {
-                let latitude = String(location.coordinate.latitude)
-                if !latitude.isEmpty {
-                    self?.model.accept(model)
-                }
                 return
             }
             self.locationToModel(with: model, placemark: placemark)
@@ -136,7 +134,7 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("error:\(error.localizedDescription)")
+        
     }
     
 }
