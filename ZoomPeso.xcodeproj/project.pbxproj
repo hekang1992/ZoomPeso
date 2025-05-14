@@ -32,7 +32,7 @@
 		7350F1802DBE7B960084D9AE /* AuthDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350F17F2DBE7B960084D9AE /* AuthDateView.swift */; };
 		735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02D2DBB3914003782FC /* ClickViewCell.swift */; };
 		735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD02F2DBB3925003782FC /* InputViewCell.swift */; };
-		735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD0342DBB7512003782FC /* SelectOneView.swift */; };
+		735DD0352DBB7512003782FC /* SelectAuthEnmuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DD0342DBB7512003782FC /* SelectAuthEnmuView.swift */; };
 		7368E60A2DBBDDEC00427C04 /* MyLoveViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */; };
 		73786BAA2DC5D6EA00523D24 /* ParaMeraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73786BA92DC5D6EA00523D24 /* ParaMeraView.swift */; };
 		73786BAC2DC6684C00523D24 /* ParaMeraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73786BAB2DC6684C00523D24 /* ParaMeraCell.swift */; };
@@ -89,7 +89,7 @@
 		7350F17F2DBE7B960084D9AE /* AuthDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDateView.swift; sourceTree = "<group>"; };
 		735DD02D2DBB3914003782FC /* ClickViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickViewCell.swift; sourceTree = "<group>"; };
 		735DD02F2DBB3925003782FC /* InputViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewCell.swift; sourceTree = "<group>"; };
-		735DD0342DBB7512003782FC /* SelectOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOneView.swift; sourceTree = "<group>"; };
+		735DD0342DBB7512003782FC /* SelectAuthEnmuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAuthEnmuView.swift; sourceTree = "<group>"; };
 		7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLoveViewCell.swift; sourceTree = "<group>"; };
 		73786BA92DC5D6EA00523D24 /* ParaMeraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaMeraView.swift; sourceTree = "<group>"; };
 		73786BAB2DC6684C00523D24 /* ParaMeraCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaMeraCell.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 				73BB3E022DB6734600085744 /* LocationConfig.swift */,
 				733DCA162DB5FC5C009AA17E /* BaseViewConfig.swift */,
 				733DCA262DB6446B009AA17E /* LoginConfig.swift */,
-				735DD0342DBB7512003782FC /* SelectOneView.swift */,
+				735DD0342DBB7512003782FC /* SelectAuthEnmuView.swift */,
 				7350F17B2DBE70BF0084D9AE /* OutLogView.swift */,
 				7350F17D2DBE70D10084D9AE /* AccDelLogView.swift */,
 				739852F32DBF613C00255216 /* SelectThreeConfig.swift */,
@@ -405,7 +405,7 @@
 				7350F17E2DBE70D10084D9AE /* AccDelLogView.swift in Sources */,
 				733DCA252DB641CF009AA17E /* FullyModel.swift in Sources */,
 				73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */,
-				735DD0352DBB7512003782FC /* SelectOneView.swift in Sources */,
+				735DD0352DBB7512003782FC /* SelectAuthEnmuView.swift in Sources */,
 				733DCA212DB62B7D009AA17E /* CenterViewController.swift in Sources */,
 				733DCA232DB63571009AA17E /* HomeView.swift in Sources */,
 				733DCA072DB5DDA2009AA17E /* BaseTabBarController.swift in Sources */,

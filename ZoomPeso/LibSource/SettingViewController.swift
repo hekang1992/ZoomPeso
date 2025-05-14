@@ -58,7 +58,6 @@ class SettingViewController: BaseViewController {
             self?.navigationController?.popViewController(animated: true)
         }
         
-        
         view.addSubview(bgView)
         bgView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()

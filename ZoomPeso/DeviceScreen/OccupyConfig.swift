@@ -2,7 +2,7 @@
 //  OccupyConfig.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/5/13.
+//  Created by Quaker on 2025/5/13.
 //
 
 import UIKit

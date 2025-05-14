@@ -271,7 +271,7 @@ extension VitamainFourViewController: UITableViewDelegate, UITableViewDataSource
 extension VitamainFourViewController: CNContactPickerDelegate {
     
     private func popSelectOneViewInfo(from model: armyModel, cell: MyLoveViewCell) {
-        let selectOneView = SelectOneView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
+        let selectOneView = SelectAuthEnmuView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
         let modelArray = model.extricate ?? []
         selectOneView.modelArray.accept(modelArray)
         let alertVc = TYAlertController(alert: selectOneView, preferredStyle: .alert)!

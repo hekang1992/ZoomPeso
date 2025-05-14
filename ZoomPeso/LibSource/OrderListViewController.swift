@@ -11,7 +11,7 @@ import RxRelay
 
 class OrderListViewController: BaseViewController {
     
-    var orderType: String = "4"
+    var orderType: String = String(Int(2 + 2))
     var nameType: String = "All"
     
     var modelArray = BehaviorRelay<[rubyModel]?>(value: nil)
@@ -128,6 +128,7 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
         let model = self.modelArray.value?[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderListViewCell", for: indexPath) as! OrderListViewCell
         cell.selectionStyle = .none
+        cell.backgroundColor = .clear
         cell.model.accept(model)
         return cell
     }

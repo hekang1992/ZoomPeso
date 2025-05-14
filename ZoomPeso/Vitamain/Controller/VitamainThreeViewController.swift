@@ -232,7 +232,7 @@ extension VitamainThreeViewController: UITableViewDelegate, UITableViewDataSourc
             cell.model.accept(model)
             cell.clickBlock = { [weak self] label in
                 guard let self = self, let model = model else { return }
-                popSelectOneViewInfo(from: model, label: label)
+                popselectEnumViewInfo(from: model, label: label)
             }
             return cell
         }else if reascended == "feeble" {
@@ -265,18 +265,18 @@ extension VitamainThreeViewController: UITableViewDelegate, UITableViewDataSourc
 
 extension VitamainThreeViewController {
     
-    private func popSelectOneViewInfo(from model: interceptModel, label: UILabel) {
-        let selectOneView = SelectOneView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        selectOneView.modelArray.accept(model.extricate ?? [])
-        let alertVc = TYAlertController(alert: selectOneView, preferredStyle: .alert)!
+    private func popselectEnumViewInfo(from model: interceptModel, label: UILabel) {
+        let selectEnumView = SelectAuthEnmuView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
+        selectEnumView.modelArray.accept(model.extricate ?? [])
+        let alertVc = TYAlertController(alert: selectEnumView, preferredStyle: .alert)!
         self.present(alertVc, animated: true)
         
-        selectOneView.dismissBlock = { [weak self] in
+        selectEnumView.dismissBlock = { [weak self] in
             guard let self = self else { return }
             self.dismiss(animated: true)
         }
         
-        selectOneView.comfirmBlock = { [weak self] index, enumModel in
+        selectEnumView.comfirmBlock = { [weak self] index, enumModel in
             guard let self = self else { return }
             self.dismiss(animated: true) {
                 label.text = enumModel.paralysed ?? ""

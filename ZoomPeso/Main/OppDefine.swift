@@ -15,7 +15,9 @@ let CHANGE_ROOT_VC = "CHANGE_ROOT_VC"
 let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
 
 extension UILabel {
-    static func createLabel(font: UIFont, textColor: UIColor, textAlignment: NSTextAlignment) -> UILabel {
+    static func createLabel(font: UIFont,
+                            textColor: UIColor,
+                            textAlignment: NSTextAlignment) -> UILabel {
         let label = UILabel()
         label.backgroundColor = UIColor.clear
         label.textColor = textColor
@@ -94,15 +96,22 @@ class ToastManagerConfig {
     }
 }
 
+enum URLParameterParseError: Error {
+    case invalidURL
+    case noQueryItems
+}
+
 class URLParameterParser {
-    static func parse(from urlString: String) -> [String: String] {
-        guard let url = URL(string: urlString),
-              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-              let queryItems = components.queryItems else {
-            return [:]
+    static func parseWithUrl(from urlString: String) throws -> [String: String] {
+        guard let url = URL(string: urlString) else {
+            throw URLParameterParseError.invalidURL
+        }
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let queryItems = components.queryItems, !queryItems.isEmpty else {
+            throw URLParameterParseError.noQueryItems
         }
         return queryItems.reduce(into: [String: String]()) { result, item in
-            result[item.name] = item.value
+            result[item.name] = item.value ?? ""
         }
     }
 }

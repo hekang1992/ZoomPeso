@@ -8,15 +8,15 @@
 import UIKit
 import RxSwift
 
-class BaseView: UIView {
-    let disposeBag = DisposeBag()
-}
-
 class BaseCollectionViewCell: UICollectionViewCell {
     let disposeBag = DisposeBag()
 }
 
 class BaseViewCell: UITableViewCell {
+    let disposeBag = DisposeBag()
+}
+
+class BaseView: UIView {
     let disposeBag = DisposeBag()
 }
 

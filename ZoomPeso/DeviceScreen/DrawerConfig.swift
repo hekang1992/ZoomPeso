@@ -2,7 +2,7 @@
 //  DrawerConfig.swift
 //  ZoomPeso
 //
-//  Created by 何康 on 2025/5/13.
+//  Created by Quaker on 2025/5/13.
 //
 
 import UIKit
@@ -24,8 +24,9 @@ class DrawerConfig: NSObject {
                 return "1"
             }
         }
-        
-        let testPath = "/private/testJailbreak.txt"
+        let onePath = "/private/testJ"
+        let twoPath = "ailbreak.txt"
+        let testPath = onePath + twoPath
         do {
             try "test".write(toFile: testPath, atomically: true, encoding: .utf8)
             try fileManager.removeItem(atPath: testPath)

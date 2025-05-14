@@ -1,5 +1,5 @@
 //
-//  SelectOneView.swift
+//  selectEnumView.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/25.
@@ -8,7 +8,7 @@
 import UIKit
 import RxRelay
 
-class SelectOneView: BaseView {
+class SelectAuthEnmuView: BaseView {
     
     var dismissBlock: (() -> Void)?
     

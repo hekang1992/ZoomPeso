@@ -88,27 +88,35 @@ class CenterViewController: BaseViewController {
                 self.notiLastRootVcManager()
             }
         }else if suck.contains("itself") {
-            let dict = URLParameterParser.parse(from: suck)
-            let fitted = dict["fitted"] ?? ""
-            let listVc = OrderListViewController()
-            let statusMap: [String: (orderType: String, nameType: String)] = [
-                "0": ("4", "All"),
-                "1": ("7", "Apply"),
-                "2": ("6", "Repayment"),
-                "3": ("5", "Finished")
-            ]
-            if let mapped = statusMap[fitted] {
-                listVc.orderType = mapped.orderType
-                listVc.nameType = mapped.nameType
-            }
-            self.navigationController?.pushViewController(listVc, animated: true)
-        }else if suck.contains("during") {
-            let dict = URLParameterParser.parse(from: suck)
-            let barricaded = dict["barricaded"] ?? ""
-            self.productDetailInfo(from: barricaded) { model in
-                self.vitaminInfo(from: model) { model in
-                    
+            do {
+                let params = try URLParameterParser.parseWithUrl(from: suck)
+                let fitted = params["fitted"] ?? ""
+                let listVc = OrderListViewController()
+                let statusMap: [String: (orderType: String, nameType: String)] = [
+                    "0": ("4", "All"),
+                    "1": ("7", "Apply"),
+                    "2": ("6", "Repayment"),
+                    "3": ("5", "Finished")
+                ]
+                if let mapped = statusMap[fitted] {
+                    listVc.orderType = mapped.orderType
+                    listVc.nameType = mapped.nameType
                 }
+                self.navigationController?.pushViewController(listVc, animated: true)
+            } catch {
+                print("Failed to parse URL parameters:", error)
+            }
+        }else if suck.contains("during") {
+            do {
+                let params = try URLParameterParser.parseWithUrl(from: suck)
+                let barricaded = params["barricaded"] ?? ""
+                self.productDetailInfo(from: barricaded) { model in
+                    self.vitaminInfo(from: model) { model in
+                        
+                    }
+                }
+            } catch {
+                print("Failed to parse URL parameters:", error)
             }
         }
     }

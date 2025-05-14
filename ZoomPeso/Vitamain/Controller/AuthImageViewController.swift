@@ -199,7 +199,7 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
             self.checkCameraPermission()
         })
         
-        alert.addAction(UIAlertAction(title: "PhotoLibrary", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default) { _ in
             self.hatched = "2"
             self.checkPhotoLibraryPermission()
         })
@@ -243,12 +243,12 @@ extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigation
                     if newStatus == .authorized || newStatus == .limited {
                         self.openPhotoLibrary()
                     } else {
-                        self.showPermissionDeniedAlert(for: "PhotoLibrary")
+                        self.showPermissionDeniedAlert(for: "Photo Library")
                     }
                 }
             }
         case .denied, .restricted:
-            showPermissionDeniedAlert(for: "PhotoLibrary")
+            showPermissionDeniedAlert(for: "Photo Library")
         @unknown default:
             break
         }

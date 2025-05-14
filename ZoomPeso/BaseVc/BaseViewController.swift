@@ -174,7 +174,7 @@ extension BaseViewController {
     func showPermissionDeniedAlert(for permission: String) {
         let alert = UIAlertController(
             title: "Permission required",
-            message: "Go to Settings to allow \(permission) access for this feature.",
+            message: "To use this feature, please grant \(permission) access in Settings.",
             preferredStyle: .alert
         )
         
@@ -293,12 +293,16 @@ extension BaseViewController {
         let sucking = model.sucking ?? ""
         let schemeURL = AppURL.schemeURL
         if sucking.hasPrefix(schemeURL) {
-            let dict = URLParameterParser.parse(from: sucking)
-            let barricaded = dict["barricaded"] ?? ""
-            self.productDetailInfo(from: barricaded) { [weak self] model in
-                guard let self = self else { return }
-                let aurl = model.pepsis?.rolled ?? ""
-                vitamainInfo(from: aurl, barricaded: barricaded, model: model)
+            do {
+                let params = try URLParameterParser.parseWithUrl(from: sucking)
+                let barricaded = params["barricaded"] ?? ""
+                self.productDetailInfo(from: barricaded) { [weak self] model in
+                    guard let self = self else { return }
+                    let aurl = model.pepsis?.rolled ?? ""
+                    vitamainInfo(from: aurl, barricaded: barricaded, model: model)
+                }
+            } catch {
+                print("Failed to parse URL parameters:", error)
             }
         }else {
             let fiveVc = VitamainFiveViewController()
