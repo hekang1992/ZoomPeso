@@ -107,6 +107,9 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
         
         geocoder.reverseGeocodeLocation(locationInfo) { [weak self] placemarks, error in
             guard let self = self, let placemark = placemarks?.first else {
+                if !String(coleoptera).isEmpty {
+                    self?.model.accept(model)
+                }
                 return
             }
             self.locationToModel(with: model, placemark: placemark)

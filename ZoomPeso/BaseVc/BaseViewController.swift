@@ -120,8 +120,8 @@ extension BaseViewController {
         let boast = model.boast ?? ""
         let cabinets = model.cabinets ?? ""
         let obscurely = model.obscurely ?? ""
-        let coleoptera = String(model.coleoptera ?? 0.0)
-        let disappointed = String(model.disappointed ?? 0.0)
+        let coleoptera = String(format: "%.6f", model.coleoptera ?? 0.0)
+        let disappointed = String(format: "%.6f", model.disappointed ?? 0.0)
         let observation = model.observation ?? ""
         let error = model.error ?? ""
         
@@ -141,6 +141,7 @@ extension BaseViewController {
             result in
             switch result {
             case .success(_):
+                print("location======success")
                 break
             case .failure(let failure):
                 print(failure.localizedDescription)
