@@ -23,7 +23,7 @@ class DeviceInfo: NSObject {
             return "0"
         } else {
             let percentage = Int(batteryLevel * 100)
-            return "\(percentage)%"
+            return "\(percentage)"
         }
     }
     

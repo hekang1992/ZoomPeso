@@ -107,10 +107,14 @@ extension BaseViewController {
     }
     
     private func zoomPesoFaceBook(from model: sexesModel) {
-        Settings.shared.appID = model.typical ?? ""
-        Settings.shared.clientToken = model.die ?? ""
-        Settings.shared.displayName = model.says ?? ""
-        Settings.shared.appURLSchemeSuffix = model.bloodthirsty ?? ""
+        let appID = model.typical ?? ""
+        let clientToken = model.die ?? ""
+        let says = model.says ?? ""
+        let bloodthirsty = model.bloodthirsty ?? ""
+        Settings.shared.appID = appID
+        Settings.shared.clientToken = clientToken
+        Settings.shared.displayName = says
+        Settings.shared.appURLSchemeSuffix = bloodthirsty
         ApplicationDelegate.shared.application(UIApplication.shared, didFinishLaunchingWithOptions: nil)
     }
     
