@@ -65,7 +65,7 @@ class VitamainFiveViewController: BaseViewController {
             if self.webView.canGoBack {
                 self.webView.goBack()
             }else {
-                self.popToVitamainGuideOrRoot()
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
         
