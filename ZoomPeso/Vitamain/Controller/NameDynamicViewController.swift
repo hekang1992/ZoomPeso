@@ -1,5 +1,5 @@
 //
-//  VitamainFourViewController.swift
+//  NameDynamicViewController.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/22.
@@ -15,7 +15,7 @@ import Combine
 import Contacts
 import ContactsUI
 
-class VitamainFourViewController: BaseViewController {
+class NameDynamicViewController: BaseViewController {
     
     var model = BehaviorRelay<netModel?>(value: nil)
             
@@ -154,7 +154,7 @@ class VitamainFourViewController: BaseViewController {
     
 }
 
-extension VitamainFourViewController {
+extension NameDynamicViewController {
     
     private func safeBingoInfo(with dictArray: [[String: String]]) {
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
@@ -227,7 +227,7 @@ extension VitamainFourViewController {
     
 }
 
-extension VitamainFourViewController: UITableViewDelegate, UITableViewDataSource {
+extension NameDynamicViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 228.pix()
@@ -268,7 +268,7 @@ extension VitamainFourViewController: UITableViewDelegate, UITableViewDataSource
     
 }
 
-extension VitamainFourViewController: CNContactPickerDelegate {
+extension NameDynamicViewController: CNContactPickerDelegate {
     
     private func popSelectOneViewInfo(from model: armyModel, cell: MyLoveViewCell) {
         let selectOneView = SelectAuthEnmuView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))

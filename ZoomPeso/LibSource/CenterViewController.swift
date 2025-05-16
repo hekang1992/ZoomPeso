@@ -67,7 +67,7 @@ class CenterViewController: BaseViewController {
             if sucking.contains(schemeURL) {
                 scUrlGoVc(with: sucking)
             }else {
-                let webVc = VitamainFiveViewController()
+                let webVc = WebDynamicViewController()
                 webVc.pageUrl = model.sucking ?? ""
                 self.navigationController?.pushViewController(webVc, animated: true)
             }

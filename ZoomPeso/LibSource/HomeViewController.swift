@@ -90,7 +90,7 @@ class HomeViewController: BaseViewController {
                 return
             }
             let conUrl = self.homeModel.value?.walckanaer?.azara ?? ""
-            let webVc = VitamainFiveViewController()
+            let webVc = WebDynamicViewController()
             webVc.pageUrl = conUrl
             self.navigationController?.pushViewController(webVc, animated: true)
         }).disposed(by: disposeBag)

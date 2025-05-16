@@ -1,5 +1,5 @@
 //
-//  VitamainOneViewController.swift
+//  VitamainGeneralViewController.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/22.
@@ -8,7 +8,7 @@
 import UIKit
 import RxRelay
 
-class VitamainOneViewController: BaseViewController {
+class VitamainGeneralViewController: BaseViewController {
         
     var horrid = BehaviorRelay<[String]?>(value: nil)
     
@@ -289,7 +289,7 @@ class VitamainOneViewController: BaseViewController {
                 ToastManagerConfig.showToastText(form: view, message: "Please select an authentication method")
                 return
             }
-            let imageVc = AuthImageViewController()
+            let imageVc = ApproachAuthViewController()
             imageVc.model.accept(model)
             imageVc.enthusiastic = selectAuthStr
             self.navigationController?.pushViewController(imageVc, animated: true)
@@ -303,7 +303,7 @@ class VitamainOneViewController: BaseViewController {
     
 }
 
-extension VitamainOneViewController: UITableViewDelegate {
+extension VitamainGeneralViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5

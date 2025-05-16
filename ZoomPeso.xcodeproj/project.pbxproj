@@ -44,18 +44,18 @@
 		73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */; };
 		73C5A1FB2DB7D19C00105BD3 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */; };
 		73C5A1FD2DB7D3F500105BD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */; };
-		73C5A2022DB7E14400105BD3 /* VitamainOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */; };
-		73C5A2042DB7E14F00105BD3 /* VitamainTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */; };
-		73C5A2062DB7E17400105BD3 /* VitamainThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */; };
-		73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2072DB7E17E00105BD3 /* VitamainFourViewController.swift */; };
-		73C5A20A2DB7E18700105BD3 /* VitamainFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2092DB7E18700105BD3 /* VitamainFiveViewController.swift */; };
+		73C5A2022DB7E14400105BD3 /* VitamainGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2012DB7E14400105BD3 /* VitamainGeneralViewController.swift */; };
+		73C5A2042DB7E14F00105BD3 /* VitamainAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2032DB7E14F00105BD3 /* VitamainAbstractViewController.swift */; };
+		73C5A2062DB7E17400105BD3 /* VitamainDynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2052DB7E17400105BD3 /* VitamainDynamicViewController.swift */; };
+		73C5A2082DB7E17E00105BD3 /* NameDynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2072DB7E17E00105BD3 /* NameDynamicViewController.swift */; };
+		73C5A20A2DB7E18700105BD3 /* WebDynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2092DB7E18700105BD3 /* WebDynamicViewController.swift */; };
 		73C5A20E2DB7E1F700105BD3 /* VitamainGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */; };
 		73C5A2122DB7E2E900105BD3 /* VitamainGuideHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */; };
 		73FAA6522DB9149100D77159 /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6512DB9149100D77159 /* CenterView.swift */; };
 		73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6532DB91D6900D77159 /* SettingViewController.swift */; };
 		73FAA6562DB9216900D77159 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6552DB9216900D77159 /* OrderListViewController.swift */; };
 		73FAA6582DB92F0A00D77159 /* AuthViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */; };
-		73FAA65A2DB93AAB00D77159 /* AuthImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */; };
+		73FAA65A2DB93AAB00D77159 /* ApproachAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAA6592DB93AAB00D77159 /* ApproachAuthViewController.swift */; };
 		73FBABB72DD333CE00F31824 /* OccupyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FBABB62DD333B200F31824 /* OccupyConfig.swift */; };
 		73FBABB92DD3346E00F31824 /* DrawerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FBABB82DD3345000F31824 /* DrawerConfig.swift */; };
 /* End PBXBuildFile section */
@@ -102,18 +102,18 @@
 		73C5A1F82DB7CBA500105BD3 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		73C5A1FA2DB7D19C00105BD3 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
 		73C5A1FC2DB7D3F500105BD3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainOneViewController.swift; sourceTree = "<group>"; };
-		73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainTwoViewController.swift; sourceTree = "<group>"; };
-		73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainThreeViewController.swift; sourceTree = "<group>"; };
-		73C5A2072DB7E17E00105BD3 /* VitamainFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainFourViewController.swift; sourceTree = "<group>"; };
-		73C5A2092DB7E18700105BD3 /* VitamainFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainFiveViewController.swift; sourceTree = "<group>"; };
+		73C5A2012DB7E14400105BD3 /* VitamainGeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainGeneralViewController.swift; sourceTree = "<group>"; };
+		73C5A2032DB7E14F00105BD3 /* VitamainAbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainAbstractViewController.swift; sourceTree = "<group>"; };
+		73C5A2052DB7E17400105BD3 /* VitamainDynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainDynamicViewController.swift; sourceTree = "<group>"; };
+		73C5A2072DB7E17E00105BD3 /* NameDynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDynamicViewController.swift; sourceTree = "<group>"; };
+		73C5A2092DB7E18700105BD3 /* WebDynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDynamicViewController.swift; sourceTree = "<group>"; };
 		73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainGuideViewController.swift; sourceTree = "<group>"; };
 		73C5A2112DB7E2E900105BD3 /* VitamainGuideHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitamainGuideHeadView.swift; sourceTree = "<group>"; };
 		73FAA6512DB9149100D77159 /* CenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
 		73FAA6532DB91D6900D77159 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		73FAA6552DB9216900D77159 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		73FAA6572DB92F0A00D77159 /* AuthViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewCell.swift; sourceTree = "<group>"; };
-		73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthImageViewController.swift; sourceTree = "<group>"; };
+		73FAA6592DB93AAB00D77159 /* ApproachAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproachAuthViewController.swift; sourceTree = "<group>"; };
 		73FBABB62DD333B200F31824 /* OccupyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccupyConfig.swift; sourceTree = "<group>"; };
 		73FBABB82DD3345000F31824 /* DrawerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerConfig.swift; sourceTree = "<group>"; };
 		CEDDA2CBD9C04EE29B8EB8E2 /* Pods-ZoomPeso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.release.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,13 +209,13 @@
 			children = (
 				733DCA142DB5FC1D009AA17E /* LoginViewController.swift */,
 				73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */,
-				73C5A2012DB7E14400105BD3 /* VitamainOneViewController.swift */,
-				73FAA6592DB93AAB00D77159 /* AuthImageViewController.swift */,
+				73C5A2012DB7E14400105BD3 /* VitamainGeneralViewController.swift */,
+				73FAA6592DB93AAB00D77159 /* ApproachAuthViewController.swift */,
 				739FA6CA2DBA84C7003C0352 /* SFaceViewViewController.swift */,
-				73C5A2032DB7E14F00105BD3 /* VitamainTwoViewController.swift */,
-				73C5A2052DB7E17400105BD3 /* VitamainThreeViewController.swift */,
-				73C5A2072DB7E17E00105BD3 /* VitamainFourViewController.swift */,
-				73C5A2092DB7E18700105BD3 /* VitamainFiveViewController.swift */,
+				73C5A2032DB7E14F00105BD3 /* VitamainAbstractViewController.swift */,
+				73C5A2052DB7E17400105BD3 /* VitamainDynamicViewController.swift */,
+				73C5A2072DB7E17E00105BD3 /* NameDynamicViewController.swift */,
+				73C5A2092DB7E18700105BD3 /* WebDynamicViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73FAA65A2DB93AAB00D77159 /* AuthImageViewController.swift in Sources */,
+				73FAA65A2DB93AAB00D77159 /* ApproachAuthViewController.swift in Sources */,
 				7350F17E2DBE70D10084D9AE /* AccDelLogView.swift in Sources */,
 				733DCA252DB641CF009AA17E /* FullyModel.swift in Sources */,
 				73C5A1F92DB7CBA500105BD3 /* OrderListView.swift in Sources */,
@@ -415,15 +415,15 @@
 				735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */,
 				733DCA012DB5DC84009AA17E /* OppDefine.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
-				73C5A2082DB7E17E00105BD3 /* VitamainFourViewController.swift in Sources */,
+				73C5A2082DB7E17E00105BD3 /* NameDynamicViewController.swift in Sources */,
 				7368E60A2DBBDDEC00427C04 /* MyLoveViewCell.swift in Sources */,
 				733DCA092DB5DDC4009AA17E /* BaseNavigationController.swift in Sources */,
-				73C5A2022DB7E14400105BD3 /* VitamainOneViewController.swift in Sources */,
+				73C5A2022DB7E14400105BD3 /* VitamainGeneralViewController.swift in Sources */,
 				73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */,
 				73FBABB92DD3346E00F31824 /* DrawerConfig.swift in Sources */,
 				73C5A1FB2DB7D19C00105BD3 /* OrderListViewCell.swift in Sources */,
 				733DCA152DB5FC1D009AA17E /* LoginViewController.swift in Sources */,
-				73C5A2062DB7E17400105BD3 /* VitamainThreeViewController.swift in Sources */,
+				73C5A2062DB7E17400105BD3 /* VitamainDynamicViewController.swift in Sources */,
 				739FA6C92DBA720A003C0352 /* AppleAuthSubView.swift in Sources */,
 				733DCA052DB5DD75009AA17E /* BaseViewController.swift in Sources */,
 				73FBABB72DD333CE00F31824 /* OccupyConfig.swift in Sources */,
@@ -442,8 +442,8 @@
 				7350F1802DBE7B960084D9AE /* AuthDateView.swift in Sources */,
 				73C5A2122DB7E2E900105BD3 /* VitamainGuideHeadView.swift in Sources */,
 				73FAA6582DB92F0A00D77159 /* AuthViewCell.swift in Sources */,
-				73C5A2042DB7E14F00105BD3 /* VitamainTwoViewController.swift in Sources */,
-				73C5A20A2DB7E18700105BD3 /* VitamainFiveViewController.swift in Sources */,
+				73C5A2042DB7E14F00105BD3 /* VitamainAbstractViewController.swift in Sources */,
+				73C5A20A2DB7E18700105BD3 /* WebDynamicViewController.swift in Sources */,
 				733DCA112DB5DF36009AA17E /* RequestConfig.swift in Sources */,
 				73786BAA2DC5D6EA00523D24 /* ParaMeraView.swift in Sources */,
 				733DCA1F2DB62B71009AA17E /* OrderViewController.swift in Sources */,

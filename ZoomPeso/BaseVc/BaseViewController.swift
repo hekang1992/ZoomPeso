@@ -209,17 +209,17 @@ extension BaseViewController {
             
             let vc = action.makeViewController()
             
-            if case .the = action, let vc = vc as? VitamainTwoViewController {
+            if case .the = action, let vc = vc as? VitamainAbstractViewController {
                 vc.model.accept(model)
             }
-            if case .and = action, let vc = vc as? VitamainThreeViewController {
+            if case .and = action, let vc = vc as? VitamainDynamicViewController {
                 vc.model.accept(model)
             }
-            if case .some = action, let vc = vc as? VitamainFourViewController {
+            if case .some = action, let vc = vc as? NameDynamicViewController {
                 vc.model.accept(model)
             }
             
-            if case .both = action, let vc = vc as? VitamainFiveViewController {
+            if case .both = action, let vc = vc as? WebDynamicViewController {
                 vc.model.accept(model)
                 vc.pageUrl = model.pepsis?.sucking ?? ""
             }
@@ -236,10 +236,10 @@ extension BaseViewController {
         case adc = ""
         func makeViewController() -> BaseViewController {
             switch self {
-            case .the: return VitamainTwoViewController()
-            case .and: return VitamainThreeViewController()
-            case .some: return VitamainFourViewController()
-            case .both: return VitamainFiveViewController()
+            case .the: return VitamainAbstractViewController()
+            case .and: return VitamainDynamicViewController()
+            case .some: return NameDynamicViewController()
+            case .both: return WebDynamicViewController()
             case .adc: return VitamainGuideViewController()
             default: fatalError("Unsupported type")
             }
@@ -310,7 +310,7 @@ extension BaseViewController {
                 print("Failed to parse URL parameters:", error)
             }
         }else {
-            let fiveVc = VitamainFiveViewController()
+            let fiveVc = WebDynamicViewController()
             fiveVc.pageUrl = sucking
             self.navigationController?.pushViewController(fiveVc, animated: true)
         }

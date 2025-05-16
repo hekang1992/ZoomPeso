@@ -1,5 +1,5 @@
 //
-//  VitamainThreeViewController.swift
+//  VitamainAbstractViewController.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/22.
@@ -13,12 +13,12 @@ import TYAlertController
 import Kingfisher
 import Combine
 
-class VitamainThreeViewController: BaseViewController {
+class VitamainAbstractViewController: BaseViewController {
     
     var model = BehaviorRelay<netModel?>(value: nil)
     
     var cancellables = Set<AnyCancellable>()
-        
+    
     var oneModel = BehaviorRelay<netModel?>(value: nil)
     
     var kstime: String = ""
@@ -86,7 +86,7 @@ class VitamainThreeViewController: BaseViewController {
             make.height.equalTo(136.pix())
         }
         
-        self.headView.nameLabel.text = "Job information"
+        self.headView.nameLabel.text = "Basic information"
         addHeadView()
         self.headView.backBlock = { [weak self] in
             self?.popToVitamainGuideOrRoot()
@@ -152,7 +152,7 @@ class VitamainThreeViewController: BaseViewController {
     
 }
 
-extension VitamainThreeViewController {
+extension VitamainAbstractViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -164,11 +164,13 @@ extension VitamainThreeViewController {
     private func getApiInfo() {
         ViewCycleManager.showLoading()
         let barricaded = self.model.value?.enlarged?.orifice ?? ""
+        let vitamin = String(format: "%@", barricaded)
         let dict = ["barricaded": barricaded,
+                    "vitamin": vitamin,
                     "bear": "1",
                     "cotton": "0"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/standing", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/bloodthirsty", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -190,7 +192,7 @@ extension VitamainThreeViewController {
         ViewCycleManager.showLoading()
         let barricaded = dict["barricaded"] ?? ""
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/uvre", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/typical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
             switch result {
             case .success(let success):
@@ -202,7 +204,7 @@ extension VitamainThreeViewController {
                             
                         }
                     }
-                    ScroPortionPointConfig.pointToPageWithModel(with: "6", kstime: kstime, jstime: DeviceInfo.currentTimestamp)
+                    ScroPortionPointConfig.pointToPageWithModel(with: "5", kstime: kstime, jstime: DeviceInfo.currentTimestamp)
                 }else {
                     ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 }
@@ -215,7 +217,7 @@ extension VitamainThreeViewController {
     
 }
 
-extension VitamainThreeViewController: UITableViewDelegate, UITableViewDataSource {
+extension VitamainAbstractViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let model = self.oneModel.value
@@ -263,7 +265,7 @@ extension VitamainThreeViewController: UITableViewDelegate, UITableViewDataSourc
     
 }
 
-extension VitamainThreeViewController {
+extension VitamainAbstractViewController {
     
     private func popselectEnumViewInfo(from model: interceptModel, label: UILabel) {
         let selectEnumView = SelectAuthEnmuView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -286,7 +288,6 @@ extension VitamainThreeViewController {
                 model.common = enumModel.paralysed ?? ""
             }
         }
-        
     }
     
     private func popSelectThreeViewInfo(tin model: interceptModel, label: UILabel) {
@@ -302,5 +303,6 @@ extension VitamainThreeViewController {
         }
         
     }
+    
     
 }

@@ -198,7 +198,7 @@ class VitamainGuideViewController: BaseViewController {
             let deadlystrength = model.deadly?.strength ?? 0
             let victimsstrength = model.victims?.strength ?? 0
             if deadlystrength == 0 && victimsstrength == 0 {
-                let vitaminVc = VitamainOneViewController()
+                let vitaminVc = VitamainGeneralViewController()
                 if let model = self.model.value {
                     vitaminVc.model.accept(model)
                 }
@@ -210,7 +210,7 @@ class VitamainGuideViewController: BaseViewController {
                 }
                 self.navigationController?.pushViewController(vitaminVc, animated: true)
             }else if deadlystrength == 1 && victimsstrength == 1   {
-                let vitaminVc = AuthImageViewController()
+                let vitaminVc = ApproachAuthViewController()
                 if let model = self.model.value {
                     vitaminVc.model.accept(model)
                 }
@@ -273,7 +273,7 @@ class VitamainGuideViewController: BaseViewController {
                 ViewCycleManager.hideLoading()
                 if ["0", "00"].contains(success.wedge) {
                     let time = DeviceInfo.currentTimestamp
-                    let fievc = VitamainFiveViewController()
+                    let fievc = WebDynamicViewController()
                     fievc.odNum = odID
                     fievc.pageUrl = success.net?.sucking ?? ""
                     self?.navigationController?.pushViewController(fievc, animated: true)
@@ -324,7 +324,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
             }
         }else if index == 1 {
             if stepIndex >= 1 {
-                let vitamanVc = VitamainTwoViewController()
+                let vitamanVc = VitamainAbstractViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }else {
@@ -334,7 +334,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
             }
         }else if index == 2 {
             if stepIndex >= 2 {
-                let vitamanVc = VitamainThreeViewController()
+                let vitamanVc = VitamainDynamicViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }else {
@@ -344,7 +344,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
             }
         }else if index == 3 {
             if stepIndex >= 3 {
-                let vitamanVc = VitamainFourViewController()
+                let vitamanVc = NameDynamicViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
             }else {
@@ -357,12 +357,12 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
             let sucking = model.finding?[index].sucking
             if vitamain.isEmpty {
                 //odIDWithString(with: model)
-                let webVc = VitamainFiveViewController()
+                let webVc = WebDynamicViewController()
                 webVc.pageUrl = sucking
                 self.navigationController?.pushViewController(webVc, animated: true)
             }else {
                 if stepIndex >= 4 {
-                    let vitamanVc = VitamainFiveViewController()
+                    let vitamanVc = WebDynamicViewController()
                     vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
                     vitamanVc.model.accept(model)
                     self.navigationController?.pushViewController(vitamanVc, animated: true)

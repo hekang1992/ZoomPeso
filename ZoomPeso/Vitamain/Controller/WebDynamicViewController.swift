@@ -1,5 +1,5 @@
 //
-//  VitamainFiveViewController.swift
+//  WebDynamicViewController.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/22.
@@ -11,7 +11,7 @@ import WebKit
 import RxSwift
 import StoreKit
 
-class VitamainFiveViewController: BaseViewController {
+class WebDynamicViewController: BaseViewController {
     
     var model = BehaviorRelay<netModel?>(value: nil)
     
@@ -118,7 +118,7 @@ class VitamainFiveViewController: BaseViewController {
     
 }
 
-extension VitamainFiveViewController: WKScriptMessageHandler, WKNavigationDelegate {
+extension WebDynamicViewController: WKScriptMessageHandler, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         decisionHandler(.allow)

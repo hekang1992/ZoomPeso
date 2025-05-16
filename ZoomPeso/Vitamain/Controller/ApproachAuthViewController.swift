@@ -1,5 +1,5 @@
 //
-//  AuthImageViewController.swift
+//  ApproachAuthViewController.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/22.
@@ -12,7 +12,7 @@ import Photos
 import TYAlertController
 import Kingfisher
 
-class AuthImageViewController: BaseViewController {
+class ApproachAuthViewController: BaseViewController {
     
     var model = BehaviorRelay<netModel?>(value: nil)
         
@@ -185,7 +185,7 @@ class AuthImageViewController: BaseViewController {
     
 }
 
-extension AuthImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ApproachAuthViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private  func showImageSourceSelection() {
         let alert = UIAlertController(

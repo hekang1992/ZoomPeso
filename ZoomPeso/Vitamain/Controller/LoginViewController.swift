@@ -46,7 +46,7 @@ class LoginViewController: BaseViewController {
             guard let self = self else { return }
             if let model = DataLoginManager.shared.currentModel {
                 let pageUrl = model.pocket_private_url ?? ""
-                let fiveVc = VitamainFiveViewController()
+                let fiveVc = WebDynamicViewController()
                 fiveVc.pageUrl = pageUrl
                 self.navigationController?.pushViewController(fiveVc, animated: true)
             }
