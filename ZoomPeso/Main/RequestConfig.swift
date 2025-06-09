@@ -17,7 +17,7 @@ enum AppURL {
     }
 }
 
-let BASE_URL = "http://47.84.36.196:8235/zigzag"
+let BASE_URL = "https://zpml.movefast-lending.com/zigzag"
 
 class NetworkMonitor {
     static let shared = NetworkMonitor()
@@ -89,7 +89,13 @@ class NetworkRequstManager {
                                   completion: @escaping (Result<T, Error>) -> Void) {
         
         let loginDict = LoginConfig.getLoginInfo().toDictionary
-        let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
+        var baseUrl = UserDefaults.standard.object(forKey: "baseUrl") as? String ?? ""
+        if baseUrl.isEmpty {
+            baseUrl = BASE_URL
+        }else {
+            baseUrl = UserDefaults.standard.object(forKey: "baseUrl") as? String ?? ""
+        }
+        let url = URLQueryConfig.appendQueryDict(to: baseUrl + endpoint, parameters: loginDict)!
         
         AF.request(url,
                    method: .get,
@@ -112,7 +118,16 @@ class NetworkRequstManager {
                                                 responseType: T.Type,
                                                 completion: @escaping (Result<T, Error>) -> Void) {
         let loginDict = LoginConfig.getLoginInfo().toDictionary
-        let url = URLQueryConfig.appendQueryDict(to: BASE_URL + endpoint, parameters: loginDict)!
+        
+        var baseUrl = UserDefaults.standard.object(forKey: "baseUrl") as? String ?? ""
+        if baseUrl.isEmpty {
+            baseUrl = BASE_URL
+        }else {
+            baseUrl = UserDefaults.standard.object(forKey: "baseUrl") as? String ?? ""
+        }
+        
+        
+        let url = URLQueryConfig.appendQueryDict(to: baseUrl + endpoint, parameters: loginDict)!
         
         AF.upload(multipartFormData: { multipartFormData in
             parameters?.forEach { key, value in

@@ -13,6 +13,8 @@ import NetworkExtension
 import AppTrackingTransparency
 
 let SHOWGUIDE: String = ""
+let dyc = "https://ph4-dc.oss-ap-southeast-1.ali"
+let cdc = "yuncs.com/zoom-peso/zpml.json"
 class LaunchViewController: BaseViewController {
     
     var buttons: [UIButton] = []
@@ -22,6 +24,10 @@ class LaunchViewController: BaseViewController {
     let images = ["Higimageone", "Higimagetwo", "Higimagethree"]
     
     var show: String = ""
+    
+    var index: Int = 0
+    
+    var apiArray: [[String: String]] = []
     
     lazy var bgImageView: UIImageView = {
         let bgImageView = UIImageView()
@@ -45,8 +51,48 @@ class LaunchViewController: BaseViewController {
         
         NetworkMonitor.shared.startMonitoring { [weak self] grand in
             if grand {
-                self?.resetLoginIngo()
-                self?.idfainfo()
+                self?.getDycInfo()
+            }
+        }
+        
+    }
+    
+    func getDycInfo() {
+        let pageUrl = dyc + cdc
+        guard let url = URL(string: pageUrl) else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self, let data = data else {
+                return
+            }
+            do {
+                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+                if let jsonArray = jsonObject as? [[String: String]] {
+                    
+                    self.apiArray = jsonArray
+                    fdaInfoMessage()
+                }
+            } catch {
+                
+            }
+        }
+        task.resume()
+    }
+    
+    private func fdaInfoMessage() {
+        self.resetLoginIngo { grand in
+            if grand {
+                self.idfainfo()
+            }else {
+                if self.index > self.apiArray.count - 1 {
+                    return
+                }
+                let apiUrl = self.apiArray[self.index]["zpp"] ?? ""
+                UserDefaults.standard.set(apiUrl, forKey: "baseUrl")
+                UserDefaults.standard.synchronize()
+                self.index += 1
+                self.fdaInfoMessage()
             }
         }
         
@@ -74,7 +120,7 @@ extension LaunchViewController: UIScrollViewDelegate {
         }
     }
     
-    func resetLoginIngo() {
+    func resetLoginIngo(complete: @escaping (Bool) -> Void) {
         let constructed = DeviceInfo.childrenMeseage()
         let similarly = checkProxySettings()
         let segment = isVPNConnected()
@@ -97,8 +143,10 @@ extension LaunchViewController: UIScrollViewDelegate {
                         notiLastRootVcManager()
                     }
                 }
+                complete(true)
                 break
             case .failure(_):
+                complete(false)
                 break
             }
         }

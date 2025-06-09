@@ -1,5 +1,5 @@
 //
-//  SFaceViewViewController.swift
+//  SFAppRoveViewViewController.swift
 //  ZoomPeso
 //
 //  Created by Quaker on 2025/4/22.
@@ -12,7 +12,7 @@ import Photos
 import TYAlertController
 import Kingfisher
 
-class SFaceViewViewController: BaseViewController {
+class SFAppRoveViewViewController: BaseViewController {
         
     var hatched: String = ""
     
@@ -177,7 +177,7 @@ class SFaceViewViewController: BaseViewController {
     
 }
 
-extension SFaceViewViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension SFAppRoveViewViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private  func showImageSourceSelection() {
         self.checkCameraPermission()

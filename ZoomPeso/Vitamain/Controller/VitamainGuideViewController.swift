@@ -204,7 +204,7 @@ class VitamainGuideViewController: BaseViewController {
                 }
                 self.navigationController?.pushViewController(vitaminVc, animated: true)
             }else if deadlystrength == 1 && victimsstrength == 0 {
-                let vitaminVc = SFaceViewViewController()
+                let vitaminVc = SFAppRoveViewViewController()
                 if let model = self.model.value {
                     vitaminVc.model.accept(model)
                 }

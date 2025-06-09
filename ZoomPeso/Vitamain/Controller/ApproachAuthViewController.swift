@@ -160,7 +160,7 @@ class ApproachAuthViewController: BaseViewController {
             selectTime = DeviceInfo.currentTimestamp
             let index = self.isSuccess.value ?? 0
             if index == 1 {
-                let sfcVc = SFaceViewViewController()
+                let sfcVc = SFAppRoveViewViewController()
                 sfcVc.model.accept(self.model.value)
                 self.navigationController?.pushViewController(sfcVc, animated: true)
             }else {
