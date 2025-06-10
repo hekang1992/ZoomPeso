@@ -249,7 +249,11 @@ class HomeView: BaseView {
             make.height.equalTo(25)
         }
         oneLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                make.top.equalTo(logoImageView.snp.bottom).offset(49.pix())
+            }else {
+                make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
+            }
             make.centerX.equalToSuperview()
             make.height.equalTo(22.pix())
         }

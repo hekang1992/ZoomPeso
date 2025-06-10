@@ -8,6 +8,7 @@
 import UIKit
 import MJRefresh
 import RxRelay
+import CoreLocation
 
 class HomeViewController: BaseViewController {
     
@@ -54,13 +55,33 @@ class HomeViewController: BaseViewController {
         
         self.homeView.applyBlock = { [weak self] in
             guard let self = self else { return }
-            let ruby = self.homeModel.value?.ruby ?? []
-            for model in ruby {
-                let bajada = model.bajada ?? ""
-                if bajada == "allowing" {
-                    let model = model.juices?.first
-                    let orifice = model?.orifice ?? 0
-                    self.sqProductInfo(from: orifice)
+            let model = DataLoginManager.shared.currentModel
+            let cordillera = model?.cordillera ?? 0
+            
+            let status = CLLocationManager().authorizationStatus
+            if status == .authorizedAlways || status == .authorizedWhenInUse {
+                let ruby = self.homeModel.value?.ruby ?? []
+                for model in ruby {
+                    let bajada = model.bajada ?? ""
+                    if bajada == "allowing" {
+                        let model = model.juices?.first
+                        let orifice = model?.orifice ?? 0
+                        self.sqProductInfo(from: orifice)
+                    }
+                }
+            }else {
+                if cordillera == 1 {
+                    showPermissionDeniedAlert(for: "Location")
+                }else {
+                    let ruby = self.homeModel.value?.ruby ?? []
+                    for model in ruby {
+                        let bajada = model.bajada ?? ""
+                        if bajada == "allowing" {
+                            let model = model.juices?.first
+                            let orifice = model?.orifice ?? 0
+                            self.sqProductInfo(from: orifice)
+                        }
+                    }
                 }
             }
         }

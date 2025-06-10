@@ -11,16 +11,30 @@ import FSPagerView
 
 class VitamainGuideViewController: BaseViewController {
     
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .clear
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInsetAdjustmentBehavior = .never
+        return scrollView
+    }()
+    
     var photoModel = BehaviorRelay<netModel?>(value: nil)
     
     var model = BehaviorRelay<netModel?>(value: nil)
     
-    let imageNames = ["authone", "authtwo", "auththree", "authfour", "authfive"]
-    let oneImageNames = ["authone_sel", "authtwo", "auththree", "authfour", "authfive"]
-    let twoImageNames = ["authone_sel", "authtwo_sel", "auththree", "authfour", "authfive"]
-    let threeImageNames = ["authone_sel", "authtwo_sel", "auththree_sel", "authfour", "authfive"]
-    let fourImageNames = ["authone_sel", "authtwo_sel", "auththree_sel", "authfour_sel", "authfive"]
-    let fiveImageNames = ["authone_sel", "authtwo_sel", "auththree_sel", "authfour_sel", "authfive_sel"]
+    var imageNames = ["authone", "authtwo", "auththree", "authfour", "authfive"]
+    
+    var oneImageNames = ["authone_sel", "authtwo", "auththree", "authfour", "authfive"]
+    
+    var twoImageNames = ["authone_sel", "authtwo_sel", "auththree", "authfour", "authfive"]
+    
+    var threeImageNames = ["authone_sel", "authtwo_sel", "auththree_sel", "authfour", "authfive"]
+    
+    var fourImageNames = ["authone_sel", "authtwo_sel", "auththree_sel", "authfour_sel", "authfive"]
+    
+    var fiveImageNames = ["authone_sel", "authtwo_sel", "auththree_sel", "authfour_sel", "authfive_sel"]
     
     var imageArray: [String] = []
     
@@ -95,13 +109,18 @@ class VitamainGuideViewController: BaseViewController {
         
         // Do any additional setup after loading the view.
         view.backgroundColor = .init(hexStr: "#FD744D")
-        view.addSubview(oneImageView)
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        scrollView.addSubview(oneImageView)
         oneImageView.addSubview(moneyLabel)
         oneImageView.addSubview(rightLabel)
         oneImageView.addSubview(leftLabel)
         oneImageView.addSubview(twoImageView)
         oneImageView.snp.makeConstraints { make in
-            make.left.top.right.equalToSuperview()
+            make.left.top.equalToSuperview()
+            make.width.equalTo(SCREEN_WIDTH)
             make.height.equalTo(283.pix())
         }
         moneyLabel.snp.makeConstraints { make in
@@ -132,34 +151,36 @@ class VitamainGuideViewController: BaseViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }
         
-        view.addSubview(descLabel)
+        scrollView.addSubview(descLabel)
         descLabel.snp.makeConstraints { make in
             make.top.equalTo(twoImageView.snp.bottom)
             make.left.equalToSuperview().offset(12)
             make.height.equalTo(25.pix())
         }
         
-        view.addSubview(nextBtn)
-        nextBtn.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
-            make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
-        }
-        
-        view.addSubview(footImageView)
+        scrollView.addSubview(footImageView)
         footImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 350.pix(), height: 396.pix()))
             make.top.equalTo(descLabel.snp.bottom).offset(10)
         }
         
-        view.addSubview(pagerView)
+        scrollView.addSubview(pagerView)
         pagerView.snp.makeConstraints { make in
             make.top.equalTo(footImageView.snp.top).offset(20.pix())
             make.width.equalTo(SCREEN_WIDTH)
             make.left.equalToSuperview()
             make.height.equalTo(222.pix())
         }
+        
+        scrollView.addSubview(nextBtn)
+        nextBtn.snp.makeConstraints { make in
+            make.top.equalTo(footImageView.snp.bottom).offset(10.pix())
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
+            make.bottom.equalToSuperview().offset(-20.pix())
+        }
+        
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
@@ -177,7 +198,7 @@ class VitamainGuideViewController: BaseViewController {
                 "both": 4,
                 "": 5
             ]
-            self.stepIndex = stepMapping[model.pepsis?.rolled ?? ""] ?? 5
+            self.stepIndex = stepMapping[model.pepsis?.rolled ?? ""] ?? 0
             pagerView.reloadData()
         }).disposed(by: disposeBag)
         
@@ -217,6 +238,21 @@ class VitamainGuideViewController: BaseViewController {
                 self.navigationController?.pushViewController(vitaminVc, animated: true)
             }
         }).disposed(by: disposeBag)
+        
+        let listArray = self.model.value?.finding ?? []
+        let keyworks = ["numerous", "the", "and", "some", "both"]
+        var imageArray: [String] = []
+        for model in listArray {
+            imageArray.append(model.rolled ?? "")
+        }
+        if listArray.count == 4 {
+            imageNames.remove(at: 3)
+            oneImageNames.remove(at: 3)
+            twoImageNames.remove(at: 3)
+            threeImageNames.remove(at: 3)
+            fourImageNames.remove(at: 3)
+            fiveImageNames.remove(at: 3)
+        }
         
     }
     
@@ -313,17 +349,19 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return imageNames.count
+        let listArray = model.value?.finding ?? []
+        return listArray.count
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         guard let model = self.model.value else { return }
-        if index == 0 {
-            if stepIndex >= 0 {
+        let rolled = model.finding?[index].rolled ?? ""
+        if rolled == "numerous" {
+            if stepIndex >= index {
                 getAuthInfo()
             }
-        }else if index == 1 {
-            if stepIndex >= 1 {
+        }else if rolled == "the" {
+            if stepIndex >= index {
                 let vitamanVc = VitamainAbstractViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
@@ -332,8 +370,8 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                     self.photoModel.accept(model)
                 }
             }
-        }else if index == 2 {
-            if stepIndex >= 2 {
+        }else if rolled == "and" {
+            if stepIndex >= index {
                 let vitamanVc = VitamainDynamicViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
@@ -342,8 +380,8 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                     self.photoModel.accept(model)
                 }
             }
-        }else if index == 3 {
-            if stepIndex >= 3 {
+        }else if rolled == "some" {
+            if stepIndex >= index {
                 let vitamanVc = NameDynamicViewController()
                 vitamanVc.model.accept(model)
                 self.navigationController?.pushViewController(vitamanVc, animated: true)
@@ -352,7 +390,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                     self.photoModel.accept(model)
                 }
             }
-        }else if index == 4 {
+        }else if rolled == "both" {
             let vitamain = model.pepsis?.rolled ?? ""
             let sucking = model.finding?[index].sucking
             if vitamain.isEmpty {
@@ -361,7 +399,7 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                 webVc.pageUrl = sucking
                 self.navigationController?.pushViewController(webVc, animated: true)
             }else {
-                if stepIndex >= 4 {
+                if stepIndex >= index {
                     let vitamanVc = WebDynamicViewController()
                     vitamanVc.pageUrl = model.pepsis?.sucking ?? ""
                     vitamanVc.model.accept(model)
@@ -372,6 +410,8 @@ extension VitamainGuideViewController: FSPagerViewDelegate, FSPagerViewDataSourc
                     }
                 }
             }
+        }else {
+            
         }
     }
 }

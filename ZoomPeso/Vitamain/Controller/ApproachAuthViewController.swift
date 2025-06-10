@@ -324,7 +324,6 @@ extension ApproachAuthViewController: UIImagePickerControllerDelegate, UINavigat
             sageInfo(form: authView)
         }).disposed(by: disposeBag)
         
-        
         authView.block = { [weak self] in
             guard let self = self else { return }
             self.dismiss(animated: true)

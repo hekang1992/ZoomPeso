@@ -31,7 +31,7 @@ class LaunchViewController: BaseViewController {
     
     lazy var bgImageView: UIImageView = {
         let bgImageView = UIImageView()
-        bgImageView.contentMode = .scaleAspectFit
+        bgImageView.contentMode = .scaleAspectFill
         bgImageView.image = UIImage(named: "lanucmimage")
         return bgImageView
     }()
@@ -197,7 +197,7 @@ extension LaunchViewController: UIScrollViewDelegate {
                                                       width: SCREEN_WIDTH,
                                                       height: SCREEN_HEIGHT))
             imageView.image = UIImage(named: images[i])
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleAspectFill
             imageView.isUserInteractionEnabled = true
             scrollView.addSubview(imageView)
             

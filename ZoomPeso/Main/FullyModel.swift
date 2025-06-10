@@ -36,6 +36,7 @@ class netModel: Codable {
 
 class findingModel: Codable {
     var sucking: String?
+    var rolled: String?
 }
 
 class walckanaerModel: Codable {
