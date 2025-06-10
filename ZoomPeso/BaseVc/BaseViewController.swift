@@ -176,15 +176,23 @@ extension BaseViewController {
         }
     }
     
-    func showPermissionDeniedAlert(for permission: String) {
+    func showPermissionDeniedAlert(for permission: String, customMessage: String? = "0") {
         let alert = UIAlertController(
             title: "Permission required",
             message: "To use this feature, please grant \(permission) access in Settings.",
             preferredStyle: .alert
         )
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            if customMessage == "1" {
+                PopupManager.recordPopupShown()
+            }
+        }))
+        
         alert.addAction(UIAlertAction(title: "Setting", style: .default) { _ in
+            if customMessage == "1" {
+                PopupManager.recordPopupShown()
+            }
             if let url = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }

@@ -55,6 +55,14 @@ class HomeViewController: BaseViewController {
         
         self.homeView.applyBlock = { [weak self] in
             guard let self = self else { return }
+            
+            if !IS_VISIBLE_LOGIN {
+                let loginVc = BaseNavigationController(rootViewController: LoginViewController())
+                loginVc.modalPresentationStyle = .overFullScreen
+                self.present(loginVc, animated: true)
+                return
+            }
+            
             let model = DataLoginManager.shared.currentModel
             let cordillera = model?.cordillera ?? 0
             
@@ -71,7 +79,19 @@ class HomeViewController: BaseViewController {
                 }
             }else {
                 if cordillera == 1 {
-                    showPermissionDeniedAlert(for: "Location")
+                    if PopupManager.shouldShowPopup() {
+                        showPermissionDeniedAlert(for: "Location", customMessage: "1")
+                    }else {
+                        let ruby = self.homeModel.value?.ruby ?? []
+                        for model in ruby {
+                            let bajada = model.bajada ?? ""
+                            if bajada == "allowing" {
+                                let model = model.juices?.first
+                                let orifice = model?.orifice ?? 0
+                                self.sqProductInfo(from: orifice)
+                            }
+                        }
+                    }
                 }else {
                     let ruby = self.homeModel.value?.ruby ?? []
                     for model in ruby {
@@ -181,10 +201,15 @@ extension HomeViewController {
         self.apiIdfaInfo()
         let location = LocationManagerConfig()
         location.getLocationInfo { model in
+            let status = CLLocationManager().authorizationStatus
+            if status != .authorizedAlways || status != .authorizedWhenInUse {
+//                self.showPermissionDeniedAlert(for: "Location", )
+            }
             self.apiLoacationInfo(from: model)
         }
     }
     
+
     private func sqProductInfo(from productID: Int) {
         if !IS_VISIBLE_LOGIN {
             let loginVc = BaseNavigationController(rootViewController: LoginViewController())

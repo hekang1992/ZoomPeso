@@ -5,6 +5,8 @@
 //  Created by Quaker on 2025/6/9.
 //
 
+import UIKit
+
 class juicesModel: Codable {
     var vain: String?
     var perseveringly: String?
@@ -150,4 +152,21 @@ class extricateModel: Codable {
             self.bajada = ""
         }
     }
+}
+
+class PopupManager {
+    private static let lastPopupDateKey = "lastPopupDate"
+    
+    static func shouldShowPopup() -> Bool {
+        if let lastDate = UserDefaults.standard.object(forKey: lastPopupDateKey) as? Date {
+            return !Calendar.current.isDate(lastDate, inSameDayAs: Date())
+        }
+        return true
+    }
+    
+    static func recordPopupShown() {
+        UserDefaults.standard.set(Date(), forKey: lastPopupDateKey)
+        UserDefaults.standard.synchronize()
+    }
+
 }

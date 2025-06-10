@@ -249,11 +249,7 @@ class HomeView: BaseView {
             make.height.equalTo(25)
         }
         oneLabel.snp.makeConstraints { make in
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                make.top.equalTo(logoImageView.snp.bottom).offset(49.pix())
-            }else {
-                make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
-            }
+            make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
             make.centerX.equalToSuperview()
             make.height.equalTo(22.pix())
         }
@@ -419,6 +415,15 @@ class HomeView: BaseView {
         logoImageView.snp.updateConstraints { make in
             make.top.equalToSuperview().offset(topSafeArea - 8.pix())
         }
+        
+        oneLabel.snp.updateConstraints { make in
+            if isIPad() {
+                make.top.equalTo(logoImageView.snp.bottom).offset(59.pix())
+            }else {
+                make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
+            }
+        }
+        
     }
     
     private func setupGradient() {
@@ -431,4 +436,11 @@ class HomeView: BaseView {
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         bgView.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    func isIPad() -> Bool {
+        let model = UIDevice.current.model
+        return model.lowercased().contains("ipad")
+    }
+    
 }
+

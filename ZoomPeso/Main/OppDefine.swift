@@ -92,7 +92,7 @@ class ViewCycleManager {
 
 class ToastManagerConfig {
     static func showToastText(form view: UIView, message: String) {
-        view.makeToast(message, duration: 2.0, position: .center)
+        view.makeToast(message, duration: 3.0, position: .center)
     }
 }
 
