@@ -58,7 +58,7 @@ class VitamainGeneralViewController: BaseViewController {
     
     lazy var m3label: UILabel = {
         let m3label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(hexStr: "#FF992F")!, textAlignment: .left)
-        m3label.text = "Other Options"
+        m3label.text = "Other" + " " + "Options"
         return m3label
     }()
     

@@ -33,11 +33,18 @@ class CenterListViewCell: BaseViewCell {
         return nameLabel
     }()
     
+    lazy var borderImageView: UIImageView = {
+        let borderImageView = UIImageView()
+        borderImageView.image = UIImage(named: "centeimgelist")
+        return borderImageView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(bgCenterView)
         bgCenterView.addSubview(bgView)
-        bgCenterView.addSubview(listImageView)
+        bgCenterView.addSubview(borderImageView)
+        borderImageView.addSubview(listImageView)
         bgView.addSubview(nameLabel)
         bgCenterView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10.pix())
@@ -48,15 +55,19 @@ class CenterListViewCell: BaseViewCell {
             make.bottom.left.right.equalToSuperview()
             make.height.equalTo(75.pix())
         }
-        listImageView.snp.makeConstraints { make in
+        borderImageView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.left.equalToSuperview()
-            make.size.equalTo(CGSize(width: 82.pix(), height: 82.pix()))
+            make.size.equalTo(CGSize(width: 109.pix(), height: 90.pix()))
         }
         nameLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.height.equalTo(21.pix())
             make.left.equalToSuperview().offset(130.pix())
+        }
+        listImageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(CGSize(width: 30.pix(), height: 30.pix()))
         }
     }
     

@@ -117,7 +117,11 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
             self.LocationManagerConfig.stopUpdatingLocation()
         }
     }
-
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
+    
     private func locationToModel(with model: LocationModel, placemark: CLPlacemark) {
         let country = placemark.country ?? ""
         var provice = placemark.administrativeArea ?? ""
@@ -135,10 +139,5 @@ extension LocationManagerConfig: CLLocationManagerDelegate{
         model.boast = countryCode
         model.cabinets = country
     }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
-    }
-    
 }
 

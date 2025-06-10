@@ -72,6 +72,10 @@ class OrderListViewController: BaseViewController {
         
         getListInfo(from: orderType)
         
+//        self.modelArray.compactMap { $0 }.asObservable().bind(to: tableView.rx.items(cellIdentifier: "OrderListViewCell", cellType: OrderListViewCell.self)){ row, model, cell in
+//            
+//        }.disposed(by: disposeBag)
+       
     }
     
 }

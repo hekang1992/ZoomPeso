@@ -197,7 +197,6 @@ extension OrderListView: UITableViewDelegate, UITableViewDataSource {
         return 188.pix()
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.modelArray.value?.count ?? 0
     }

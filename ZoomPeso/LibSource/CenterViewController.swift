@@ -9,6 +9,9 @@ import UIKit
 
 class CenterViewController: BaseViewController {
     
+    let oneArray = ["All", "Apply"]
+    let twoArray = ["Repayment", "Finished"]
+    
     lazy var centerView: CenterView = {
         let centerView = CenterView()
         return centerView
@@ -28,7 +31,7 @@ class CenterViewController: BaseViewController {
             judgeIsLogin()
             let oVc = OrderListViewController()
             oVc.orderType = "4"
-            oVc.nameType = "All"
+            oVc.nameType = oneArray.first ?? ""
             self.navigationController?.pushViewController(oVc, animated: true)
         }).disposed(by: disposeBag)
         
@@ -37,7 +40,7 @@ class CenterViewController: BaseViewController {
             judgeIsLogin()
             let oVc = OrderListViewController()
             oVc.orderType = "7"
-            oVc.nameType = "Apply"
+            oVc.nameType = oneArray.last ?? ""
             self.navigationController?.pushViewController(oVc, animated: true)
         }).disposed(by: disposeBag)
         
@@ -46,7 +49,7 @@ class CenterViewController: BaseViewController {
             judgeIsLogin()
             let oVc = OrderListViewController()
             oVc.orderType = "6"
-            oVc.nameType = "Repayment"
+            oVc.nameType = twoArray[0]
             self.navigationController?.pushViewController(oVc, animated: true)
         }).disposed(by: disposeBag)
         
@@ -55,7 +58,7 @@ class CenterViewController: BaseViewController {
             judgeIsLogin()
             let oVc = OrderListViewController()
             oVc.orderType = "5"
-            oVc.nameType = "Finished"
+            oVc.nameType = twoArray[1]
             self.navigationController?.pushViewController(oVc, animated: true)
         }).disposed(by: disposeBag)
         
