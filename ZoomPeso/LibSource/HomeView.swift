@@ -152,11 +152,6 @@ class HomeView: BaseView {
         return whiteView
     }()
     
-    lazy var applyLabel: UILabel = {
-        let applyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 29.pix())!, textColor: .white, textAlignment: .right)
-        return applyLabel
-    }()
-    
     lazy var fuckLabel: UILabel = {
         let fuckLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 18.pix())!, textColor: .white, textAlignment: .center)
         fuckLabel.text = "Common functions"
@@ -224,7 +219,7 @@ class HomeView: BaseView {
         scrollMinView.addSubview(sixImageView)
         scrollMinView.addSubview(sixLsImageView)
         scrollerView.addSubview(footImageView)
-        loanImageView.addSubview(applyLabel)
+        
         
         bgView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -281,15 +276,15 @@ class HomeView: BaseView {
         }
         loanImageView.snp.makeConstraints { make in
             make.top.equalTo(oneImageView.snp.bottom).offset(-25)
-            make.left.equalToSuperview()
-            make.width.equalTo(SCREEN_WIDTH)
-            make.height.equalTo(96.pix())
+            make.centerX.equalToSuperview()
+            make.width.equalTo(345.pix())
+            make.height.equalTo(105.pix())
         }
         desrightImageMainView.snp.makeConstraints { make in
-            make.top.equalTo(loanImageView.snp.bottom)
-            make.left.equalToSuperview()
-            make.width.equalTo(SCREEN_WIDTH)
-            make.height.equalTo(148.pix())
+            make.top.equalTo(loanImageView.snp.bottom).offset(10.pix())
+            make.centerX.equalToSuperview()
+            make.width.equalTo(344.pix())
+            make.height.equalTo(165.pix())
         }
         twoImageView.snp.makeConstraints { make in
             make.left.equalToSuperview()
@@ -339,11 +334,7 @@ class HomeView: BaseView {
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-95)
         }
-        applyLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(160.pix())
-            make.top.equalToSuperview()
-            make.size.equalTo(CGSize(width: SCREEN_WIDTH - 185.pix(), height: 92.pix()))
-        }
+        
         fuckLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().offset(-12)
@@ -388,7 +379,7 @@ class HomeView: BaseView {
                     fourLabel.text = model?.shropshire ?? ""
                     fiveLabel.text = model?.cutting ?? ""
                     let applyStr = model?.thrusts ?? ""
-                    applyLabel.text = "\(applyStr) >"
+                    
                     nameLabel.text = model?.pitying ?? ""
                     let logoUrl = URL(string: model?.antagonist ?? "")
                     logoImageView.kf.setImage(with: logoUrl)
@@ -429,8 +420,8 @@ class HomeView: BaseView {
     private func setupGradient() {
         gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(hexStr: "#FFF1CB")!.cgColor,
-            UIColor(hexStr: "#FFDEA4")!.cgColor
+            UIColor(hexStr: "#83D1FE")!.cgColor,
+            UIColor(hexStr: "#46A4FF")!.cgColor
         ]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
