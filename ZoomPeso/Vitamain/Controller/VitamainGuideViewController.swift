@@ -108,7 +108,7 @@ class VitamainGuideViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        view.backgroundColor = .init(hexStr: "#FD744D")
+        view.backgroundColor = .init(hexStr: "#83D1FE")
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

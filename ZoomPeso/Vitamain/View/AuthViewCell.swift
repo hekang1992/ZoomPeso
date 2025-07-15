@@ -11,7 +11,7 @@ class AuthViewCell: BaseViewCell {
     
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+        bgView.backgroundColor = .init(hexStr: "#FAFAFA")
         bgView.layer.cornerRadius = 10
         return bgView
     }()

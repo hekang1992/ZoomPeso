@@ -95,7 +95,7 @@ class LoginView: BaseView {
             range: NSRange(location: 0, length: "Get code".count)
         )
         visibleLabel.attributedText = attributedString
-        visibleLabel.textColor = UIColor(hexStr: "#FF992F")
+        visibleLabel.textColor = UIColor(hexStr: "#FE5255")
         visibleLabel.textAlignment = .right
         visibleLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         return visibleLabel
@@ -106,7 +106,7 @@ class LoginView: BaseView {
         voiceBtn.contentHorizontalAlignment = .right
         voiceBtn.setImage(UIImage(named: "voiceimage"), for: .normal)
         voiceBtn.setTitle("VOZ", for: .normal)
-        voiceBtn.setTitleColor(UIColor.init(hexStr: "#FF992F"), for: .normal)
+        voiceBtn.setTitleColor(UIColor.init(hexStr: "#FE5255"), for: .normal)
         voiceBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         voiceBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 7)
         return voiceBtn

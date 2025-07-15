@@ -38,6 +38,7 @@ class OrderListView: BaseView {
     lazy var mahuaImageView: UIImageView = {
         let mahuaImageView = UIImageView()
         mahuaImageView.image = UIImage(named: "mahuaimage")
+        mahuaImageView.contentMode = .scaleAspectFit
         return mahuaImageView
     }()
     
@@ -108,7 +109,8 @@ class OrderListView: BaseView {
         }
         mahuaImageView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.top.equalTo(headImageView.snp.bottom).offset(-20)
+            make.height.equalTo(53.pix())
+            make.top.equalTo(headImageView.snp.bottom).offset(-30.pix())
         }
         oneBtn.snp.makeConstraints { make in
             make.left.equalToSuperview()
@@ -181,8 +183,8 @@ class OrderListView: BaseView {
     private func setupGradient() {
         gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(hexStr: "#FFF1CB")!.cgColor,
-            UIColor(hexStr: "#FFDEA4")!.cgColor
+            UIColor(hexStr: "#7CCCFE")!.cgColor,
+            UIColor(hexStr: "#7CCCFE")!.cgColor
         ]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)

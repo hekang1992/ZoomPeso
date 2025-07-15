@@ -64,8 +64,8 @@ extension BaseViewController {
     private func setupGradient() {
         gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(hexStr: "#FFF1CB")!.cgColor,
-            UIColor(hexStr: "#FFDEA4")!.cgColor
+            UIColor(hexStr: "#83D1FE")!.cgColor,
+            UIColor(hexStr: "#46A4FF")!.cgColor
         ]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)

@@ -18,7 +18,7 @@ class MyLoveViewCell: BaseViewCell {
         desclabel.startPoint = CGPoint(x: 0, y: 0.5)
         desclabel.endPoint = CGPoint(x: 1, y: 0.5)
         desclabel.locations = [0 ,1]
-        desclabel.colors = [UIColor.init(hexStr: "#FF3824")!.cgColor, UIColor.init(hexStr: "#FF992F")!.cgColor]
+        desclabel.colors = [UIColor.init(hexStr: "#FF3824")!.cgColor, UIColor.init(hexStr: "#FE5255")!.cgColor]
         return desclabel
     }()
     
@@ -42,7 +42,7 @@ class MyLoveViewCell: BaseViewCell {
     
     lazy var contaceView: UIView = {
         let contaceView = UIView()
-        contaceView.backgroundColor = .init(hexStr: "#FFF5C3")
+        contaceView.backgroundColor = .init(hexStr: "#FAFAFA")
         contaceView.layer.cornerRadius = 10.pix()
         contaceView.layer.masksToBounds = true
         return contaceView
@@ -66,7 +66,7 @@ class MyLoveViewCell: BaseViewCell {
     
     lazy var phoenView: UIView = {
         let phoenView = UIView()
-        phoenView.backgroundColor = .init(hexStr: "#FFF5C3")
+        phoenView.backgroundColor = .init(hexStr: "#FAFAFA")
         phoenView.layer.cornerRadius = 10.pix()
         phoenView.layer.masksToBounds = true
         return phoenView

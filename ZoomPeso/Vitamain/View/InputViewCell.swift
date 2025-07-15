@@ -20,7 +20,7 @@ class InputViewCell: BaseViewCell {
 
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+        bgView.backgroundColor = .init(hexStr: "#FAFAFA")
         bgView.layer.cornerRadius = 10.pix()
         bgView.layer.masksToBounds = true
         return bgView

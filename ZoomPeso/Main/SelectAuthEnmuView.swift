@@ -126,9 +126,9 @@ class SelectAuthEnmuView: BaseView {
             cell.nameLabel.textAlignment = .center
             if let selectIndexPath = self.selectIndexPath {
                 if selectIndexPath.row == row {
-                    cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+                    cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
                 }else {
-                    cell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+                    cell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
                 }
             }
         }.disposed(by: disposeBag)

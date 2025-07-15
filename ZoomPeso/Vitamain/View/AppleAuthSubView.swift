@@ -52,6 +52,8 @@ class AppleAuthSubView: BaseView {
         nameTx.backgroundColor = .white
         nameTx.layer.cornerRadius = 10.pix()
         nameTx.textAlignment = .center
+        nameTx.layer.borderWidth = 1.pix()
+        nameTx.layer.borderColor = UIColor.black.cgColor
         return nameTx
     }()
     
@@ -68,6 +70,8 @@ class AppleAuthSubView: BaseView {
         idTx.backgroundColor = .white
         idTx.layer.cornerRadius = 10.pix()
         idTx.textAlignment = .center
+        idTx.layer.borderWidth = 1.pix()
+        idTx.layer.borderColor = UIColor.black.cgColor
         return idTx
     }()
     
@@ -83,6 +87,8 @@ class AppleAuthSubView: BaseView {
         timeBtn.layer.cornerRadius = 10.pix()
         timeBtn.setTitleColor(.black, for: .normal)
         timeBtn.contentHorizontalAlignment = .center
+        timeBtn.layer.borderWidth = 1.pix()
+        timeBtn.layer.borderColor = UIColor.black.cgColor
         return timeBtn
     }()
     

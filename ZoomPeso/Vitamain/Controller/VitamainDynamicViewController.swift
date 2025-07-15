@@ -23,11 +23,7 @@ class VitamainDynamicViewController: BaseViewController {
     
     var kstime: String = ""
     
-    lazy var hedImageView: UIImageView = {
-        let hedImageView = UIImageView()
-        hedImageView.image = UIImage(named: "seigmeiage")
-        return hedImageView
-    }()
+   
     
     lazy var oneImageView: UIImageView = {
         let oneImageView = UIImageView()
@@ -80,10 +76,10 @@ class VitamainDynamicViewController: BaseViewController {
         
         // Do any additional setup after loading the view.
         kstime = DeviceInfo.currentTimestamp
-        view.addSubview(hedImageView)
-        hedImageView.snp.makeConstraints { make in
-            make.left.top.right.equalToSuperview()
-            make.height.equalTo(136.pix())
+       
+        view.addSubview(bgView)
+        bgView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
         self.headView.nameLabel.text = "Job information"
@@ -92,11 +88,8 @@ class VitamainDynamicViewController: BaseViewController {
             self?.popToVitamainGuideOrRoot()
         }
         
-        view.addSubview(bgView)
-        bgView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(hedImageView.snp.bottom).offset(-20)
-        }
+       
+        
         view.addSubview(oneImageView)
         oneImageView.addSubview(mlabel)
         oneImageView.snp.makeConstraints { make in

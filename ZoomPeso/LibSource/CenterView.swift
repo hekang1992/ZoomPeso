@@ -18,7 +18,7 @@ class CenterView: BaseView {
     
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = .init(hexStr: "#FD744D")
+        bgView.backgroundColor = .init(hexStr: "#83D1FE")
         return bgView
     }()
     

@@ -18,12 +18,6 @@ class VitamainGeneralViewController: BaseViewController {
     
     var model = BehaviorRelay<netModel?>(value: nil)
     
-    lazy var hedImageView: UIImageView = {
-        let hedImageView = UIImageView()
-        hedImageView.image = UIImage(named: "seigmeiage")
-        return hedImageView
-    }()
-    
     lazy var oneImageView: UIImageView = {
         let oneImageView = UIImageView()
         oneImageView.image = UIImage(named: "aseuthigme")
@@ -38,7 +32,7 @@ class VitamainGeneralViewController: BaseViewController {
     }()
     
     lazy var m1label: UILabel = {
-        let m1label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(hexStr: "#FF992F")!, textAlignment: .left)
+        let m1label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(hexStr: "#FE5255")!, textAlignment: .left)
         m1label.text = "Select An ID To Validate Your Identity"
         return m1label
     }()
@@ -57,7 +51,7 @@ class VitamainGeneralViewController: BaseViewController {
     }()
     
     lazy var m3label: UILabel = {
-        let m3label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(hexStr: "#FF992F")!, textAlignment: .left)
+        let m3label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(hexStr: "#FE5255")!, textAlignment: .left)
         m3label.text = "Other" + " " + "Options"
         return m3label
     }()
@@ -70,7 +64,7 @@ class VitamainGeneralViewController: BaseViewController {
     
     lazy var scro: UIScrollView = {
         let scro = UIScrollView()
-        scro.backgroundColor = .clear
+        scro.backgroundColor = .init(hexStr: "#83D1FE")
         scro.showsHorizontalScrollIndicator = false
         scro.showsVerticalScrollIndicator = false
         scro.contentInsetAdjustmentBehavior = .never
@@ -90,7 +84,7 @@ class VitamainGeneralViewController: BaseViewController {
     lazy var table1View: UITableView = {
         let table1View = UITableView(frame: .zero, style: .plain)
         table1View.separatorStyle = .none
-        table1View.backgroundColor = .clear
+        table1View.backgroundColor = .white
         table1View.register(AuthViewCell.self, forCellReuseIdentifier: "AuthViewCell")
         table1View.estimatedRowHeight = 80
         table1View.showsVerticalScrollIndicator = false
@@ -105,7 +99,7 @@ class VitamainGeneralViewController: BaseViewController {
     lazy var table2View: UITableView = {
         let table2View = UITableView(frame: .zero, style: .plain)
         table2View.separatorStyle = .none
-        table2View.backgroundColor = .clear
+        table2View.backgroundColor = .white
         table2View.register(AuthViewCell.self, forCellReuseIdentifier: "AuthViewCell")
         table2View.estimatedRowHeight = 80
         table2View.showsVerticalScrollIndicator = false
@@ -129,12 +123,11 @@ class VitamainGeneralViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        view.addSubview(hedImageView)
-        hedImageView.snp.makeConstraints { make in
-            make.left.top.right.equalToSuperview()
-            make.height.equalTo(136.pix())
+        view.addSubview(bgView)
+        bgView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
+        
         
         self.headView.nameLabel.text = "Select Identity Document"
         addHeadView()
@@ -142,12 +135,7 @@ class VitamainGeneralViewController: BaseViewController {
             self?.navigationController?.popViewController(animated: true)
         }
         
-        view.addSubview(bgView)
-        bgView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(hedImageView.snp.bottom).offset(-20)
-        }
-        
+       
         view.addSubview(scro)
         scro.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()
@@ -197,7 +185,8 @@ class VitamainGeneralViewController: BaseViewController {
         
         oneImageView.addSubview(table1View)
         table1View.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.equalToSuperview().offset(10.pix())
+            make.right.equalToSuperview().offset(-10.pix())
             make.top.equalTo(m2label.snp.bottom).offset(1)
             make.bottom.equalToSuperview().offset(-5)
         }
@@ -216,7 +205,8 @@ class VitamainGeneralViewController: BaseViewController {
         }
         
         table2View.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.equalToSuperview().offset(5.pix())
+            make.right.equalToSuperview().offset(-5.pix())
             make.bottom.equalToSuperview().offset(-5)
             make.top.equalTo(m4label.snp.bottom).offset(1)
         }
@@ -226,9 +216,9 @@ class VitamainGeneralViewController: BaseViewController {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             if self.oneGrand && self.select1IndexPath?.row == row {
-                cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+                cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
             }else {
-                cell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+                cell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
             }
         }.disposed(by: disposeBag)
         
@@ -237,9 +227,9 @@ class VitamainGeneralViewController: BaseViewController {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             if self.twoGrand && self.select2IndexPath?.row == row {
-                cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+                cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
             }else {
-                cell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+                cell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
             }
         }.disposed(by: disposeBag)
         
@@ -256,11 +246,11 @@ class VitamainGeneralViewController: BaseViewController {
             table2View.reloadData()
             if let previousIndexPath = select1IndexPath {
                 if let previousCell = self.table1View.cellForRow(at: previousIndexPath) as? AuthViewCell {
-                    previousCell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+                    previousCell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
                 }
             }
             if let cell = self.table1View.cellForRow(at: indexPath) as? AuthViewCell {
-                cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+                cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
             }
             select1IndexPath = indexPath
         }).disposed(by: disposeBag)
@@ -274,11 +264,11 @@ class VitamainGeneralViewController: BaseViewController {
             table1View.reloadData()
             if let previousIndexPath = select2IndexPath {
                 if let previousCell = self.table2View.cellForRow(at: previousIndexPath) as? AuthViewCell {
-                    previousCell.bgView.backgroundColor = .init(hexStr: "#FFF5C3")
+                    previousCell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
                 }
             }
             if let cell = self.table2View.cellForRow(at: indexPath) as? AuthViewCell {
-                cell.bgView.backgroundColor = .init(hexStr: "#FF992F")
+                cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
             }
             select2IndexPath = indexPath
         }).disposed(by: disposeBag)
