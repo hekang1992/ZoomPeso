@@ -50,33 +50,19 @@ class HomeView: BaseView {
         return nameLabel
     }()
     
-    lazy var oneLabel: UILabel = {
-        let oneLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 20.pix())!, textColor: .init(hexStr: "#2A1512")!, textAlignment: .center)
-        return oneLabel
-    }()
-    
     lazy var moneyLabel: UILabel = {
-        let moneyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 55.pix())!, textColor: .init(hexStr: "#EB3516")!, textAlignment: .center)
+        let moneyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 50.pix())!, textColor: .init(hexStr: "#FFFFFF")!, textAlignment: .left)
         return moneyLabel
     }()
     
-    lazy var twoLabel: UILabel = {
-        let twoLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#F1E4A8")!, textAlignment: .center)
-        return twoLabel
-    }()
     
     lazy var threeLabel: UILabel = {
-        let threeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#B79714")!, textAlignment: .center)
+        let threeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#000000")!, textAlignment: .center)
         return threeLabel
     }()
     
-    lazy var fourLabel: UILabel = {
-        let fourLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#F1E4A8")!, textAlignment: .center)
-        return fourLabel
-    }()
-    
     lazy var fiveLabel: UILabel = {
-        let fiveLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#B79714")!, textAlignment: .center)
+        let fiveLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#000000")!, textAlignment: .center)
         return fiveLabel
     }()
     
@@ -95,55 +81,8 @@ class HomeView: BaseView {
     
     lazy var twoImageView: UIImageView = {
         let twoImageView = UIImageView()
-        twoImageView.image = UIImage(named: "kimagesix")
+        twoImageView.image = UIImage(named: "kefui_amge")
         return twoImageView
-    }()
-    
-    lazy var threeImageView: UIImageView = {
-        let threeImageView = UIImageView()
-        threeImageView.isUserInteractionEnabled = true
-        threeImageView.image = UIImage(named: "legimge")
-        return threeImageView
-    }()
-    
-    lazy var fourImageView: UIImageView = {
-        let fourImageView = UIImageView()
-        fourImageView.isUserInteractionEnabled = true
-        fourImageView.image = UIImage(named: "rightimage")
-        return fourImageView
-    }()
-    
-    lazy var fiveImageView: UIImageView = {
-        let fiveImageView = UIImageView()
-        fiveImageView.image = UIImage(named: "adimage")
-        return fiveImageView
-    }()
-    
-    lazy var scrollMinView: UIScrollView = {
-        let scrollMinView = UIScrollView()
-        scrollMinView.contentSize = CGSize(width: SCREEN_WIDTH * 2, height: 233.pix())
-        scrollMinView.bounces = false
-        scrollMinView.isPagingEnabled = true
-        scrollMinView.showsHorizontalScrollIndicator = false
-        return scrollMinView
-    }()
-    
-    lazy var sixImageView: UIImageView = {
-        let sixImageView = UIImageView()
-        sixImageView.image = UIImage(named: "adimgetwo")
-        return sixImageView
-    }()
-    
-    lazy var sixLsImageView: UIImageView = {
-        let sixLsImageView = UIImageView()
-        sixLsImageView.image = UIImage(named: "adimgeledtimage")
-        return sixLsImageView
-    }()
-    
-    lazy var footImageView: UIImageView = {
-        let footImageView = UIImageView()
-        footImageView.image = UIImage(named: "adimgetrhre")
-        return footImageView
     }()
     
     lazy var whiteView: UIView = {
@@ -152,41 +91,22 @@ class HomeView: BaseView {
         return whiteView
     }()
     
-    lazy var fuckLabel: UILabel = {
-        let fuckLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 18.pix())!, textColor: .white, textAlignment: .center)
-        fuckLabel.text = "Common functions"
-        return fuckLabel
+    lazy var appView: UIView = {
+        let appView = UIView()
+        appView.layer.cornerRadius = 25.pix()
+        appView.layer.borderWidth = 1.pix()
+        appView.layer.borderColor = UIColor.init(hexStr: "#7B2306")!.cgColor
+        appView.backgroundColor = UIColor.init(hexStr: "#FE5255")
+        return appView
     }()
     
-    lazy var suckLabel: UILabel = {
-        let suckLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 18.pix())!, textColor: .white, textAlignment: .center)
-        suckLabel.text = "Comparison of advantages"
-        return suckLabel
-    }()
-    
-    lazy var fuck1Label: UILabel = {
-        let fuck1Label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 12.pix())!, textColor: .black, textAlignment: .left)
-        fuck1Label.text = "Customer\nservice"
-        fuck1Label.numberOfLines = 0
-        return fuck1Label
-    }()
-    
-    lazy var suck1Label: UILabel = {
-        let suck1Label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 14.pix())!, textColor: .init(hexStr: "#FE4D39")!, textAlignment: .right)
-        suck1Label.text = "Click >"
-        return suck1Label
-    }()
-    
-    lazy var fuck2Label: UILabel = {
-        let fuck2Label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 12.pix())!, textColor: .black, textAlignment: .left)
-        fuck2Label.text = "Certification"
-        return fuck2Label
-    }()
-    
-    lazy var suck2Label: UILabel = {
-        let suck2Label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 14.pix())!, textColor: .init(hexStr: "#FE4D39")!, textAlignment: .right)
-        suck2Label.text = "Click >"
-        return suck2Label
+    lazy var applyLabel: UILabel = {
+        let applyLabel = UILabel()
+        applyLabel.textColor = UIColor.init(hexStr: "Go Loan >")
+        applyLabel.textColor = .white
+        applyLabel.textAlignment = .center
+        applyLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        return applyLabel
     }()
     
     override init(frame: CGRect) {
@@ -196,30 +116,15 @@ class HomeView: BaseView {
         scrollerView.addSubview(oneImageView)
         oneImageView.addSubview(logoImageView)
         oneImageView.addSubview(nameLabel)
-        oneImageView.addSubview(oneLabel)
         oneImageView.addSubview(moneyLabel)
-        oneImageView.addSubview(twoLabel)
         oneImageView.addSubview(threeLabel)
-        oneImageView.addSubview(fourLabel)
         oneImageView.addSubview(fiveLabel)
+        oneImageView.addSubview(appView)
+        appView.addSubview(applyLabel)
         scrollerView.addSubview(loanImageView)
         scrollerView.addSubview(desrightImageMainView)
-        scrollerView.addSubview(whiteView)
         scrollerView.addSubview(twoImageView)
-        twoImageView.addSubview(fuckLabel)
-        scrollerView.addSubview(threeImageView)
-        threeImageView.addSubview(fuck1Label)
-        threeImageView.addSubview(suck1Label)
-        scrollerView.addSubview(fourImageView)
-        fourImageView.addSubview(fuck2Label)
-        fourImageView.addSubview(suck2Label)
-        scrollerView.addSubview(fiveImageView)
-        fiveImageView.addSubview(suckLabel)
-        scrollerView.addSubview(scrollMinView)
-        scrollMinView.addSubview(sixImageView)
-        scrollMinView.addSubview(sixLsImageView)
-        scrollerView.addSubview(footImageView)
-        
+        scrollerView.addSubview(whiteView)
         
         bgView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -243,35 +148,22 @@ class HomeView: BaseView {
             make.left.equalTo(logoImageView.snp.right).offset(2.pix())
             make.height.equalTo(25)
         }
-        oneLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
-            make.centerX.equalToSuperview()
-            make.height.equalTo(22.pix())
-        }
+        
         moneyLabel.snp.makeConstraints { make in
-            make.top.equalTo(oneLabel.snp.top).offset(3.pix())
-            make.centerX.equalToSuperview()
+            make.top.equalTo(nameLabel.snp.bottom).offset(60.pix())
+            make.left.equalToSuperview().offset(41.pix())
             make.height.equalTo(82.pix())
         }
-        twoLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(122.pix())
-            make.top.equalToSuperview().offset(233.pix())
-            make.height.equalTo(20.pix())
-            make.width.equalTo(94.pix())
-        }
+        
         threeLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(twoLabel.snp.centerX)
-            make.top.equalTo(twoLabel.snp.bottom).offset(2.pix())
+            make.left.equalToSuperview().offset(126.pix())
+            make.top.equalTo(nameLabel.snp.bottom).offset(30.pix())
             make.height.equalTo(20.pix())
         }
-        fourLabel.snp.makeConstraints { make in
-            make.left.equalTo(twoLabel.snp.right)
-            make.top.equalTo(twoLabel.snp.top)
-            make.height.equalTo(20)
-        }
+        
         fiveLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(fourLabel.snp.centerX)
-            make.top.equalTo(fourLabel.snp.bottom).offset(2.pix())
+            make.left.equalTo(threeLabel.snp.right).offset(20.pix())
+            make.top.equalTo(nameLabel.snp.bottom).offset(30.pix())
             make.height.equalTo(20.pix())
         }
         loanImageView.snp.makeConstraints { make in
@@ -287,84 +179,28 @@ class HomeView: BaseView {
             make.height.equalTo(165.pix())
         }
         twoImageView.snp.makeConstraints { make in
-            make.left.equalToSuperview()
-            make.top.equalTo(desrightImageMainView.snp.bottom)
-            make.size.equalTo(CGSize(width: 240.pix(), height: 54.pix()))
-        }
-        threeImageView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(15.pix())
-            make.top.equalTo(twoImageView.snp.bottom).offset(13)
-            make.size.equalTo(CGSize(width: 168.pix(), height: 92.pix()))
-        }
-        fourImageView.snp.makeConstraints { make in
-            make.left.equalTo(threeImageView.snp.right).offset(10.pix())
-            make.top.equalTo(twoImageView.snp.bottom).offset(13)
-            make.size.equalTo(CGSize(width: 168.pix(), height: 92.pix()))
-        }
-        whiteView.snp.makeConstraints { make in
-            make.top.equalTo(twoImageView.snp.top)
-            make.left.equalToSuperview()
-            make.width.equalTo(SCREEN_WIDTH)
-            make.bottom.equalTo(threeImageView.snp.bottom).offset(20)
-        }
-        fiveImageView.snp.makeConstraints { make in
-            make.left.equalToSuperview()
-            make.top.equalTo(fourImageView.snp.bottom).offset(38)
-            make.size.equalTo(CGSize(width: 310.pix(), height: 54.pix()))
-        }
-        scrollMinView.snp.makeConstraints { make in
-            make.top.equalTo(fiveImageView.snp.bottom).offset(12.pix())
-            make.size.equalTo(CGSize(width: SCREEN_WIDTH, height: 233.pix()))
+            make.top.equalTo(desrightImageMainView.snp.bottom).offset(10.pix())
             make.centerX.equalToSuperview()
-        }
-        sixImageView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(5.pix())
-            make.top.bottom.equalToSuperview()
-            make.width.equalTo(SCREEN_WIDTH - 10.pix())
-        }
-        sixLsImageView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(SCREEN_WIDTH + 5.pix())
-            make.width.equalTo(SCREEN_WIDTH - 10.pix())
-            make.right.equalToSuperview().offset(-5.pix())
-        }
-        footImageView.snp.makeConstraints { make in
-            make.top.equalTo(scrollMinView.snp.bottom).offset(17.pix())
-            make.size.equalTo(CGSize(width: 346.pix(), height: 280.pix()))
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-95)
+            make.width.equalTo(344.pix())
+            make.height.equalTo(105.pix())
         }
         
-        fuckLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-12)
-            make.height.equalTo(40)
+        whiteView.snp.makeConstraints { make in
+            make.top.equalTo(twoImageView.snp.bottom).offset(20.pix())
+            make.centerX.equalToSuperview()
+            make.width.equalTo(344.pix())
+            make.height.equalTo(201.pix())
+            make.bottom.equalToSuperview().offset(-95.pix())
         }
-        suckLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-12)
-            make.height.equalTo(40)
+        appView.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-30.pix())
+            make.size.equalTo(CGSize(width: 220.pix(), height: 54.pix()))
+            make.bottom.equalToSuperview().offset(-48.pix())
         }
-        fuck1Label.snp.makeConstraints { make in
-            make.width.equalTo(70.pix())
-            make.top.equalToSuperview().offset(10)
-            make.left.equalToSuperview().offset(20)
+        applyLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
-        suck1Label.snp.makeConstraints { make in
-            make.height.equalTo(20)
-            make.right.equalToSuperview().offset(-6)
-            make.bottom.equalToSuperview().offset(-18)
-        }
-        fuck2Label.snp.makeConstraints { make in
-            make.width.equalTo(100.pix())
-            make.top.equalToSuperview().offset(10)
-            make.left.equalToSuperview().offset(20)
-        }
-        suck2Label.snp.makeConstraints { make in
-            make.height.equalTo(20)
-            make.right.equalToSuperview().offset(-6)
-            make.bottom.equalToSuperview().offset(-18)
-        }
+        
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
             let ruby = model.ruby ?? []
@@ -372,14 +208,11 @@ class HomeView: BaseView {
                 let bajada = model.bajada ?? ""
                 if bajada == "allowing" {
                     let model = model.juices?.first
-                    oneLabel.text = model?.aimed ?? ""
                     moneyLabel.text = model?.vain ?? ""
-                    twoLabel.text = model?.perseveringly ?? ""
                     threeLabel.text = model?.entangle ?? ""
-                    fourLabel.text = model?.shropshire ?? ""
                     fiveLabel.text = model?.cutting ?? ""
                     let applyStr = model?.thrusts ?? ""
-                    
+                    applyLabel.text = applyStr
                     nameLabel.text = model?.pitying ?? ""
                     let logoUrl = URL(string: model?.antagonist ?? "")
                     logoImageView.kf.setImage(with: logoUrl)
@@ -407,13 +240,13 @@ class HomeView: BaseView {
             make.top.equalToSuperview().offset(topSafeArea - 8.pix())
         }
         
-        oneLabel.snp.updateConstraints { make in
-            if isIPad() {
-                make.top.equalTo(logoImageView.snp.bottom).offset(59.pix())
-            }else {
-                make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
-            }
-        }
+//        oneLabel.snp.updateConstraints { make in
+//            if isIPad() {
+//                make.top.equalTo(logoImageView.snp.bottom).offset(59.pix())
+//            }else {
+//                make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
+//            }
+//        }
         
     }
     

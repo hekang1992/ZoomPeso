@@ -137,12 +137,12 @@ extension LaunchViewController: UIScrollViewDelegate {
                     if let model = success.net {
                         DataLoginManager.shared.currentModel = model
                     }
-//                    if show != "1" {
-//                        firstVcInfo()
-//                    }else {
-//                        notiLastRootVcManager()
-//                    }
-                    notiLastRootVcManager()
+                    if show != "1" {
+                        firstVcInfo()
+                    }else {
+                        notiLastRootVcManager()
+                    }
+//                    notiLastRootVcManager()
                 }
                 complete(true)
                 break

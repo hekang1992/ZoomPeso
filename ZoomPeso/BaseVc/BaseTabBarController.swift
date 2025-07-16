@@ -27,7 +27,7 @@ class BaseTabBarController: UITabBarController {
     private func setupCustomTabBar() {
         tabBar.isHidden = true
         
-        customTabBar.backgroundColor = .clear
+        customTabBar.backgroundColor = .white
         customTabBar.frame = CGRect(
             x: 0,
             y: view.bounds.height - 88,
@@ -50,7 +50,6 @@ class BaseTabBarController: UITabBarController {
             
             let imageName = i == 0 ? "homesel" : (i == 1 ? "ordernor" : "centernor")
             button.setImage(UIImage(named: imageName), for: .normal)
-            button.imageView?.contentMode = .scaleAspectFill
             customTabBar.addSubview(button)
         }
     }

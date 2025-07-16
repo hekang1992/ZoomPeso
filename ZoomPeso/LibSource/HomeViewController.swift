@@ -122,32 +122,32 @@ class HomeViewController: BaseViewController {
             DataAddressManager.shared.currentModel = model
         }
         
-        homeView.threeImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            if !IS_VISIBLE_LOGIN {
-                let loginVc = BaseNavigationController(rootViewController: LoginViewController())
-                loginVc.modalPresentationStyle = .overFullScreen
-                self.present(loginVc, animated: true)
-                return
-            }
-            let conUrl = self.homeModel.value?.walckanaer?.azara ?? ""
-            let webVc = WebDynamicViewController()
-            webVc.pageUrl = conUrl
-            self.navigationController?.pushViewController(webVc, animated: true)
-        }).disposed(by: disposeBag)
-        
-        homeView.fourImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            let ruby = self.homeModel.value?.ruby ?? []
-            for model in ruby {
-                let bajada = model.bajada ?? ""
-                if bajada == "allowing" {
-                    let model = model.juices?.first
-                    let orifice = model?.orifice ?? 0
-                    self.sqProductInfo(from: orifice)
-                }
-            }
-        }).disposed(by: disposeBag)
+//        homeView.threeImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+//            guard let self = self else { return }
+//            if !IS_VISIBLE_LOGIN {
+//                let loginVc = BaseNavigationController(rootViewController: LoginViewController())
+//                loginVc.modalPresentationStyle = .overFullScreen
+//                self.present(loginVc, animated: true)
+//                return
+//            }
+//            let conUrl = self.homeModel.value?.walckanaer?.azara ?? ""
+//            let webVc = WebDynamicViewController()
+//            webVc.pageUrl = conUrl
+//            self.navigationController?.pushViewController(webVc, animated: true)
+//        }).disposed(by: disposeBag)
+//        
+//        homeView.fourImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+//            guard let self = self else { return }
+//            let ruby = self.homeModel.value?.ruby ?? []
+//            for model in ruby {
+//                let bajada = model.bajada ?? ""
+//                if bajada == "allowing" {
+//                    let model = model.juices?.first
+//                    let orifice = model?.orifice ?? 0
+//                    self.sqProductInfo(from: orifice)
+//                }
+//            }
+//        }).disposed(by: disposeBag)
         
     }
     
