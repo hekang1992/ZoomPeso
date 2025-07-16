@@ -18,7 +18,7 @@ class CenterView: BaseView {
     
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = .init(hexStr: "#83D1FE")
+        bgView.backgroundColor = .init(hexStr: "#EBF4FF")
         return bgView
     }()
     
@@ -32,6 +32,12 @@ class CenterView: BaseView {
         let logoImageView = UIImageView()
         logoImageView.image = UIImage(named: "centeriamge")
         return logoImageView
+    }()
+    
+    lazy var logoImageView1: UIImageView = {
+        let logoImageView1 = UIImageView()
+        logoImageView1.image = UIImage(named: "giri_imge")
+        return logoImageView1
     }()
     
     lazy var oneBtn: UIButton = {
@@ -59,7 +65,7 @@ class CenterView: BaseView {
     }()
     
     lazy var phonelabel: UILabel = {
-        let phonelabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .white, textAlignment: .center)
+        let phonelabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .white, textAlignment: .left)
         let phone = UserDefaults.standard.object(forKey: LoginConfig.Keys.userPhone) as? String ?? ""
         phonelabel.text = maskPhoneNumber(phone)
         return phonelabel
@@ -81,6 +87,7 @@ class CenterView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(logoImageView)
+        logoImageView.addSubview(logoImageView1)
         logoImageView.addSubview(phonelabel)
         logoImageView.addSubview(nameLabel)
         addSubview(bgView)
@@ -91,15 +98,20 @@ class CenterView: BaseView {
         bgView.addSubview(fourBtn)
         
         logoImageView.snp.makeConstraints { make in
-            make.left.top.equalToSuperview()
-            make.width.equalTo(SCREEN_WIDTH)
-            make.height.equalTo(235.pix())
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30.pix())
+            make.width.equalTo(311.pix())
+            make.centerX.equalToSuperview()
+            make.height.equalTo(101.pix())
+        }
+        logoImageView1.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(50.pix())
+            make.top.equalToSuperview().offset(15.pix())
+            make.size.equalTo(CGSize(width: 55.pix(), height: 55.pix()))
         }
         phonelabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-12.pix())
-            make.width.equalTo(200.pix())
-            make.height.equalTo(56.pix())
-            make.top.equalToSuperview().offset(110.pix())
+            make.height.equalTo(25.pix())
+            make.centerY.equalTo(logoImageView1.snp.centerY)
+            make.left.equalTo(logoImageView1.snp.right).offset(25.pix())
         }
         nameLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -107,7 +119,7 @@ class CenterView: BaseView {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(5)
         }
         bgView.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(-30)
+            make.top.equalTo(logoImageView.snp.bottom).offset(30)
             make.left.bottom.equalToSuperview()
             make.width.equalTo(SCREEN_WIDTH)
         }

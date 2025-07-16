@@ -142,7 +142,6 @@ extension LaunchViewController: UIScrollViewDelegate {
                     }else {
                         notiLastRootVcManager()
                     }
-//                    notiLastRootVcManager()
                 }
                 complete(true)
                 break

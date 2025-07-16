@@ -9,18 +9,10 @@ import UIKit
 
 class CenterListViewCell: BaseViewCell {
     
-    lazy var bgCenterView: UIView = {
-        let bgCenterView = UIView()
-        return bgCenterView
-    }()
-    
-    lazy var bgView: UIView = {
-        let bgView = UIView()
-        bgView.layer.cornerRadius = 38.pix()
-        bgView.layer.masksToBounds = true
-        bgView.layer.borderWidth = 1
-        bgView.layer.borderColor = UIColor.white.cgColor
-        return bgView
+    lazy var bgImageView: UIImageView = {
+        let bgImageView = UIImageView()
+        bgImageView.image = UIImage(named: "cell_imged_f")
+        return bgImageView
     }()
     
     lazy var listImageView: UIImageView = {
@@ -29,46 +21,35 @@ class CenterListViewCell: BaseViewCell {
     }()
     
     lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 17)!, textColor: UIColor.init(hexStr: "#712202")!, textAlignment: .left)
+        let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 17)!, textColor: UIColor.init(hexStr: "#000000")!, textAlignment: .left)
         return nameLabel
-    }()
-    
-    lazy var borderImageView: UIImageView = {
-        let borderImageView = UIImageView()
-        borderImageView.image = UIImage(named: "centeimgelist")
-        return borderImageView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(bgCenterView)
-        bgCenterView.addSubview(bgView)
-        bgCenterView.addSubview(borderImageView)
-        borderImageView.addSubview(listImageView)
-        bgView.addSubview(nameLabel)
-        bgCenterView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10.pix())
-            make.size.equalTo(CGSize(width: 346.pix(), height: 91.pix()))
+        contentView.addSubview(bgImageView)
+        bgImageView.addSubview(listImageView)
+        bgImageView.addSubview(nameLabel)
+        
+        
+        bgImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
             make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 345.pix(), height: 95.pix()))
         }
-        bgView.snp.makeConstraints { make in
-            make.bottom.left.right.equalToSuperview()
-            make.height.equalTo(75.pix())
-        }
-        borderImageView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.left.equalToSuperview()
-            make.size.equalTo(CGSize(width: 109.pix(), height: 90.pix()))
-        }
-        nameLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.height.equalTo(21.pix())
-            make.left.equalToSuperview().offset(130.pix())
-        }
+       
         listImageView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-16.pix())
+            make.left.equalToSuperview().offset(14.pix())
             make.size.equalTo(CGSize(width: 30.pix(), height: 30.pix()))
         }
+        
+        nameLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(listImageView.snp.centerY)
+            make.height.equalTo(21.pix())
+            make.left.equalTo(listImageView.snp.right).offset(35.pix())
+        }
+        
     }
     
     @MainActor required init?(coder: NSCoder) {
@@ -79,21 +60,6 @@ class CenterListViewCell: BaseViewCell {
 
 extension CenterListViewCell {
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let endColor = UIColor.white.withAlphaComponent(0.5).cgColor
-        applyGradient(to: bgView, colors: [UIColor.init(hexStr: "#FFD119")!.cgColor, endColor])
-        
-    }
     
-    func applyGradient(to view: UIView, colors: [CGColor]) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = colors
-        
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-        view.layer.insertSublayer(gradientLayer, at: 0)
-    }
     
 }
