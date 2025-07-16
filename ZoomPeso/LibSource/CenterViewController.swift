@@ -26,42 +26,6 @@ class CenterViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
         
-        centerView.oneBtn.rx.tap.subscribe(onNext: { [weak self] in
-            guard let self = self else { return }
-            judgeIsLogin()
-            let oVc = OrderListViewController()
-            oVc.orderType = "4"
-            oVc.nameType = oneArray.first ?? ""
-            self.navigationController?.pushViewController(oVc, animated: true)
-        }).disposed(by: disposeBag)
-        
-        centerView.twoBtn.rx.tap.subscribe(onNext: { [weak self] in
-            guard let self = self else { return }
-            judgeIsLogin()
-            let oVc = OrderListViewController()
-            oVc.orderType = "7"
-            oVc.nameType = oneArray.last ?? ""
-            self.navigationController?.pushViewController(oVc, animated: true)
-        }).disposed(by: disposeBag)
-        
-        centerView.threeBtn.rx.tap.subscribe(onNext: { [weak self] in
-            guard let self = self else { return }
-            judgeIsLogin()
-            let oVc = OrderListViewController()
-            oVc.orderType = "6"
-            oVc.nameType = twoArray[0]
-            self.navigationController?.pushViewController(oVc, animated: true)
-        }).disposed(by: disposeBag)
-        
-        centerView.fourBtn.rx.tap.subscribe(onNext: { [weak self] in
-            guard let self = self else { return }
-            judgeIsLogin()
-            let oVc = OrderListViewController()
-            oVc.orderType = "5"
-            oVc.nameType = twoArray[1]
-            self.navigationController?.pushViewController(oVc, animated: true)
-        }).disposed(by: disposeBag)
-        
         centerView.modelBlock = { [weak self] model in
             guard let self = self else { return }
             judgeIsLogin()

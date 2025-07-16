@@ -40,30 +40,6 @@ class CenterView: BaseView {
         return logoImageView1
     }()
     
-    lazy var oneBtn: UIButton = {
-        let oneBtn = UIButton(type: .custom)
-        oneBtn.setImage(UIImage(named: "alloreiamgece"), for: .normal)
-        return oneBtn
-    }()
-    
-    lazy var twoBtn: UIButton = {
-        let twoBtn = UIButton(type: .custom)
-        twoBtn.setImage(UIImage(named: "centeimagepa"), for: .normal)
-        return twoBtn
-    }()
-    
-    lazy var threeBtn: UIButton = {
-        let threeBtn = UIButton(type: .custom)
-        threeBtn.setImage(UIImage(named: "repcenteplay"), for: .normal)
-        return threeBtn
-    }()
-    
-    lazy var fourBtn: UIButton = {
-        let fourBtn = UIButton(type: .custom)
-        fourBtn.setImage(UIImage(named: "centefinshimge"), for: .normal)
-        return fourBtn
-    }()
-    
     lazy var phonelabel: UILabel = {
         let phonelabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .white, textAlignment: .left)
         let phone = UserDefaults.standard.object(forKey: LoginConfig.Keys.userPhone) as? String ?? ""
@@ -91,11 +67,7 @@ class CenterView: BaseView {
         logoImageView.addSubview(phonelabel)
         logoImageView.addSubview(nameLabel)
         addSubview(bgView)
-        addSubview(tableView)
-        bgView.addSubview(oneBtn)
-        bgView.addSubview(twoBtn)
-        bgView.addSubview(threeBtn)
-        bgView.addSubview(fourBtn)
+        bgView.addSubview(tableView)
         
         logoImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30.pix())
@@ -123,36 +95,9 @@ class CenterView: BaseView {
             make.left.bottom.equalToSuperview()
             make.width.equalTo(SCREEN_WIDTH)
         }
-        oneBtn.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(15)
-            make.left.equalToSuperview().offset(15.pix())
-            make.width.equalTo(79.pix())
-            make.height.equalTo(92.pix())
-        }
-        
-        twoBtn.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(15)
-            make.left.equalTo(oneBtn.snp.right).offset(10.pix())
-            make.width.equalTo(79.pix())
-            make.height.equalTo(92.pix())
-        }
-        
-        threeBtn.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(15)
-            make.left.equalTo(twoBtn.snp.right).offset(10.pix())
-            make.width.equalTo(79.pix())
-            make.height.equalTo(92.pix())
-        }
-        
-        fourBtn.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(15)
-            make.left.equalTo(threeBtn.snp.right).offset(10.pix())
-            make.width.equalTo(79.pix())
-            make.height.equalTo(92.pix())
-        }
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(oneBtn.snp.bottom).offset(5)
+            make.top.equalToSuperview().offset(5.pix())
             make.left.equalToSuperview()
             make.width.equalTo(SCREEN_WIDTH)
             make.bottom.equalToSuperview().offset(-90)

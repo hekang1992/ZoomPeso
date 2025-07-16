@@ -18,7 +18,7 @@ class VitamainGuideHeadView: BaseView {
     }()
     
     lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 18.pix())!, textColor: .white, textAlignment: .center)
+        let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 18.pix())!, textColor: .black, textAlignment: .center)
         return nameLabel
     }()
     

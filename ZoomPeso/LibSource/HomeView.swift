@@ -36,6 +36,7 @@ class HomeView: BaseView {
     lazy var oneImageView: UIImageView = {
         let oneImageView = UIImageView()
         oneImageView.image = UIImage(named: "omeimage")
+        oneImageView.isUserInteractionEnabled = true
         return oneImageView
     }()
     
@@ -83,7 +84,18 @@ class HomeView: BaseView {
     lazy var twoImageView: UIImageView = {
         let twoImageView = UIImageView()
         twoImageView.image = UIImage(named: "kefui_amge")
+        twoImageView.isUserInteractionEnabled = true
         return twoImageView
+    }()
+    
+    lazy var oneBtn: UIButton = {
+        let oneBtn = UIButton()
+        return oneBtn
+    }()
+    
+    lazy var twoBtn: UIButton = {
+        let twoBtn = UIButton()
+        return twoBtn
     }()
     
     lazy var whiteView: UIView = {
@@ -209,6 +221,19 @@ class HomeView: BaseView {
             make.height.equalTo(105.pix())
         }
         
+        twoImageView.addSubview(oneBtn)
+        twoImageView.addSubview(twoBtn)
+        
+        oneBtn.snp.makeConstraints { make in
+            make.left.top.right.equalToSuperview()
+            make.height.equalTo(55.pix())
+        }
+        
+        twoBtn.snp.makeConstraints { make in
+            make.left.bottom.right.equalToSuperview()
+            make.height.equalTo(55.pix())
+        }
+        
         whiteView.snp.makeConstraints { make in
             make.top.equalTo(twoImageView.snp.bottom).offset(20.pix())
             make.centerX.equalToSuperview()
@@ -252,6 +277,11 @@ class HomeView: BaseView {
                     logoImageView.kf.setImage(with: logoUrl)
                 }
             }
+        }).disposed(by: disposeBag)
+        
+        oneImageView.rx.tapGesture().subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            self.applyBlock?()
         }).disposed(by: disposeBag)
         
         loanImageView.rx.tapGesture().subscribe(onNext: { [weak self] _ in
