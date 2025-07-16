@@ -30,14 +30,14 @@ class OrderViewController: BaseViewController {
         self.listView.oneBlock = { [weak self] in
             guard let self = self else { return }
             judgeIsLogin()
-            self.listStr = "4"
+            self.listStr = String(Int(2 + 2))
             getListInfo(from: "4")
         }
         
         self.listView.twoBlock = { [weak self] in
             guard let self = self else { return }
             judgeIsLogin()
-            self.listStr = "7"
+            self.listStr = String(Int(4 + 3))
             getListInfo(from: "7")
         }
         

@@ -85,11 +85,11 @@ class ClickViewCell: BaseViewCell {
                     clickLabel.textColor = .init(hexStr: "#CACACA")
                 }else {
                     clickLabel.text = hound
-                    clickLabel.textColor = .init(hexStr: "#FF3824")
+                    clickLabel.textColor = .init(hexStr: "#FF3825")
                 }
             }else {
                 clickLabel.text = hound
-                clickLabel.textColor = .init(hexStr: "#FF3824")
+                clickLabel.textColor = .init(hexStr: "#FF3825")
             }
         }).disposed(by: disposeBag)
         

@@ -32,7 +32,7 @@ class OrderListViewCell: BaseViewCell {
     }()
     
     lazy var typeLabel: UILabel = {
-        let typeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 13.pix(), weight: .bold), textColor: .init(hexStr: "#FF2727")!, textAlignment: .right)
+        let typeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 13.pix(), weight: .bold), textColor: .init(hexStr: "#FF2726")!, textAlignment: .right)
         return typeLabel
     }()
     
@@ -52,8 +52,8 @@ class OrderListViewCell: BaseViewCell {
         let checkLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .bold), textColor: .white, textAlignment: .center)
         checkLabel.layer.cornerRadius = 5
         checkLabel.layer.masksToBounds = true
-        checkLabel.text = "Check"
-        checkLabel.backgroundColor = .init(hexStr: "#FF3824")
+        checkLabel.text = "Ch" + "eck"
+        checkLabel.backgroundColor = .init(hexStr: "#FF3825")
         return checkLabel
     }()
     

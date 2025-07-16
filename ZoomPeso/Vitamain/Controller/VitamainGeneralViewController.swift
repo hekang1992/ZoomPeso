@@ -75,7 +75,7 @@ class VitamainGeneralViewController: BaseViewController {
         let nextBtn = UIButton(type: .custom)
         nextBtn.setTitle("Next", for: .normal)
         nextBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        nextBtn.backgroundColor = .init(hexStr: "#FF3824")
+        nextBtn.backgroundColor = .init(hexStr: "#FF3825")
         nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.layer.cornerRadius = 23.5
         return nextBtn

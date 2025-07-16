@@ -40,7 +40,7 @@ class SFAppRoveViewViewController: BaseViewController {
     
     lazy var m1label: UILabel = {
         let m1label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .black, textAlignment: .left)
-        m1label.text = "Demonstration"
+        m1label.text = "Demonst" + "ration"
         return m1label
     }()
     
@@ -61,7 +61,7 @@ class SFAppRoveViewViewController: BaseViewController {
         let nextBtn = UIButton(type: .custom)
         nextBtn.setTitle("Next", for: .normal)
         nextBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        nextBtn.backgroundColor = .init(hexStr: "#FF3824")
+        nextBtn.backgroundColor = .init(hexStr: "#FF3825")
         nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.layer.cornerRadius = 23.5
         return nextBtn
@@ -77,7 +77,7 @@ class SFAppRoveViewViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
       
-        self.headView.nameLabel.text = "Face recognition"
+        self.headView.nameLabel.text = "Face" + " " + "recognition"
         addHeadView()
         self.headView.backBlock = { [weak self] in
             guard let self = self else { return }

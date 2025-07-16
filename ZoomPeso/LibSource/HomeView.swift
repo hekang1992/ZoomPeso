@@ -59,12 +59,12 @@ class HomeView: BaseView {
     
     
     lazy var threeLabel: UILabel = {
-        let threeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#000000")!, textAlignment: .center)
+        let threeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#000001")!, textAlignment: .center)
         return threeLabel
     }()
     
     lazy var fiveLabel: UILabel = {
-        let fiveLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#000000")!, textAlignment: .center)
+        let fiveLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#000001")!, textAlignment: .center)
         return fiveLabel
     }()
     
@@ -125,7 +125,7 @@ class HomeView: BaseView {
     
     lazy var proLabel: UILabel = {
         let proLabel = UILabel()
-        proLabel.text = "Application Process"
+        proLabel.text = "Application " + "Process"
         proLabel.textColor = .black
         proLabel.textAlignment = .left
         proLabel.font = UIFont.boldSystemFont(ofSize: 18)
@@ -303,14 +303,6 @@ class HomeView: BaseView {
         logoImageView.snp.updateConstraints { make in
             make.top.equalToSuperview().offset(topSafeArea - 8.pix())
         }
-        
-//        oneLabel.snp.updateConstraints { make in
-//            if isIPad() {
-//                make.top.equalTo(logoImageView.snp.bottom).offset(59.pix())
-//            }else {
-//                make.top.equalTo(logoImageView.snp.bottom).offset(29.pix())
-//            }
-//        }
         
     }
     

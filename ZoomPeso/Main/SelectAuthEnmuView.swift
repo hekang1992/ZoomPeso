@@ -34,7 +34,7 @@ class SelectAuthEnmuView: BaseView {
         let saveBtn = UIButton(type: .custom)
         saveBtn.setTitle("Confirm", for: .normal)
         saveBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        saveBtn.backgroundColor = .init(hexStr: "#FF3824")
+        saveBtn.backgroundColor = .init(hexStr: "#FF3825")
         saveBtn.setTitleColor(.white, for: .normal)
         saveBtn.layer.cornerRadius = 23.5
         saveBtn.layer.borderWidth = 2

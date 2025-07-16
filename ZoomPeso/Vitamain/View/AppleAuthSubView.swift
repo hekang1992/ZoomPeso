@@ -33,7 +33,7 @@ class AppleAuthSubView: BaseView {
         let nextBtn = UIButton(type: .custom)
         nextBtn.setTitle("Confirm", for: .normal)
         nextBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        nextBtn.backgroundColor = .init(hexStr: "#FF3824")
+        nextBtn.backgroundColor = .init(hexStr: "#FF3825")
         nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.layer.cornerRadius = 23.5
         return nextBtn
@@ -41,7 +41,7 @@ class AppleAuthSubView: BaseView {
     
     lazy var namelabel: UILabel = {
         let namelabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .black, textAlignment: .center)
-        namelabel.text = "Full Name"
+        namelabel.text = "Full " + "Name"
         return namelabel
     }()
     

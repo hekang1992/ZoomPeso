@@ -28,7 +28,7 @@ class InputViewCell: BaseViewCell {
     
     lazy var inputTx: UITextField = {
         let inputTx = UITextField()
-        inputTx.textColor = .init(hexStr: "#FF3824")
+        inputTx.textColor = .init(hexStr: "#FF3825")
         let placeholderAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.systemGray,
             .font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium)

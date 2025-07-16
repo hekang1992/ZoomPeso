@@ -18,7 +18,7 @@ class MyLoveViewCell: BaseViewCell {
         desclabel.startPoint = CGPoint(x: 0, y: 0.5)
         desclabel.endPoint = CGPoint(x: 1, y: 0.5)
         desclabel.locations = [0 ,1]
-        desclabel.colors = [UIColor.init(hexStr: "#FF3824")!.cgColor, UIColor.init(hexStr: "#FE5255")!.cgColor]
+        desclabel.colors = [UIColor.init(hexStr: "#FF3825")!.cgColor, UIColor.init(hexStr: "#FE5255")!.cgColor]
         return desclabel
     }()
     
@@ -184,13 +184,13 @@ class MyLoveViewCell: BaseViewCell {
                         let bajada = model.bajada ?? ""
                         if paths == bajada {
                             clickLabel.text = model.paralysed ?? ""
-                            clickLabel.textColor = .init(hexStr: "#FF3824")
+                            clickLabel.textColor = .init(hexStr: "#FF3825")
                         }
                     }
                 }
             }else {
                 clickLabel.text = common
-                clickLabel.textColor = .init(hexStr: "#FF3824")
+                clickLabel.textColor = .init(hexStr: "#FF3825")
             }
             
             let phone = model.beaten ?? ""
@@ -201,7 +201,7 @@ class MyLoveViewCell: BaseViewCell {
                 cpLabel.textColor = .init(hexStr: "#E2D38B")
             }else {
                 cpLabel.text = "\(name) - \(phone)"
-                cpLabel.textColor = .init(hexStr: "#FF3824")
+                cpLabel.textColor = .init(hexStr: "#FF3825")
             }
             
         }).disposed(by: disposeBag)

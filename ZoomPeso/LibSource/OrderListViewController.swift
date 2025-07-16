@@ -11,7 +11,8 @@ import RxRelay
 
 class OrderListViewController: BaseViewController {
     
-    var orderType: String = String(Int(2 + 2))
+    var orderType: String = String(Int(3 + 1))
+    
     var nameType: String = "All"
     
     var modelArray = BehaviorRelay<[rubyModel]?>(value: nil)
@@ -61,10 +62,6 @@ class OrderListViewController: BaseViewController {
         })
         
         getListInfo(from: orderType)
-        
-//        self.modelArray.compactMap { $0 }.asObservable().bind(to: tableView.rx.items(cellIdentifier: "OrderListViewCell", cellType: OrderListViewCell.self)){ row, model, cell in
-//            
-//        }.disposed(by: disposeBag)
        
     }
     

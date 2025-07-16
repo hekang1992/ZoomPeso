@@ -49,7 +49,7 @@ class WebDynamicViewController: BaseViewController {
     
     lazy var progressView: UIProgressView = {
         let progressView = UIProgressView()
-        progressView.progressTintColor = UIColor.init(hexStr: "#FF3824")
+        progressView.progressTintColor = UIColor.init(hexStr: "#FF3825")
         progressView.trackTintColor = .lightGray
         return progressView
     }()

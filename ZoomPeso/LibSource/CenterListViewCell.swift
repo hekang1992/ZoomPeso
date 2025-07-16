@@ -21,7 +21,7 @@ class CenterListViewCell: BaseViewCell {
     }()
     
     lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 17)!, textColor: UIColor.init(hexStr: "#000000")!, textAlignment: .left)
+        let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 17)!, textColor: UIColor.init(hexStr: "#000001")!, textAlignment: .left)
         return nameLabel
     }()
     
@@ -55,11 +55,5 @@ class CenterListViewCell: BaseViewCell {
     @MainActor required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-}
-
-extension CenterListViewCell {
-    
-    
     
 }

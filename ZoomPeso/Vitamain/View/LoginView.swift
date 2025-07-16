@@ -27,7 +27,7 @@ class LoginView: BaseView {
     
     lazy var phonelabel: UILabel = {
         let phonelabel = UILabel()
-        phonelabel.text = "Telephone"
+        phonelabel.text = "Tele" + "phone"
         phonelabel.textColor = UIColor.black
         phonelabel.textAlignment = .left
         phonelabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
@@ -56,7 +56,7 @@ class LoginView: BaseView {
     
     lazy var codelabel: UILabel = {
         let codelabel = UILabel()
-        codelabel.text = "Verification code"
+        codelabel.text = "Verification " + "code"
         codelabel.textColor = UIColor.black
         codelabel.textAlignment = .left
         codelabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
@@ -112,7 +112,7 @@ class LoginView: BaseView {
     lazy var loginBtn: UIButton = {
         let loginBtn = UIButton(type: .custom)
         loginBtn.setTitle("Login", for: .normal)
-        loginBtn.backgroundColor = UIColor.init(hexStr: "#FF3824")
+        loginBtn.backgroundColor = UIColor.init(hexStr: "#FF3825")
         loginBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18)
         loginBtn.layer.cornerRadius = 23.5
         return loginBtn

@@ -32,7 +32,7 @@ class LaunchViewController: BaseViewController {
     lazy var bgImageView: UIImageView = {
         let bgImageView = UIImageView()
         bgImageView.contentMode = .scaleAspectFill
-        bgImageView.image = UIImage(named: "lanucmimage")
+        bgImageView.image = UIImage(named: "lacunimge")
         return bgImageView
     }()
     
@@ -202,7 +202,7 @@ extension LaunchViewController: UIScrollViewDelegate {
             scrollView.addSubview(imageView)
             
             let button = UIButton(type: .custom)
-            button.backgroundColor = UIColor.init(hexStr: "#FF3824")
+            button.backgroundColor = UIColor.init(hexStr: "#FF3825")
             button.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18)
             button.setTitle(i == images.count - 1 ? "Begin" : "Next", for: .normal)
             button.layer.cornerRadius = 23.5
