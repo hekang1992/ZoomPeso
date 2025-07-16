@@ -7,6 +7,7 @@
 
 import UIKit
 import RxRelay
+import FSPagerView
 
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
@@ -88,6 +89,8 @@ class HomeView: BaseView {
     lazy var whiteView: UIView = {
         let whiteView = UIView()
         whiteView.backgroundColor = .white
+        whiteView.layer.cornerRadius = 10.pix()
+        whiteView.layer.masksToBounds = true
         return whiteView
     }()
     
@@ -102,11 +105,31 @@ class HomeView: BaseView {
     
     lazy var applyLabel: UILabel = {
         let applyLabel = UILabel()
-        applyLabel.textColor = UIColor.init(hexStr: "Go Loan >")
         applyLabel.textColor = .white
         applyLabel.textAlignment = .center
         applyLabel.font = UIFont.boldSystemFont(ofSize: 30)
         return applyLabel
+    }()
+    
+    lazy var proLabel: UILabel = {
+        let proLabel = UILabel()
+        proLabel.text = "Application Process"
+        proLabel.textColor = .black
+        proLabel.textAlignment = .left
+        proLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        return proLabel
+    }()
+    
+    lazy var pagerView: FSPagerView = {
+        let pagerView = FSPagerView(frame: .zero)
+        pagerView.delegate = self
+        pagerView.dataSource = self
+        pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "FSPagerViewCell")
+        pagerView.isInfinite = true
+        pagerView.transformer = FSPagerViewTransformer(type: .linear)
+        pagerView.itemSize = CGSize(width: 340.pix(), height: 160.pix())
+        pagerView.interitemSpacing = 15.pix()
+        return pagerView
     }()
     
     override init(frame: CGRect) {
@@ -125,6 +148,7 @@ class HomeView: BaseView {
         scrollerView.addSubview(desrightImageMainView)
         scrollerView.addSubview(twoImageView)
         scrollerView.addSubview(whiteView)
+        whiteView.addSubview(proLabel)
         
         bgView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -200,6 +224,16 @@ class HomeView: BaseView {
         applyLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        proLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(9.pix())
+            make.left.equalToSuperview().offset(14.pix())
+            make.height.equalTo(25.pix())
+        }
+        whiteView.addSubview(pagerView)
+        pagerView.snp.makeConstraints { make in
+            make.top.equalTo(proLabel.snp.bottom).offset(9)
+            make.left.bottom.right.equalToSuperview()
+        }
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
@@ -268,3 +302,18 @@ class HomeView: BaseView {
     
 }
 
+extension HomeView: FSPagerViewDelegate, FSPagerViewDataSource {
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let imageArray = ["banner_1", "banner_2", "banner_3"]
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "FSPagerViewCell", at: index)
+        cell.imageView?.image = UIImage(named: imageArray[index])
+        cell.imageView?.contentMode = .scaleAspectFit
+        return cell
+    }
+    
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return 3
+    }
+    
+}

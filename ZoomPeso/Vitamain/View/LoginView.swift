@@ -13,19 +13,16 @@ class LoginView: BaseView {
 
     lazy var loginImageView: UIImageView = {
         let loginImageView = UIImageView()
-        loginImageView.image = UIImage(named: "loginimge")
+        loginImageView.image = UIImage(named: "login_head")
         loginImageView.isUserInteractionEnabled = true
         return loginImageView
     }()
     
-    lazy var desclabel: UILabel = {
-        let desclabel = UILabel()
-        desclabel.text = "Get approval in just \n1 minute"
-        desclabel.textColor = UIColor.white
-        desclabel.textAlignment = .left
-        desclabel.numberOfLines = 0
-        desclabel.font = UIFont(name: ArialBlackFont, size: 18)
-        return desclabel
+    lazy var loginImageView1: UIImageView = {
+        let loginImageView1 = UIImageView()
+        loginImageView1.image = UIImage(named: "login_foot")
+        loginImageView1.isUserInteractionEnabled = true
+        return loginImageView1
     }()
     
     lazy var phonelabel: UILabel = {
@@ -150,35 +147,50 @@ class LoginView: BaseView {
         return privacyLabel
     }()
     
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .clear
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInsetAdjustmentBehavior = .never
+        return scrollView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(loginImageView)
-        loginImageView.addSubview(desclabel)
-        loginImageView.addSubview(phonelabel)
-        loginImageView.addSubview(wedgeView)
+        addSubview(loginImageView1)
+        addSubview(backBtn)
+        addSubview(scrollView)
+        
+        scrollView.addSubview(phonelabel)
+        scrollView.addSubview(wedgeView)
         wedgeView.addSubview(quakerTopTextField)
         
-        loginImageView.addSubview(codelabel)
-        loginImageView.addSubview(platFormView)
+        scrollView.addSubview(codelabel)
+        scrollView.addSubview(platFormView)
         platFormView.addSubview(typicTextField)
         platFormView.addSubview(visibleLabel)
         
-        loginImageView.addSubview(voiceBtn)
-        loginImageView.addSubview(loginBtn)
-        
-        loginImageView.addSubview(backBtn)
+        scrollView.addSubview(voiceBtn)
+        scrollView.addSubview(loginBtn)
         
         loginImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.right.equalToSuperview()
+            make.height.equalTo(400.pix())
         }
-        desclabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(50)
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(64)
-            make.right.equalToSuperview().offset(-104)
+        loginImageView1.snp.makeConstraints { make in
+            make.top.equalTo(loginImageView.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
+        }
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(loginImageView.snp.bottom)
+            make.left.bottom.equalToSuperview()
+            make.width.equalTo(SCREEN_WIDTH)
         }
         phonelabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(33)
-            make.top.equalTo(desclabel.snp.bottom).offset(72)
+            make.top.equalToSuperview()
             make.width.equalTo(250)
         }
         wedgeView.snp.makeConstraints { make in
@@ -230,14 +242,15 @@ class LoginView: BaseView {
             make.top.equalTo(platFormView.snp.bottom).offset(77)
         }
         
-        loginImageView.addSubview(privacyLabel)
+        scrollView.addSubview(privacyLabel)
         privacyLabel.snp.makeConstraints { make in
             make.top.equalTo(loginBtn.snp.bottom).offset(22)
             make.centerX.equalToSuperview().offset(14)
-            make.height.equalTo(17)
+            make.height.equalTo(17)            
+            make.bottom.equalToSuperview().offset(-20)
         }
         
-        loginImageView.addSubview(cycleBtn)
+        scrollView.addSubview(cycleBtn)
         cycleBtn.snp.makeConstraints { make in
             make.centerY.equalTo(privacyLabel.snp.centerY)
             make.right.equalTo(privacyLabel.snp.left).offset(-2)

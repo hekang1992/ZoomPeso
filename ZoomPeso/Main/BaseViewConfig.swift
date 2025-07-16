@@ -28,7 +28,7 @@ class EmptyView: UIView {
     }()
     
     lazy var emptyLabel: UILabel = {
-        let emptyLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .medium), textColor: .init(hexStr: "#FFA220")!, textAlignment: .center)
+        let emptyLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .medium), textColor: .init(hexStr: "#FFFFFF")!, textAlignment: .center)
         emptyLabel.text = "You have no orders"
         return emptyLabel
     }()
