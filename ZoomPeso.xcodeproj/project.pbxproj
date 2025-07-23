@@ -473,6 +473,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8K9YQ3M42C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZoomPeso/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
 				INFOPLIST_KEY_NSCameraUsageDescription = "After enabling camera permissions, you can directly take ID photos through ZoomMeso, simplifying the upload process. All shooting content will be encrypted and stored.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "To expedite the application process, ZoomMeso needs to obtain contact book permissions to automatically fill in contact information. We only read necessary information and will not disclose it.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "ZoomMeso needs to obtain your location information in order to recommend nearby service outlets for you. Your location data will be encrypted and can be turned off at any time in Settings Privacy Location Services.";
@@ -519,6 +520,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8K9YQ3M42C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZoomPeso/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
 				INFOPLIST_KEY_NSCameraUsageDescription = "After enabling camera permissions, you can directly take ID photos through ZoomMeso, simplifying the upload process. All shooting content will be encrypted and stored.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "To expedite the application process, ZoomMeso needs to obtain contact book permissions to automatically fill in contact information. We only read necessary information and will not disclose it.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "ZoomMeso needs to obtain your location information in order to recommend nearby service outlets for you. Your location data will be encrypted and can be turned off at any time in Settings Privacy Location Services.";
