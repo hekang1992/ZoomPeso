@@ -141,6 +141,7 @@ class HomeView: BaseView {
         pagerView.transformer = FSPagerViewTransformer(type: .linear)
         pagerView.itemSize = CGSize(width: 340.pix(), height: 160.pix())
         pagerView.interitemSpacing = 15.pix()
+        pagerView.automaticSlidingInterval = 3.0 
         return pagerView
     }()
     
@@ -193,13 +194,13 @@ class HomeView: BaseView {
         
         threeLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(126.pix())
-            make.top.equalTo(nameLabel.snp.bottom).offset(30.pix())
+            make.top.equalTo(nameLabel.snp.bottom).offset(33.pix())
             make.height.equalTo(20.pix())
         }
         
         fiveLabel.snp.makeConstraints { make in
             make.left.equalTo(threeLabel.snp.right).offset(20.pix())
-            make.top.equalTo(nameLabel.snp.bottom).offset(30.pix())
+            make.top.equalTo(nameLabel.snp.bottom).offset(33.pix())
             make.height.equalTo(20.pix())
         }
         loanImageView.snp.makeConstraints { make in
@@ -336,6 +337,10 @@ extension HomeView: FSPagerViewDelegate, FSPagerViewDataSource {
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         return 3
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
+        return false
     }
     
 }

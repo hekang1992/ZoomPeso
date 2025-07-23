@@ -138,15 +138,18 @@ class HomeViewController: BaseViewController {
         
         homeView.twoBtn.rx.tap.subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
-            let ruby = self.homeModel.value?.ruby ?? []
-            for model in ruby {
-                let bajada = model.bajada ?? ""
-                if bajada == "allowing" {
-                    let model = model.juices?.first
-                    let orifice = model?.orifice ?? 0
-                    self.sqProductInfo(from: orifice)
-                }
-            }
+//            let ruby = self.homeModel.value?.ruby ?? []
+//            for model in ruby {
+//                let bajada = model.bajada ?? ""
+//                if bajada == "allowing" {
+//                    let model = model.juices?.first
+//                    let orifice = model?.orifice ?? 0
+//                    self.sqProductInfo(from: orifice)
+//                }
+//            }
+            let webVc = WebDynamicViewController()
+            webVc.pageUrl = website_url + "/pyrophorus"
+            self.navigationController?.pushViewController(webVc, animated: true)
         }).disposed(by: disposeBag)
         
     }
@@ -188,6 +191,7 @@ extension HomeViewController {
                         self?.homeView.model.accept(model)
                         self?.paraView.model.accept(model)
                         self?.paraView.tableView.reloadData()
+                        self?.homeView.pagerView.reloadData()
                     }
                 }
                 break

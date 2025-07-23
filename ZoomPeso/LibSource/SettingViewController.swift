@@ -38,7 +38,7 @@ class SettingViewController: BaseViewController {
     }()
     
     lazy var vLabel: UILabel = {
-        let vLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .medium), textColor: .white, textAlignment: .right)
+        let vLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .medium), textColor: .black, textAlignment: .right)
         vLabel.text = "\(Bundle.main.releaseVersionNumber ?? "")"
         return vLabel
     }()

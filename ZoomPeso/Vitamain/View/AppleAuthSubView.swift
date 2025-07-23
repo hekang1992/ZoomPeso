@@ -209,7 +209,13 @@ class AppleAuthSubView: BaseView {
             let outputFormatter = DateFormatter()
             outputFormatter.dateFormat = "yyyy/MM/dd"
             
-            let time = model.stuff ?? ""
+            var time = model.stuff ?? ""
+            
+            if time.isEmpty {
+                time = "1999/12/12"
+            }else {
+                time = model.stuff ?? ""
+            }
             
             if let date = inputFormatter.date(from: time) {
                 timeBtn.setTitle(outputFormatter.string(from: date), for: .normal)

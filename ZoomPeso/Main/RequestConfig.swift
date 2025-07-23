@@ -17,7 +17,9 @@ enum AppURL {
     }
 }
 
-let BASE_URL = "https://zpml.movefast-lending.com/zigzag"
+let website_url = "https://zpml.movefast-lending.com"
+
+let BASE_URL = "\(website_url)/zigzag"
 
 class NetworkMonitor {
     static let shared = NetworkMonitor()

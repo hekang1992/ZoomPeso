@@ -229,7 +229,7 @@ class LoginView: BaseView {
         }
         
         voiceBtn.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-40)
+            make.left.equalTo(SCREEN_WIDTH - 150)
             make.top.equalTo(platFormView.snp.bottom).offset(15)
             make.height.equalTo(20)
             make.width.equalTo(90)
