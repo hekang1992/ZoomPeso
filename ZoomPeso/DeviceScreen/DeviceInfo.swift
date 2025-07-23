@@ -91,18 +91,32 @@ extension DeviceInfo {
     }
 
     private static func getNetworkInfo() -> [String: Any] {
-        let orders = DeviceInfo.getTimeZone()
-        let toothed = DeviceIDManager.shared.getDeviceID()
-        let constructed = DeviceInfo.childrenMeseage()
-        let importance = NetworkMonitor.shared.connectionType
-        let clicking = DeviceIDManager.shared.getIDFA()
-        return ["lepidoptera": ["orders": orders, "toothed": toothed, "constructed": constructed, "importance": importance, "clicking": clicking]]
+        let timeZone = DeviceInfo.getTimeZone()
+        let deviceID = DeviceIDManager.shared.getDeviceID()
+        let childrenMessage = DeviceInfo.childrenMeseage()
+        let connectionType = NetworkMonitor.shared.connectionType
+        let idfa = DeviceIDManager.shared.getIDFA()
+        
+        return [
+            "lepidoptera": [
+                "orders": timeZone,
+                "toothed": deviceID,
+                "constructed": childrenMessage,
+                "importance": connectionType,
+                "clicking": idfa
+            ]
+        ]
     }
 
     private static func getWiFiInfo() -> [String: Any] {
-        let gardens = DrawerConfig.getWiFiBSSID()
-        let paralysed = DrawerConfig.getWiFiSSID()
-        return ["comparative": ["untouched": ["gardens": gardens, "paralysed": paralysed]]]
+        return [
+            "comparative": [
+                "untouched": [
+                    "gardens": DrawerConfig.getWiFiBSSID(),
+                    "paralysed": DrawerConfig.getWiFiSSID()
+                ]
+            ]
+        ]
     }
     
 }

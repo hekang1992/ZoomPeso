@@ -11,6 +11,15 @@ class LoginView: BaseView {
     
     var backBlock: (() -> Void)?
 
+    lazy var phonelabel: UILabel = {
+        let phonelabel = UILabel()
+        phonelabel.text = "Telephone"
+        phonelabel.textColor = UIColor.black
+        phonelabel.textAlignment = .left
+        phonelabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        return phonelabel
+    }()
+    
     lazy var loginImageView: UIImageView = {
         let loginImageView = UIImageView()
         loginImageView.image = UIImage(named: "login_head")
@@ -23,15 +32,6 @@ class LoginView: BaseView {
         loginImageView1.image = UIImage(named: "login_foot")
         loginImageView1.isUserInteractionEnabled = true
         return loginImageView1
-    }()
-    
-    lazy var phonelabel: UILabel = {
-        let phonelabel = UILabel()
-        phonelabel.text = "Tele" + "phone"
-        phonelabel.textColor = UIColor.black
-        phonelabel.textAlignment = .left
-        phonelabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        return phonelabel
     }()
     
     lazy var wedgeView: UIView = {

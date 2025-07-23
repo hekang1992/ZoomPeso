@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		420ED8A214ABD12C0323B7F1 /* Pods_ZoomPeso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3346BCA40071A509D8B6B1CF /* Pods_ZoomPeso.framework */; };
+		7304FE972E30E9510092908A /* viewconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7304FE962E30E94C0092908A /* viewconfig.swift */; };
 		733102FC2DF706C200687BA0 /* otherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733102FB2DF706B700687BA0 /* otherConfig.swift */; };
 		733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */; };
 		733DC9FA2DB5CF7E009AA17E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		3346BCA40071A509D8B6B1CF /* Pods_ZoomPeso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoomPeso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF90C2B2DAAB457EB52CFC6 /* Pods-ZoomPeso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoomPeso.debug.xcconfig"; path = "Target Support Files/Pods-ZoomPeso/Pods-ZoomPeso.debug.xcconfig"; sourceTree = "<group>"; };
+		7304FE962E30E94C0092908A /* viewconfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewconfig.swift; sourceTree = "<group>"; };
 		733102FB2DF706B700687BA0 /* otherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = otherConfig.swift; sourceTree = "<group>"; };
 		733DC9D52DB5CF76009AA17E /* ZoomPeso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZoomPeso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		733DCA032DB5DCD5009AA17E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7304FE962E30E94C0092908A /* viewconfig.swift */,
 				733102FB2DF706B700687BA0 /* otherConfig.swift */,
 				733DC9ED2DB5CF7E009AA17E /* AppDelegate.swift */,
 				733DC9FE2DB5D68E009AA17E /* ArialBlack.ttf */,
@@ -415,6 +418,7 @@
 				7350F17C2DBE70BF0084D9AE /* OutLogView.swift in Sources */,
 				73FAA6542DB91D6900D77159 /* SettingViewController.swift in Sources */,
 				739FA6CB2DBA84C7003C0352 /* SFAppRoveViewViewController.swift in Sources */,
+				7304FE972E30E9510092908A /* viewconfig.swift in Sources */,
 				735DD02E2DBB3914003782FC /* ClickViewCell.swift in Sources */,
 				733DCA012DB5DC84009AA17E /* OppDefine.swift in Sources */,
 				733DC9F72DB5CF7E009AA17E /* AppDelegate.swift in Sources */,
@@ -466,11 +470,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ZoomPeso/ZoomPeso.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8K9YQ3M42C;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = YUQ352UGYJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZoomPeso/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
@@ -491,10 +495,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hkdev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feilvbin.testappid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = hkdevpro;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FeiLvBinProfile;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -513,11 +517,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ZoomPeso/ZoomPeso.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8K9YQ3M42C;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = YUQ352UGYJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZoomPeso/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
@@ -538,10 +542,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hkdev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feilvbin.testappid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = hkdevpro;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FeiLvBinProfile;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

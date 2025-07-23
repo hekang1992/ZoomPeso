@@ -49,7 +49,6 @@ class NetworkMonitor {
                 print("connect----connect")
                 complete(true)
             } else {
-                print("lose----lose")
                 complete(false)
             }
         }
