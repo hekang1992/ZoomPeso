@@ -10,7 +10,7 @@ import RxRelay
 import AVFoundation
 import Photos
 import TYAlertController
-import Kingfisher
+import AlamofireImage
 
 class SFAppRoveViewViewController: BaseViewController {
         
@@ -264,7 +264,9 @@ extension SFAppRoveViewViewController: UIImagePickerControllerDelegate, UINaviga
                     if let model = success.net?.victims {
                         self.isSuccess.accept(model.strength ?? 0)
                         let picUrl = model.sucking ?? ""
-                        self.popImageView.kf.setImage(with: URL(string: picUrl), placeholder: UIImage(named: "sfaceimage"))
+                        if let url = URL(string: picUrl) {
+                            self.popImageView.af.setImage(withURL: url)
+                        }
                     }
                 }
                 break

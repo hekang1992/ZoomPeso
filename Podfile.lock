@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.10.2)
+  - AlamofireImage (4.3.0):
+    - Alamofire (~> 5.8)
   - ASGradientLabel (1.0.0)
   - BRPickerView (2.9.1):
     - BRPickerView/All (= 2.9.1)
@@ -28,6 +30,7 @@ PODS:
   - BRPickerView/TextPicker (2.9.1):
     - BRPickerView/Core
   - DeviceKit (5.5.0)
+  - ESPullToRefresh (2.9.3)
   - FBAEMKit (17.4.0):
     - FBSDKCoreKit_Basics (= 17.4.0)
   - FBSDKCoreKit (17.4.0):
@@ -35,6 +38,7 @@ PODS:
     - FBSDKCoreKit_Basics (= 17.4.0)
   - FBSDKCoreKit_Basics (17.4.0)
   - FSPagerView (0.8.3)
+  - iCarousel (1.8.3)
   - IQKeyboardCore (1.0.5)
   - IQKeyboardManagerSwift (8.0.0):
     - IQKeyboardManagerSwift/Appearance (= 8.0.0)
@@ -75,9 +79,11 @@ PODS:
     - IQKeyboardCore
   - IQTextView (1.0.5):
     - IQKeyboardToolbar/Placeholderable
-  - Kingfisher (8.1.1)
+  - KeychainAccess (4.2.2)
+  - KRActivityIndicatorView (3.0.8)
+  - KRProgressHUD (3.4.8):
+    - KRActivityIndicatorView (= 3.0.8)
   - Loaf (0.7.0)
-  - MJRefresh (3.7.9)
   - RxCocoa (6.8.0):
     - RxRelay (= 6.8.0)
     - RxSwift (= 6.8.0)
@@ -87,40 +93,42 @@ PODS:
   - RxRelay (6.8.0):
     - RxSwift (= 6.8.0)
   - RxSwift (6.8.0)
-  - SAMKeychain (1.5.3)
   - SnapKit (5.7.1)
-  - Toast-Swift (5.1.1)
   - TYAlertController (1.2.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - ASGradientLabel
   - BRPickerView
   - DeviceKit
+  - ESPullToRefresh
   - FBSDKCoreKit
   - FSPagerView
+  - iCarousel
   - IQKeyboardManagerSwift
-  - Kingfisher
+  - KeychainAccess
+  - KRProgressHUD
   - Loaf
-  - MJRefresh
   - RxCocoa
   - RxGesture
   - RxSwift
-  - SAMKeychain
   - SnapKit
-  - Toast-Swift
   - TYAlertController
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireImage
     - ASGradientLabel
     - BRPickerView
     - DeviceKit
+    - ESPullToRefresh
     - FBAEMKit
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
     - FSPagerView
+    - iCarousel
     - IQKeyboardCore
     - IQKeyboardManagerSwift
     - IQKeyboardNotification
@@ -129,27 +137,29 @@ SPEC REPOS:
     - IQKeyboardToolbarManager
     - IQTextInputViewNotification
     - IQTextView
-    - Kingfisher
+    - KeychainAccess
+    - KRActivityIndicatorView
+    - KRProgressHUD
     - Loaf
-    - MJRefresh
     - RxCocoa
     - RxGesture
     - RxRelay
     - RxSwift
-    - SAMKeychain
     - SnapKit
-    - Toast-Swift
     - TYAlertController
 
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
   ASGradientLabel: 40a26da240c487ec6908825636688b652156d1f3
   BRPickerView: 6dd69ea2c48e0a0abf1d197a705050e13143ee63
   DeviceKit: d83e38ca196a4ebf0cc5f37d6f0316a24b794d5b
+  ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
   FBAEMKit: 58cb5f302cdd715a56d4c1d0dfdd2e423ac1421a
   FBSDKCoreKit: 94d7461d0cecf441b1ba7c41acfff41daa8ccd41
   FBSDKCoreKit_Basics: 151b43db8b834d3f0e02f95d36a44ffd36265e45
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
   IQKeyboardManagerSwift: 0c6fbbaa2e60739e48d7cf59f25661471a7a3a65
   IQKeyboardNotification: d7382c4466c5a5adef92c7452ebf861b36050088
@@ -158,18 +168,17 @@ SPEC CHECKSUMS:
   IQKeyboardToolbarManager: 6c693c8478d6327a7ef2107528d29698b3514dbb
   IQTextInputViewNotification: f5e954d8881fd9808b744e49e024cc0d4bcfe572
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
-  Kingfisher: fc2788e497306f97fdef6e4df49f02106cb57788
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  KRActivityIndicatorView: c5c503bf56e54834382dd926b64ff47287ca0006
+  KRProgressHUD: d0fb4e72428d312eb6966e84c543ea58fb1efbc7
   Loaf: d69937cd00649f3fa260beb8b7aef0a1feb861ef
-  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
   RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
-  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
-  Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
   TYAlertController: c121090edb0bea7426f987da94cdddd81eef4231
 
-PODFILE CHECKSUM: c38a7e051efcb4cbffaea327be870f3b1bae2463
+PODFILE CHECKSUM: 143dd394b36cb2585a2db9f9341ec3ab85168a08
 
 COCOAPODS: 1.16.2

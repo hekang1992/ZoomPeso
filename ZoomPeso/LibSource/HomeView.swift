@@ -274,8 +274,8 @@ class HomeView: BaseView {
                     let applyStr = model?.thrusts ?? ""
                     applyLabel.text = applyStr
                     nameLabel.text = model?.pitying ?? ""
-                    let logoUrl = URL(string: model?.antagonist ?? "")
-                    logoImageView.kf.setImage(with: logoUrl)
+                    let logoUrl = URL(string: model?.antagonist ?? "")!
+                    logoImageView.af.setImage(withURL: logoUrl)
                 }
             }
         }).disposed(by: disposeBag)

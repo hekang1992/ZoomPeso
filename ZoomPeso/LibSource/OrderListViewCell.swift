@@ -148,7 +148,7 @@ class OrderListViewCell: BaseViewCell {
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
             let logUrl = model.antagonist ?? ""
-            logoImageView.kf.setImage(with: URL(string: logUrl))
+            logoImageView.af.setImage(withURL: URL(string: logUrl)!)
             nameLabel.text = model.pitying ?? ""
             typeLabel.text = model.thrusts ?? ""
             moneyLabel.text = model.carrion ?? ""

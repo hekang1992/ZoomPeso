@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Toast_Swift
+import KRProgressHUD
 
 let ArialBlackFont = "Arial-Black"
 
@@ -62,7 +62,7 @@ class ViewCycleManager {
 
 class ToastManagerConfig {
     static func showToastText(form view: UIView, message: String) {
-        view.makeToast(message, duration: 3.0, position: .center)
+        KRProgressHUD.showMessage(message)
     }
 }
 

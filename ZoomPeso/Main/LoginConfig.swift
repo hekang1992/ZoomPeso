@@ -7,7 +7,7 @@
 
 import Foundation
 import DeviceKit
-import SAMKeychain
+import KeychainAccess
 import AdSupport
 import AppTrackingTransparency
 
@@ -77,27 +77,37 @@ class DeviceIDManager {
     private let serviceName = "com.zoom.peso"
     private let accountName = "deviceID"
     
+    private var keychain: Keychain {
+        return Keychain(service: serviceName)
+    }
+    
     func getDeviceID() -> String {
-        if let deviceID = SAMKeychain.password(forService: serviceName, account: accountName) {
-            return deviceID
+        do {
+            if let deviceID = try keychain.get(accountName) {
+                return deviceID
+            }
+            
+            let newDeviceID: String
+            if let vendorID = UIDevice.current.identifierForVendor?.uuidString {
+                newDeviceID = vendorID
+            } else {
+                newDeviceID = UUID().uuidString
+            }
+            
+            try keychain.set(newDeviceID, key: accountName)
+            return newDeviceID
+            
+        } catch {
+            print("Keychain access error: \(error)")
+            // Fallback to generating a new ID if keychain fails
+            return UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
         }
-        
-        let newDeviceID: String
-        if let vendorID = UIDevice.current.identifierForVendor?.uuidString {
-            newDeviceID = vendorID
-        } else {
-            newDeviceID = UUID().uuidString
-        }
-        
-        SAMKeychain.setPassword(newDeviceID, forService: serviceName, account: accountName)
-        
-        return newDeviceID
     }
     
     func getIDFA() -> String {
+        // Note: IDFA access requires proper user consent as per App Store guidelines
         return ASIdentifierManager.shared().advertisingIdentifier.uuidString
     }
-    
 }
 
 class URLQueryConfig {

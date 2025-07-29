@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MJRefresh
+import ESPullToRefresh
 
 class OrderViewController: BaseViewController {
     
@@ -55,11 +55,11 @@ class OrderViewController: BaseViewController {
             getListInfo(from: "5")
         }
         
-        self.listView.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+        self.listView.tableView.es.addPullToRefresh { [weak self] in
             guard let self = self else { return }
             getListInfo(from: listStr)
-        })
-        
+        }
+
         self.listView.block = { [weak self] model in
             guard let self = self else { return }
             judgeIsLogin()
@@ -90,7 +90,7 @@ extension OrderViewController {
         let man = NetworkRequstManager()
         man.multipartFormDataRequest(endpoint: "/surely/theridion", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
-            self?.listView.tableView.mj_header?.endRefreshing()
+            self?.listView.tableView.es.stopPullToRefresh()
             switch result {
             case .success(let success):
                 guard let self = self else { return }

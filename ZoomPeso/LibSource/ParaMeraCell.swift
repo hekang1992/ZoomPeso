@@ -125,7 +125,7 @@ class ParaMeraCell: BaseViewCell {
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
             let ogo = model.antagonist ?? ""
-            logoImageView.kf.setImage(with: URL(string: ogo))
+            logoImageView.af.setImage(withURL: URL(string: ogo)!)
             nameLabel.text = model.pitying ?? ""
             let aplt = model.thrusts ?? ""
             aplyLabel.text = "\(aplt) >"

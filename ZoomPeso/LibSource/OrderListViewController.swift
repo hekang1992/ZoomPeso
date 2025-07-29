@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MJRefresh
+import ESPullToRefresh
 import RxRelay
 
 class OrderListViewController: BaseViewController {
@@ -56,10 +56,10 @@ class OrderListViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
         
-        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
-            guard let self = self else { return }
-            getListInfo(from: orderType)
-        })
+        self.tableView.es.addPullToRefresh { [weak self] in
+                guard let self = self else { return }
+                getListInfo(from: orderType)
+        }
         
         getListInfo(from: orderType)
        
@@ -78,7 +78,7 @@ extension OrderListViewController {
         let man = NetworkRequstManager()
         man.multipartFormDataRequest(endpoint: "/surely/theridion", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
-            self?.tableView.mj_header?.endRefreshing()
+            self?.tableView.es.startPullToRefresh()
             switch result {
             case .success(let success):
                 guard let self = self else { return }

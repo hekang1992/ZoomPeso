@@ -10,7 +10,7 @@ import RxRelay
 import AVFoundation
 import Photos
 import TYAlertController
-import Kingfisher
+import AlamofireImage
 
 class ApproachAuthViewController: BaseViewController {
     
@@ -402,7 +402,9 @@ extension ApproachAuthViewController: UIImagePickerControllerDelegate, UINavigat
                     if let model = success.net?.deadly {
                         self.isSuccess.accept(model.strength ?? 0)
                         let picUrl = model.sucking ?? ""
-                        self.popImageView.kf.setImage(with: URL(string: picUrl), placeholder: UIImage(named: "pheoamigesi"))
+                        if let url = URL(string: picUrl) {
+                            self.popImageView.af.setImage(withURL: url)
+                        }
                     }
                 }
                 break

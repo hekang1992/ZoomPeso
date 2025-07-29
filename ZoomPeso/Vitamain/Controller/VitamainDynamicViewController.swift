@@ -10,7 +10,7 @@ import RxRelay
 import AVFoundation
 import Photos
 import TYAlertController
-import Kingfisher
+import AlamofireImage
 import Combine
 
 class VitamainDynamicViewController: BaseViewController {

@@ -148,7 +148,7 @@ extension ParaMeraView: UITableViewDelegate, UITableViewDataSource {
                     headBtn.setTitle("\(tyi) >", for: .normal)
                     
                     let logoUrl = self.juices?.antagonist ?? ""
-                    vindaImageView.kf.setImage(with: URL(string: logoUrl))
+                    vindaImageView.af.setImage(withURL: URL(string: logoUrl)!)
                     namelabel.text = self.juices?.pitying ?? ""
                 }
             }

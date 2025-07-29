@@ -110,7 +110,7 @@ class CenterView: BaseView {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             let walckanaer = model.walckanaer ?? ""
-            cell.listImageView.kf.setImage(with: URL(string: walckanaer), placeholder: UIImage(named: "onelaige"))
+            cell.listImageView.af.setImage(withURL: URL(string: walckanaer)!)
             cell.nameLabel.text = model.backs ?? ""
         }
             .disposed(by: disposeBag)

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MJRefresh
+import ESPullToRefresh
 import RxRelay
 import CoreLocation
 
@@ -41,17 +41,17 @@ class HomeViewController: BaseViewController {
             make.bottom.equalToSuperview().offset(-90)
         }
         
-        self.homeView.scrollerView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
-            guard let self = self else { return }
-            idfaAndLocationInfo()
-            getHomeInfo()
-        })
+        self.homeView.scrollerView.es.addPullToRefresh { [weak self] in
+                guard let self = self else { return }
+                idfaAndLocationInfo()
+                getHomeInfo()
+        }
         
-        self.paraView.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
-            guard let self = self else { return }
-            idfaAndLocationInfo()
-            getHomeInfo()
-        })
+        self.paraView.tableView.es.addInfiniteScrolling { [weak self] in
+                guard let self = self else { return }
+                idfaAndLocationInfo()
+                getHomeInfo()
+        }
         
         self.homeView.applyBlock = { [weak self] in
             guard let self = self else { return }
@@ -170,8 +170,8 @@ extension HomeViewController {
         let man = NetworkRequstManager()
         man.getRequest(endpoint: "/surely/station", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.hideLoading()
-            self?.homeView.scrollerView.mj_header?.endRefreshing()
-            self?.paraView.tableView.mj_header?.endRefreshing()
+            self?.homeView.scrollerView.es.stopPullToRefresh()
+            self?.paraView.tableView.es.stopPullToRefresh()
             switch result {
             case .success(let success):
                 if ["0", "00"].contains(success.wedge) {
