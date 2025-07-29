@@ -20,7 +20,7 @@ class InputViewCell: BaseViewCell {
 
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = .init(hexStr: "#FAFAFA")
+        bgView.backgroundColor = .init(cssHexStr: "#FAFAFA")
         bgView.layer.cornerRadius = 10.pix()
         bgView.layer.masksToBounds = true
         return bgView
@@ -28,7 +28,7 @@ class InputViewCell: BaseViewCell {
     
     lazy var inputTx: UITextField = {
         let inputTx = UITextField()
-        inputTx.textColor = .init(hexStr: "#FF3825")
+        inputTx.textColor = .init(cssHexStr: "#FF3825")
         let placeholderAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.systemGray,
             .font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium)

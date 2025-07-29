@@ -21,7 +21,7 @@ class CenterListViewCell: BaseViewCell {
     }()
     
     lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 17)!, textColor: UIColor.init(hexStr: "#000001")!, textAlignment: .left)
+        let nameLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 17)!, textColor: UIColor.init(cssHexStr: "#000001")!, textAlignment: .left)
         return nameLabel
     }()
     

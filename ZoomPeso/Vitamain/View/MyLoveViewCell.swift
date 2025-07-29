@@ -18,16 +18,16 @@ class MyLoveViewCell: BaseViewCell {
         desclabel.startPoint = CGPoint(x: 0, y: 0.5)
         desclabel.endPoint = CGPoint(x: 1, y: 0.5)
         desclabel.locations = [0 ,1]
-        desclabel.colors = [UIColor.init(hexStr: "#FF3825")!.cgColor, UIColor.init(hexStr: "#FE5255")!.cgColor]
+        desclabel.colors = [UIColor.init(cssHexStr: "#FF3825")!.cgColor, UIColor.init(cssHexStr: "#FE5255")!.cgColor]
         return desclabel
     }()
     
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = .init(hexStr: "#FFFAED")
+        bgView.backgroundColor = .init(cssHexStr: "#FFFAED")
         bgView.layer.cornerRadius = 10.pix()
         bgView.layer.masksToBounds = true
-        bgView.layer.shadowColor = UIColor.init(hexStr: "#B42400")?.withAlphaComponent(0.27).cgColor
+        bgView.layer.shadowColor = UIColor.init(cssHexStr: "#B42400")?.withAlphaComponent(0.27).cgColor
         bgView.layer.shadowOffset = CGSize(width: 0, height: -3.5)
         bgView.layer.shadowRadius = 6.5
         bgView.layer.shadowOpacity = 0.2
@@ -42,7 +42,7 @@ class MyLoveViewCell: BaseViewCell {
     
     lazy var contaceView: UIView = {
         let contaceView = UIView()
-        contaceView.backgroundColor = .init(hexStr: "#FAFAFA")
+        contaceView.backgroundColor = .init(cssHexStr: "#FAFAFA")
         contaceView.layer.cornerRadius = 10.pix()
         contaceView.layer.masksToBounds = true
         return contaceView
@@ -55,7 +55,7 @@ class MyLoveViewCell: BaseViewCell {
     }()
     
     lazy var clickLabel: UILabel = {
-        let clickLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(hexStr: "#E2D38B")!, textAlignment: .left)
+        let clickLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssHexStr: "#E2D38B")!, textAlignment: .left)
         return clickLabel
     }()
     
@@ -66,7 +66,7 @@ class MyLoveViewCell: BaseViewCell {
     
     lazy var phoenView: UIView = {
         let phoenView = UIView()
-        phoenView.backgroundColor = .init(hexStr: "#FAFAFA")
+        phoenView.backgroundColor = .init(cssHexStr: "#FAFAFA")
         phoenView.layer.cornerRadius = 10.pix()
         phoenView.layer.masksToBounds = true
         return phoenView
@@ -79,7 +79,7 @@ class MyLoveViewCell: BaseViewCell {
     }()
     
     lazy var cpLabel: UILabel = {
-        let cpLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(hexStr: "#E2D38B")!, textAlignment: .left)
+        let cpLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssHexStr: "#E2D38B")!, textAlignment: .left)
         return cpLabel
     }()
     
@@ -177,20 +177,20 @@ class MyLoveViewCell: BaseViewCell {
             if common.isEmpty {
                 if paths.isEmpty {
                     clickLabel.text = model.astonished ?? ""
-                    clickLabel.textColor = .init(hexStr: "#E2D38B")
+                    clickLabel.textColor = .init(cssHexStr: "#E2D38B")
                 }else {
                     let extricate = model.extricate ?? []
                     for model in extricate {
                         let bajada = model.bajada ?? ""
                         if paths == bajada {
                             clickLabel.text = model.paralysed ?? ""
-                            clickLabel.textColor = .init(hexStr: "#FF3825")
+                            clickLabel.textColor = .init(cssHexStr: "#FF3825")
                         }
                     }
                 }
             }else {
                 clickLabel.text = common
-                clickLabel.textColor = .init(hexStr: "#FF3825")
+                clickLabel.textColor = .init(cssHexStr: "#FF3825")
             }
             
             let phone = model.beaten ?? ""
@@ -198,10 +198,10 @@ class MyLoveViewCell: BaseViewCell {
             phoenLabel.text = model.excepted ?? ""
             if phone.isEmpty {
                 cpLabel.text = model.bees ?? ""
-                cpLabel.textColor = .init(hexStr: "#E2D38B")
+                cpLabel.textColor = .init(cssHexStr: "#E2D38B")
             }else {
                 cpLabel.text = "\(name) - \(phone)"
-                cpLabel.textColor = .init(hexStr: "#FF3825")
+                cpLabel.textColor = .init(cssHexStr: "#FF3825")
             }
             
         }).disposed(by: disposeBag)

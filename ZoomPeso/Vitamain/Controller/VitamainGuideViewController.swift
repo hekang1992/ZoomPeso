@@ -53,22 +53,22 @@ class VitamainGuideViewController: BaseViewController {
     }()
     
     lazy var moneyLabel: UILabel = {
-        let moneyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 59)!, textColor: .init(hexStr: "#712202")!, textAlignment: .left)
+        let moneyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 59)!, textColor: .init(cssHexStr: "#712202")!, textAlignment: .left)
         return moneyLabel
     }()
     
     lazy var rightLabel: UILabel = {
-        let rightLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .init(hexStr: "#F9732C")!, textAlignment: .center)
+        let rightLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .init(cssHexStr: "#F9732C")!, textAlignment: .center)
         return rightLabel
     }()
     
     lazy var leftLabel: UILabel = {
-        let leftLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .init(hexStr: "#F9732C")!, textAlignment: .center)
+        let leftLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .init(cssHexStr: "#F9732C")!, textAlignment: .center)
         return leftLabel
     }()
     
     lazy var descLabel: UILabel = {
-        let descLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 18)!, textColor: .init(hexStr: "#FFFFFF")!, textAlignment: .center)
+        let descLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 18)!, textColor: .init(cssHexStr: "#FFFFFF")!, textAlignment: .center)
         descLabel.text = "Certifcation conditions"
         return descLabel
     }()
@@ -77,11 +77,11 @@ class VitamainGuideViewController: BaseViewController {
         let nextBtn = UIButton(type: .custom)
         nextBtn.setTitle("Go Loan >", for: .normal)
         nextBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        nextBtn.backgroundColor = .init(hexStr: "#FF3825")
+        nextBtn.backgroundColor = .init(cssHexStr: "#FF3825")
         nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.layer.cornerRadius = 23.5
         nextBtn.layer.borderWidth = 2
-        nextBtn.layer.borderColor = UIColor.init(hexStr: "#FCE69B")?.cgColor
+        nextBtn.layer.borderColor = UIColor.init(cssHexStr: "#FCE69B")?.cgColor
         return nextBtn
     }()
     
@@ -108,7 +108,7 @@ class VitamainGuideViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        view.backgroundColor = .init(hexStr: "#83D1FE")
+        view.backgroundColor = .init(cssHexStr: "#83D1FE")
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

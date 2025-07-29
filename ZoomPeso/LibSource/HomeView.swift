@@ -53,18 +53,18 @@ class HomeView: BaseView {
     }()
     
     lazy var moneyLabel: UILabel = {
-        let moneyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 50.pix())!, textColor: .init(hexStr: "#FFFFFF")!, textAlignment: .left)
+        let moneyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 50.pix())!, textColor: .init(cssHexStr: "#FFFFFF")!, textAlignment: .left)
         return moneyLabel
     }()
     
     
     lazy var threeLabel: UILabel = {
-        let threeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#000001")!, textAlignment: .center)
+        let threeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssHexStr: "#000001")!, textAlignment: .center)
         return threeLabel
     }()
     
     lazy var fiveLabel: UILabel = {
-        let fiveLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#000001")!, textAlignment: .center)
+        let fiveLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssHexStr: "#000001")!, textAlignment: .center)
         return fiveLabel
     }()
     
@@ -110,8 +110,8 @@ class HomeView: BaseView {
         let appView = UIView()
         appView.layer.cornerRadius = 25.pix()
         appView.layer.borderWidth = 1.pix()
-        appView.layer.borderColor = UIColor.init(hexStr: "#7B2306")!.cgColor
-        appView.backgroundColor = UIColor.init(hexStr: "#FE5255")
+        appView.layer.borderColor = UIColor.init(cssHexStr: "#7B2306")!.cgColor
+        appView.backgroundColor = UIColor.init(cssHexStr: "#FE5255")
         return appView
     }()
     
@@ -310,8 +310,8 @@ class HomeView: BaseView {
     private func setupGradient() {
         gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(hexStr: "#83D1FE")!.cgColor,
-            UIColor(hexStr: "#46A4FF")!.cgColor
+            UIColor(cssHexStr: "#83D1FE")!.cgColor,
+            UIColor(cssHexStr: "#46A4FF")!.cgColor
         ]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)

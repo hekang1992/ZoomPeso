@@ -32,18 +32,18 @@ class OrderListViewCell: BaseViewCell {
     }()
     
     lazy var typeLabel: UILabel = {
-        let typeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 13.pix(), weight: .bold), textColor: .init(hexStr: "#FF2726")!, textAlignment: .right)
+        let typeLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 13.pix(), weight: .bold), textColor: .init(cssHexStr: "#FF2726")!, textAlignment: .right)
         return typeLabel
     }()
     
     lazy var moneyLabel: UILabel = {
-        let moneyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 42.pix())!, textColor: .init(hexStr: "#712202")!, textAlignment: .center)
+        let moneyLabel = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 42.pix())!, textColor: .init(cssHexStr: "#712202")!, textAlignment: .center)
         return moneyLabel
     }()
     
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = UIColor.init(hexStr: "#FFE4B6")
+        bgView.backgroundColor = UIColor.init(cssHexStr: "#FFE4B6")
         bgView.layer.cornerRadius = 5
         return bgView
     }()
@@ -53,27 +53,27 @@ class OrderListViewCell: BaseViewCell {
         checkLabel.layer.cornerRadius = 5
         checkLabel.layer.masksToBounds = true
         checkLabel.text = "Ch" + "eck"
-        checkLabel.backgroundColor = .init(hexStr: "#FF3825")
+        checkLabel.backgroundColor = .init(cssHexStr: "#FF3825")
         return checkLabel
     }()
     
     lazy var dlLabel: UILabel = {
-        let dlLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 11.pix(), weight: .medium), textColor: .init(hexStr: "#BF9B0E")!, textAlignment: .left)
+        let dlLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 11.pix(), weight: .medium), textColor: .init(cssHexStr: "#BF9B0E")!, textAlignment: .left)
         return dlLabel
     }()
     
     lazy var dtLabel: UILabel = {
-        let dtLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 11.pix(), weight: .medium), textColor: .init(hexStr: "#BF9B0E")!, textAlignment: .left)
+        let dtLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 11.pix(), weight: .medium), textColor: .init(cssHexStr: "#BF9B0E")!, textAlignment: .left)
         return dtLabel
     }()
     
     lazy var dlMustLabel: UILabel = {
-        let dlMustLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#712202")!, textAlignment: .right)
+        let dlMustLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssHexStr: "#712202")!, textAlignment: .right)
         return dlMustLabel
     }()
     
     lazy var dtMustLabel: UILabel = {
-        let dtMustLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(hexStr: "#712202")!, textAlignment: .right)
+        let dtMustLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssHexStr: "#712202")!, textAlignment: .right)
         return dtMustLabel
     }()
     

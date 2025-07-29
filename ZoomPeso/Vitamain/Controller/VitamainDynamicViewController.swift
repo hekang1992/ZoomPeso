@@ -41,7 +41,7 @@ class VitamainDynamicViewController: BaseViewController {
         let nextBtn = UIButton(type: .custom)
         nextBtn.setTitle("Next", for: .normal)
         nextBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        nextBtn.backgroundColor = .init(hexStr: "#FF3825")
+        nextBtn.backgroundColor = .init(cssHexStr: "#FF3825")
         nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.layer.cornerRadius = 23.5
         return nextBtn
@@ -49,7 +49,7 @@ class VitamainDynamicViewController: BaseViewController {
     
     lazy var infoView: UIView = {
         let infoView = UIView()
-        infoView.backgroundColor = .init(hexStr: "#FFFAED")
+        infoView.backgroundColor = .init(cssHexStr: "#FFFAED")
         return infoView
     }()
     
@@ -273,7 +273,7 @@ extension VitamainDynamicViewController {
             guard let self = self else { return }
             self.dismiss(animated: true) {
                 label.text = enumModel.paralysed ?? ""
-                label.textColor = .init(hexStr: "#FF3825")
+                label.textColor = .init(cssHexStr: "#FF3825")
                 model.bajada = enumModel.bajada ?? ""
                 model.hound = enumModel.paralysed ?? ""
                 model.common = enumModel.paralysed ?? ""
@@ -287,7 +287,7 @@ extension VitamainDynamicViewController {
             let listArray = ThrottleModelConig.processThroData(dataSource: modelArray)
             let pickerView = SelectThreeConfig.showAddressPicker(from: listArray, pickerMode: .area) { address, code in
                 label.text = address
-                label.textColor = .init(hexStr: "#FF3825")
+                label.textColor = .init(cssHexStr: "#FF3825")
                 model.hound = address
                 model.common = code
             }

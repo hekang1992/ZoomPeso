@@ -32,7 +32,7 @@ class ParaMeraCell: BaseViewCell {
     }()
     
     lazy var moneyLabel: UILabel = {
-        let moneyLabel = UILabel.createLabel(font: UIFont.init(name: ArialBlackFont, size: 42)!, textColor: UIColor.init(hexStr: "#712202")!, textAlignment: .center)
+        let moneyLabel = UILabel.createLabel(font: UIFont.init(name: ArialBlackFont, size: 42)!, textColor: UIColor.init(cssHexStr: "#712202")!, textAlignment: .center)
         return moneyLabel
     }()
     
@@ -42,23 +42,23 @@ class ParaMeraCell: BaseViewCell {
     }()
     
     lazy var topLabel: UILabel = {
-        let topLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(hexStr: "#832F17")!, textAlignment: .right)
+        let topLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(cssHexStr: "#832F17")!, textAlignment: .right)
         return topLabel
     }()
     
     lazy var bottomLabel: UILabel = {
-        let bottomLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(hexStr: "#832F17")!, textAlignment: .right)
+        let bottomLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(cssHexStr: "#832F17")!, textAlignment: .right)
         return bottomLabel
     }()
     
     lazy var oneLabel: UILabel = {
-        let oneLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(hexStr: "#FFFFFF")!, textAlignment: .center)
+        let oneLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssHexStr: "#FFFFFF")!, textAlignment: .center)
         oneLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-9 * Double.pi / 180))
         return oneLabel
     }()
     
     lazy var twoLabel: UILabel = {
-        let twoLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(hexStr: "#FFFFFF")!, textAlignment: .center)
+        let twoLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssHexStr: "#FFFFFF")!, textAlignment: .center)
         twoLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-9 * Double.pi / 180))
         return twoLabel
     }()

@@ -92,11 +92,11 @@ extension ParaMeraView: UITableViewDelegate, UITableViewDataSource {
         headBtn.setTitle("Go Loan >", for: .normal)
         headBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 19.pix())
         
-        let leftlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(hexStr: "#F9732C")!, textAlignment: .center)
+        let leftlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(cssHexStr: "#F9732C")!, textAlignment: .center)
       
-        let rightlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(hexStr: "#F9732C")!, textAlignment: .center)
+        let rightlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(cssHexStr: "#F9732C")!, textAlignment: .center)
         
-        let mtlabel = UILabel.createLabel(font: UIFont.init(name: ArialBlackFont, size: 58)!, textColor: .init(hexStr: "#F5B837")!, textAlignment: .center)
+        let mtlabel = UILabel.createLabel(font: UIFont.init(name: ArialBlackFont, size: 58)!, textColor: .init(cssHexStr: "#F5B837")!, textAlignment: .center)
         
         headView.addSubview(mainImageView)
         mainImageView.addSubview(fotImageView)

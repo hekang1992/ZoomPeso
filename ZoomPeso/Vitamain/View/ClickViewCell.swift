@@ -21,7 +21,7 @@ class ClickViewCell: BaseViewCell {
 
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = .init(hexStr: "#FAFAFA")
+        bgView.backgroundColor = .init(cssHexStr: "#FAFAFA")
         bgView.layer.cornerRadius = 10.pix()
         bgView.layer.masksToBounds = true
         bgView.isUserInteractionEnabled = true
@@ -35,7 +35,7 @@ class ClickViewCell: BaseViewCell {
     }()
     
     lazy var clickLabel: UILabel = {
-        let clickLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(hexStr: "#CACACA")!, textAlignment: .left)
+        let clickLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssHexStr: "#CACACA")!, textAlignment: .left)
         clickLabel.numberOfLines = 0
         return clickLabel
     }()
@@ -82,14 +82,14 @@ class ClickViewCell: BaseViewCell {
             if common.isEmpty {
                 if hound.isEmpty {
                     clickLabel.text = model.tuft ?? ""
-                    clickLabel.textColor = .init(hexStr: "#CACACA")
+                    clickLabel.textColor = .init(cssHexStr: "#CACACA")
                 }else {
                     clickLabel.text = hound
-                    clickLabel.textColor = .init(hexStr: "#FF3825")
+                    clickLabel.textColor = .init(cssHexStr: "#FF3825")
                 }
             }else {
                 clickLabel.text = hound
-                clickLabel.textColor = .init(hexStr: "#FF3825")
+                clickLabel.textColor = .init(cssHexStr: "#FF3825")
             }
         }).disposed(by: disposeBag)
         

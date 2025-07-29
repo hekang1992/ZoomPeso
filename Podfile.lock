@@ -76,6 +76,7 @@ PODS:
   - IQTextView (1.0.5):
     - IQKeyboardToolbar/Placeholderable
   - Kingfisher (8.1.1)
+  - Loaf (0.7.0)
   - MJRefresh (3.7.9)
   - RxCocoa (6.8.0):
     - RxRelay (= 6.8.0)
@@ -100,6 +101,7 @@ DEPENDENCIES:
   - FSPagerView
   - IQKeyboardManagerSwift
   - Kingfisher
+  - Loaf
   - MJRefresh
   - RxCocoa
   - RxGesture
@@ -128,6 +130,7 @@ SPEC REPOS:
     - IQTextInputViewNotification
     - IQTextView
     - Kingfisher
+    - Loaf
     - MJRefresh
     - RxCocoa
     - RxGesture
@@ -156,6 +159,7 @@ SPEC CHECKSUMS:
   IQTextInputViewNotification: f5e954d8881fd9808b744e49e024cc0d4bcfe572
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
   Kingfisher: fc2788e497306f97fdef6e4df49f02106cb57788
+  Loaf: d69937cd00649f3fa260beb8b7aef0a1feb861ef
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
@@ -166,6 +170,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
   TYAlertController: c121090edb0bea7426f987da94cdddd81eef4231
 
-PODFILE CHECKSUM: 321c43aed5a8d109110b3feca21a53ce96cc1a8a
+PODFILE CHECKSUM: c38a7e051efcb4cbffaea327be870f3b1bae2463
 
 COCOAPODS: 1.16.2

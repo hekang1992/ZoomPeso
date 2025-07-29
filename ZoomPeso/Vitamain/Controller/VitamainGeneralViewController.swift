@@ -32,7 +32,7 @@ class VitamainGeneralViewController: BaseViewController {
     }()
     
     lazy var m1label: UILabel = {
-        let m1label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(hexStr: "#FE5255")!, textAlignment: .left)
+        let m1label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(cssHexStr: "#FE5255")!, textAlignment: .left)
         m1label.text = "Select An ID To Validate Your Identity"
         return m1label
     }()
@@ -45,13 +45,13 @@ class VitamainGeneralViewController: BaseViewController {
     
     lazy var otherView: UIView = {
         let otherView = UIView()
-        otherView.backgroundColor = .init(hexStr: "#FFFAED")
+        otherView.backgroundColor = .init(cssHexStr: "#FFFAED")
         otherView.layer.cornerRadius = 15
         return otherView
     }()
     
     lazy var m3label: UILabel = {
-        let m3label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(hexStr: "#FE5255")!, textAlignment: .left)
+        let m3label = UILabel.createLabel(font: UIFont(name: ArialBlackFont, size: 15)!, textColor: .init(cssHexStr: "#FE5255")!, textAlignment: .left)
         m3label.text = "Other" + " " + "Options"
         return m3label
     }()
@@ -64,7 +64,7 @@ class VitamainGeneralViewController: BaseViewController {
     
     lazy var scro: UIScrollView = {
         let scro = UIScrollView()
-        scro.backgroundColor = .init(hexStr: "#83D1FE")
+        scro.backgroundColor = .init(cssHexStr: "#83D1FE")
         scro.showsHorizontalScrollIndicator = false
         scro.showsVerticalScrollIndicator = false
         scro.contentInsetAdjustmentBehavior = .never
@@ -75,7 +75,7 @@ class VitamainGeneralViewController: BaseViewController {
         let nextBtn = UIButton(type: .custom)
         nextBtn.setTitle("Next", for: .normal)
         nextBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        nextBtn.backgroundColor = .init(hexStr: "#FF3825")
+        nextBtn.backgroundColor = .init(cssHexStr: "#FF3825")
         nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.layer.cornerRadius = 23.5
         return nextBtn
@@ -216,9 +216,9 @@ class VitamainGeneralViewController: BaseViewController {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             if self.oneGrand && self.select1IndexPath?.row == row {
-                cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
+                cell.bgView.backgroundColor = .init(cssHexStr: "#FE5255")
             }else {
-                cell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
+                cell.bgView.backgroundColor = .init(cssHexStr: "#FAFAFA")
             }
         }.disposed(by: disposeBag)
         
@@ -227,9 +227,9 @@ class VitamainGeneralViewController: BaseViewController {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             if self.twoGrand && self.select2IndexPath?.row == row {
-                cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
+                cell.bgView.backgroundColor = .init(cssHexStr: "#FE5255")
             }else {
-                cell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
+                cell.bgView.backgroundColor = .init(cssHexStr: "#FAFAFA")
             }
         }.disposed(by: disposeBag)
         
@@ -246,11 +246,11 @@ class VitamainGeneralViewController: BaseViewController {
             table2View.reloadData()
             if let previousIndexPath = select1IndexPath {
                 if let previousCell = self.table1View.cellForRow(at: previousIndexPath) as? AuthViewCell {
-                    previousCell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
+                    previousCell.bgView.backgroundColor = .init(cssHexStr: "#FAFAFA")
                 }
             }
             if let cell = self.table1View.cellForRow(at: indexPath) as? AuthViewCell {
-                cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
+                cell.bgView.backgroundColor = .init(cssHexStr: "#FE5255")
             }
             select1IndexPath = indexPath
         }).disposed(by: disposeBag)
@@ -264,11 +264,11 @@ class VitamainGeneralViewController: BaseViewController {
             table1View.reloadData()
             if let previousIndexPath = select2IndexPath {
                 if let previousCell = self.table2View.cellForRow(at: previousIndexPath) as? AuthViewCell {
-                    previousCell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
+                    previousCell.bgView.backgroundColor = .init(cssHexStr: "#FAFAFA")
                 }
             }
             if let cell = self.table2View.cellForRow(at: indexPath) as? AuthViewCell {
-                cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
+                cell.bgView.backgroundColor = .init(cssHexStr: "#FE5255")
             }
             select2IndexPath = indexPath
         }).disposed(by: disposeBag)

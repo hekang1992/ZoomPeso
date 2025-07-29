@@ -11,10 +11,6 @@ import SAMKeychain
 import AdSupport
 import AppTrackingTransparency
 
-var IS_VISIBLE_LOGIN: Bool {
-    (UserDefaults.standard.object(forKey: LoginConfig.Keys.loginToken) as? String)?.isEmpty == false
-}
-
 class LoginConfig {
     enum Keys {
         static let userPhone = "USER_PHONE"
@@ -119,4 +115,16 @@ extension URLComponents {
         copy.queryItems = (queryItems ?? []) + items
         return copy
     }
+}
+
+class DataAddressManager {
+    static let shared = DataAddressManager()
+    private init() {}
+    var currentModel: netModel?
+}
+
+class DataLoginManager {
+    static let shared = DataLoginManager()
+    private init() {}
+    var currentModel: netModel?
 }

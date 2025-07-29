@@ -34,11 +34,11 @@ class SelectAuthEnmuView: BaseView {
         let saveBtn = UIButton(type: .custom)
         saveBtn.setTitle("Confirm", for: .normal)
         saveBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        saveBtn.backgroundColor = .init(hexStr: "#FF3825")
+        saveBtn.backgroundColor = .init(cssHexStr: "#FF3825")
         saveBtn.setTitleColor(.white, for: .normal)
         saveBtn.layer.cornerRadius = 23.5
         saveBtn.layer.borderWidth = 2
-        saveBtn.layer.borderColor = UIColor.init(hexStr: "#FCE69B")?.cgColor
+        saveBtn.layer.borderColor = UIColor.init(cssHexStr: "#FCE69B")?.cgColor
         return saveBtn
     }()
     
@@ -126,9 +126,9 @@ class SelectAuthEnmuView: BaseView {
             cell.nameLabel.textAlignment = .center
             if let selectIndexPath = self.selectIndexPath {
                 if selectIndexPath.row == row {
-                    cell.bgView.backgroundColor = .init(hexStr: "#FE5255")
+                    cell.bgView.backgroundColor = .init(cssHexStr: "#FE5255")
                 }else {
-                    cell.bgView.backgroundColor = .init(hexStr: "#FAFAFA")
+                    cell.bgView.backgroundColor = .init(cssHexStr: "#FAFAFA")
                 }
             }
         }.disposed(by: disposeBag)

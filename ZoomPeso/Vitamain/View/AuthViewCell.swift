@@ -11,13 +11,13 @@ class AuthViewCell: BaseViewCell {
     
     lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.backgroundColor = .init(hexStr: "#FAFAFA")
+        bgView.backgroundColor = .init(cssHexStr: "#FAFAFA")
         bgView.layer.cornerRadius = 10
         return bgView
     }()
     
     lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .medium), textColor: .init(hexStr: "#E2D38B")!, textAlignment: .left)
+        let nameLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .medium), textColor: .init(cssHexStr: "#E2D38B")!, textAlignment: .left)
         return nameLabel
     }()
     

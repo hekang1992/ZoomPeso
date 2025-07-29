@@ -45,7 +45,7 @@ class LoginView: BaseView {
         let quakerTopTextField = UITextField()
         quakerTopTextField.keyboardType = .numberPad
         let attrString = NSMutableAttributedString(string: "Enter mobile number", attributes: [
-            .foregroundColor: UIColor.init(hexStr: "#BFBEBE") as Any,
+            .foregroundColor: UIColor.init(cssHexStr: "#BFBEBE") as Any,
             .font: UIFont.systemFont(ofSize: 14)
         ])
         quakerTopTextField.attributedPlaceholder = attrString
@@ -74,7 +74,7 @@ class LoginView: BaseView {
         let typicTextField = UITextField()
         typicTextField.keyboardType = .numberPad
         let attrString = NSMutableAttributedString(string: "Verification code", attributes: [
-            .foregroundColor: UIColor.init(hexStr: "#BFBEBE") as Any,
+            .foregroundColor: UIColor.init(cssHexStr: "#BFBEBE") as Any,
             .font: UIFont.systemFont(ofSize: 14)
         ])
         typicTextField.attributedPlaceholder = attrString
@@ -92,7 +92,7 @@ class LoginView: BaseView {
             range: NSRange(location: 0, length: "Get code".count)
         )
         visibleLabel.attributedText = attributedString
-        visibleLabel.textColor = UIColor(hexStr: "#FE5255")
+        visibleLabel.textColor = UIColor(cssHexStr: "#FE5255")
         visibleLabel.textAlignment = .right
         visibleLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         return visibleLabel
@@ -103,7 +103,7 @@ class LoginView: BaseView {
         voiceBtn.contentHorizontalAlignment = .right
         voiceBtn.setImage(UIImage(named: "voiceimage"), for: .normal)
         voiceBtn.setTitle("VOZ", for: .normal)
-        voiceBtn.setTitleColor(UIColor.init(hexStr: "#FE5255"), for: .normal)
+        voiceBtn.setTitleColor(UIColor.init(cssHexStr: "#FE5255"), for: .normal)
         voiceBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         voiceBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 7)
         return voiceBtn
@@ -112,7 +112,7 @@ class LoginView: BaseView {
     lazy var loginBtn: UIButton = {
         let loginBtn = UIButton(type: .custom)
         loginBtn.setTitle("Login", for: .normal)
-        loginBtn.backgroundColor = UIColor.init(hexStr: "#FF3825")
+        loginBtn.backgroundColor = UIColor.init(cssHexStr: "#FF3825")
         loginBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18)
         loginBtn.layer.cornerRadius = 23.5
         return loginBtn

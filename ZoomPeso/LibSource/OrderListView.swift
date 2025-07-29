@@ -183,8 +183,8 @@ class OrderListView: BaseView {
     private func setupGradient() {
         gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(hexStr: "#7CCCFE")!.cgColor,
-            UIColor(hexStr: "#7CCCFE")!.cgColor
+            UIColor(cssHexStr: "#7CCCFE")!.cgColor,
+            UIColor(cssHexStr: "#7CCCFE")!.cgColor
         ]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)

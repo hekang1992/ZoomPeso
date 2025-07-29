@@ -8,10 +8,6 @@
 import UIKit
 import RxSwift
 
-class BaseCollectionViewCell: UICollectionViewCell {
-    let disposeBag = DisposeBag()
-}
-
 class BaseViewCell: UITableViewCell {
     let disposeBag = DisposeBag()
 }
@@ -28,7 +24,7 @@ class EmptyView: UIView {
     }()
     
     lazy var emptyLabel: UILabel = {
-        let emptyLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .medium), textColor: .init(hexStr: "#FFFFFF")!, textAlignment: .center)
+        let emptyLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .medium), textColor: .init(cssHexStr: "#FFFFFF")!, textAlignment: .center)
         emptyLabel.text = "You have no orders"
         return emptyLabel
     }()

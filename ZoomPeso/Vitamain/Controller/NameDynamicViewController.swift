@@ -48,7 +48,7 @@ class NameDynamicViewController: BaseViewController {
         let nextBtn = UIButton(type: .custom)
         nextBtn.setTitle("Next", for: .normal)
         nextBtn.titleLabel?.font = UIFont(name: ArialBlackFont, size: 18.pix())
-        nextBtn.backgroundColor = .init(hexStr: "#FF3825")
+        nextBtn.backgroundColor = .init(cssHexStr: "#FF3825")
         nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.layer.cornerRadius = 23.5
         return nextBtn
@@ -279,7 +279,7 @@ extension NameDynamicViewController: CNContactPickerDelegate {
             guard let self = self else { return }
             self.dismiss(animated: true) {
                 cell.clickLabel.text = enumModel.paralysed ?? ""
-                cell.clickLabel.textColor = .init(hexStr: "#FF3825")
+                cell.clickLabel.textColor = .init(cssHexStr: "#FF3825")
                 model.paths = enumModel.bajada ?? "0"
                 model.common = enumModel.paralysed ?? ""
                 DispatchQueue.main.async {
@@ -369,7 +369,7 @@ extension NameDynamicViewController: CNContactPickerDelegate {
         if let phoneNumber = contact.phoneNumbers.first?.value.stringValue {
             if let selectCell = self.selectCell {
                 selectCell.cpLabel.text = "\(fullName) - \(phoneNumber)"
-                selectCell.cpLabel.textColor = .init(hexStr: "#FF3825")
+                selectCell.cpLabel.textColor = .init(cssHexStr: "#FF3825")
                 if let model = self.oneModel.value?.army?[selectIndex] {
                     model.paralysed = fullName
                     model.beaten = phoneNumber
