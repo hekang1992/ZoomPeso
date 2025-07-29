@@ -93,3 +93,13 @@ class rubyModel: Codable {
     
 }
 
+class LocationModel {
+    var disturb: String?
+    var boast: String?
+    var coleoptera: Double?
+    var cabinets: String?
+    var obscurely: String?
+    var disappointed: Double?
+    var observation: String?
+    var error: String?
+}

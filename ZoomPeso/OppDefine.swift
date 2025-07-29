@@ -60,12 +60,6 @@ class ViewCycleManager {
     }
 }
 
-class ToastManagerConfig {
-    static func showToastText(form view: UIView, message: String) {
-        KRProgressHUD.showMessage(message)
-    }
-}
-
 enum URLParameterParseError: Error {
     case invalidURL
     case noQueryItems
@@ -83,5 +77,12 @@ class URLParameterParser {
         return queryItems.reduce(into: [String: String]()) { result, item in
             result[item.name] = item.value ?? ""
         }
+    }
+}
+
+
+class ToastManagerConfig {
+    static func showToastText(form view: UIView, message: String) {
+        KRProgressHUD.showMessage(message)
     }
 }

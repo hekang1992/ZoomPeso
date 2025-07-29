@@ -10,17 +10,6 @@ import RxSwift
 import RxRelay
 import CoreLocation
 
-class LocationModel {
-    var disturb: String?
-    var boast: String?
-    var coleoptera: Double?
-    var cabinets: String?
-    var obscurely: String?
-    var disappointed: Double?
-    var observation: String?
-    var error: String?
-}
-
 class LocationManagerConfig: NSObject {
     
     

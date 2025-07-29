@@ -23,8 +23,6 @@ class VitamainAbstractViewController: BaseViewController {
     
     var kstime: String = ""
     
-   
-    
     lazy var oneImageView: UIImageView = {
         let oneImageView = UIImageView()
         oneImageView.image = UIImage(named: "aseuthigme")
@@ -82,7 +80,6 @@ class VitamainAbstractViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
        
-        
         self.headView.nameLabel.text = "Basic information"
         addHeadView()
         self.headView.backBlock = { [weak self] in
@@ -295,6 +292,5 @@ extension VitamainAbstractViewController {
         }
         
     }
-    
     
 }
