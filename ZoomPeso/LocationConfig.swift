@@ -12,7 +12,6 @@ import CoreLocation
 
 class LocationManagerConfig: NSObject {
     
-    
     var model = BehaviorRelay<LocationModel?>(value: nil)
     
     let disposeBag = DisposeBag()

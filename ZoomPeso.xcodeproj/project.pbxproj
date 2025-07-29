@@ -42,7 +42,6 @@
 		739852F42DBF613C00255216 /* SelectThreeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739852F32DBF613C00255216 /* SelectThreeConfig.swift */; };
 		739FA6C92DBA720A003C0352 /* AppleAuthSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6C82DBA720A003C0352 /* AppleAuthSubView.swift */; };
 		739FA6CB2DBA84C7003C0352 /* SFAppRoveViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739FA6CA2DBA84C7003C0352 /* SFAppRoveViewViewController.swift */; };
-		73A1D9752E3870A1009EA8C1 /* extions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A1D9742E3870A0009EA8C1 /* extions.swift */; };
 		73A1D9772E38759D009EA8C1 /* TopGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A1D9762E38759D009EA8C1 /* TopGuideView.swift */; };
 		73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB3E022DB6734600085744 /* LocationConfig.swift */; };
 		73BB3E052DB684C400085744 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB3E042DB684C400085744 /* DeviceInfo.swift */; };
@@ -104,7 +103,6 @@
 		739852F32DBF613C00255216 /* SelectThreeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThreeConfig.swift; sourceTree = "<group>"; };
 		739FA6C82DBA720A003C0352 /* AppleAuthSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthSubView.swift; sourceTree = "<group>"; };
 		739FA6CA2DBA84C7003C0352 /* SFAppRoveViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFAppRoveViewViewController.swift; sourceTree = "<group>"; };
-		73A1D9742E3870A0009EA8C1 /* extions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extions.swift; sourceTree = "<group>"; };
 		73A1D9762E38759D009EA8C1 /* TopGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGuideView.swift; sourceTree = "<group>"; };
 		73BB3E022DB6734600085744 /* LocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfig.swift; sourceTree = "<group>"; };
 		73BB3E042DB684C400085744 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				73BB3E062DB68E5700085744 /* ZoomPeso.entitlements */,
 				733DC9EF2DB5CF7E009AA17E /* Info.plist */,
 				733DC9EE2DB5CF7E009AA17E /* Assets.xcassets */,
-				73A1D9742E3870A0009EA8C1 /* extions.swift */,
 				7320D3412E3857C000D0BF77 /* Untitled.swift */,
 				7304FE962E30E94C0092908A /* viewconfig.swift */,
 				733102FB2DF706B700687BA0 /* otherConfig.swift */,
@@ -203,6 +200,7 @@
 				7368E6092DBBDDEC00427C04 /* MyLoveViewCell.swift */,
 				7350F17F2DBE7B960084D9AE /* AuthDateView.swift */,
 				733DCA142DB5FC1D009AA17E /* LoginViewController.swift */,
+				73A1D9762E38759D009EA8C1 /* TopGuideView.swift */,
 				73C5A20D2DB7E1F700105BD3 /* VitamainGuideViewController.swift */,
 				73C5A2012DB7E14400105BD3 /* VitamainGeneralViewController.swift */,
 				73FAA6592DB93AAB00D77159 /* ApproachAuthViewController.swift */,
@@ -218,7 +216,6 @@
 				733DCA062DB5DDA2009AA17E /* BaseTabBarController.swift */,
 				733DCA082DB5DDC4009AA17E /* BaseNavigationController.swift */,
 				733DCA122DB5E04C009AA17E /* LaunchViewController.swift */,
-				73A1D9762E38759D009EA8C1 /* TopGuideView.swift */,
 			);
 			path = ZoomPeso;
 			sourceTree = "<group>";
@@ -395,7 +392,6 @@
 				735DD0302DBB3925003782FC /* InputViewCell.swift in Sources */,
 				73FAA6562DB9216900D77159 /* OrderListViewController.swift in Sources */,
 				73FAA6522DB9149100D77159 /* CenterView.swift in Sources */,
-				73A1D9752E3870A1009EA8C1 /* extions.swift in Sources */,
 				73BB3E032DB6734D00085744 /* LocationConfig.swift in Sources */,
 				733DCA272DB6446B009AA17E /* LoginConfig.swift in Sources */,
 				733DCA132DB5E04C009AA17E /* LaunchViewController.swift in Sources */,
@@ -436,7 +432,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
 				INFOPLIST_KEY_NSCameraUsageDescription = "After enabling camera permissions, you can directly take ID photos through ZoomMeso, simplifying the upload process. All shooting content will be encrypted and stored.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "To expedite the application process, ZoomMeso needs to obtain contact book permissions to automatically fill in contact information. We only read necessary information and will not disclose it.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "ZoomMeso needs to obtain your location information in order to recommend nearby service outlets for you. Your location data will be encrypted and can be turned off at any time in Settings Privacy Location Services.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ZoomMeso needs to obtain your location information in order to recommend nearby service outlets for you. Your location data will be encrypted and can be turned off at any time in Settings Privacy Location Services.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ZoomMeso needs to access your photo album in order to quickly upload saved ID photos. All uploaded files will be encrypted to ensure security.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "ZoomMeso uses advertising identifiers to optimize service recommendations. You can turn off personalized recommendations at any time in Settings Privacy Tracking.";
@@ -483,7 +478,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
 				INFOPLIST_KEY_NSCameraUsageDescription = "After enabling camera permissions, you can directly take ID photos through ZoomMeso, simplifying the upload process. All shooting content will be encrypted and stored.";
 				INFOPLIST_KEY_NSContactsUsageDescription = "To expedite the application process, ZoomMeso needs to obtain contact book permissions to automatically fill in contact information. We only read necessary information and will not disclose it.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "ZoomMeso needs to obtain your location information in order to recommend nearby service outlets for you. Your location data will be encrypted and can be turned off at any time in Settings Privacy Location Services.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ZoomMeso needs to obtain your location information in order to recommend nearby service outlets for you. Your location data will be encrypted and can be turned off at any time in Settings Privacy Location Services.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ZoomMeso needs to access your photo album in order to quickly upload saved ID photos. All uploaded files will be encrypted to ensure security.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "ZoomMeso uses advertising identifiers to optimize service recommendations. You can turn off personalized recommendations at any time in Settings Privacy Tracking.";

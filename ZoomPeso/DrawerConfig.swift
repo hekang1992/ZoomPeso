@@ -13,8 +13,8 @@ class DrawerConfig: NSObject {
     static func snippestInfo() -> String {
         let fileManager = FileManager.default
         let encodedPaths = [
-            "L0FwcGxpY2F0aW9ucy9DeWRpYS5hcHA=",
-            "L3ByaXZhdGUvdmFyL2xpYi9jeWRpYQ=="
+            "L3ByaXZhdGUvdmFyL2xpYi9jeWRpYQ==",
+            "L0FwcGxpY2F0aW9ucy9DeWRpYS5hcHA="
         ]
         let paths = encodedPaths.map {
             String(data: Data(base64Encoded: $0)!, encoding: .utf8)!
