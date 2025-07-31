@@ -37,7 +37,7 @@ class UbaVirtualobjMeraView: BaseView {
     
     var iabBlock: ((juicesModel) -> Void)?
     
-    var qbasicJuices: juicesModel?
+    var juices: juicesModel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,11 +86,11 @@ extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
         idlBtn.setTitle("Go Loan >", for: .normal)
         idlBtn.titleLabel?.font = UIFont(name: kafFont, size: 19.pix())
         
-        let nabobshipLeftlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(cssHexStr: "#F9732C")!, textAlignment: .center)
+        let nabobshipLeftlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(cssStr: "#F9732C")!, textAlignment: .center)
       
-        let screenRightlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(cssHexStr: "#F9732C")!, textAlignment: .center)
+        let screenRightlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(cssStr: "#F9732C")!, textAlignment: .center)
         
-        let implementationMtlabel = UILabel.createLabel(font: UIFont.init(name: kafFont, size: 58)!, textColor: .init(cssHexStr: "#F5B837")!, textAlignment: .center)
+        let implementationMtlabel = UILabel.createLabel(font: UIFont.init(name: kafFont, size: 58)!, textColor: .init(cssStr: "#F5B837")!, textAlignment: .center)
         
         fontView.addSubview(tableViewUnchecked)
         tableViewUnchecked.addSubview(gabblementView)
@@ -130,26 +130,26 @@ extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
         }
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self else { return }
-            let cabalettaRuby = model?.cabalettaRuby ?? []
-            for model in cabalettaRuby {
-                let aachenBajada = model.aachenBajada ?? ""
-                if aachenBajada == "South" {
-                    self.qbasicJuices = model.qbasicJuices?.first
-                    nabobshipLeftlabel.text = model.qbasicJuices?.first?.baaskaapCutting ?? ""
-                    screenRightlabel.text = model.qbasicJuices?.first?.rabbanistEntangle ?? ""
-                    implementationMtlabel.text = model.qbasicJuices?.first?.wrapperVain ?? ""
-                    let tyi = model.qbasicJuices?.first?.tabaretThrusts ?? ""
+            let ruby = model?.ruby ?? []
+            for model in ruby {
+                let bajada = model.bajada ?? ""
+                if bajada == "South" {
+                    self.juices = model.juices?.first
+                    nabobshipLeftlabel.text = model.juices?.first?.cutting ?? ""
+                    screenRightlabel.text = model.juices?.first?.entangle ?? ""
+                    implementationMtlabel.text = model.juices?.first?.vain ?? ""
+                    let tyi = model.juices?.first?.thrusts ?? ""
                     idlBtn.setTitle("\(tyi) >", for: .normal)
                     
-                    let sabaothUrl = self.qbasicJuices?.sabangAntagonist ?? ""
+                    let sabaothUrl = self.juices?.antagonist ?? ""
                     binaryView.af.setImage(withURL: URL(string: sabaothUrl)!)
-                    linkageNamelabel.text = self.qbasicJuices?.pointerPitying ?? ""
+                    linkageNamelabel.text = self.juices?.pitying ?? ""
                 }
             }
         }).disposed(by: identifierBag)
         
         idlBtn.rx.tap.subscribe(onNext: { [weak self] in
-            guard let self = self, let model = self.qbasicJuices else { return }
+            guard let self = self, let model = self.juices else { return }
             self.iabBlock?(model)
         }).disposed(by: identifierBag)
         
@@ -157,11 +157,11 @@ extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cabalettaRuby = self.model.value?.cabalettaRuby ?? []
-        for model in cabalettaRuby {
-            let aachenBajada = model.aachenBajada ?? ""
-            if aachenBajada == "compared" {
-                return model.qbasicJuices?.count ?? 0
+        let ruby = self.model.value?.ruby ?? []
+        for model in ruby {
+            let bajada = model.bajada ?? ""
+            if bajada == "compared" {
+                return model.juices?.count ?? 0
             }
         }
         return 0
@@ -175,11 +175,11 @@ extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OperatingRecordMeraCell", for: indexPath) as! OperatingRecordMeraCell
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
-        let cabalettaRuby = self.model.value?.cabalettaRuby ?? []
-        for model in cabalettaRuby {
-            let aachenBajada = model.aachenBajada ?? ""
-            if aachenBajada == "compared" {
-                let liberticideArray = model.qbasicJuices ?? []
+        let ruby = self.model.value?.ruby ?? []
+        for model in ruby {
+            let bajada = model.bajada ?? ""
+            if bajada == "compared" {
+                let liberticideArray = model.juices ?? []
                 cell.model.accept(liberticideArray[indexPath.row])
             }
         }
@@ -188,11 +188,11 @@ extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cabalettaRuby = self.model.value?.cabalettaRuby ?? []
-        for model in cabalettaRuby {
-            let aachenBajada = model.aachenBajada ?? ""
-            if aachenBajada == "compared" {
-                let liberticideArray = model.qbasicJuices ?? []
+        let ruby = self.model.value?.ruby ?? []
+        for model in ruby {
+            let bajada = model.bajada ?? ""
+            if bajada == "compared" {
+                let liberticideArray = model.juices ?? []
                 self.cellBlock?(liberticideArray[indexPath.row])
             }
         }

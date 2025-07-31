@@ -4,9 +4,9 @@ import RxRelay
 
 class SarapeFabliauViewController: OaklandLibidoViewController {
         
-    var hookHorrid = BehaviorRelay<[String]?>(value: nil)
+    var horrid = BehaviorRelay<[String]?>(value: nil)
     
-    var caballeroLarvae = BehaviorRelay<[String]?>(value: nil)
+    var larvae = BehaviorRelay<[String]?>(value: nil)
     
     var time: String = ""
     
@@ -26,7 +26,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
     }()
     
     lazy var m1label: UILabel = {
-        let m1label = UILabel.createLabel(font: UIFont(name: kafFont, size: 15)!, textColor: .init(cssHexStr: "#FE5255")!, textAlignment: .left)
+        let m1label = UILabel.createLabel(font: UIFont(name: kafFont, size: 15)!, textColor: .init(cssStr: "#FE5255")!, textAlignment: .left)
         m1label.text = "Select An ID To Validate Your Identity"
         return m1label
     }()
@@ -39,13 +39,13 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
     
     lazy var bugView: UIView = {
         let bugView = UIView()
-        bugView.backgroundColor = .init(cssHexStr: "#FFFAED")
+        bugView.backgroundColor = .init(cssStr: "#FFFAED")
         bugView.layer.cornerRadius = 15
         return bugView
     }()
     
     lazy var m3label: UILabel = {
-        let m3label = UILabel.createLabel(font: UIFont(name: kafFont, size: 15)!, textColor: .init(cssHexStr: "#FE5255")!, textAlignment: .left)
+        let m3label = UILabel.createLabel(font: UIFont(name: kafFont, size: 15)!, textColor: .init(cssStr: "#FE5255")!, textAlignment: .left)
         m3label.text = "Other" + " " + "Options"
         return m3label
     }()
@@ -58,7 +58,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
     
     lazy var labeScro: UIScrollView = {
         let labeScro = UIScrollView()
-        labeScro.backgroundColor = .init(cssHexStr: "#83D1FE")
+        labeScro.backgroundColor = .init(cssStr: "#83D1FE")
         labeScro.showsHorizontalScrollIndicator = false
         labeScro.showsVerticalScrollIndicator = false
         labeScro.contentInsetAdjustmentBehavior = .never
@@ -69,7 +69,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
         qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
-        qandaharBtn.backgroundColor = .init(cssHexStr: "#FF3825")
+        qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
         return qandaharBtn
@@ -204,25 +204,25 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
             make.top.equalTo(m4label.snp.bottom).offset(1)
         }
         
-        hookHorrid.compactMap { $0 }.asObservable().bind(to: table1View.rx.items(cellIdentifier: "QanonNabobshipViewCell", cellType: QanonNabobshipViewCell.self)) { row, model, cell in
+        horrid.compactMap { $0 }.asObservable().bind(to: table1View.rx.items(cellIdentifier: "QanonNabobshipViewCell", cellType: QanonNabobshipViewCell.self)) { row, model, cell in
             cell.nabobessLabel.text = model
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             if self.oakenGrand && self.select1IndexPath?.row == row {
-                cell.architectureView.backgroundColor = .init(cssHexStr: "#FE5255")
+                cell.architectureView.backgroundColor = .init(cssStr: "#FE5255")
             }else {
-                cell.architectureView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+                cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
             }
         }.disposed(by: identifierBag)
         
-        caballeroLarvae.compactMap { $0 }.asObservable().bind(to: table2View.rx.items(cellIdentifier: "QanonNabobshipViewCell", cellType: QanonNabobshipViewCell.self)) { row, model, cell in
+        larvae.compactMap { $0 }.asObservable().bind(to: table2View.rx.items(cellIdentifier: "QanonNabobshipViewCell", cellType: QanonNabobshipViewCell.self)) { row, model, cell in
             cell.nabobessLabel.text = model
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             if self.sessionGrand && self.select2IndexPath?.row == row {
-                cell.architectureView.backgroundColor = .init(cssHexStr: "#FE5255")
+                cell.architectureView.backgroundColor = .init(cssStr: "#FE5255")
             }else {
-                cell.architectureView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+                cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
             }
         }.disposed(by: identifierBag)
         
@@ -233,17 +233,17 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
         table1View.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             guard let self = self else { return }
             time = ServerSideDeviceInfo.currentTimestamp
-            self.eamStr = hookHorrid.value?[indexPath.row] ?? ""
+            self.eamStr = horrid.value?[indexPath.row] ?? ""
             oakenGrand = true
             sessionGrand = false
             table2View.reloadData()
             if let iteratorPath = select1IndexPath {
                 if let uniqueCell = self.table1View.cellForRow(at: iteratorPath) as? QanonNabobshipViewCell {
-                    uniqueCell.architectureView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+                    uniqueCell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
                 }
             }
             if let cell = self.table1View.cellForRow(at: indexPath) as? QanonNabobshipViewCell {
-                cell.architectureView.backgroundColor = .init(cssHexStr: "#FE5255")
+                cell.architectureView.backgroundColor = .init(cssStr: "#FE5255")
             }
             select1IndexPath = indexPath
         }).disposed(by: identifierBag)
@@ -251,17 +251,17 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
         table2View.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             guard let self = self else { return }
             time = ServerSideDeviceInfo.currentTimestamp
-            self.eamStr = caballeroLarvae.value?[indexPath.row] ?? ""
+            self.eamStr = larvae.value?[indexPath.row] ?? ""
             oakenGrand = false
             sessionGrand = true
             table1View.reloadData()
             if let iteratorPath = select2IndexPath {
                 if let uniqueCell = self.table2View.cellForRow(at: iteratorPath) as? QanonNabobshipViewCell {
-                    uniqueCell.architectureView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+                    uniqueCell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
                 }
             }
             if let cell = self.table2View.cellForRow(at: indexPath) as? QanonNabobshipViewCell {
-                cell.architectureView.backgroundColor = .init(cssHexStr: "#FE5255")
+                cell.architectureView.backgroundColor = .init(cssStr: "#FE5255")
             }
             select2IndexPath = indexPath
         }).disposed(by: identifierBag)
@@ -299,19 +299,19 @@ extension SarapeFabliauViewController: UITableViewDelegate {
     
     private func alphabetizeZahalTabassaran() {
         ViewCycleManager.showLoading()
-        let jaboticabaBarricaded = self.model.value?.yachtswomanEnlarged?.patternOrifice ?? ""
-        let dict = ["barricaded": jaboticabaBarricaded,
+        let barricaded = self.model.value?.enlarged?.orifice ?? ""
+        let dict = ["barricaded": barricaded,
                     "vitaman": "q",
                     "zoom": "video"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/valueCordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
-                    self.hookHorrid.accept(success.net?.hookHorrid ?? [])
-                    self.caballeroLarvae.accept(success.net?.caballeroLarvae ?? [])
+                if ["0", "00"].contains(success.wedge) {
+                    self.horrid.accept(success.net?.horrid ?? [])
+                    self.larvae.accept(success.net?.larvae ?? [])
                 }
                 break
             case .failure(_):

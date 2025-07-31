@@ -42,7 +42,7 @@ class FabricantTabbyViewController: OaklandLibidoViewController {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
         qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
-        qandaharBtn.backgroundColor = .init(cssHexStr: "#FF3825")
+        qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
         return qandaharBtn
@@ -124,12 +124,12 @@ class FabricantTabbyViewController: OaklandLibidoViewController {
         qandaharBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self,
                   let caballineModel = self.caballineModel.value,
-                  let liberticideArray = caballineModel.matchingArmy else { return }
+                  let liberticideArray = caballineModel.army else { return }
             sequentialArray.removeAll()
             for model in liberticideArray {
-                let dict = ["paths": model.oamPaths ?? "",
-                            "paralysed": model.liberticideParalysed ?? "",
-                            "beaten": model.itemBeaten ?? ""]
+                let dict = ["paths": model.paths ?? "",
+                            "paralysed": model.paralysed ?? "",
+                            "beaten": model.beaten ?? ""]
                 sequentialArray.append(dict)
             }
             vacationlandCheckSab(with: sequentialArray)
@@ -143,7 +143,7 @@ class FabricantTabbyViewController: OaklandLibidoViewController {
 extension FabricantTabbyViewController {
     
     private func vacationlandCheckSab(with sequentialArray: [[String: String]]) {
-        let jaboticabaBarricaded = self.model.value?.yachtswomanEnlarged?.patternOrifice ?? ""
+        let barricaded = self.model.value?.enlarged?.orifice ?? ""
         var idleJstring: String = ""
         do {
             let refactoringData = try JSONSerialization.data(withJSONObject: sequentialArray, options: [])
@@ -154,7 +154,7 @@ extension FabricantTabbyViewController {
             print("Failed to convert childArray to JSON: \(error)")
         }
         ViewCycleManager.showLoading()
-        let dict = ["barricaded": jaboticabaBarricaded,
+        let dict = ["barricaded": barricaded,
                     "net": idleJstring,
                     "vertical": "63"]
         let man = NetworkRequstManager()
@@ -162,14 +162,14 @@ extension FabricantTabbyViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if success.rabbiWedge == "0" || success.rabbiWedge == "00" {
-                    self.labialiseModelingAaron(from: jaboticabaBarricaded) { model in
+                if success.wedge == "0" || success.wedge == "00" {
+                    self.labialiseModelingAaron(from: barricaded) { model in
                         self.model.accept(model)
                         self.unwindingHabaneroScalable(from: model) { model in }
                     }
                     ScroPortionPointConfig.pointToPageWithModel(with: "7", discreteKstime: aapssTime, jstime: ServerSideDeviceInfo.currentTimestamp)
                 }
-                ToastManagerConfig.showToastText(form: view, message: success.chainCircular ?? "")
+                ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 ViewCycleManager.iterationLibraWaddie()
                 break
             case .failure(_):
@@ -188,17 +188,17 @@ extension FabricantTabbyViewController {
     
     private func babInteroperabilityWadding() {
         ViewCycleManager.showLoading()
-        let jaboticabaBarricaded = self.model.value?.yachtswomanEnlarged?.patternOrifice ?? ""
-        let dict = ["barricaded": jaboticabaBarricaded,
+        let barricaded = self.model.value?.enlarged?.orifice ?? ""
+        let dict = ["barricaded": barricaded,
                     "bear": "1",
                     "cotton": "0"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/vectorSays", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/says", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         self.caballineModel.accept(model)
                         self.tableView.reloadData()
@@ -221,11 +221,11 @@ extension FabricantTabbyViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let model = self.caballineModel.value
-        return model?.matchingArmy?.count ?? 0
+        return model?.army?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = self.caballineModel.value?.matchingArmy?[indexPath.row]
+        let model = self.caballineModel.value?.army?[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "XanthinAssociativeViewCell", for: indexPath) as! XanthinAssociativeViewCell
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
@@ -239,8 +239,8 @@ extension FabricantTabbyViewController: UITableViewDelegate, UITableViewDataSour
         cell.qdaBlock = { [weak self] in
             guard let self = self, let model = model else { return }
             DispatchQueue.main.async {
-                let sabbatarianCommon = model.sabbatarianCommon ?? ""
-                if sabbatarianCommon.isEmpty {
+                let common = model.common ?? ""
+                if common.isEmpty {
                     ToastManagerConfig.showToastText(form: self.view, message: "Please select your relationship to the emergency contact first.")
                     return
                 }
@@ -258,7 +258,7 @@ extension FabricantTabbyViewController: CNContactPickerDelegate {
     
     private func vertexAtomicPacesetting(from model: armyModel, cell: XanthinAssociativeViewCell) {
         let cilView = UbietyUawEnmuView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        let liberticideArray = model.rpcExtricate ?? []
+        let liberticideArray = model.extricate ?? []
         cilView.liberticideArray.accept(liberticideArray)
         let cabaneAlert = TYAlertController(alert: cilView, preferredStyle: .alert)!
         self.present(cabaneAlert, animated: true)
@@ -271,10 +271,10 @@ extension FabricantTabbyViewController: CNContactPickerDelegate {
         cilView.scopeBlock = { [weak self] index, enumModel in
             guard let self = self else { return }
             self.dismiss(animated: true) {
-                cell.iterationLabel.text = enumModel.liberticideParalysed ?? ""
-                cell.iterationLabel.textColor = .init(cssHexStr: "#FF3825")
-                model.oamPaths = enumModel.aachenBajada ?? "0"
-                model.sabbatarianCommon = enumModel.liberticideParalysed ?? ""
+                cell.iterationLabel.text = enumModel.paralysed ?? ""
+                cell.iterationLabel.textColor = .init(cssStr: "#FF3825")
+                model.paths = enumModel.bajada ?? "0"
+                model.common = enumModel.paralysed ?? ""
                 DispatchQueue.main.async {
                     self.libertymanDnaEscape(from: model, cell: cell)
                 }
@@ -362,10 +362,10 @@ extension FabricantTabbyViewController: CNContactPickerDelegate {
         if let phoneNumber = contact.phoneNumbers.first?.value.stringValue {
             if let parameterizeCell = self.parameterizeCell {
                 parameterizeCell.filterLabel.text = "\(recursiveName) - \(phoneNumber)"
-                parameterizeCell.filterLabel.textColor = .init(cssHexStr: "#FF3825")
-                if let model = self.caballineModel.value?.matchingArmy?[selectIndex] {
-                    model.liberticideParalysed = recursiveName
-                    model.itemBeaten = phoneNumber
+                parameterizeCell.filterLabel.textColor = .init(cssStr: "#FF3825")
+                if let model = self.caballineModel.value?.army?[selectIndex] {
+                    model.paralysed = recursiveName
+                    model.beaten = phoneNumber
                 }
             }
         } else {

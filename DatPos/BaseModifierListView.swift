@@ -177,8 +177,8 @@ class BaseModifierListView: BaseView {
     private func enumFactoringMacaber() {
         windowsLayer = CAGradientLayer()
         windowsLayer.colors = [
-            UIColor(cssHexStr: "#7CCCFE")!.cgColor,
-            UIColor(cssHexStr: "#7CCCFE")!.cgColor
+            UIColor(cssStr: "#7CCCFE")!.cgColor,
+            UIColor(cssStr: "#7CCCFE")!.cgColor
         ]
         windowsLayer.startPoint = CGPoint(x: 0, y: 0)
         windowsLayer.endPoint = CGPoint(x: 1, y: 1)

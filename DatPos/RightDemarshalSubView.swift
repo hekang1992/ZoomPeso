@@ -27,7 +27,7 @@ class RightDemarshalSubView: BaseView {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Confirm", for: .normal)
         qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
-        qandaharBtn.backgroundColor = .init(cssHexStr: "#FF3825")
+        qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
         return qandaharBtn
@@ -87,7 +87,7 @@ class RightDemarshalSubView: BaseView {
     }()
     
     lazy var accoucheDesclabel: UILabel = {
-        let accoucheDesclabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .semibold), textColor: UIColor.init(cssHexStr: "#FEA124")!, textAlignment: .center)
+        let accoucheDesclabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .semibold), textColor: UIColor.init(cssStr: "#FEA124")!, textAlignment: .center)
         accoucheDesclabel.numberOfLines = 0
         accoucheDesclabel.text = "Please carefully check the information, it cannot be changed after uploading."
         return accoucheDesclabel
@@ -194,8 +194,8 @@ class RightDemarshalSubView: BaseView {
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
-            jacanaName.text = model.liberticideParalysed ?? ""
-            yachtswomanFor.text = model.sideSting ?? ""
+            jacanaName.text = model.paralysed ?? ""
+            yachtswomanFor.text = model.sting ?? ""
             
             let aapssFormatter = DateFormatter()
             aapssFormatter.dateFormat = "yyyy-MM-dd"
@@ -203,12 +203,12 @@ class RightDemarshalSubView: BaseView {
             let multidimensionalFormatter = DateFormatter()
             multidimensionalFormatter.dateFormat = "yyyy/MM/dd"
             
-            var time = model.sequentialStuff ?? ""
+            var time = model.stuff ?? ""
             
             if time.isEmpty {
-                time = "1999/12/12"
+                time = "2000/11/11"
             }else {
-                time = model.sequentialStuff ?? ""
+                time = model.stuff ?? ""
             }
             
             if let date = aapssFormatter.date(from: time) {

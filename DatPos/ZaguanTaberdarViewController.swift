@@ -33,7 +33,7 @@ class ZaguanTaberdarViewController: OaklandLibidoViewController {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
         qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
-        qandaharBtn.backgroundColor = .init(cssHexStr: "#FF3825")
+        qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
         return qandaharBtn
@@ -41,7 +41,7 @@ class ZaguanTaberdarViewController: OaklandLibidoViewController {
     
     lazy var sharedView: UIView = {
         let sharedView = UIView()
-        sharedView.backgroundColor = .init(cssHexStr: "#FFFAED")
+        sharedView.backgroundColor = .init(cssStr: "#FFFAED")
         return sharedView
     }()
     
@@ -116,14 +116,14 @@ class ZaguanTaberdarViewController: OaklandLibidoViewController {
             guard let self = self,
                   let model = self.model.value,
                   let caballineModel = self.caballineModel.value,
-                  let liberticideArray = caballineModel.dacianIntercept else { return }
-            let dict = liberticideArray.reduce(into: ["barricaded": model.yachtswomanEnlarged?.patternOrifice ?? ""]) { result, model in
-                guard let key = model.rabbiWedge else { return }
-                let baathistReascended = model.baathistReascended ?? ""
-                if baathistReascended == "Some" || baathistReascended == "feeble" {
-                    result[key] = model.throwHound ?? ""
+                  let liberticideArray = caballineModel.intercept else { return }
+            let dict = liberticideArray.reduce(into: ["barricaded": model.enlarged?.orifice ?? ""]) { result, model in
+                guard let key = model.wedge else { return }
+                let reascended = model.reascended ?? ""
+                if reascended == "Some" || reascended == "feeble" {
+                    result[key] = model.hound ?? ""
                 }else {
-                    result[key] = model.aachenBajada ?? ""
+                    result[key] = model.bajada ?? ""
                 }
             }
             vacationlandCheckSab(with: dict)
@@ -145,19 +145,19 @@ extension ZaguanTaberdarViewController {
     
     private func babInteroperabilityWadding() {
         ViewCycleManager.showLoading()
-        let jaboticabaBarricaded = self.model.value?.yachtswomanEnlarged?.patternOrifice ?? ""
-        let checkedVitamin = String(format: "%@", jaboticabaBarricaded)
-        let dict = ["barricaded": jaboticabaBarricaded,
+        let barricaded = self.model.value?.enlarged?.orifice ?? ""
+        let checkedVitamin = String(format: "%@", barricaded)
+        let dict = ["barricaded": barricaded,
                     "vitamin": checkedVitamin,
                     "bear": "1",
                     "cotton": "0"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/tapeBloodthirsty", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/bloodthirsty", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         self.caballineModel.accept(model)
                         self.tableView.reloadData()
@@ -172,15 +172,15 @@ extension ZaguanTaberdarViewController {
     
     private func vacationlandCheckSab(with dict: [String: String]) {
         ViewCycleManager.showLoading()
-        let jaboticabaBarricaded = dict["jaboticabaBarricaded"] ?? ""
+        let barricaded = dict["barricaded"] ?? ""
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/hyperlinkTypical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/typical", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
-                    labialiseModelingAaron(from: jaboticabaBarricaded) { model in
+                if ["0", "00"].contains(success.wedge) {
+                    labialiseModelingAaron(from: barricaded) { model in
                         self.model.accept(model)
                         self.unwindingHabaneroScalable(from: model) { model in
                             
@@ -188,7 +188,7 @@ extension ZaguanTaberdarViewController {
                     }
                     ScroPortionPointConfig.pointToPageWithModel(with: "5", discreteKstime: discreteKstime, jstime: ServerSideDeviceInfo.currentTimestamp)
                 }else {
-                    ToastManagerConfig.showToastText(form: view, message: success.chainCircular ?? "")
+                    ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 }
                 break
             case .failure(_):
@@ -203,13 +203,13 @@ extension ZaguanTaberdarViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let model = self.caballineModel.value
-        return model?.dacianIntercept?.count ?? 0
+        return model?.intercept?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = self.caballineModel.value?.dacianIntercept?[indexPath.row]
-        let baathistReascended = model?.baathistReascended ?? ""
-        if baathistReascended == "inflicted" {
+        let model = self.caballineModel.value?.intercept?[indexPath.row]
+        let reascended = model?.reascended ?? ""
+        if reascended == "inflicted" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImplementationBabaViewCell", for: indexPath) as! ImplementationBabaViewCell
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
@@ -219,7 +219,7 @@ extension ZaguanTaberdarViewController: UITableViewDelegate, UITableViewDataSour
                 iaafRaceDacquoise(from: model, label: label)
             }
             return cell
-        }else if baathistReascended == "feeble" {
+        }else if reascended == "feeble" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImplementationBabaViewCell", for: indexPath) as! ImplementationBabaViewCell
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
@@ -238,7 +238,7 @@ extension ZaguanTaberdarViewController: UITableViewDelegate, UITableViewDataSour
                 .compactMap { $0 }
                 .filter { !$0.isEmpty }
                 .sink { text in
-                    model?.throwHound = text
+                    model?.hound = text
                 }
                 .store(in: &intersectionCancellables)
             return cell
@@ -251,7 +251,7 @@ extension ZaguanTaberdarViewController {
     
     private func iaafRaceDacquoise(from model: interceptModel, label: UILabel) {
         let planarityView = UbietyUawEnmuView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        planarityView.liberticideArray.accept(model.rpcExtricate ?? [])
+        planarityView.liberticideArray.accept(model.extricate ?? [])
         let cabaneAlert = TYAlertController(alert: planarityView, preferredStyle: .alert)!
         self.present(cabaneAlert, animated: true)
         
@@ -263,23 +263,23 @@ extension ZaguanTaberdarViewController {
         planarityView.scopeBlock = { [weak self] index, enumModel in
             guard let self = self else { return }
             self.dismiss(animated: true) {
-                label.text = enumModel.liberticideParalysed ?? ""
-                label.textColor = .init(cssHexStr: "#FF3825")
-                model.aachenBajada = enumModel.aachenBajada ?? ""
-                model.throwHound = enumModel.liberticideParalysed ?? ""
-                model.sabbatarianCommon = enumModel.liberticideParalysed ?? ""
+                label.text = enumModel.paralysed ?? ""
+                label.textColor = .init(cssStr: "#FF3825")
+                model.bajada = enumModel.bajada ?? ""
+                model.hound = enumModel.paralysed ?? ""
+                model.common = enumModel.paralysed ?? ""
             }
         }
     }
     
     private func loadAbstractWacko(tin model: interceptModel, label: UILabel) {
-        if let liberticideArray = DataAddressManager.shared.currentModel?.cabalettaRuby {
+        if let liberticideArray = DataAddressManager.shared.currentModel?.ruby {
             let yabberArray = ThrottleModelConig.mutexYabbiNearest(dataSource: liberticideArray)
             let pickerView = DispidCandidateThreeConfig.showAddressPicker(from: yabberArray, pickerMode: .area) { address, code in
                 label.text = address
-                label.textColor = .init(cssHexStr: "#FF3825")
-                model.throwHound = address
-                model.sabbatarianCommon = code
+                label.textColor = .init(cssStr: "#FF3825")
+                model.hound = address
+                model.common = code
             }
             pickerView.show()
         }

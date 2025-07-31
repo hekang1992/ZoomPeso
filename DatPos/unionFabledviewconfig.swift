@@ -2,8 +2,8 @@
 import UIKit
 
 extension UIColor {
-    convenience init?(cssHexStr: String) {
-        let yachtswomanString = cssHexStr.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+    convenience init?(cssStr: String) {
+        let yachtswomanString = cssStr.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         guard yachtswomanString.hasPrefix("#") else {
             return nil
         }

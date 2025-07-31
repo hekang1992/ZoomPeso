@@ -75,13 +75,13 @@ extension fabricableConfig: CLLocationManagerDelegate{
         
         let model = LocationModel()
         
-        let alphabeticalColeoptera = location.coordinate.latitude
+        let coleoptera = location.coordinate.latitude
         
-        let habatsuDisappointed = location.coordinate.longitude
+        let disappointed = location.coordinate.longitude
         
-        model.alphabeticalColeoptera = alphabeticalColeoptera
+        model.coleoptera = coleoptera
         
-        model.habatsuDisappointed = habatsuDisappointed
+        model.disappointed = disappointed
         
         let zagrosGeocoder = CLGeocoder()
         
@@ -89,7 +89,7 @@ extension fabricableConfig: CLLocationManagerDelegate{
         
         zagrosGeocoder.reverseGeocodeLocation(iadlInfo) { [weak self] placemarks, error in
             guard let self = self, let placemark = placemarks?.first else {
-                if !String(alphabeticalColeoptera).isEmpty {
+                if !String(coleoptera).isEmpty {
                     self?.model.accept(model)
                 }
                 return
@@ -114,12 +114,12 @@ extension fabricableConfig: CLLocationManagerDelegate{
         if tabasheerProvice.isEmpty {
             tabasheerProvice = city
         }
-        model.fableObscurely = rowsetStreet
-        model.tabasheerObservation = city
+        model.obscurely = rowsetStreet
+        model.observation = city
         model.error = region
-        model.caballineDisturb = tabasheerProvice
-        model.qcbBoast = kabukiCode
-        model.windowsCabinets = country
+        model.disturb = tabasheerProvice
+        model.boast = kabukiCode
+        model.cabinets = country
     }
 }
 

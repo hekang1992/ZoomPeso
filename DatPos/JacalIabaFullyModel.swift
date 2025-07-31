@@ -1,99 +1,99 @@
 
 class BaseModel: Codable {
-    var rabbiWedge: String?
-    var chainCircular: String?
+    var wedge: String?
+    var circular: String?
     var net: netModel?
 }
 
 class netModel: Codable {
-    var wadableRecollect: String?
-    var libraeAttachment: String?
-    var alphabeticallySucking: String?
-    var qcbPepsis: pepsisModel?
-    var yachtswomanEnlarged: enlargedModel?
-    var cabalettaRuby: [rubyModel]?
-    var hookHorrid: [String]?
-    var caballeroLarvae: [String]?
-    var liberticideParalysed: String?
-    var sideSting: String?
-    var sequentialStuff: String?
-    var dereferenceDeadly: deadlyModel?
-    var pacewayVictims: victimsModel?
-    var dacianIntercept: [interceptModel]?
-    var matchingArmy: [armyModel]?
-    var valueCordillera: Int?
-    var actualSexes: rollModel?
-    var baathistWalckanaer: walckanaerModel?
-    var qcbUrl: String?
-    var methodFinding: [findingModel]?
+    var recollect: String?
+    var attachment: String?
+    var sucking: String?
+    var pepsis: pepsisModel?
+    var enlarged: enlargedModel?
+    var ruby: [rubyModel]?
+    var horrid: [String]?
+    var larvae: [String]?
+    var paralysed: String?
+    var sting: String?
+    var stuff: String?
+    var deadly: deadlyModel?
+    var victims: victimsModel?
+    var intercept: [interceptModel]?
+    var army: [armyModel]?
+    var cordillera: Int?
+    var sexes: sexesModel?
+    var walckanaer: walckanaerModel?
+    var pocket_private_url: String?
+    var finding: [findingModel]?
 }
 
 class findingModel: Codable {
-    var alphabeticallySucking: String?
-    var actualRolled: String?
+    var sucking: String?
+    var rolled: String?
 }
 
 class walckanaerModel: Codable {
-    var minkowskiAzara: String?
+    var azara: String?
 }
 
-class rollModel: Codable {
-    var tapeBloodthirsty: String?
+class sexesModel: Codable {
+    var bloodthirsty: String?
     var die: String?
-    var vectorSays: String?
-    var hyperlinkTypical: String?
+    var says: String?
+    var typical: String?
 }
 
 class rubyModel: Codable {
-    var aachenBajada: String?
-    var sabangAntagonist: String?
-    var pointerPitying: String?
-    var associatedHymenoptera: String?
-    var tabaretThrusts: String?
-    var constrainedCarrion: String?
-    var assignmentRapacious: String?
-    var labeDont: String?
-    var threadCasts: String?
-    var pacesetterHarpalid: String?
-    var throughAntenn: String?
-    var qbasicJuices: [juicesModel]?
-    var liberticideParalysed: String?
-    var cabalettaRuby: [rubyModel]?
-    var baathistWalckanaer: String?
-    var alphabeticallySucking: String?
-    var patternOrifice: Int?
-    var videoBacks: String?
+    var bajada: String?
+    var antagonist: String?
+    var pitying: String?
+    var hymenoptera: String?
+    var thrusts: String?
+    var carrion: String?
+    var rapacious: String?
+    var dont: String?
+    var casts: String?
+    var harpalid: String?
+    var antenn: String?
+    var juices: [juicesModel]?
+    var paralysed: String?
+    var ruby: [rubyModel]?
+    var walckanaer: String?
+    var sucking: String?
+    var orifice: Int?
+    var backs: String?
     
     enum CodingKeys: String, CodingKey {
-        case patternOrifice
-        case baathistWalckanaer
-        case alphabeticallySucking
-        case cabalettaRuby
-        case liberticideParalysed
-        case aachenBajada
-        case sabangAntagonist
-        case pointerPitying
-        case associatedHymenoptera
-        case tabaretThrusts
-        case constrainedCarrion
-        case assignmentRapacious
-        case labeDont = "do"
-        case qbasicJuices
-        case threadCasts
-        case pacesetterHarpalid
-        case throughAntenn
-        case videoBacks
+        case orifice
+        case walckanaer
+        case sucking
+        case ruby
+        case paralysed
+        case bajada
+        case antagonist
+        case pitying
+        case hymenoptera
+        case thrusts
+        case carrion
+        case rapacious
+        case dont = "do"
+        case juices
+        case casts
+        case harpalid
+        case antenn
+        case backs
     }
     
 }
 
 class LocationModel {
-    var caballineDisturb: String?
-    var qcbBoast: String?
-    var alphabeticalColeoptera: Double?
-    var windowsCabinets: String?
-    var fableObscurely: String?
-    var habatsuDisappointed: Double?
-    var tabasheerObservation: String?
+    var disturb: String?
+    var boast: String?
+    var coleoptera: Double?
+    var cabinets: String?
+    var obscurely: String?
+    var disappointed: Double?
+    var observation: String?
     var error: String?
 }

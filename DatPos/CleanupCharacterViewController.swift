@@ -57,42 +57,42 @@ class CleanupCharacterViewController: OaklandLibidoViewController {
             }
             
             let model = DataLoginManager.shared.currentModel
-            let valueCordillera = model?.valueCordillera ?? 0
+            let cordillera = model?.cordillera ?? 0
             
             let status = CLLocationManager().authorizationStatus
             if status == .authorizedAlways || status == .authorizedWhenInUse {
-                let cabalettaRuby = self.advancedModel.value?.cabalettaRuby ?? []
-                for model in cabalettaRuby {
-                    let aachenBajada = model.aachenBajada ?? ""
-                    if aachenBajada == "allowing" {
-                        let model = model.qbasicJuices?.first
-                        let patternOrifice = model?.patternOrifice ?? 0
-                        self.iadActionQarnns(from: patternOrifice)
+                let ruby = self.advancedModel.value?.ruby ?? []
+                for model in ruby {
+                    let bajada = model.bajada ?? ""
+                    if bajada == "allowing" {
+                        let model = model.juices?.first
+                        let orifice = model?.orifice ?? 0
+                        self.iadActionQarnns(from: orifice)
                     }
                 }
             }else {
-                if valueCordillera == 1 {
-                    if PopupManager.codeMabelGabbro() {
+                if cordillera == 1 {
+                    if PopupManager.shouldShowPopup() {
                         showPermissionDeniedAlert(for: "Location", customMessage: "1")
                     }else {
-                        let cabalettaRuby = self.advancedModel.value?.cabalettaRuby ?? []
-                        for model in cabalettaRuby {
-                            let aachenBajada = model.aachenBajada ?? ""
-                            if aachenBajada == "allowing" {
-                                let model = model.qbasicJuices?.first
-                                let patternOrifice = model?.patternOrifice ?? 0
-                                self.iadActionQarnns(from: patternOrifice)
+                        let ruby = self.advancedModel.value?.ruby ?? []
+                        for model in ruby {
+                            let bajada = model.bajada ?? ""
+                            if bajada == "allowing" {
+                                let model = model.juices?.first
+                                let orifice = model?.orifice ?? 0
+                                self.iadActionQarnns(from: orifice)
                             }
                         }
                     }
                 }else {
-                    let cabalettaRuby = self.advancedModel.value?.cabalettaRuby ?? []
-                    for model in cabalettaRuby {
-                        let aachenBajada = model.aachenBajada ?? ""
-                        if aachenBajada == "allowing" {
-                            let model = model.qbasicJuices?.first
-                            let patternOrifice = model?.patternOrifice ?? 0
-                            self.iadActionQarnns(from: patternOrifice)
+                    let ruby = self.advancedModel.value?.ruby ?? []
+                    for model in ruby {
+                        let bajada = model.bajada ?? ""
+                        if bajada == "allowing" {
+                            let model = model.juices?.first
+                            let orifice = model?.orifice ?? 0
+                            self.iadActionQarnns(from: orifice)
                         }
                     }
                 }
@@ -101,14 +101,14 @@ class CleanupCharacterViewController: OaklandLibidoViewController {
         
         self.habatsuView.iabBlock = { [weak self] model in
             guard let self = self else { return }
-            let patternOrifice = model.patternOrifice ?? 0
-            self.iadActionQarnns(from: patternOrifice)
+            let orifice = model.orifice ?? 0
+            self.iadActionQarnns(from: orifice)
         }
         
         self.habatsuView.cellBlock = { [weak self] model in
             guard let self = self else { return }
-            let patternOrifice = model.patternOrifice ?? 0
-            self.iadActionQarnns(from: patternOrifice)
+            let orifice = model.orifice ?? 0
+            self.iadActionQarnns(from: orifice)
         }
         
         triangulationTransactionLibia { model in
@@ -123,7 +123,7 @@ class CleanupCharacterViewController: OaklandLibidoViewController {
                 self.present(hierarchyLogin, animated: true)
                 return
             }
-            let userUrl = self.advancedModel.value?.baathistWalckanaer?.minkowskiAzara ?? ""
+            let userUrl = self.advancedModel.value?.walckanaer?.azara ?? ""
             let satisfiabilityWeb = InfrastructureUbicationViewController()
             satisfiabilityWeb.planarityUrl = userUrl
             self.navigationController?.pushViewController(satisfiabilityWeb, animated: true)
@@ -158,12 +158,12 @@ extension CleanupCharacterViewController {
             self?.habatsuView.tableView.es.stopPullToRefresh()
             switch result {
             case .success(let success):
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
-                        let cabalettaRuby = model.cabalettaRuby ?? []
-                        for model in cabalettaRuby {
-                            let aachenBajada = model.aachenBajada ?? ""
-                            if aachenBajada == "compared" {
+                        let ruby = model.ruby ?? []
+                        for model in ruby {
+                            let bajada = model.bajada ?? ""
+                            if bajada == "compared" {
                                 self?.habatsuView.isHidden = false
                                 self?.waddingView.isHidden = true
                             }else {
@@ -214,17 +214,17 @@ extension CleanupCharacterViewController {
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
-                let rabbiWedge = success.rabbiWedge ?? ""
-                if ["0", "00"].contains(rabbiWedge) {
+                let wedge = success.wedge ?? ""
+                if ["0", "00"].contains(wedge) {
                     if let self = self, let model = success.net {
                         self.kabobFlushNamed(from: model)
                     }
-                }else if rabbiWedge == "-2" {
+                }else if wedge == "-2" {
                     GabbyAardvarkLoginConfig.deleteLoginInfo()
                     self?.digitalGuiView()
-                }else if rabbiWedge == "01" {
+                }else if wedge == "01" {
                     if let self = self {
-                        ToastManagerConfig.showToastText(form: view, message: success.chainCircular ?? "")
+                        ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                     }
                 }
                 break

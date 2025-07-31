@@ -138,13 +138,13 @@ extension ForwardZahalViewController {
                     switch result {
                     case .success(let success):
                         guard let self = self else { return }
-                        if ["0", "00"].contains(success.rabbiWedge) {
+                        if ["0", "00"].contains(success.wedge) {
                             GabbyAardvarkLoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                                 self.digitalGuiView()
                             }
                         }
-                        ToastManagerConfig.showToastText(form: view, message: success.chainCircular ?? "")
+                        ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                         ViewCycleManager.iterationLibraWaddie()
                         break
                     case .failure(_):
@@ -170,13 +170,13 @@ extension ForwardZahalViewController {
                     switch result {
                     case .success(let success):
                         guard let self = self else { return }
-                        if ["0", "00"].contains(success.rabbiWedge) {
+                        if ["0", "00"].contains(success.wedge) {
                             GabbyAardvarkLoginConfig.deleteLoginInfo()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                                 self.digitalGuiView()
                             }
                         }
-                        ToastManagerConfig.showToastText(form: view, message: success.chainCircular ?? "")
+                        ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                         ViewCycleManager.iterationLibraWaddie()
                         break
                     case .failure(_):

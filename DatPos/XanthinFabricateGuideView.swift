@@ -26,22 +26,22 @@ class XanthinFabricateGuideView: BaseView {
     }()
     
     lazy var pacesetterLabel: UILabel = {
-        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 59)!, textColor: .init(cssHexStr: "#712202")!, textAlignment: .left)
+        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 59)!, textColor: .init(cssStr: "#712202")!, textAlignment: .left)
         return pacesetterLabel
     }()
     
     lazy var translationLabel: UILabel = {
-        let translationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .init(cssHexStr: "#F9732C")!, textAlignment: .center)
+        let translationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .init(cssStr: "#F9732C")!, textAlignment: .center)
         return translationLabel
     }()
     
     lazy var iadLabel: UILabel = {
-        let iadLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .init(cssHexStr: "#F9732C")!, textAlignment: .center)
+        let iadLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18, weight: .semibold), textColor: .init(cssStr: "#F9732C")!, textAlignment: .center)
         return iadLabel
     }()
     
     lazy var itemLabel: UILabel = {
-        let itemLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18)!, textColor: .init(cssHexStr: "#FFFFFF")!, textAlignment: .center)
+        let itemLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18)!, textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .center)
         itemLabel.text = "Certifcation conditions"
         return itemLabel
     }()
@@ -50,11 +50,11 @@ class XanthinFabricateGuideView: BaseView {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Go Loan >", for: .normal)
         qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
-        qandaharBtn.backgroundColor = .init(cssHexStr: "#FF3825")
+        qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
         qandaharBtn.layer.borderWidth = 2
-        qandaharBtn.layer.borderColor = UIColor.init(cssHexStr: "#FCE69B")?.cgColor
+        qandaharBtn.layer.borderColor = UIColor.init(cssStr: "#FCE69B")?.cgColor
         return qandaharBtn
     }()
     

@@ -12,16 +12,16 @@ class XanthinAssociativeViewCell: BaseViewCell {
         accoucheDesclabel.startPoint = CGPoint(x: 0, y: 0.5)
         accoucheDesclabel.endPoint = CGPoint(x: 1, y: 0.5)
         accoucheDesclabel.locations = [0 ,1]
-        accoucheDesclabel.colors = [UIColor.init(cssHexStr: "#FF3825")!.cgColor, UIColor.init(cssHexStr: "#FE5255")!.cgColor]
+        accoucheDesclabel.colors = [UIColor.init(cssStr: "#FF3825")!.cgColor, UIColor.init(cssStr: "#FE5255")!.cgColor]
         return accoucheDesclabel
     }()
     
     lazy var architectureView: UIView = {
         let architectureView = UIView()
-        architectureView.backgroundColor = .init(cssHexStr: "#FFFAED")
+        architectureView.backgroundColor = .init(cssStr: "#FFFAED")
         architectureView.layer.cornerRadius = 10.pix()
         architectureView.layer.masksToBounds = true
-        architectureView.layer.shadowColor = UIColor.init(cssHexStr: "#B42400")?.withAlphaComponent(0.27).cgColor
+        architectureView.layer.shadowColor = UIColor.init(cssStr: "#B42400")?.withAlphaComponent(0.27).cgColor
         architectureView.layer.shadowOffset = CGSize(width: 0, height: -3.5)
         architectureView.layer.shadowRadius = 6.5
         architectureView.layer.shadowOpacity = 0.2
@@ -36,7 +36,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     
     lazy var fatherlessView: UIView = {
         let fatherlessView = UIView()
-        fatherlessView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+        fatherlessView.backgroundColor = .init(cssStr: "#FAFAFA")
         fatherlessView.layer.cornerRadius = 10.pix()
         fatherlessView.layer.masksToBounds = true
         return fatherlessView
@@ -49,7 +49,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     }()
     
     lazy var iterationLabel: UILabel = {
-        let iterationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssHexStr: "#E2D38B")!, textAlignment: .left)
+        let iterationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssStr: "#E2D38B")!, textAlignment: .left)
         return iterationLabel
     }()
     
@@ -60,7 +60,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     
     lazy var zaftigView: UIView = {
         let zaftigView = UIView()
-        zaftigView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+        zaftigView.backgroundColor = .init(cssStr: "#FAFAFA")
         zaftigView.layer.cornerRadius = 10.pix()
         zaftigView.layer.masksToBounds = true
         return zaftigView
@@ -73,7 +73,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     }()
     
     lazy var filterLabel: UILabel = {
-        let filterLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssHexStr: "#E2D38B")!, textAlignment: .left)
+        let filterLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssStr: "#E2D38B")!, textAlignment: .left)
         return filterLabel
     }()
     
@@ -161,41 +161,41 @@ class XanthinAssociativeViewCell: BaseViewCell {
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
-            let videoBacks = NSMutableAttributedString(string: model.videoBacks ?? "")
-            let range = NSRange(location: 0, length: videoBacks.length)
-            videoBacks.addAttributes([.font: UIFont(name: kafFont, size: 15)!], range: range)
-            accoucheDesclabel.attributedText = videoBacks
-            contentLabel.text = model.traceLabours ?? ""
-            let sabbatarianCommon = model.sabbatarianCommon ?? ""
-            let oamPaths = model.oamPaths ?? ""
-            if sabbatarianCommon.isEmpty {
-                if oamPaths.isEmpty {
-                    iterationLabel.text = model.wordAstonished ?? ""
-                    iterationLabel.textColor = .init(cssHexStr: "#E2D38B")
+            let backs = NSMutableAttributedString(string: model.backs ?? "")
+            let range = NSRange(location: 0, length: backs.length)
+            backs.addAttributes([.font: UIFont(name: kafFont, size: 15)!], range: range)
+            accoucheDesclabel.attributedText = backs
+            contentLabel.text = model.labours ?? ""
+            let common = model.common ?? ""
+            let paths = model.paths ?? ""
+            if common.isEmpty {
+                if paths.isEmpty {
+                    iterationLabel.text = model.astonished ?? ""
+                    iterationLabel.textColor = .init(cssStr: "#E2D38B")
                 }else {
-                    let rpcExtricate = model.rpcExtricate ?? []
-                    for model in rpcExtricate {
-                        let aachenBajada = model.aachenBajada ?? ""
-                        if oamPaths == aachenBajada {
-                            iterationLabel.text = model.liberticideParalysed ?? ""
-                            iterationLabel.textColor = .init(cssHexStr: "#FF3825")
+                    let extricate = model.extricate ?? []
+                    for model in extricate {
+                        let bajada = model.bajada ?? ""
+                        if paths == bajada {
+                            iterationLabel.text = model.paralysed ?? ""
+                            iterationLabel.textColor = .init(cssStr: "#FF3825")
                         }
                     }
                 }
             }else {
-                iterationLabel.text = sabbatarianCommon
-                iterationLabel.textColor = .init(cssHexStr: "#FF3825")
+                iterationLabel.text = common
+                iterationLabel.textColor = .init(cssStr: "#FF3825")
             }
             
-            let phone = model.itemBeaten ?? ""
-            let name = model.liberticideParalysed ?? ""
-            calendricalLabel.text = model.libertinismExcepted ?? ""
+            let phone = model.beaten ?? ""
+            let name = model.paralysed ?? ""
+            calendricalLabel.text = model.excepted ?? ""
             if phone.isEmpty {
-                filterLabel.text = model.labialiseBees ?? ""
-                filterLabel.textColor = .init(cssHexStr: "#E2D38B")
+                filterLabel.text = model.bees ?? ""
+                filterLabel.textColor = .init(cssStr: "#E2D38B")
             }else {
                 filterLabel.text = "\(name) - \(phone)"
-                filterLabel.textColor = .init(cssHexStr: "#FF3825")
+                filterLabel.textColor = .init(cssStr: "#FF3825")
             }
             
         }).disposed(by: identifierBag)

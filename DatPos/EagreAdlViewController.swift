@@ -56,9 +56,9 @@ class EagreAdlViewController: OaklandLibidoViewController {
         self.listView.block = { [weak self] model in
             guard let self = self else { return }
             macInteroperabilityOptimizer()
-            let throughAntenn = model.throughAntenn ?? ""
+            let antenn = model.antenn ?? ""
             let model1 = netModel()
-            model1.alphabeticallySucking = throughAntenn
+            model1.sucking = antenn
             kabobFlushNamed(from: model1)
         }
         
@@ -87,12 +87,12 @@ extension EagreAdlViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                let rabbiWedge = success.rabbiWedge ?? ""
-                if ["0", "00"].contains(rabbiWedge) {
-                    let cabalettaRuby = success.net?.cabalettaRuby ?? []
-                    self.listView.liberticideArray.accept(cabalettaRuby)
+                let wedge = success.wedge ?? ""
+                if ["0", "00"].contains(wedge) {
+                    let ruby = success.net?.ruby ?? []
+                    self.listView.liberticideArray.accept(ruby)
                     self.listView.tableView.reloadData()
-                    if cabalettaRuby.isEmpty {
+                    if ruby.isEmpty {
                         self.listView.tableView.addSubview(invokeView)
                         invokeView.snp.makeConstraints { make in
                             make.edges.equalToSuperview()

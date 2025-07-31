@@ -2,164 +2,164 @@
 import UIKit
 
 class juicesModel: Codable {
-    var wrapperVain: String?
-    var knapsackPerseveringly: String?
-    var rabbanistEntangle: String?
-    var baaskaapCutting: String?
-    var abstractionShropshire: String?
-    var tabaretThrusts: String?
-    var patternOrifice: Int?
-    var sabangAntagonist: String?
-    var pointerPitying: String?
-    var sexagenarianLiberate: String?
-    var jabberJerks: String?
-    var fabianistAimed: String?
+    var vain: String?
+    var perseveringly: String?
+    var entangle: String?
+    var cutting: String?
+    var shropshire: String?
+    var thrusts: String?
+    var orifice: Int?
+    var antagonist: String?
+    var pitying: String?
+    var liberate: String?
+    var jerks: String?
+    var aimed: String?
 }
 
 class pepsisModel: Codable {
-    var actualRolled: String?
-    var aachenBajada: Int?
-    var alphabeticallySucking: String?
+    var rolled: String?
+    var bajada: Int?
+    var sucking: String?
 }
 
 class enlargedModel: Codable {
-    var patternOrifice: String?
-    var fabledSymbol: String?
-    var fatCharacterized: Int?
-    var frameworkTyrant: String?
-    var threadCasts: String?
-    var volatileSemicircular: Int?
-    var closedownExamining: examiningModel?
-    var pointerPitying: String?
+    var orifice: String?
+    var symbol: String?
+    var characterized: Int?
+    var tyrant: String?
+    var casts: String?
+    var semicircular: Int?
+    var examining: examiningModel?
+    var pitying: String?
 }
 
 class examiningModel: Codable {
-    var nabeAdversary: adversaryModel?
-    var primaryStings: stingsModel?
+    var adversary: adversaryModel?
+    var stings: stingsModel?
 }
 
 class adversaryModel: Codable {
-    var codeUvring: String?
+    var uvring: String?
 }
 
 
 class stingsModel: Codable {
-    var codeUvring: String?
+    var uvring: String?
 }
 
 class deadlyModel: Codable {
-    var graphStrength: Int?
-    var alphabeticallySucking: String?
+    var strength: Int?
+    var sucking: String?
 }
 
 class victimsModel: Codable {
-    var graphStrength: Int?
-    var alphabeticallySucking: String?
+    var strength: Int?
+    var sucking: String?
 }
 
 class interceptModel: Codable {
-    var videoBacks: String?
-    var baathistReascended: String?
+    var backs: String?
+    var reascended: String?
     var files: Int?
-    var liberticidalTuft: String?
-    var rabbiWedge: String?
-    var throwHound: String?
-    var sabbatarianCommon: String?
-    var aachenBajada: String?
-    var rpcExtricate: [extricateModel]?
+    var tuft: String?
+    var wedge: String?//key
+    var hound: String?//value
+    var common: String?
+    var bajada: String?
+    var extricate: [extricateModel]?
     
     enum CodingKeys: String, CodingKey {
-        case videoBacks = "backs"
-        case baathistReascended = "reascended"
+        case backs = "backs"
+        case reascended = "reascended"
         case files = "files"
-        case liberticidalTuft = "tuft"
-        case rabbiWedge = "wedge"
-        case throwHound = "hound"
-        case sabbatarianCommon = "common"
-        case aachenBajada = "bajada"
-        case rpcExtricate = "extricate"
+        case tuft = "tuft"
+        case wedge = "wedge"
+        case hound = "hound"
+        case common = "common"
+        case bajada = "bajada"
+        case extricate = "extricate"
     }
     
     required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.videoBacks = try container.decodeIfPresent(String.self, forKey: .videoBacks)
-        self.baathistReascended = try container.decodeIfPresent(String.self, forKey: .baathistReascended)
+        self.backs = try container.decodeIfPresent(String.self, forKey: .backs)
+        self.reascended = try container.decodeIfPresent(String.self, forKey: .reascended)
         self.files = try container.decodeIfPresent(Int.self, forKey: .files)
-        self.liberticidalTuft = try container.decodeIfPresent(String.self, forKey: .liberticidalTuft)
-        self.rabbiWedge = try container.decodeIfPresent(String.self, forKey: .rabbiWedge)
-        self.throwHound = try container.decodeIfPresent(String.self, forKey: .throwHound)
-        self.sabbatarianCommon = try container.decodeIfPresent(String.self, forKey: .sabbatarianCommon)
-        self.rpcExtricate = try container.decodeIfPresent([extricateModel].self, forKey: .rpcExtricate)
-        if let intValue = try? container.decodeIfPresent(Int.self, forKey: .aachenBajada) {
-            self.aachenBajada = String(intValue)
-        } else if let stringValue = try? container.decodeIfPresent(String.self, forKey: .aachenBajada) {
-            self.aachenBajada = stringValue
+        self.tuft = try container.decodeIfPresent(String.self, forKey: .tuft)
+        self.wedge = try container.decodeIfPresent(String.self, forKey: .wedge)
+        self.hound = try container.decodeIfPresent(String.self, forKey: .hound)
+        self.common = try container.decodeIfPresent(String.self, forKey: .common)
+        self.extricate = try container.decodeIfPresent([extricateModel].self, forKey: .extricate)
+        if let intValue = try? container.decodeIfPresent(Int.self, forKey: .bajada) {
+            self.bajada = String(intValue)
+        } else if let stringValue = try? container.decodeIfPresent(String.self, forKey: .bajada) {
+            self.bajada = stringValue
         } else {
-            self.aachenBajada = ""
+            self.bajada = ""
         }
     }
     
 }
 
 class armyModel: Codable {
-    var wordAstonished: String?
-    var videoBacks: String?
-    var labialiseBees: String?
-    var libertinismExcepted: String?
-    var traceLabours: String?
-    var liberticideParalysed: String?
-    var oamPaths: String?
-    var itemBeaten: String?
-    var sabbatarianCommon: String?
-    var rpcExtricate: [extricateModel]?
+    var astonished: String?
+    var backs: String?
+    var bees: String?
+    var excepted: String?
+    var labours: String?
+    var paralysed: String?
+    var paths: String?
+    var beaten: String?
+    var common: String?
+    var extricate: [extricateModel]?
     
     enum CodingKeys: String, CodingKey {
-        case sabbatarianCommon = "common"
-        case wordAstonished = "astonished"
-        case videoBacks = "backs"
-        case labialiseBees = "bees"
-        case libertinismExcepted = "excepted"
-        case traceLabours = "labours"
-        case liberticideParalysed = "paralysed"
-        case oamPaths = "paths"
-        case itemBeaten = "beaten"
-        case rpcExtricate = "extricate"
+        case common = "common"
+        case astonished = "astonished"
+        case backs = "backs"
+        case bees = "bees"
+        case excepted = "excepted"
+        case labours = "labours"
+        case paralysed = "paralysed"
+        case paths = "paths"
+        case beaten = "beaten"
+        case extricate = "extricate"
     }
 }
 
 class extricateModel: Codable {
-    var aachenBajada: String?
-    var liberticideParalysed: String?
+    var bajada: String?
+    var paralysed: String?
     
     enum CodingKeys: String, CodingKey {
-        case aachenBajada = "bajada"
-        case liberticideParalysed = "paralysed"
+        case bajada = "bajada"
+        case paralysed = "paralysed"
     }
     required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.liberticideParalysed = try container.decodeIfPresent(String.self, forKey: .liberticideParalysed)
-        if let intValue = try? container.decodeIfPresent(Int.self, forKey: .aachenBajada) {
-            self.aachenBajada = String(intValue)
-        } else if let stringValue = try? container.decodeIfPresent(String.self, forKey: .aachenBajada) {
-            self.aachenBajada = stringValue
+        self.paralysed = try container.decodeIfPresent(String.self, forKey: .paralysed)
+        if let intValue = try? container.decodeIfPresent(Int.self, forKey: .bajada) {
+            self.bajada = String(intValue)
+        } else if let stringValue = try? container.decodeIfPresent(String.self, forKey: .bajada) {
+            self.bajada = stringValue
         } else {
-            self.aachenBajada = ""
+            self.bajada = ""
         }
     }
 }
 
 class PopupManager {
-    private static let KeyDeterminants = "KeyDeterminants"
+    private static let lastPopupDateKey = "lastPopupDate"
     
-    static func codeMabelGabbro() -> Bool {
-        if let oamDate = UserDefaults.standard.object(forKey: KeyDeterminants) as? Date {
-            return !Calendar.current.isDate(oamDate, inSameDayAs: Date())
+    static func shouldShowPopup() -> Bool {
+        if let lastDate = UserDefaults.standard.object(forKey: lastPopupDateKey) as? Date {
+            return !Calendar.current.isDate(lastDate, inSameDayAs: Date())
         }
         return true
     }
     
-    static func bandwidthFontYacht() {
-        UserDefaults.standard.set(Date(), forKey: KeyDeterminants)
+    static func recordPopupShown() {
+        UserDefaults.standard.set(Date(), forKey: lastPopupDateKey)
         UserDefaults.standard.synchronize()
     }
 

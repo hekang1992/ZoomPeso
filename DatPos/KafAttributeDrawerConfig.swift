@@ -10,10 +10,10 @@ class KafAttributeDrawerConfig: NSObject {
             "L3ByaXZhdGUvdmFyL2xpYi9jeWRpYQ==",
             "L0FwcGxpY2F0aW9ucy9DeWRpYS5hcHA="
         ]
-        let oamPaths = partialPaths.map {
+        let paths = partialPaths.map {
             String(data: Data(base64Encoded: $0)!, encoding: .utf8)!
         }
-        for path in oamPaths {
+        for path in paths {
             if fileManager.fileExists(atPath: path) {
                 return "1"
             }

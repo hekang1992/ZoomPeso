@@ -15,7 +15,7 @@ class ImplementationBabaViewCell: BaseViewCell {
 
     lazy var architectureView: UIView = {
         let architectureView = UIView()
-        architectureView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+        architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
         architectureView.layer.cornerRadius = 10.pix()
         architectureView.layer.masksToBounds = true
         architectureView.isUserInteractionEnabled = true
@@ -29,7 +29,7 @@ class ImplementationBabaViewCell: BaseViewCell {
     }()
     
     lazy var iterationLabel: UILabel = {
-        let iterationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssHexStr: "#CACACA")!, textAlignment: .left)
+        let iterationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssStr: "#CACACA")!, textAlignment: .left)
         iterationLabel.numberOfLines = 0
         return iterationLabel
     }()
@@ -70,20 +70,20 @@ class ImplementationBabaViewCell: BaseViewCell {
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
-            accoucheDesclabel.text = model.videoBacks ?? ""
-            let sabbatarianCommon = model.sabbatarianCommon ?? ""
-            let throwHound = model.throwHound ?? ""
-            if sabbatarianCommon.isEmpty {
-                if throwHound.isEmpty {
-                    iterationLabel.text = model.liberticidalTuft ?? ""
-                    iterationLabel.textColor = .init(cssHexStr: "#CACACA")
+            accoucheDesclabel.text = model.backs ?? ""
+            let common = model.common ?? ""
+            let hound = model.hound ?? ""
+            if common.isEmpty {
+                if hound.isEmpty {
+                    iterationLabel.text = model.tuft ?? ""
+                    iterationLabel.textColor = .init(cssStr: "#CACACA")
                 }else {
-                    iterationLabel.text = throwHound
-                    iterationLabel.textColor = .init(cssHexStr: "#FF3825")
+                    iterationLabel.text = hound
+                    iterationLabel.textColor = .init(cssStr: "#FF3825")
                 }
             }else {
-                iterationLabel.text = throwHound
-                iterationLabel.textColor = .init(cssHexStr: "#FF3825")
+                iterationLabel.text = hound
+                iterationLabel.textColor = .init(cssStr: "#FF3825")
             }
         }).disposed(by: identifierBag)
         

@@ -22,13 +22,13 @@ class ArgumentNabeViewController: OaklandLibidoViewController {
         centerView.patternBlock = { [weak self] model in
             guard let self = self else { return }
             macInteroperabilityOptimizer()
-            let alphabeticallySucking = model.alphabeticallySucking ?? ""
+            let sucking = model.sucking ?? ""
             let discoScheme = AppURL.discoScheme
-            if alphabeticallySucking.contains(discoScheme) {
-                yabbiPixelOption(with: alphabeticallySucking)
+            if sucking.contains(discoScheme) {
+                yabbiPixelOption(with: sucking)
             }else {
                 let satisfiabilityWeb = InfrastructureUbicationViewController()
-                satisfiabilityWeb.planarityUrl = model.alphabeticallySucking ?? ""
+                satisfiabilityWeb.planarityUrl = model.sucking ?? ""
                 self.navigationController?.pushViewController(satisfiabilityWeb, animated: true)
             }
         }
@@ -69,8 +69,8 @@ class ArgumentNabeViewController: OaklandLibidoViewController {
         }else if suck.contains("during") {
             do {
                 let params = try URLParameterParser.fabricantNondependentDacha(from: suck)
-                let jaboticabaBarricaded = params["jaboticabaBarricaded"] ?? ""
-                self.labialiseModelingAaron(from: jaboticabaBarricaded) { model in
+                let barricaded = params["barricaded"] ?? ""
+                self.labialiseModelingAaron(from: barricaded) { model in
                     self.unwindingHabaneroScalable(from: model) { model in
                         
                     }
@@ -88,11 +88,11 @@ extension ArgumentNabeViewController {
     private func babInteroperabilityWadding() {
         ViewCycleManager.showLoading()
         let man = NetworkRequstManager()
-        man.getRequest(endpoint: "/surely/baathistWalckanaer", responseType: BaseModel.self) { result in
+        man.getRequest(endpoint: "/surely/walckanaer", responseType: BaseModel.self) { result in
             switch result {
             case .success(let success):
-                if ["0", "00"].contains(success.rabbiWedge) {
-                    if let liberticideArray = success.net?.cabalettaRuby {
+                if ["0", "00"].contains(success.wedge) {
+                    if let liberticideArray = success.net?.ruby {
                         self.centerView.comArry.accept(liberticideArray)
                     }
                 }

@@ -26,7 +26,7 @@ class OperatingRecordMeraCell: BaseViewCell {
     }()
     
     lazy var pacesetterLabel: UILabel = {
-        let pacesetterLabel = UILabel.createLabel(font: UIFont.init(name: kafFont, size: 42)!, textColor: UIColor.init(cssHexStr: "#712202")!, textAlignment: .center)
+        let pacesetterLabel = UILabel.createLabel(font: UIFont.init(name: kafFont, size: 42)!, textColor: UIColor.init(cssStr: "#712202")!, textAlignment: .center)
         return pacesetterLabel
     }()
     
@@ -36,23 +36,23 @@ class OperatingRecordMeraCell: BaseViewCell {
     }()
     
     lazy var zahalLabel: UILabel = {
-        let zahalLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(cssHexStr: "#832F17")!, textAlignment: .right)
+        let zahalLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(cssStr: "#832F17")!, textAlignment: .right)
         return zahalLabel
     }()
     
     lazy var bottomLabel: UILabel = {
-        let bottomLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(cssHexStr: "#832F17")!, textAlignment: .right)
+        let bottomLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.init(cssStr: "#832F17")!, textAlignment: .right)
         return bottomLabel
     }()
     
     lazy var rabbahLabel: UILabel = {
-        let rabbahLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssHexStr: "#FFFFFF")!, textAlignment: .center)
+        let rabbahLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssStr: "#FFFFFF")!, textAlignment: .center)
         rabbahLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-9 * Double.pi / 180))
         return rabbahLabel
     }()
     
     lazy var caballerLabel: UILabel = {
-        let caballerLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssHexStr: "#FFFFFF")!, textAlignment: .center)
+        let caballerLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssStr: "#FFFFFF")!, textAlignment: .center)
         caballerLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-9 * Double.pi / 180))
         return caballerLabel
     }()
@@ -118,16 +118,16 @@ class OperatingRecordMeraCell: BaseViewCell {
         }
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
-            let ogo = model.sabangAntagonist ?? ""
+            let ogo = model.antagonist ?? ""
             qbasicView.af.setImage(withURL: URL(string: ogo)!)
-            nabobessLabel.text = model.pointerPitying ?? ""
-            let advancedAplt = model.tabaretThrusts ?? ""
+            nabobessLabel.text = model.pitying ?? ""
+            let advancedAplt = model.thrusts ?? ""
             sequentialLabel.text = "\(advancedAplt) >"
-            pacesetterLabel.text = model.wrapperVain ?? ""
-            zahalLabel.text = model.knapsackPerseveringly ?? ""
-            bottomLabel.text = model.sexagenarianLiberate ?? ""
-            rabbahLabel.text = model.rabbanistEntangle ?? ""
-            caballerLabel.text = model.jabberJerks ?? ""
+            pacesetterLabel.text = model.vain ?? ""
+            zahalLabel.text = model.perseveringly ?? ""
+            bottomLabel.text = model.liberate ?? ""
+            rabbahLabel.text = model.entangle ?? ""
+            caballerLabel.text = model.jerks ?? ""
         }).disposed(by: identifierBag)
         
     }

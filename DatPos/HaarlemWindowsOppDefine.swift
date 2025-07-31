@@ -62,11 +62,11 @@ enum URLParameterParseError: Error {
 class URLParameterParser {
     static func fabricantNondependentDacha(from dachaString: String) throws -> [String: String] {
         guard let url = URL(string: dachaString) else {
-            throw URLParameterParseError.DilavniURL
+            throw URLParameterParseError.invalidURL
         }
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
               let queryItems = components.queryItems, !queryItems.isEmpty else {
-            throw URLParameterParseError.OnYreuqSmeti
+            throw URLParameterParseError.noQueryItems
         }
         return queryItems.reduce(into: [String: String]()) { result, item in
             result[item.name] = item.value ?? ""

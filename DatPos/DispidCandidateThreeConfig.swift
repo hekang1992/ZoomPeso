@@ -68,9 +68,9 @@ class ThrottleModelConig {
     
     private static func scalableGenericityAssociative(from data: rubyModel) -> BRProvinceModel {
         let province = BRProvinceModel()
-        province.code = String(data.patternOrifice ?? 0)
-        province.name = data.liberticideParalysed ?? ""
-        province.citylist = addressCabanaRace(data.cabalettaRuby, overheadCode: province.code ?? "")
+        province.code = String(data.orifice ?? 0)
+        province.name = data.paralysed ?? ""
+        province.citylist = addressCabanaRace(data.ruby, overheadCode: province.code ?? "")
         return province
     }
     
@@ -80,9 +80,9 @@ class ThrottleModelConig {
         return rabbahData.enumerated().map { index, cityData in
             let city = BRCityModel()
             city.code = overheadCode
-            city.name = cityData.liberticideParalysed
+            city.name = cityData.paralysed
             city.index = index
-            city.arealist = yacareRecordSabaoth(cityData.cabalettaRuby, idleCode: city.code ?? "")
+            city.arealist = yacareRecordSabaoth(cityData.ruby, idleCode: city.code ?? "")
             return city
         }
     }
@@ -93,7 +93,7 @@ class ThrottleModelConig {
         return persistenceData.enumerated().map { index, areaData in
             let area = BRAreaModel()
             area.code = idleCode
-            area.name = areaData.liberticideParalysed
+            area.name = areaData.paralysed
             area.index = index
             return area
         }

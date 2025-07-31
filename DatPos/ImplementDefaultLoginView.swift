@@ -39,7 +39,7 @@ class ImplementDefaultLoginView: BaseView {
         let openField = UITextField()
         openField.keyboardType = .numberPad
         let eaglewoodString = NSMutableAttributedString(string: "Enter mobile number", attributes: [
-            .foregroundColor: UIColor.init(cssHexStr: "#BFBEBE") as Any,
+            .foregroundColor: UIColor.init(cssStr: "#BFBEBE") as Any,
             .font: UIFont.systemFont(ofSize: 14)
         ])
         openField.attributedPlaceholder = eaglewoodString
@@ -68,7 +68,7 @@ class ImplementDefaultLoginView: BaseView {
         let localField = UITextField()
         localField.keyboardType = .numberPad
         let eaglewoodString = NSMutableAttributedString(string: "Verification code", attributes: [
-            .foregroundColor: UIColor.init(cssHexStr: "#BFBEBE") as Any,
+            .foregroundColor: UIColor.init(cssStr: "#BFBEBE") as Any,
             .font: UIFont.systemFont(ofSize: 14)
         ])
         localField.attributedPlaceholder = eaglewoodString
@@ -86,7 +86,7 @@ class ImplementDefaultLoginView: BaseView {
             range: NSRange(location: 0, length: "Get code".count)
         )
         veeLabel.attributedText = operandString
-        veeLabel.textColor = UIColor(cssHexStr: "#FE5255")
+        veeLabel.textColor = UIColor(cssStr: "#FE5255")
         veeLabel.textAlignment = .right
         veeLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         return veeLabel
@@ -97,7 +97,7 @@ class ImplementDefaultLoginView: BaseView {
         throughBtn.contentHorizontalAlignment = .right
         throughBtn.setImage(UIImage(named: "solvingIconVoiceimage"), for: .normal)
         throughBtn.setTitle("VOZ", for: .normal)
-        throughBtn.setTitleColor(UIColor.init(cssHexStr: "#FE5255"), for: .normal)
+        throughBtn.setTitleColor(UIColor.init(cssStr: "#FE5255"), for: .normal)
         throughBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         throughBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 7)
         return throughBtn
@@ -106,7 +106,7 @@ class ImplementDefaultLoginView: BaseView {
     lazy var schemaBtn: UIButton = {
         let schemaBtn = UIButton(type: .custom)
         schemaBtn.setTitle("Login", for: .normal)
-        schemaBtn.backgroundColor = UIColor.init(cssHexStr: "#FF3825")
+        schemaBtn.backgroundColor = UIColor.init(cssStr: "#FF3825")
         schemaBtn.titleLabel?.font = UIFont(name: kafFont, size: 18)
         schemaBtn.layer.cornerRadius = 23.5
         return schemaBtn

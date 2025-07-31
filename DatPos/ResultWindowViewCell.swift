@@ -15,7 +15,7 @@ class ResultWindowViewCell: BaseViewCell {
     }()
     
     lazy var nabobessLabel: UILabel = {
-        let nabobessLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 17)!, textColor: UIColor.init(cssHexStr: "#000001")!, textAlignment: .left)
+        let nabobessLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 17)!, textColor: UIColor.init(cssStr: "#000001")!, textAlignment: .left)
         return nabobessLabel
     }()
     

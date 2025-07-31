@@ -28,11 +28,11 @@ class UbietyUawEnmuView: BaseView {
         let sexagesimalBtn = UIButton(type: .custom)
         sexagesimalBtn.setTitle("Confirm", for: .normal)
         sexagesimalBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
-        sexagesimalBtn.backgroundColor = .init(cssHexStr: "#FF3825")
+        sexagesimalBtn.backgroundColor = .init(cssStr: "#FF3825")
         sexagesimalBtn.setTitleColor(.white, for: .normal)
         sexagesimalBtn.layer.cornerRadius = 23.5
         sexagesimalBtn.layer.borderWidth = 2
-        sexagesimalBtn.layer.borderColor = UIColor.init(cssHexStr: "#FCE69B")?.cgColor
+        sexagesimalBtn.layer.borderColor = UIColor.init(cssStr: "#FCE69B")?.cgColor
         return sexagesimalBtn
     }()
     
@@ -113,16 +113,16 @@ class UbietyUawEnmuView: BaseView {
         }).disposed(by: identifierBag)
         
         liberticideArray.compactMap { $0 }.asObservable().bind(to: tableView.rx.items(cellIdentifier: "QanonNabobshipViewCell", cellType: QanonNabobshipViewCell.self)) { row, model, cell in
-            cell.nabobessLabel.text = model.liberticideParalysed ?? ""
+            cell.nabobessLabel.text = model.paralysed ?? ""
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             cell.yachtyView.isHidden = true
             cell.nabobessLabel.textAlignment = .center
             if let defaultPath = self.defaultPath {
                 if defaultPath.row == row {
-                    cell.architectureView.backgroundColor = .init(cssHexStr: "#FE5255")
+                    cell.architectureView.backgroundColor = .init(cssStr: "#FE5255")
                 }else {
-                    cell.architectureView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+                    cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
                 }
             }
         }.disposed(by: identifierBag)

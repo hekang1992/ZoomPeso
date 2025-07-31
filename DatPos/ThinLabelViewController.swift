@@ -75,12 +75,12 @@ extension ThinLabelViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                let rabbiWedge = success.rabbiWedge ?? ""
-                if ["0", "00"].contains(rabbiWedge) {
-                    let cabalettaRuby = success.net?.cabalettaRuby ?? []
-                    self.liberticideArray.accept(cabalettaRuby)
+                let wedge = success.wedge ?? ""
+                if ["0", "00"].contains(wedge) {
+                    let ruby = success.net?.ruby ?? []
+                    self.liberticideArray.accept(ruby)
                     self.tableView.reloadData()
-                    if cabalettaRuby.isEmpty {
+                    if ruby.isEmpty {
                         self.tableView.addSubview(invokeView)
                         invokeView.snp.makeConstraints { make in
                             make.edges.equalToSuperview()
@@ -119,9 +119,9 @@ extension ThinLabelViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.liberticideArray.value?[indexPath.row]
-        let throughAntenn = model?.throughAntenn ?? ""
+        let antenn = model?.antenn ?? ""
         let rabbaniteNmodel = netModel()
-        rabbaniteNmodel.alphabeticallySucking = throughAntenn
+        rabbaniteNmodel.sucking = antenn
         kabobFlushNamed(from: rabbaniteNmodel)
     }
     

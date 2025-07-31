@@ -26,18 +26,18 @@ class MultiuserIntersectionViewCell: BaseViewCell {
     }()
     
     lazy var vacancyLabel: UILabel = {
-        let vacancyLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 13.pix(), weight: .bold), textColor: .init(cssHexStr: "#FF2726")!, textAlignment: .right)
+        let vacancyLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 13.pix(), weight: .bold), textColor: .init(cssStr: "#FF2726")!, textAlignment: .right)
         return vacancyLabel
     }()
     
     lazy var pacesetterLabel: UILabel = {
-        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 42.pix())!, textColor: .init(cssHexStr: "#712202")!, textAlignment: .center)
+        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 42.pix())!, textColor: .init(cssStr: "#712202")!, textAlignment: .center)
         return pacesetterLabel
     }()
     
     lazy var architectureView: UIView = {
         let architectureView = UIView()
-        architectureView.backgroundColor = UIColor.init(cssHexStr: "#FFE4B6")
+        architectureView.backgroundColor = UIColor.init(cssStr: "#FFE4B6")
         architectureView.layer.cornerRadius = 5
         return architectureView
     }()
@@ -47,27 +47,27 @@ class MultiuserIntersectionViewCell: BaseViewCell {
         transactionalLabel.layer.cornerRadius = 5
         transactionalLabel.layer.masksToBounds = true
         transactionalLabel.text = "Ch" + "eck"
-        transactionalLabel.backgroundColor = .init(cssHexStr: "#FF3825")
+        transactionalLabel.backgroundColor = .init(cssStr: "#FF3825")
         return transactionalLabel
     }()
     
     lazy var partLabel: UILabel = {
-        let partLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 11.pix(), weight: .medium), textColor: .init(cssHexStr: "#BF9B0E")!, textAlignment: .left)
+        let partLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 11.pix(), weight: .medium), textColor: .init(cssStr: "#BF9B0E")!, textAlignment: .left)
         return partLabel
     }()
     
     lazy var habaneroLabel: UILabel = {
-        let habaneroLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 11.pix(), weight: .medium), textColor: .init(cssHexStr: "#BF9B0E")!, textAlignment: .left)
+        let habaneroLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 11.pix(), weight: .medium), textColor: .init(cssStr: "#BF9B0E")!, textAlignment: .left)
         return habaneroLabel
     }()
     
     lazy var xanthineLabel: UILabel = {
-        let xanthineLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssHexStr: "#712202")!, textAlignment: .right)
+        let xanthineLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssStr: "#712202")!, textAlignment: .right)
         return xanthineLabel
     }()
     
     lazy var jabezLabel: UILabel = {
-        let jabezLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssHexStr: "#712202")!, textAlignment: .right)
+        let jabezLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssStr: "#712202")!, textAlignment: .right)
         return jabezLabel
     }()
     
@@ -141,15 +141,15 @@ class MultiuserIntersectionViewCell: BaseViewCell {
         }
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
-            let wsdlUrl = model.sabangAntagonist ?? ""
+            let wsdlUrl = model.antagonist ?? ""
             qbasicView.af.setImage(withURL: URL(string: wsdlUrl)!)
-            nabobessLabel.text = model.pointerPitying ?? ""
-            vacancyLabel.text = model.tabaretThrusts ?? ""
-            pacesetterLabel.text = model.constrainedCarrion ?? ""
-            partLabel.text = model.assignmentRapacious ?? ""
-            habaneroLabel.text = model.labeDont ?? ""
-            xanthineLabel.text = model.threadCasts ?? ""
-            jabezLabel.text = model.pacesetterHarpalid ?? ""
+            nabobessLabel.text = model.pitying ?? ""
+            vacancyLabel.text = model.thrusts ?? ""
+            pacesetterLabel.text = model.carrion ?? ""
+            partLabel.text = model.rapacious ?? ""
+            habaneroLabel.text = model.dont ?? ""
+            xanthineLabel.text = model.casts ?? ""
+            jabezLabel.text = model.harpalid ?? ""
         }).disposed(by: identifierBag)
     }
     

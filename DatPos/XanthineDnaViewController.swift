@@ -55,7 +55,7 @@ class XanthineDnaViewController: OaklandLibidoViewController {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
         qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
-        qandaharBtn.backgroundColor = .init(cssHexStr: "#FF3825")
+        qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
         return qandaharBtn
@@ -132,8 +132,8 @@ class XanthineDnaViewController: OaklandLibidoViewController {
             jacamarFacetime = ServerSideDeviceInfo.currentTimestamp
             let index = self.isSuccess.value ?? 0
             if index == 1 {
-                let jaboticabaBarricaded = self.model.value?.yachtswomanEnlarged?.patternOrifice ?? ""
-                labialiseModelingAaron(from: jaboticabaBarricaded) { model in
+                let barricaded = self.model.value?.enlarged?.orifice ?? ""
+                labialiseModelingAaron(from: barricaded) { model in
                     self.model.accept(model)
                     self.unwindingHabaneroScalable(from: model) { model in
                         
@@ -228,13 +228,13 @@ extension XanthineDnaViewController: UIImagePickerControllerDelegate, UINavigati
             case .success(let success):
                 ViewCycleManager.iterationLibraWaddie()
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     DispatchQueue.main.async {
                         self.alphabetizeZahalTabassaran()
                     }
                     ScroPortionPointConfig.pointToPageWithModel(with: "4", discreteKstime: jacamarFacetime, jstime: ServerSideDeviceInfo.currentTimestamp)
                 }
-                ToastManagerConfig.showToastText(form: view, message: success.chainCircular ?? "")
+                ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 break
             case .failure(_):
                 ViewCycleManager.iterationLibraWaddie()
@@ -245,18 +245,18 @@ extension XanthineDnaViewController: UIImagePickerControllerDelegate, UINavigati
     
     private func alphabetizeZahalTabassaran() {
         ViewCycleManager.showLoading()
-        let jaboticabaBarricaded = self.model.value?.yachtswomanEnlarged?.patternOrifice ?? ""
-        let dict = ["barricaded": jaboticabaBarricaded, "vitaman": "d"]
+        let barricaded = self.model.value?.enlarged?.orifice ?? ""
+        let dict = ["barricaded": barricaded, "vitaman": "d"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/valueCordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
-                    if let model = success.net?.pacewayVictims {
-                        self.isSuccess.accept(model.graphStrength ?? 0)
-                        let iconUrl = model.alphabeticallySucking ?? ""
+                if ["0", "00"].contains(success.wedge) {
+                    if let model = success.net?.victims {
+                        self.isSuccess.accept(model.strength ?? 0)
+                        let iconUrl = model.sucking ?? ""
                         if let url = URL(string: iconUrl) {
                             self.triangulationView.af.setImage(withURL: url)
                         }

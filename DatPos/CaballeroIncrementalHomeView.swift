@@ -47,18 +47,18 @@ class CaballeroIncrementalHomeView: BaseView {
     }()
     
     lazy var pacesetterLabel: UILabel = {
-        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 50.pix())!, textColor: .init(cssHexStr: "#FFFFFF")!, textAlignment: .left)
+        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 50.pix())!, textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .left)
         return pacesetterLabel
     }()
     
     
     lazy var babassuLabel: UILabel = {
-        let babassuLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssHexStr: "#000001")!, textAlignment: .center)
+        let babassuLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssStr: "#000001")!, textAlignment: .center)
         return babassuLabel
     }()
     
     lazy var combinatorialLabel: UILabel = {
-        let combinatorialLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssHexStr: "#000001")!, textAlignment: .center)
+        let combinatorialLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssStr: "#000001")!, textAlignment: .center)
         return combinatorialLabel
     }()
     
@@ -104,8 +104,8 @@ class CaballeroIncrementalHomeView: BaseView {
         let saxView = UIView()
         saxView.layer.cornerRadius = 25.pix()
         saxView.layer.borderWidth = 1.pix()
-        saxView.layer.borderColor = UIColor.init(cssHexStr: "#7B2306")!.cgColor
-        saxView.backgroundColor = UIColor.init(cssHexStr: "#FE5255")
+        saxView.layer.borderColor = UIColor.init(cssStr: "#7B2306")!.cgColor
+        saxView.backgroundColor = UIColor.init(cssStr: "#FE5255")
         return saxView
     }()
     
@@ -257,18 +257,18 @@ class CaballeroIncrementalHomeView: BaseView {
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
-            let cabalettaRuby = model.cabalettaRuby ?? []
-            for model in cabalettaRuby {
-                let aachenBajada = model.aachenBajada ?? ""
-                if aachenBajada == "allowing" {
-                    let model = model.qbasicJuices?.first
-                    pacesetterLabel.text = model?.wrapperVain ?? ""
-                    babassuLabel.text = model?.rabbanistEntangle ?? ""
-                    combinatorialLabel.text = model?.baaskaapCutting ?? ""
-                    let jabberwockyStr = model?.tabaretThrusts ?? ""
+            let ruby = model.ruby ?? []
+            for model in ruby {
+                let bajada = model.bajada ?? ""
+                if bajada == "allowing" {
+                    let model = model.juices?.first
+                    pacesetterLabel.text = model?.vain ?? ""
+                    babassuLabel.text = model?.entangle ?? ""
+                    combinatorialLabel.text = model?.cutting ?? ""
+                    let jabberwockyStr = model?.thrusts ?? ""
                     loginLabel.text = jabberwockyStr
-                    nabobessLabel.text = model?.pointerPitying ?? ""
-                    let sabaothUrl = URL(string: model?.sabangAntagonist ?? "")!
+                    nabobessLabel.text = model?.pitying ?? ""
+                    let sabaothUrl = URL(string: model?.antagonist ?? "")!
                     qbasicView.af.setImage(withURL: sabaothUrl)
                 }
             }
@@ -304,8 +304,8 @@ class CaballeroIncrementalHomeView: BaseView {
     private func enumFactoringMacaber() {
         windowsLayer = CAGradientLayer()
         windowsLayer.colors = [
-            UIColor(cssHexStr: "#83D1FE")!.cgColor,
-            UIColor(cssHexStr: "#46A4FF")!.cgColor
+            UIColor(cssStr: "#83D1FE")!.cgColor,
+            UIColor(cssStr: "#46A4FF")!.cgColor
         ]
         windowsLayer.startPoint = CGPoint(x: 0, y: 0)
         windowsLayer.endPoint = CGPoint(x: 1, y: 1)

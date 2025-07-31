@@ -14,7 +14,7 @@ class TupleJacamarViewCell: BaseViewCell {
 
     lazy var architectureView: UIView = {
         let architectureView = UIView()
-        architectureView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+        architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
         architectureView.layer.cornerRadius = 10.pix()
         architectureView.layer.masksToBounds = true
         return architectureView
@@ -22,7 +22,7 @@ class TupleJacamarViewCell: BaseViewCell {
     
     lazy var aaronInput: UITextField = {
         let aaronInput = UITextField()
-        aaronInput.textColor = .init(cssHexStr: "#FF3825")
+        aaronInput.textColor = .init(cssStr: "#FF3825")
         let motionAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.systemGray,
             .font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium)
@@ -63,19 +63,19 @@ class TupleJacamarViewCell: BaseViewCell {
         
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }
-            accoucheDesclabel.text = model.videoBacks ?? ""
-            let sabbatarianCommon = model.sabbatarianCommon ?? ""
-            let throwHound = model.throwHound ?? ""
-            if sabbatarianCommon.isEmpty {
-                if throwHound.isEmpty {
+            accoucheDesclabel.text = model.backs ?? ""
+            let common = model.common ?? ""
+            let hound = model.hound ?? ""
+            if common.isEmpty {
+                if hound.isEmpty {
                     aaronInput.text = ""
                 }else {
-                    aaronInput.text = throwHound
+                    aaronInput.text = hound
                 }
             }else {
-                aaronInput.text = sabbatarianCommon
+                aaronInput.text = common
             }
-            aaronInput.attributedPlaceholder = NSAttributedString(string: model.liberticidalTuft ?? "")
+            aaronInput.attributedPlaceholder = NSAttributedString(string: model.tuft ?? "")
             let files = model.files ?? 0
             self.keyboardTypeInfo(from: files)
         }).disposed(by: identifierBag)

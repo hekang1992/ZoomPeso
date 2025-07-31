@@ -5,13 +5,13 @@ class QanonNabobshipViewCell: BaseViewCell {
     
     lazy var architectureView: UIView = {
         let architectureView = UIView()
-        architectureView.backgroundColor = .init(cssHexStr: "#FAFAFA")
+        architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
         architectureView.layer.cornerRadius = 10
         return architectureView
     }()
     
     lazy var nabobessLabel: UILabel = {
-        let nabobessLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .medium), textColor: .init(cssHexStr: "#E2D38B")!, textAlignment: .left)
+        let nabobessLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .medium), textColor: .init(cssStr: "#E2D38B")!, textAlignment: .left)
         return nabobessLabel
     }()
     

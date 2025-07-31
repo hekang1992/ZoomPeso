@@ -12,7 +12,7 @@ class DelegationRecordsetCenterView: BaseView {
     
     lazy var architectureView: UIView = {
         let architectureView = UIView()
-        architectureView.backgroundColor = .init(cssHexStr: "#EBF4FF")
+        architectureView.backgroundColor = .init(cssStr: "#EBF4FF")
         return architectureView
     }()
     
@@ -103,9 +103,9 @@ class DelegationRecordsetCenterView: BaseView {
             .bind(to: tableView.rx.items(cellIdentifier: "ResultWindowViewCell", cellType: ResultWindowViewCell.self)) { row, model, cell in
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
-            let baathistWalckanaer = model.baathistWalckanaer ?? ""
-            cell.qcbView.af.setImage(withURL: URL(string: baathistWalckanaer)!)
-            cell.nabobessLabel.text = model.videoBacks ?? ""
+            let walckanaer = model.walckanaer ?? ""
+            cell.qcbView.af.setImage(withURL: URL(string: walckanaer)!)
+            cell.nabobessLabel.text = model.backs ?? ""
         }
             .disposed(by: identifierBag)
         

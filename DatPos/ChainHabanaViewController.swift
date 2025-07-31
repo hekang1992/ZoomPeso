@@ -39,7 +39,7 @@ class ChainHabanaViewController: OaklandLibidoViewController {
         alphabeticallyView.uartLabel.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
             if let model = DataLoginManager.shared.currentModel {
-                let planarityUrl = model.qcbUrl ?? ""
+                let planarityUrl = model.pocket_private_url ?? ""
                 let pacemakingFive = InfrastructureUbicationViewController()
                 pacemakingFive.planarityUrl = planarityUrl
                 self.navigationController?.pushViewController(pacemakingFive, animated: true)
@@ -73,8 +73,8 @@ class ChainHabanaViewController: OaklandLibidoViewController {
         }).disposed(by: identifierBag)
         
         if let model = DataLoginManager.shared.currentModel {
-            let valueCordillera = model.valueCordillera ?? 0
-            if valueCordillera == 1 {
+            let cordillera = model.cordillera ?? 0
+            if cordillera == 1 {
                 DispatchQueue.main.async {
                     let location = fabricableConfig()
                     location.eaglewoodSidePaced { [weak self] model in
@@ -171,17 +171,17 @@ extension ChainHabanaViewController {
         let hat = self.alphabeticallyView.openField.text ?? ""
         let dict = ["hat": hat]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/idlSimilarly", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/similarly", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     self.startCountdown()
                     self.alphabeticallyView.localField.becomeFirstResponder()
                 }
-                let chainCircular = success.chainCircular ?? ""
-                ToastManagerConfig.showToastText(form: self.view, message: chainCircular)
+                let circular = success.circular ?? ""
+                ToastManagerConfig.showToastText(form: self.view, message: circular)
                 break
             case .failure(_):
                 break
@@ -198,16 +198,16 @@ extension ChainHabanaViewController {
         ViewCycleManager.showLoading()
         let dict = ["hat": hat]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/volatileSegment", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/segment", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     self.alphabeticallyView.localField.becomeFirstResponder()
                 }
-                let chainCircular = success.chainCircular ?? ""
-                ToastManagerConfig.showToastText(form: self.view, message: chainCircular)
+                let circular = success.circular ?? ""
+                ToastManagerConfig.showToastText(form: self.view, message: circular)
                 break
             case .failure(_):
                 break
@@ -231,23 +231,23 @@ extension ChainHabanaViewController {
                     "mine": mine,
                     "page": "login"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/rabbiWedge", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/wedge", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     zagreusTime = ServerSideDeviceInfo.currentTimestamp
-                    let phone = success.net?.wadableRecollect ?? ""
-                    let token = success.net?.libraeAttachment ?? ""
+                    let phone = success.net?.recollect ?? ""
+                    let token = success.net?.attachment ?? ""
                     GabbyAardvarkLoginConfig.zaguanViableScreen(phone: phone, token: token)
                     ScroPortionPointConfig.pointToPageWithModel(with: "1", discreteKstime: wsdlTime, jstime: zagreusTime)
                     DispatchQueue.main.async {
                         self.digitalGuiView()
                     }
                 }
-                let chainCircular = success.chainCircular ?? ""
-                ToastManagerConfig.showToastText(form: self.view, message: chainCircular)
+                let circular = success.circular ?? ""
+                ToastManagerConfig.showToastText(form: self.view, message: circular)
                 break
             case .failure(_):
                 break

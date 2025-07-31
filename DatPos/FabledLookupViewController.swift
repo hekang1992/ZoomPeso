@@ -114,19 +114,19 @@ extension FabledLookupViewController: UIScrollViewDelegate {
     }
     
     func fullIacuShared(complete: @escaping (Bool) -> Void) {
-        let tabassaranConstructed = ServerSideDeviceInfo.exceptionIdentifierSdk()
-        let idlSimilarly = hyperlinkSdkAccess()
-        let volatileSegment = isVPNConnected()
-        let dict = ["constructed": tabassaranConstructed,
-                    "similarly": idlSimilarly,
-                    "segment": volatileSegment,
+        let constructed = ServerSideDeviceInfo.exceptionIdentifierSdk()
+        let similarly = hyperlinkSdkAccess()
+        let segment = isVPNConnected()
+        let dict = ["constructed": constructed,
+                    "similarly": similarly,
+                    "segment": segment,
                     "relationShip": "1"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/tabassaranConstructed", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/constructed", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         DataLoginManager.shared.currentModel = model
                     }
@@ -195,7 +195,7 @@ extension FabledLookupViewController: UIScrollViewDelegate {
             scrollView.addSubview(imageView)
             
             let button = UIButton(type: .custom)
-            button.backgroundColor = UIColor.init(cssHexStr: "#FF3825")
+            button.backgroundColor = UIColor.init(cssStr: "#FF3825")
             button.titleLabel?.font = UIFont(name: kafFont, size: 18)
             button.setTitle(i == images.count - 1 ? "Begin" : "Next", for: .normal)
             button.layer.cornerRadius = 23.5

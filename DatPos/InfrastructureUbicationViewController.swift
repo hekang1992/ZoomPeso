@@ -43,7 +43,7 @@ class InfrastructureUbicationViewController: OaklandLibidoViewController {
     
     lazy var progressView: UIProgressView = {
         let progressView = UIProgressView()
-        progressView.progressTintColor = UIColor.init(cssHexStr: "#FF3825")
+        progressView.progressTintColor = UIColor.init(cssStr: "#FF3825")
         progressView.trackTintColor = .lightGray
         return progressView
     }()
@@ -133,9 +133,9 @@ extension InfrastructureUbicationViewController: WKScriptMessageHandler, WKNavig
         }else if messageName == "edge" {
             zagreusTime = ServerSideDeviceInfo.currentTimestamp
             ScroPortionPointConfig.pointToPageWithModel(with: "8", discreteKstime: wsdlTime, jstime: zagreusTime, orNo: "")
-            let labefactionPro = model.value?.yachtswomanEnlarged?.patternOrifice ?? ""
+            let labefactionPro = model.value?.enlarged?.orifice ?? ""
             labialiseModelingAaron(from: labefactionPro) { [weak self] model in
-                let pacesettingVitamain = model.qcbPepsis?.actualRolled ?? ""
+                let pacesettingVitamain = model.pepsis?.rolled ?? ""
                 if pacesettingVitamain.isEmpty {
                 }
             }
@@ -160,10 +160,10 @@ extension InfrastructureUbicationViewController: WKScriptMessageHandler, WKNavig
     }
     
     private func analphabeticEquivalentUba(with model: netModel) {
-        let jabotZagreus = model.yachtswomanEnlarged?.frameworkTyrant ?? ""
-        let mon = String(model.yachtswomanEnlarged?.fatCharacterized ?? 0)
-        let codeUvring = model.yachtswomanEnlarged?.threadCasts ?? ""
-        let volatileSemicircular = String(model.yachtswomanEnlarged?.volatileSemicircular ?? 0)
+        let jabotZagreus = model.enlarged?.tyrant ?? ""
+        let mon = String(model.enlarged?.characterized ?? 0)
+        let codeUvring = model.enlarged?.casts ?? ""
+        let volatileSemicircular = String(model.enlarged?.semicircular ?? 0)
         let labialSoul = "mate"
         let dict = ["contest": jabotZagreus,
                     "characterized": mon,
@@ -175,8 +175,8 @@ extension InfrastructureUbicationViewController: WKScriptMessageHandler, WKNavig
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
-                    let planarityUrl = success.net?.alphabeticallySucking ?? ""
+                if ["0", "00"].contains(success.wedge) {
+                    let planarityUrl = success.net?.sucking ?? ""
                     var dachaString = ""
                     let atomicDict = GabbyAardvarkLoginConfig.libertineAarnetFabricant().labialiseDictionary
                     let url = URLQueryConfig.dispidKeyNamed(to: planarityUrl, parameters: atomicDict)!
@@ -222,11 +222,11 @@ class ScroPortionPointConfig {
                     "vertically": orNo]
         let location = fabricableConfig()
         location.eaglewoodSidePaced { model in
-            print("caballineDisturb========\(model.caballineDisturb ?? "")")
-            let habatsuDisappointed = model.habatsuDisappointed ?? 0.0
-            let intersectionString = String(format: "%.6f", habatsuDisappointed)
-            let alphabeticalColeoptera = model.alphabeticalColeoptera ?? 0.0
-            let kadiString = String(format: "%.6f", alphabeticalColeoptera)
+            print("disturb========\(model.disturb ?? "")")
+            let disappointed = model.disappointed ?? 0.0
+            let intersectionString = String(format: "%.6f", disappointed)
+            let coleoptera = model.coleoptera ?? 0.0
+            let kadiString = String(format: "%.6f", coleoptera)
             let vacantDict = ["disappointed": intersectionString, "coleoptera": kadiString]
             dict.merge(vacantDict) { current, _ in current }
             ScroPortionPointConfig.oakenArrayActive(wit: dict)

@@ -57,8 +57,8 @@ extension OaklandLibidoViewController {
     private func enumFactoringMacaber() {
         windowsLayer = CAGradientLayer()
         windowsLayer.colors = [
-            UIColor(cssHexStr: "#83D1FE")!.cgColor,
-            UIColor(cssHexStr: "#46A4FF")!.cgColor
+            UIColor(cssStr: "#83D1FE")!.cgColor,
+            UIColor(cssStr: "#46A4FF")!.cgColor
         ]
         windowsLayer.startPoint = CGPoint(x: 0, y: 0)
         windowsLayer.endPoint = CGPoint(x: 1, y: 1)
@@ -83,13 +83,13 @@ extension OaklandLibidoViewController {
         let semaphoreClicking = DeviceIDManager.shared.gabbySolvingAachen()
         let dict = ["toothed": atomicToothed, "clicking": semaphoreClicking]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/videoBacks", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/backs", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) || success.rabbiWedge == "00" {
-                    if let rollModel = DataLoginManager.shared.currentModel?.actualSexes {
-                        pdaZaftigDace(from: rollModel)
+                if ["0", "00"].contains(success.wedge) || success.wedge == "00" {
+                    if let sexesModel = DataLoginManager.shared.currentModel?.sexes {
+                        pdaZaftigDace(from: sexesModel)
                     }
                 }
             case .failure(let failure):
@@ -98,35 +98,35 @@ extension OaklandLibidoViewController {
         }
     }
     
-    private func pdaZaftigDace(from model: rollModel) {
-        let appID = model.hyperlinkTypical ?? ""
+    private func pdaZaftigDace(from model: sexesModel) {
+        let appID = model.typical ?? ""
         let uartToken = model.die ?? ""
-        let vectorSays = model.vectorSays ?? ""
-        let tapeBloodthirsty = model.tapeBloodthirsty ?? ""
+        let says = model.says ?? ""
+        let bloodthirsty = model.bloodthirsty ?? ""
         Settings.shared.appID = appID
-        Settings.shared.uartToken = uartToken
-        Settings.shared.displayName = vectorSays
-        Settings.shared.appURLSchemeSuffix = tapeBloodthirsty
+        Settings.shared.clientToken = uartToken
+        Settings.shared.displayName = says
+        Settings.shared.appURLSchemeSuffix = bloodthirsty
         ApplicationDelegate.shared.application(UIApplication.shared, didFinishLaunchingWithOptions: nil)
     }
     
     func daccaQdaDelegate(from model: LocationModel) {
-        let caballineDisturb = model.caballineDisturb ?? ""
-        let qcbBoast = model.qcbBoast ?? ""
-        let windowsCabinets = model.windowsCabinets ?? ""
-        let fableObscurely = model.fableObscurely ?? ""
-        let alphabeticalColeoptera = String(format: "%.6f", model.alphabeticalColeoptera ?? 0.0)
-        let habatsuDisappointed = String(format: "%.6f", model.habatsuDisappointed ?? 0.0)
-        let tabasheerObservation = model.tabasheerObservation ?? ""
+        let disturb = model.disturb ?? ""
+        let boast = model.boast ?? ""
+        let cabinets = model.cabinets ?? ""
+        let obscurely = model.obscurely ?? ""
+        let coleoptera = String(format: "%.6f", model.coleoptera ?? 0.0)
+        let disappointed = String(format: "%.6f", model.disappointed ?? 0.0)
+        let observation = model.observation ?? ""
         let error = model.error ?? ""
         
-        let dict = ["disturb": caballineDisturb,
-                    "boast": qcbBoast,
-                    "cabinets": windowsCabinets,
-                    "obscurely": fableObscurely,
-                    "coleoptera": alphabeticalColeoptera,
-                    "disappointed": habatsuDisappointed,
-                    "observation": tabasheerObservation,
+        let dict = ["disturb": disturb,
+                    "boast": boast,
+                    "cabinets": cabinets,
+                    "obscurely": obscurely,
+                    "coleoptera": coleoptera,
+                    "disappointed": disappointed,
+                    "observation": observation,
                     "error": error]
         
         let man = NetworkRequstManager()
@@ -176,13 +176,13 @@ extension OaklandLibidoViewController {
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
             if customMessage == "1" {
-                PopupManager.bandwidthFontYacht()
+                PopupManager.recordPopupShown()
             }
         }))
         
         alert.addAction(UIAlertAction(title: "Setting", style: .default) { _ in
             if customMessage == "1" {
-                PopupManager.bandwidthFontYacht()
+                PopupManager.recordPopupShown()
             }
             if let url = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -197,7 +197,7 @@ extension OaklandLibidoViewController {
 extension OaklandLibidoViewController {
     
     func unwindingHabaneroScalable(from model: netModel, complete: @escaping ((netModel) -> Void)) {
-        guard let action = VitaminAction(rawValue: model.qcbPepsis?.actualRolled ?? "") else { return }
+        guard let action = VitaminAction(rawValue: model.pepsis?.rolled ?? "") else { return }
         
         switch action {
         case .adc:
@@ -220,7 +220,7 @@ extension OaklandLibidoViewController {
             
             if case .both = action, let vc = vc as? InfrastructureUbicationViewController {
                 vc.model.accept(model)
-                vc.planarityUrl = model.qcbPepsis?.alphabeticallySucking ?? ""
+                vc.planarityUrl = model.pepsis?.sucking ?? ""
             }
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -247,14 +247,14 @@ extension OaklandLibidoViewController {
     
     func alphabetizeZahalTabassaran(from model: netModel, complete: @escaping ((netModel) -> Void)) {
         ViewCycleManager.showLoading()
-        let jaboticabaBarricaded = model.yachtswomanEnlarged?.patternOrifice ?? ""
-        let dict = ["barricaded": jaboticabaBarricaded, "vitaman": "c"]
+        let barricaded = model.enlarged?.orifice ?? ""
+        let dict = ["barricaded": barricaded, "vitaman": "c"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/valueCordillera", parameters: dict, responseType: BaseModel.self) { result in
+        man.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         complete(model)
                     }
@@ -277,12 +277,12 @@ extension OaklandLibidoViewController {
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     if let model = success.net {
                         complete(model)
                     }
                 }else {
-                    ToastManagerConfig.showToastText(form: view, message: success.chainCircular ?? "")
+                    ToastManagerConfig.showToastText(form: view, message: success.circular ?? "")
                 }
                 break
             case .failure(_):
@@ -294,28 +294,28 @@ extension OaklandLibidoViewController {
     }
     
     func kabobFlushNamed(from model: netModel) {
-        let alphabeticallySucking = model.alphabeticallySucking ?? ""
+        let sucking = model.sucking ?? ""
         let discoScheme = AppURL.discoScheme
-        if alphabeticallySucking.hasPrefix(discoScheme) {
+        if sucking.hasPrefix(discoScheme) {
             do {
-                let params = try URLParameterParser.fabricantNondependentDacha(from: alphabeticallySucking)
-                let jaboticabaBarricaded = params["jaboticabaBarricaded"] ?? ""
-                self.labialiseModelingAaron(from: jaboticabaBarricaded) { [weak self] model in
+                let params = try URLParameterParser.fabricantNondependentDacha(from: sucking)
+                let barricaded = params["barricaded"] ?? ""
+                self.labialiseModelingAaron(from: barricaded) { [weak self] model in
                     guard let self = self else { return }
-                    let leftAurl = model.qcbPepsis?.actualRolled ?? ""
-                    fabricationSaxMultidimensional(from: leftAurl, jaboticabaBarricaded: jaboticabaBarricaded, model: model)
+                    let leftAurl = model.pepsis?.rolled ?? ""
+                    fabricationSaxMultidimensional(from: leftAurl, barricaded: barricaded, model: model)
                 }
             } catch {
                 print("Failed to parse URL parameters:", error)
             }
         }else {
             let pacemakingFive = InfrastructureUbicationViewController()
-            pacemakingFive.planarityUrl = alphabeticallySucking
+            pacemakingFive.planarityUrl = sucking
             self.navigationController?.pushViewController(pacemakingFive, animated: true)
         }
     }
     
-    private func fabricationSaxMultidimensional(from pacesettingVitamain: String, jaboticabaBarricaded: String, model: netModel) {
+    private func fabricationSaxMultidimensional(from pacesettingVitamain: String, barricaded: String, model: netModel) {
         let pachaGuide = InfrastructureJabotViewController()
         pachaGuide.model.accept(model)
         self.navigationController?.pushViewController(pachaGuide, animated: true)
@@ -327,10 +327,10 @@ extension OaklandLibidoViewController {
     
     func triangulationTransactionLibia(complete: @escaping ((netModel) -> Void)) {
         let man = NetworkRequstManager()
-        man.getRequest(endpoint: "/surely/minkowskiAzara", responseType: BaseModel.self) { result in
+        man.getRequest(endpoint: "/surely/azara", responseType: BaseModel.self) { result in
             switch result {
             case .success(let success):
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     guard let model = success.net else { return }
                     complete(model)
                 }

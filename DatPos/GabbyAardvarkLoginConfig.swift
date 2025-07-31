@@ -40,15 +40,11 @@ struct LoginInfo: Codable {
         return [
             "applied": caballineVersion,
             "raw": underflowModel,
-            "login": "1",
-            "index": "10",
             "repeatedly": underflowDevice,
             "saliva": localVersion,
-            "main": "1",
             "carouselView": "vertical",
             "attachment": siblingToken,
             "contrivance": semanticsAdvertising,
-            "code": "0",
         ]
     }
 }

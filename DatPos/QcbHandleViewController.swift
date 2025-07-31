@@ -57,7 +57,7 @@ class QcbHandleViewController: OaklandLibidoViewController {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
         qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
-        qandaharBtn.backgroundColor = .init(cssHexStr: "#FF3825")
+        qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
         return qandaharBtn
@@ -283,13 +283,13 @@ extension QcbHandleViewController: UIImagePickerControllerDelegate, UINavigation
                 ViewCycleManager.iterationLibraWaddie()
                 guard let self = self else { return }
                 if let model = success.net {
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                         DispatchQueue.main.async {
                             self.xanthochroiBaaskaapVaalhaai(from: model)
                         }
                     }
                 }
-                ToastManagerConfig.showToastText(form: unqualifiedView, message: success.chainCircular ?? "")
+                ToastManagerConfig.showToastText(form: unqualifiedView, message: success.circular ?? "")
                 break
             case .failure(_):
                 ViewCycleManager.iterationLibraWaddie()
@@ -360,18 +360,18 @@ extension QcbHandleViewController: UIImagePickerControllerDelegate, UINavigation
                     "bajada": "11",
                     "enthusiastic": labeEnthusiastic]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/actualSexes", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/sexes", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
+                if ["0", "00"].contains(success.wedge) {
                     self.dismiss(animated: true) {
                         self.alphabetizeZahalTabassaran()
                     }
                     ScroPortionPointConfig.pointToPageWithModel(with: "3", discreteKstime: backwardTime, jstime: ServerSideDeviceInfo.currentTimestamp)
                 }
-                ToastManagerConfig.showToastText(form: unqualifiedView, message: success.chainCircular ?? "")
+                ToastManagerConfig.showToastText(form: unqualifiedView, message: success.circular ?? "")
                 break
             case .failure(_):
                 break
@@ -381,20 +381,20 @@ extension QcbHandleViewController: UIImagePickerControllerDelegate, UINavigation
     
     private func alphabetizeZahalTabassaran() {
         ViewCycleManager.showLoading()
-        let jaboticabaBarricaded = self.model.value?.yachtswomanEnlarged?.patternOrifice ?? ""
-        let dict = ["barricaded": jaboticabaBarricaded,
+        let barricaded = self.model.value?.enlarged?.orifice ?? ""
+        let dict = ["barricaded": barricaded,
                     "vitaman": "c",
                     "macdown": "1"]
         let man = NetworkRequstManager()
-        man.multipartFormDataRequest(endpoint: "/surely/valueCordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
+        man.multipartFormDataRequest(endpoint: "/surely/cordillera", parameters: dict, responseType: BaseModel.self) { [weak self] result in
             ViewCycleManager.iterationLibraWaddie()
             switch result {
             case .success(let success):
                 guard let self = self else { return }
-                if ["0", "00"].contains(success.rabbiWedge) {
-                    if let model = success.net?.dereferenceDeadly {
-                        self.isSuccess.accept(model.graphStrength ?? 0)
-                        let iconUrl = model.alphabeticallySucking ?? ""
+                if ["0", "00"].contains(success.wedge) {
+                    if let model = success.net?.deadly {
+                        self.isSuccess.accept(model.strength ?? 0)
+                        let iconUrl = model.sucking ?? ""
                         if let url = URL(string: iconUrl) {
                             self.triangulationView.af.setImage(withURL: url)
                         }
