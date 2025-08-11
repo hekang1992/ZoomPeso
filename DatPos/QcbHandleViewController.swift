@@ -167,6 +167,13 @@ class QcbHandleViewController: OaklandLibidoViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.showImageSourceSelection()
+        }
+    }
+    
 }
 
 extension QcbHandleViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

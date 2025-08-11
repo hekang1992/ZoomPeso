@@ -8,123 +8,123 @@
 
 /* Begin PBXBuildFile section */
 		097C52BC9394E5EE9449F5DD /* Pods_DatPos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE8E7137EE54AFFC8A5EC4D /* Pods_DatPos.framework */; };
-		3C92AB4FE9E1E0964FF37003 /* unionFabledviewconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E6997E3AA8DE08F372FE9C /* unionFabledviewconfig.swift */; };
-		AD0E1FEF69624FF5D0116246 /* ExceptionZagUntitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2A9049A5F3373846F817A /* ExceptionZagUntitled.swift */; };
-		AC1930CD04097BBC492076BF /* nabobismXanthinuriaotherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B45F663613DEE70471090A /* nabobismXanthinuriaotherConfig.swift */; };
-		627547E56B2566B4EDA46E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C712D2586B8395B2F07584 /* AppDelegate.swift */; };
-		0ECC2023BDD228AE6037441F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584CB9677C4253A2E2B05517 /* Assets.xcassets */; };
-		C952A57C276989DC10D98E42 /* ArialBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ADA40A08B40F8CEC6F064A7 /* ArialBlack.ttf */; };
-		394C80C9F9B215C457396425 /* HaarlemWindowsOppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC190802ABF52F0FAE84A0 /* HaarlemWindowsOppDefine.swift */; };
-		1DB80A6D854852647F5C58C9 /* OaklandLibidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C6C5BC115154EDD3663A0 /* OaklandLibidoViewController.swift */; };
-		3DB249E59A5A8EE3149530A9 /* PixelDacianBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100E9E47C839F471416D03E /* PixelDacianBarController.swift */; };
-		2DF28F8258B1A71A98445D76 /* AssociatedScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF499B25DE83ED0494300B15 /* AssociatedScreenNavigationController.swift */; };
-		8BF9084905E3AE41EB8A9C38 /* FactoringLabelRequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709E14638BF28D824AB5F3C6 /* FactoringLabelRequestConfig.swift */; };
-		ACDD9AE73E8D4F9075B89064 /* FabledLookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F54F10FBDEF5B33646A931 /* FabledLookupViewController.swift */; };
-		44F8594908AE7ECD4EC68128 /* ChainHabanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC588B17CF180CDB8FD542 /* ChainHabanaViewController.swift */; };
-		FC8866AF11E503C78C0443A9 /* DacianCleanupViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C10E659625AF02112FAF1 /* DacianCleanupViewConfig.swift */; };
-		C8F49E3B836AAF6B6BAB82EE /* ImplementDefaultLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8710DC8313F495545EB5FA91 /* ImplementDefaultLoginView.swift */; };
-		A925E886EA1A91CC49D15714 /* CleanupCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FCF859C088E49F09943 /* CleanupCharacterViewController.swift */; };
-		5EE8DD56B4F72BA9A5B31036 /* EagreAdlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBBA441B257783F15E4E9 /* EagreAdlViewController.swift */; };
-		8DFD4E505E366FF2569AA430 /* ArgumentNabeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552875B0A73770DC7CA3370 /* ArgumentNabeViewController.swift */; };
-		9276D1F84111674B780B0202 /* CaballeroIncrementalHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E449C4EB0756A5DDB645AA80 /* CaballeroIncrementalHomeView.swift */; };
-		646486AB3CFD5E39E29D4DA9 /* JacalIabaFullyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F71D72BBCED8234524217 /* JacalIabaFullyModel.swift */; };
-		5B7815B2F23A34A5489CB080 /* GabbyAardvarkLoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7990F7EB8F9D35B415EE70 /* GabbyAardvarkLoginConfig.swift */; };
-		8A2D14F98E87F05B5171E01C /* ResultWindowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E4E2B8A4FB936294B2C420 /* ResultWindowViewCell.swift */; };
-		527649F5248A049331FB8AE8 /* DacoitMiddlewareLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9E0DAA634E42C188F00909 /* DacoitMiddlewareLogView.swift */; };
-		FFF2247B5A4F971E696818C4 /* RecursiveBugLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE8DF26DD7C40FC585714C /* RecursiveBugLogView.swift */; };
 		0E177746EC5D699A88D74C47 /* DacIdlDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AC5ED8337787779FD71F66 /* DacIdlDateView.swift */; };
-		BCD99F80BD87D3A39D7FE40A /* ImplementationBabaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9801D7C44D5CBB89C7BBF9D0 /* ImplementationBabaViewCell.swift */; };
-		80D60380F42FB038F88226FA /* TupleJacamarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208E88134729EA05EA5D339 /* TupleJacamarViewCell.swift */; };
-		6DAE1A7486B4980B61285464 /* UbietyUawEnmuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B0A021D8A9840EC372582 /* UbietyUawEnmuView.swift */; };
-		97546A13BA636BF6BA8C574C /* XanthinAssociativeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4190D40E57A69D58A1FBEC73 /* XanthinAssociativeViewCell.swift */; };
-		D9886CDC0BF88C94E39E4760 /* UbaVirtualobjMeraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978C043AC9D914911B4ECBF /* UbaVirtualobjMeraView.swift */; };
-		721682F240C99BB4D78D4407 /* OperatingRecordMeraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1294F7E0CE4997B709A7B /* OperatingRecordMeraCell.swift */; };
-		2CDB97B7AF39904413AA5B42 /* DispidCandidateThreeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AF544FCC66F5876F98A244 /* DispidCandidateThreeConfig.swift */; };
+		0ECC2023BDD228AE6037441F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 584CB9677C4253A2E2B05517 /* Assets.xcassets */; };
+		0F21305E91A46CCD93FBBBDE /* FabricantTabbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B0D2B21D4324DBD6AB849 /* FabricantTabbyViewController.swift */; };
 		1041D982169C6078F3A06ADF /* RightDemarshalSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8900F753844139C70439E /* RightDemarshalSubView.swift */; };
-		CB55940F4E5656BFFA18AC8D /* XanthineDnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976E4D9AD7A98F1C574506CA /* XanthineDnaViewController.swift */; };
-		8160D64373D837A4496778AE /* XanthinFabricateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5ED730C3BB48D573090F8 /* XanthinFabricateGuideView.swift */; };
-		95D4C0C19A9B2CADA830B4AA /* LibertineXanthicLocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3172CF577552758604D26F /* LibertineXanthicLocationConfig.swift */; };
-		86290ADCCD394DC0F8A39726 /* ServerSideDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AA77AD40FFA143754789EC /* ServerSideDeviceInfo.swift */; };
+		1DB80A6D854852647F5C58C9 /* OaklandLibidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C6C5BC115154EDD3663A0 /* OaklandLibidoViewController.swift */; };
 		240E56BCF084FEEAC25B9B82 /* BaseModifierListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D789C89F0846FC827AD5D19 /* BaseModifierListView.swift */; };
 		24471C247B7CC9A693E1F155 /* MultiuserIntersectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AF09FCAF1B978598CEBEC /* MultiuserIntersectionViewCell.swift */; };
-		B795A3457ACED95432828348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F4DAE5324E9303409EAC4C /* LaunchScreen.storyboard */; };
-		7003A6249373D9B6BBCD9F82 /* SarapeFabliauViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10849B8189EF3CB88632375 /* SarapeFabliauViewController.swift */; };
-		D81E6A45485BDC9F2CB044EE /* ZaguanTaberdarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AC7902874EA5F3FAA7704 /* ZaguanTaberdarViewController.swift */; };
 		2BF9B6DFC02F14C5A510D3A7 /* RecordJacarandaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436058B4137657C0BAC3FE1 /* RecordJacarandaViewController.swift */; };
-		0F21305E91A46CCD93FBBBDE /* FabricantTabbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B0D2B21D4324DBD6AB849 /* FabricantTabbyViewController.swift */; };
-		E9BAC944F5ED5660C937CF61 /* InfrastructureUbicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CD58FBB2949D99827F376 /* InfrastructureUbicationViewController.swift */; };
-		548545B63C5648F3598B431A /* InfrastructureJabotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8306206482445B9BBD29BF /* InfrastructureJabotViewController.swift */; };
+		2CDB97B7AF39904413AA5B42 /* DispidCandidateThreeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AF544FCC66F5876F98A244 /* DispidCandidateThreeConfig.swift */; };
+		2DF28F8258B1A71A98445D76 /* AssociatedScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF499B25DE83ED0494300B15 /* AssociatedScreenNavigationController.swift */; };
 		3633D40F65BC87E2D4B6DE1C /* KaffeeklatschFiniteHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4325538F5E94C530DAAAA7 /* KaffeeklatschFiniteHeadView.swift */; };
-		6D2A1B8B64070CE29BB62C48 /* DelegationRecordsetCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C608E703D27A5506AB43054A /* DelegationRecordsetCenterView.swift */; };
-		BFDE60684C9BCD0281788D9E /* ForwardZahalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40062BFEA84110A8606E8ADE /* ForwardZahalViewController.swift */; };
+		394C80C9F9B215C457396425 /* HaarlemWindowsOppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFC190802ABF52F0FAE84A0 /* HaarlemWindowsOppDefine.swift */; };
+		3C92AB4FE9E1E0964FF37003 /* unionFabledviewconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E6997E3AA8DE08F372FE9C /* unionFabledviewconfig.swift */; };
+		3DB249E59A5A8EE3149530A9 /* PixelDacianBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100E9E47C839F471416D03E /* PixelDacianBarController.swift */; };
+		44F8594908AE7ECD4EC68128 /* ChainHabanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC588B17CF180CDB8FD542 /* ChainHabanaViewController.swift */; };
+		527649F5248A049331FB8AE8 /* DacoitMiddlewareLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9E0DAA634E42C188F00909 /* DacoitMiddlewareLogView.swift */; };
+		548545B63C5648F3598B431A /* InfrastructureJabotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8306206482445B9BBD29BF /* InfrastructureJabotViewController.swift */; };
 		575BA8E5B84A4BD1083072AB /* ThinLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3BFBF7E317BFE37E8CD49 /* ThinLabelViewController.swift */; };
-		8506792568FBA38080F958CA /* QanonNabobshipViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457C0C38D6E3994D0044330F /* QanonNabobshipViewCell.swift */; };
+		5B7815B2F23A34A5489CB080 /* GabbyAardvarkLoginConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7990F7EB8F9D35B415EE70 /* GabbyAardvarkLoginConfig.swift */; };
+		5EE8DD56B4F72BA9A5B31036 /* EagreAdlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBBA441B257783F15E4E9 /* EagreAdlViewController.swift */; };
+		627547E56B2566B4EDA46E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C712D2586B8395B2F07584 /* AppDelegate.swift */; };
+		646486AB3CFD5E39E29D4DA9 /* JacalIabaFullyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F71D72BBCED8234524217 /* JacalIabaFullyModel.swift */; };
+		6D2A1B8B64070CE29BB62C48 /* DelegationRecordsetCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C608E703D27A5506AB43054A /* DelegationRecordsetCenterView.swift */; };
+		6DAE1A7486B4980B61285464 /* UbietyUawEnmuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B0A021D8A9840EC372582 /* UbietyUawEnmuView.swift */; };
+		7003A6249373D9B6BBCD9F82 /* SarapeFabliauViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10849B8189EF3CB88632375 /* SarapeFabliauViewController.swift */; };
+		721682F240C99BB4D78D4407 /* OperatingRecordMeraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE1294F7E0CE4997B709A7B /* OperatingRecordMeraCell.swift */; };
+		80D60380F42FB038F88226FA /* TupleJacamarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208E88134729EA05EA5D339 /* TupleJacamarViewCell.swift */; };
+		8160D64373D837A4496778AE /* XanthinFabricateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5ED730C3BB48D573090F8 /* XanthinFabricateGuideView.swift */; };
 		85029F5817DA12F0BD782865 /* QcbHandleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D666863173B060CBC2C6423 /* QcbHandleViewController.swift */; };
+		8506792568FBA38080F958CA /* QanonNabobshipViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457C0C38D6E3994D0044330F /* QanonNabobshipViewCell.swift */; };
+		86290ADCCD394DC0F8A39726 /* ServerSideDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AA77AD40FFA143754789EC /* ServerSideDeviceInfo.swift */; };
+		8A2D14F98E87F05B5171E01C /* ResultWindowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E4E2B8A4FB936294B2C420 /* ResultWindowViewCell.swift */; };
+		8BF9084905E3AE41EB8A9C38 /* FactoringLabelRequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709E14638BF28D824AB5F3C6 /* FactoringLabelRequestConfig.swift */; };
 		8CE0EE8E7F866C69454B812B /* TriggerTabassaranOccupyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B320A49A19A6F1AB9F5DD3 /* TriggerTabassaranOccupyConfig.swift */; };
+		8DFD4E505E366FF2569AA430 /* ArgumentNabeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552875B0A73770DC7CA3370 /* ArgumentNabeViewController.swift */; };
+		9276D1F84111674B780B0202 /* CaballeroIncrementalHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E449C4EB0756A5DDB645AA80 /* CaballeroIncrementalHomeView.swift */; };
+		95D4C0C19A9B2CADA830B4AA /* LibertineXanthicLocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3172CF577552758604D26F /* LibertineXanthicLocationConfig.swift */; };
+		97546A13BA636BF6BA8C574C /* XanthinAssociativeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4190D40E57A69D58A1FBEC73 /* XanthinAssociativeViewCell.swift */; };
+		A925E886EA1A91CC49D15714 /* CleanupCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FCF859C088E49F09943 /* CleanupCharacterViewController.swift */; };
+		AC1930CD04097BBC492076BF /* nabobismXanthinuriaotherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B45F663613DEE70471090A /* nabobismXanthinuriaotherConfig.swift */; };
+		ACDD9AE73E8D4F9075B89064 /* FabledLookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F54F10FBDEF5B33646A931 /* FabledLookupViewController.swift */; };
+		AD0E1FEF69624FF5D0116246 /* ExceptionZagUntitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2A9049A5F3373846F817A /* ExceptionZagUntitled.swift */; };
 		B77408DA1B6364A560B1D645 /* KafAttributeDrawerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16087C340AD759E6B2E8242 /* KafAttributeDrawerConfig.swift */; };
+		B795A3457ACED95432828348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F4DAE5324E9303409EAC4C /* LaunchScreen.storyboard */; };
+		BCD99F80BD87D3A39D7FE40A /* ImplementationBabaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9801D7C44D5CBB89C7BBF9D0 /* ImplementationBabaViewCell.swift */; };
+		BFDE60684C9BCD0281788D9E /* ForwardZahalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40062BFEA84110A8606E8ADE /* ForwardZahalViewController.swift */; };
+		C8F49E3B836AAF6B6BAB82EE /* ImplementDefaultLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8710DC8313F495545EB5FA91 /* ImplementDefaultLoginView.swift */; };
+		C952A57C276989DC10D98E42 /* ArialBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1ADA40A08B40F8CEC6F064A7 /* ArialBlack.ttf */; };
+		CB55940F4E5656BFFA18AC8D /* XanthineDnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976E4D9AD7A98F1C574506CA /* XanthineDnaViewController.swift */; };
+		D81E6A45485BDC9F2CB044EE /* ZaguanTaberdarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2AC7902874EA5F3FAA7704 /* ZaguanTaberdarViewController.swift */; };
+		D9886CDC0BF88C94E39E4760 /* UbaVirtualobjMeraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978C043AC9D914911B4ECBF /* UbaVirtualobjMeraView.swift */; };
+		E9BAC944F5ED5660C937CF61 /* InfrastructureUbicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806CD58FBB2949D99827F376 /* InfrastructureUbicationViewController.swift */; };
+		FC8866AF11E503C78C0443A9 /* DacianCleanupViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C10E659625AF02112FAF1 /* DacianCleanupViewConfig.swift */; };
+		FFF2247B5A4F971E696818C4 /* RecursiveBugLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE8DF26DD7C40FC585714C /* RecursiveBugLogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6CE8E7137EE54AFFC8A5EC4D /* Pods_DatPos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatPos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6006D4026B0E3D178DD97EA5 /* Pods-DatPos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatPos.debug.xcconfig"; path = "Target Support Files/Pods-DatPos/Pods-DatPos.debug.xcconfig"; sourceTree = "<group>"; };
-		85E6997E3AA8DE08F372FE9C /* unionFabledviewconfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unionFabledviewconfig.swift; sourceTree = "<group>"; };
-		E5D2A9049A5F3373846F817A /* ExceptionZagUntitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionZagUntitled.swift; sourceTree = "<group>"; };
-		A3B45F663613DEE70471090A /* nabobismXanthinuriaotherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nabobismXanthinuriaotherConfig.swift; sourceTree = "<group>"; };
-		67D14F8897E1C96712CE2F0E /* DatPos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatPos.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7C712D2586B8395B2F07584 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		584CB9677C4253A2E2B05517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8CC3234242FF4514932D2202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		042D14A9EC1BFB8D5BD5B61F /* Pods-DatPos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatPos.release.xcconfig"; path = "Target Support Files/Pods-DatPos/Pods-DatPos.release.xcconfig"; sourceTree = "<group>"; };
+		05A3BFBF7E317BFE37E8CD49 /* ThinLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinLabelViewController.swift; sourceTree = "<group>"; };
 		1ADA40A08B40F8CEC6F064A7 /* ArialBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArialBlack.ttf; sourceTree = "<group>"; };
-		3FFC190802ABF52F0FAE84A0 /* HaarlemWindowsOppDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaarlemWindowsOppDefine.swift; sourceTree = "<group>"; };
+		22B320A49A19A6F1AB9F5DD3 /* TriggerTabassaranOccupyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerTabassaranOccupyConfig.swift; sourceTree = "<group>"; };
 		257C6C5BC115154EDD3663A0 /* OaklandLibidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OaklandLibidoViewController.swift; sourceTree = "<group>"; };
-		A100E9E47C839F471416D03E /* PixelDacianBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelDacianBarController.swift; sourceTree = "<group>"; };
-		EF499B25DE83ED0494300B15 /* AssociatedScreenNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedScreenNavigationController.swift; sourceTree = "<group>"; };
-		709E14638BF28D824AB5F3C6 /* FactoringLabelRequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoringLabelRequestConfig.swift; sourceTree = "<group>"; };
-		92F54F10FBDEF5B33646A931 /* FabledLookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabledLookupViewController.swift; sourceTree = "<group>"; };
-		49BC588B17CF180CDB8FD542 /* ChainHabanaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHabanaViewController.swift; sourceTree = "<group>"; };
-		AD6C10E659625AF02112FAF1 /* DacianCleanupViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DacianCleanupViewConfig.swift; sourceTree = "<group>"; };
-		8710DC8313F495545EB5FA91 /* ImplementDefaultLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImplementDefaultLoginView.swift; sourceTree = "<group>"; };
-		ECCF2FCF859C088E49F09943 /* CleanupCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanupCharacterViewController.swift; sourceTree = "<group>"; };
-		A21EBBA441B257783F15E4E9 /* EagreAdlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EagreAdlViewController.swift; sourceTree = "<group>"; };
-		B552875B0A73770DC7CA3370 /* ArgumentNabeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentNabeViewController.swift; sourceTree = "<group>"; };
-		E449C4EB0756A5DDB645AA80 /* CaballeroIncrementalHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaballeroIncrementalHomeView.swift; sourceTree = "<group>"; };
 		265F71D72BBCED8234524217 /* JacalIabaFullyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JacalIabaFullyModel.swift; sourceTree = "<group>"; };
-		5F7990F7EB8F9D35B415EE70 /* GabbyAardvarkLoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GabbyAardvarkLoginConfig.swift; sourceTree = "<group>"; };
-		97E4E2B8A4FB936294B2C420 /* ResultWindowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultWindowViewCell.swift; sourceTree = "<group>"; };
-		AF9E0DAA634E42C188F00909 /* DacoitMiddlewareLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DacoitMiddlewareLogView.swift; sourceTree = "<group>"; };
-		E8BE8DF26DD7C40FC585714C /* RecursiveBugLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveBugLogView.swift; sourceTree = "<group>"; };
-		64AC5ED8337787779FD71F66 /* DacIdlDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DacIdlDateView.swift; sourceTree = "<group>"; };
-		9801D7C44D5CBB89C7BBF9D0 /* ImplementationBabaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImplementationBabaViewCell.swift; sourceTree = "<group>"; };
-		B208E88134729EA05EA5D339 /* TupleJacamarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleJacamarViewCell.swift; sourceTree = "<group>"; };
-		975B0A021D8A9840EC372582 /* UbietyUawEnmuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbietyUawEnmuView.swift; sourceTree = "<group>"; };
-		4190D40E57A69D58A1FBEC73 /* XanthinAssociativeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XanthinAssociativeViewCell.swift; sourceTree = "<group>"; };
-		5978C043AC9D914911B4ECBF /* UbaVirtualobjMeraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbaVirtualobjMeraView.swift; sourceTree = "<group>"; };
-		FEE1294F7E0CE4997B709A7B /* OperatingRecordMeraCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatingRecordMeraCell.swift; sourceTree = "<group>"; };
-		85AF544FCC66F5876F98A244 /* DispidCandidateThreeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispidCandidateThreeConfig.swift; sourceTree = "<group>"; };
-		B8C8900F753844139C70439E /* RightDemarshalSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDemarshalSubView.swift; sourceTree = "<group>"; };
-		976E4D9AD7A98F1C574506CA /* XanthineDnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XanthineDnaViewController.swift; sourceTree = "<group>"; };
-		A7A5ED730C3BB48D573090F8 /* XanthinFabricateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XanthinFabricateGuideView.swift; sourceTree = "<group>"; };
-		8C3172CF577552758604D26F /* LibertineXanthicLocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibertineXanthicLocationConfig.swift; sourceTree = "<group>"; };
-		E5AA77AD40FFA143754789EC /* ServerSideDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSideDeviceInfo.swift; sourceTree = "<group>"; };
-		9B940CAE9B3A0146B4EFDDE9 /* DatPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DatPos.entitlements; sourceTree = "<group>"; };
 		3D789C89F0846FC827AD5D19 /* BaseModifierListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModifierListView.swift; sourceTree = "<group>"; };
-		819AF09FCAF1B978598CEBEC /* MultiuserIntersectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiuserIntersectionViewCell.swift; sourceTree = "<group>"; };
-		70F4DAE5324E9303409EAC4C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A10849B8189EF3CB88632375 /* SarapeFabliauViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SarapeFabliauViewController.swift; sourceTree = "<group>"; };
-		DA2AC7902874EA5F3FAA7704 /* ZaguanTaberdarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaguanTaberdarViewController.swift; sourceTree = "<group>"; };
+		3FFC190802ABF52F0FAE84A0 /* HaarlemWindowsOppDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaarlemWindowsOppDefine.swift; sourceTree = "<group>"; };
+		40062BFEA84110A8606E8ADE /* ForwardZahalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardZahalViewController.swift; sourceTree = "<group>"; };
+		4190D40E57A69D58A1FBEC73 /* XanthinAssociativeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XanthinAssociativeViewCell.swift; sourceTree = "<group>"; };
+		457C0C38D6E3994D0044330F /* QanonNabobshipViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QanonNabobshipViewCell.swift; sourceTree = "<group>"; };
+		49BC588B17CF180CDB8FD542 /* ChainHabanaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHabanaViewController.swift; sourceTree = "<group>"; };
+		4C4325538F5E94C530DAAAA7 /* KaffeeklatschFiniteHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaffeeklatschFiniteHeadView.swift; sourceTree = "<group>"; };
 		5436058B4137657C0BAC3FE1 /* RecordJacarandaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordJacarandaViewController.swift; sourceTree = "<group>"; };
+		584CB9677C4253A2E2B05517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5978C043AC9D914911B4ECBF /* UbaVirtualobjMeraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbaVirtualobjMeraView.swift; sourceTree = "<group>"; };
+		5F7990F7EB8F9D35B415EE70 /* GabbyAardvarkLoginConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GabbyAardvarkLoginConfig.swift; sourceTree = "<group>"; };
+		6006D4026B0E3D178DD97EA5 /* Pods-DatPos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatPos.debug.xcconfig"; path = "Target Support Files/Pods-DatPos/Pods-DatPos.debug.xcconfig"; sourceTree = "<group>"; };
+		64AC5ED8337787779FD71F66 /* DacIdlDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DacIdlDateView.swift; sourceTree = "<group>"; };
+		67D14F8897E1C96712CE2F0E /* DatPos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatPos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CE8E7137EE54AFFC8A5EC4D /* Pods_DatPos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatPos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		709E14638BF28D824AB5F3C6 /* FactoringLabelRequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoringLabelRequestConfig.swift; sourceTree = "<group>"; };
+		70F4DAE5324E9303409EAC4C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B7B0D2B21D4324DBD6AB849 /* FabricantTabbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricantTabbyViewController.swift; sourceTree = "<group>"; };
 		806CD58FBB2949D99827F376 /* InfrastructureUbicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfrastructureUbicationViewController.swift; sourceTree = "<group>"; };
-		ED8306206482445B9BBD29BF /* InfrastructureJabotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfrastructureJabotViewController.swift; sourceTree = "<group>"; };
-		4C4325538F5E94C530DAAAA7 /* KaffeeklatschFiniteHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaffeeklatschFiniteHeadView.swift; sourceTree = "<group>"; };
-		C608E703D27A5506AB43054A /* DelegationRecordsetCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationRecordsetCenterView.swift; sourceTree = "<group>"; };
-		40062BFEA84110A8606E8ADE /* ForwardZahalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardZahalViewController.swift; sourceTree = "<group>"; };
-		05A3BFBF7E317BFE37E8CD49 /* ThinLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinLabelViewController.swift; sourceTree = "<group>"; };
-		457C0C38D6E3994D0044330F /* QanonNabobshipViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QanonNabobshipViewCell.swift; sourceTree = "<group>"; };
+		819AF09FCAF1B978598CEBEC /* MultiuserIntersectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiuserIntersectionViewCell.swift; sourceTree = "<group>"; };
+		85AF544FCC66F5876F98A244 /* DispidCandidateThreeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispidCandidateThreeConfig.swift; sourceTree = "<group>"; };
+		85E6997E3AA8DE08F372FE9C /* unionFabledviewconfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unionFabledviewconfig.swift; sourceTree = "<group>"; };
+		8710DC8313F495545EB5FA91 /* ImplementDefaultLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImplementDefaultLoginView.swift; sourceTree = "<group>"; };
+		8C3172CF577552758604D26F /* LibertineXanthicLocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibertineXanthicLocationConfig.swift; sourceTree = "<group>"; };
+		8CC3234242FF4514932D2202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D666863173B060CBC2C6423 /* QcbHandleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QcbHandleViewController.swift; sourceTree = "<group>"; };
-		22B320A49A19A6F1AB9F5DD3 /* TriggerTabassaranOccupyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerTabassaranOccupyConfig.swift; sourceTree = "<group>"; };
+		92F54F10FBDEF5B33646A931 /* FabledLookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabledLookupViewController.swift; sourceTree = "<group>"; };
+		975B0A021D8A9840EC372582 /* UbietyUawEnmuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbietyUawEnmuView.swift; sourceTree = "<group>"; };
+		976E4D9AD7A98F1C574506CA /* XanthineDnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XanthineDnaViewController.swift; sourceTree = "<group>"; };
+		97E4E2B8A4FB936294B2C420 /* ResultWindowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultWindowViewCell.swift; sourceTree = "<group>"; };
+		9801D7C44D5CBB89C7BBF9D0 /* ImplementationBabaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImplementationBabaViewCell.swift; sourceTree = "<group>"; };
+		9B940CAE9B3A0146B4EFDDE9 /* DatPos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DatPos.entitlements; sourceTree = "<group>"; };
+		A100E9E47C839F471416D03E /* PixelDacianBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelDacianBarController.swift; sourceTree = "<group>"; };
+		A10849B8189EF3CB88632375 /* SarapeFabliauViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SarapeFabliauViewController.swift; sourceTree = "<group>"; };
+		A21EBBA441B257783F15E4E9 /* EagreAdlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EagreAdlViewController.swift; sourceTree = "<group>"; };
+		A3B45F663613DEE70471090A /* nabobismXanthinuriaotherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nabobismXanthinuriaotherConfig.swift; sourceTree = "<group>"; };
+		A7A5ED730C3BB48D573090F8 /* XanthinFabricateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XanthinFabricateGuideView.swift; sourceTree = "<group>"; };
+		A7C712D2586B8395B2F07584 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD6C10E659625AF02112FAF1 /* DacianCleanupViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DacianCleanupViewConfig.swift; sourceTree = "<group>"; };
+		AF9E0DAA634E42C188F00909 /* DacoitMiddlewareLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DacoitMiddlewareLogView.swift; sourceTree = "<group>"; };
 		B16087C340AD759E6B2E8242 /* KafAttributeDrawerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KafAttributeDrawerConfig.swift; sourceTree = "<group>"; };
-		042D14A9EC1BFB8D5BD5B61F /* Pods-DatPos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatPos.release.xcconfig"; path = "Target Support Files/Pods-DatPos/Pods-DatPos.release.xcconfig"; sourceTree = "<group>"; };
+		B208E88134729EA05EA5D339 /* TupleJacamarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleJacamarViewCell.swift; sourceTree = "<group>"; };
+		B552875B0A73770DC7CA3370 /* ArgumentNabeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentNabeViewController.swift; sourceTree = "<group>"; };
+		B8C8900F753844139C70439E /* RightDemarshalSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDemarshalSubView.swift; sourceTree = "<group>"; };
+		C608E703D27A5506AB43054A /* DelegationRecordsetCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationRecordsetCenterView.swift; sourceTree = "<group>"; };
+		DA2AC7902874EA5F3FAA7704 /* ZaguanTaberdarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaguanTaberdarViewController.swift; sourceTree = "<group>"; };
+		E449C4EB0756A5DDB645AA80 /* CaballeroIncrementalHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaballeroIncrementalHomeView.swift; sourceTree = "<group>"; };
+		E5AA77AD40FFA143754789EC /* ServerSideDeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSideDeviceInfo.swift; sourceTree = "<group>"; };
+		E5D2A9049A5F3373846F817A /* ExceptionZagUntitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionZagUntitled.swift; sourceTree = "<group>"; };
+		E8BE8DF26DD7C40FC585714C /* RecursiveBugLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveBugLogView.swift; sourceTree = "<group>"; };
+		ECCF2FCF859C088E49F09943 /* CleanupCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanupCharacterViewController.swift; sourceTree = "<group>"; };
+		ED8306206482445B9BBD29BF /* InfrastructureJabotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfrastructureJabotViewController.swift; sourceTree = "<group>"; };
+		EF499B25DE83ED0494300B15 /* AssociatedScreenNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedScreenNavigationController.swift; sourceTree = "<group>"; };
+		FEE1294F7E0CE4997B709A7B /* OperatingRecordMeraCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatingRecordMeraCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +139,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		285ADB4B1D29B2B89D4A9466 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67D14F8897E1C96712CE2F0E /* DatPos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41BB3CE00397CB6840B7F4CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CE8E7137EE54AFFC8A5EC4D /* Pods_DatPos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54CA0E79BA5F044A7C74609E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6006D4026B0E3D178DD97EA5 /* Pods-DatPos.debug.xcconfig */,
+				042D14A9EC1BFB8D5BD5B61F /* Pods-DatPos.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A126DB56D24DCBC46F94A6F1 = {
 			isa = PBXGroup;
 			children = (
@@ -147,14 +172,6 @@
 				54CA0E79BA5F044A7C74609E /* Pods */,
 				41BB3CE00397CB6840B7F4CF /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		285ADB4B1D29B2B89D4A9466 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				67D14F8897E1C96712CE2F0E /* DatPos.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C02ACABD68D4D1EC7C49BAAF /* DatPos */ = {
@@ -218,23 +235,6 @@
 				92F54F10FBDEF5B33646A931 /* FabledLookupViewController.swift */,
 			);
 			path = DatPos;
-			sourceTree = "<group>";
-		};
-		54CA0E79BA5F044A7C74609E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6006D4026B0E3D178DD97EA5 /* Pods-DatPos.debug.xcconfig */,
-				042D14A9EC1BFB8D5BD5B61F /* Pods-DatPos.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		41BB3CE00397CB6840B7F4CF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6CE8E7137EE54AFFC8A5EC4D /* Pods_DatPos.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,98 +414,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C4828AABD6037A5A19F828B0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6006D4026B0E3D178DD97EA5 /* Pods-DatPos.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DatPos/DatPos.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8K9YQ3M42C;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DatPos/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
-				INFOPLIST_KEY_NSCameraUsageDescription = "After enabling camera permissions, you can directly take ID photos through ZoomMeso, simplifying the upload process. All shooting content will be encrypted and stored.";
-				INFOPLIST_KEY_NSContactsUsageDescription = "To expedite the application process, ZoomMeso needs to obtain contact book permissions to automatically fill in contact information. We only read necessary information and will not disclose it.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ZoomMeso needs to obtain your location information in order to recommend nearby service outlets for you. Your location data will be encrypted and can be turned off at any time in Settings Privacy Location Services.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ZoomMeso needs to access your photo album in order to quickly upload saved ID photos. All uploaded files will be encrypted to ensure security.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "ZoomMeso uses advertising identifiers to optimize service recommendations. You can turn off personalized recommendations at any time in Settings Privacy Tracking.";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hkdev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = hkdevpro;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		52684CC7965732AEFEB575E3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 042D14A9EC1BFB8D5BD5B61F /* Pods-DatPos.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DatPos/DatPos.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8K9YQ3M42C;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DatPos/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
-				INFOPLIST_KEY_NSCameraUsageDescription = "After enabling camera permissions, you can directly take ID photos through ZoomMeso, simplifying the upload process. All shooting content will be encrypted and stored.";
-				INFOPLIST_KEY_NSContactsUsageDescription = "To expedite the application process, ZoomMeso needs to obtain contact book permissions to automatically fill in contact information. We only read necessary information and will not disclose it.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ZoomMeso needs to obtain your location information in order to recommend nearby service outlets for you. Your location data will be encrypted and can be turned off at any time in Settings Privacy Location Services.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ZoomMeso needs to access your photo album in order to quickly upload saved ID photos. All uploaded files will be encrypted to ensure security.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "ZoomMeso uses advertising identifiers to optimize service recommendations. You can turn off personalized recommendations at any time in Settings Privacy Tracking.";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hkdev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = hkdevpro;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		12588996FA4B4F3B496F4651 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -569,6 +477,52 @@
 			};
 			name = Debug;
 		};
+		52684CC7965732AEFEB575E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 042D14A9EC1BFB8D5BD5B61F /* Pods-DatPos.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DatPos/DatPos.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8K9YQ3M42C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DatPos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
+				INFOPLIST_KEY_NSCameraUsageDescription = "To ensure efficient authentication, Boost Cash requires access to your camera. This permission is only used for ID shooting and facial recognition verification, and all images will be encrypted and stored.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "To improve the risk control system, Boost Cash needs to access your address book to set up secure contacts. We only collect contact information that you actively choose and strictly follow the principle of minimum data collection.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Boost Cash needs to obtain your location information to intelligently provide more convenient services and ensure transaction security. We only obtain location data when you use the service and do not track it continuously. You can turn off this permission at any time in your phone settings.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Boost Cash applies for album access permission, allowing you to quickly upload stored application materials. You can precisely control the sharing scope by selecting only the files you need to use.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Boost Cash uses advertising identifiers to optimize financial product recommendations and provide you with more accurate services. You can manage personalized ads at any time through \"Settings - Privacy - Tracking\".";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hkdev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = hkdevpro;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		66D6B5B67074F5B883066BA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -625,23 +579,69 @@
 			};
 			name = Release;
 		};
+		C4828AABD6037A5A19F828B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6006D4026B0E3D178DD97EA5 /* Pods-DatPos.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DatPos/DatPos.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8K9YQ3M42C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DatPos/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Boost Cash";
+				INFOPLIST_KEY_NSCameraUsageDescription = "To ensure efficient authentication, Boost Cash requires access to your camera. This permission is only used for ID shooting and facial recognition verification, and all images will be encrypted and stored.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "To improve the risk control system, Boost Cash needs to access your address book to set up secure contacts. We only collect contact information that you actively choose and strictly follow the principle of minimum data collection.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Boost Cash needs to obtain your location information to intelligently provide more convenient services and ensure transaction security. We only obtain location data when you use the service and do not track it continuously. You can turn off this permission at any time in your phone settings.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Boost Cash applies for album access permission, allowing you to quickly upload stored application materials. You can precisely control the sharing scope by selecting only the files you need to use.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Boost Cash uses advertising identifiers to optimize financial product recommendations and provide you with more accurate services. You can manage personalized ads at any time through \"Settings - Privacy - Tracking\".";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hkdev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = hkdevpro;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B7F7E7949CCBD0BCDB3DAE49 /* Build configuration list for PBXProject "DatPos" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				12588996FA4B4F3B496F4651 /* Debug */,
-				66D6B5B67074F5B883066BA9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7A79B4B1CB9574BF4E28AF71 /* Build configuration list for PBXNativeTarget "DatPos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4828AABD6037A5A19F828B0 /* Debug */,
 				52684CC7965732AEFEB575E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7F7E7949CCBD0BCDB3DAE49 /* Build configuration list for PBXProject "DatPos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12588996FA4B4F3B496F4651 /* Debug */,
+				66D6B5B67074F5B883066BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

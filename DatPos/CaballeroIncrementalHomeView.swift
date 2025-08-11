@@ -180,23 +180,28 @@ class CaballeroIncrementalHomeView: BaseView {
             make.height.equalTo(25)
         }
         
-        pacesetterLabel.snp.makeConstraints { make in
-            make.top.equalTo(nabobessLabel.snp.bottom).offset(60.pix())
-            make.left.equalToSuperview().offset(41.pix())
-            make.height.equalTo(82.pix())
-        }
+        
         
         babassuLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(126.pix())
-            make.top.equalTo(nabobessLabel.snp.bottom).offset(33.pix())
+            make.top.equalTo(oamView.snp.top).offset(108.pix())
             make.height.equalTo(20.pix())
         }
         
         combinatorialLabel.snp.makeConstraints { make in
             make.left.equalTo(babassuLabel.snp.right).offset(20.pix())
-            make.top.equalTo(nabobessLabel.snp.bottom).offset(33.pix())
+            make.centerY.equalTo(babassuLabel.snp.centerY)
             make.height.equalTo(20.pix())
         }
+        
+        
+        pacesetterLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(132.pix())
+            make.left.equalToSuperview().offset(41.pix())
+            make.height.equalTo(82.pix())
+        }
+        
+        
         labialView.snp.makeConstraints { make in
             make.top.equalTo(oamView.snp.bottom).offset(-25)
             make.centerX.equalToSuperview()

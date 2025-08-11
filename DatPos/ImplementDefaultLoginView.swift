@@ -178,13 +178,13 @@ class ImplementDefaultLoginView: BaseView {
             make.left.right.bottom.equalToSuperview()
         }
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(paceView.snp.bottom)
+            make.top.equalTo(paceView.snp.bottom).offset(-90.pix())
             make.left.bottom.equalToSuperview()
             make.width.equalTo(SCREEN_WIDTH)
         }
         xanthinPhonelabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(33)
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(90.pix())
             make.width.equalTo(250)
         }
         deductionView.snp.makeConstraints { make in
@@ -241,7 +241,7 @@ class ImplementDefaultLoginView: BaseView {
             make.top.equalTo(schemaBtn.snp.bottom).offset(22)
             make.centerX.equalToSuperview().offset(14)
             make.height.equalTo(17)            
-            make.bottom.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-40.pix())
         }
         
         scrollView.addSubview(lateBtn)
