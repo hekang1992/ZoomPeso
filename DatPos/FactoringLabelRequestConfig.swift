@@ -11,7 +11,7 @@ enum AppURL {
     }
 }
 
-let habatsuUrl = "https://zpml.movefast-lending.com"
+let habatsuUrl = "https://bced.eascorp-defense.com"
 
 let BASE_URL = "\(habatsuUrl)/zigzag"
 

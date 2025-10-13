@@ -8,7 +8,7 @@ import AppTrackingTransparency
 
 let SHOWGUIDE: String = ""
 let dyc = "https://ph4-dc.oss-ap-southeast-1.ali"
-let cdc = "yuncs.com/zoom-peso/zpml.json"
+let cdc = "yuncs.com/zoom-peso/bced.json"
 class FabledLookupViewController: OaklandLibidoViewController {
     
     var cilButtons: [UIButton] = []
@@ -81,7 +81,7 @@ class FabledLookupViewController: OaklandLibidoViewController {
                 if self.index > self.yacareArray.count - 1 {
                     return
                 }
-                let iacuUrl = self.yacareArray[self.index]["zpp"] ?? ""
+                let iacuUrl = self.yacareArray[self.index]["bc"] ?? ""
                 UserDefaults.standard.set(iacuUrl, forKey: "baseUrl")
                 UserDefaults.standard.synchronize()
                 self.index += 1
