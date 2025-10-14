@@ -40,7 +40,7 @@ class CleanupCharacterViewController: OaklandLibidoViewController {
                 batchCallLibration()
         }
         
-        self.habatsuView.tableView.es.addInfiniteScrolling { [weak self] in
+        self.habatsuView.tableView.es.addPullToRefresh { [weak self] in
                 guard let self = self else { return }
                 sabaloExceptionUat()
                 batchCallLibration()

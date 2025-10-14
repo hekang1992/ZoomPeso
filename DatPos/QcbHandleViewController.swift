@@ -165,13 +165,10 @@ class QcbHandleViewController: OaklandLibidoViewController {
             }
         }).disposed(by: identifierBag)
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.showImageSourceSelection()
         }
+        
     }
     
 }
