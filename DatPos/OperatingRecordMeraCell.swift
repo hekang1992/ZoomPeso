@@ -46,13 +46,13 @@ class OperatingRecordMeraCell: BaseViewCell {
     }()
     
     lazy var rabbahLabel: UILabel = {
-        let rabbahLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssStr: "#FFFFFF")!, textAlignment: .center)
+        let rabbahLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssStr: "#FFFFFE")!, textAlignment: .center)
         rabbahLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-9 * Double.pi / 180))
         return rabbahLabel
     }()
     
     lazy var caballerLabel: UILabel = {
-        let caballerLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssStr: "#FFFFFF")!, textAlignment: .center)
+        let caballerLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14, weight: .medium), textColor: UIColor.init(cssStr: "#FFFFFE")!, textAlignment: .center)
         caballerLabel.transform = CGAffineTransform(rotationAngle: CGFloat(-9 * Double.pi / 180))
         return caballerLabel
     }()

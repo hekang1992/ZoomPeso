@@ -36,7 +36,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     
     lazy var fatherlessView: UIView = {
         let fatherlessView = UIView()
-        fatherlessView.backgroundColor = .init(cssStr: "#FAFAFA")
+        fatherlessView.backgroundColor = .init(cssStr: "#FAFAFB")
         fatherlessView.layer.cornerRadius = 10.bcPix()
         fatherlessView.layer.masksToBounds = true
         return fatherlessView
@@ -60,7 +60,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     
     lazy var zaftigView: UIView = {
         let zaftigView = UIView()
-        zaftigView.backgroundColor = .init(cssStr: "#FAFAFA")
+        zaftigView.backgroundColor = .init(cssStr: "#FAFAFB")
         zaftigView.layer.cornerRadius = 10.bcPix()
         zaftigView.layer.masksToBounds = true
         return zaftigView

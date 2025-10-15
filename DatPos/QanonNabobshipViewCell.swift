@@ -5,7 +5,7 @@ class QanonNabobshipViewCell: BaseViewCell {
     
     lazy var architectureView: UIView = {
         let architectureView = UIView()
-        architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
+        architectureView.backgroundColor = .init(cssStr: "#FAFAFB")
         architectureView.layer.cornerRadius = 10
         return architectureView
     }()

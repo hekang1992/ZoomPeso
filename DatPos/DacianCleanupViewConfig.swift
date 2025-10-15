@@ -18,8 +18,8 @@ class EmptyView: UIView {
     }()
     
     lazy var graphLabel: UILabel = {
-        let graphLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.bcPix(), weight: .medium), textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .center)
-        graphLabel.text = "You have no orders"
+        let graphLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.bcPix(), weight: .medium), textColor: .init(cssStr: "#FFFFFE")!, textAlignment: .center)
+        graphLabel.text = "You have " + "no orders"
         return graphLabel
     }()
     

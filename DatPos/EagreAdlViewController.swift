@@ -22,28 +22,24 @@ class EagreAdlViewController: OaklandLibidoViewController {
         
         self.listView.eagernessBlock = { [weak self] in
             guard let self = self else { return }
-            macInteroperabilityOptimizer()
-            self.uartStr = String(Int(2 + 2))
+            self.uartStr = String(Int(3 + 1))
             redrapeNabobRegular(from: "4")
         }
         
         self.listView.bestBlock = { [weak self] in
             guard let self = self else { return }
-            macInteroperabilityOptimizer()
-            self.uartStr = String(Int(4 + 3))
+            self.uartStr = String(Int(3 + 4))
             redrapeNabobRegular(from: "7")
         }
         
         self.listView.raffishBlock = { [weak self] in
             guard let self = self else { return }
-            macInteroperabilityOptimizer()
             self.uartStr = "6"
             redrapeNabobRegular(from: "6")
         }
         
         self.listView.betBlock = { [weak self] in
             guard let self = self else { return }
-            macInteroperabilityOptimizer()
             self.uartStr = "5"
             redrapeNabobRegular(from: "5")
         }
@@ -55,7 +51,6 @@ class EagreAdlViewController: OaklandLibidoViewController {
 
         self.listView.block = { [weak self] model in
             guard let self = self else { return }
-            macInteroperabilityOptimizer()
             let antenn = model.antenn ?? ""
             let model1 = netModel()
             model1.sucking = antenn

@@ -341,8 +341,4 @@ extension OaklandLibidoViewController {
         }
     }
     
-    func macInteroperabilityOptimizer() {
-        
-    }
-    
 }

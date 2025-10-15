@@ -122,7 +122,7 @@ class UbietyUawEnmuView: BaseView {
                 if defaultPath.row == row {
                     cell.architectureView.backgroundColor = .init(cssStr: "#FE5255")
                 }else {
-                    cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
+                    cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFB")
                 }
             }
         }.disposed(by: identifierBag)

@@ -211,7 +211,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
             if self.oakenGrand && self.select1IndexPath?.row == row {
                 cell.architectureView.backgroundColor = .init(cssStr: "#FE5255")
             }else {
-                cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
+                cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFB")
             }
         }.disposed(by: identifierBag)
         
@@ -222,7 +222,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
             if self.sessionGrand && self.select2IndexPath?.row == row {
                 cell.architectureView.backgroundColor = .init(cssStr: "#FE5255")
             }else {
-                cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
+                cell.architectureView.backgroundColor = .init(cssStr: "#FAFAFB")
             }
         }.disposed(by: identifierBag)
         
@@ -239,7 +239,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
             table2View.reloadData()
             if let iteratorPath = select1IndexPath {
                 if let uniqueCell = self.table1View.cellForRow(at: iteratorPath) as? QanonNabobshipViewCell {
-                    uniqueCell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
+                    uniqueCell.architectureView.backgroundColor = .init(cssStr: "#FAFAFB")
                 }
             }
             if let cell = self.table1View.cellForRow(at: indexPath) as? QanonNabobshipViewCell {
@@ -257,7 +257,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
             table1View.reloadData()
             if let iteratorPath = select2IndexPath {
                 if let uniqueCell = self.table2View.cellForRow(at: iteratorPath) as? QanonNabobshipViewCell {
-                    uniqueCell.architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
+                    uniqueCell.architectureView.backgroundColor = .init(cssStr: "#FAFAFB")
                 }
             }
             if let cell = self.table2View.cellForRow(at: indexPath) as? QanonNabobshipViewCell {

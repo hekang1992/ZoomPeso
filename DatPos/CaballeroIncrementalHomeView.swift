@@ -47,7 +47,7 @@ class CaballeroIncrementalHomeView: BaseView {
     }()
     
     lazy var pacesetterLabel: UILabel = {
-        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 50.bcPix())!, textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .left)
+        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 50.bcPix())!, textColor: .init(cssStr: "#FFFFFE")!, textAlignment: .left)
         return pacesetterLabel
     }()
     

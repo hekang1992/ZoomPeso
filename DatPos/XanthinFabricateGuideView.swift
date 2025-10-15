@@ -41,7 +41,7 @@ class XanthinFabricateGuideView: BaseView {
     }()
     
     lazy var itemLabel: UILabel = {
-        let itemLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18)!, textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .center)
+        let itemLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18)!, textColor: .init(cssStr: "#FFFFFE")!, textAlignment: .center)
         itemLabel.text = "Certifcation conditions"
         return itemLabel
     }()

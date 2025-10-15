@@ -21,7 +21,6 @@ class ArgumentNabeViewController: OaklandLibidoViewController {
         
         centerView.patternBlock = { [weak self] model in
             guard let self = self else { return }
-            macInteroperabilityOptimizer()
             let sucking = model.sucking ?? ""
             let discoScheme = AppURL.discoScheme
             if sucking.contains(discoScheme) {
