@@ -16,8 +16,7 @@ class FabledLookupViewController: OaklandLibidoViewController {
     let scrollView = UIScrollView()
     let pageControl = UIPageControl()
     let images = ["CaballerNameHigimageone",
-                  "LiteralPicHigimagetwo",
-                  "LeftIconHigimagethree"]
+                  "LiteralPicHigimagetwo"]
     
     var show: String = ""
     
@@ -197,9 +196,11 @@ extension FabledLookupViewController: UIScrollViewDelegate {
             scrollView.addSubview(imageView)
             
             let button = UIButton(type: .custom)
+            button.layer.borderWidth = 2
+            button.layer.borderColor = UIColor.init(cssStr: "#F8E7A4")?.cgColor
             button.backgroundColor = UIColor.init(cssStr: "#FF3825")
             button.titleLabel?.font = UIFont(name: kafFont, size: 18)
-            button.setTitle(i == images.count - 1 ? "Begin" : "Next", for: .normal)
+            button.setTitle(i == images.count - 1 ? "Get Started" : "Next", for: .normal)
             button.layer.cornerRadius = 23.5
             button.tag = i
             button.addTarget(self, action: #selector(rabbinDacoitSabaean(_:)), for: .touchUpInside)
