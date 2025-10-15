@@ -27,7 +27,7 @@ class RecordJacarandaViewController: OaklandLibidoViewController {
     
     lazy var gabelleMlabel: UILabel = {
         let gabelleMlabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18)!, textColor: .white, textAlignment: .center)
-        gabelleMlabel.text = "Step 4"
+        gabelleMlabel.text = "Step 3"
         return gabelleMlabel
     }()
     

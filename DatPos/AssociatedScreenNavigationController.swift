@@ -8,7 +8,14 @@ class AssociatedScreenNavigationController: UINavigationController {
 
         self.navigationBar.isHidden = true
         self.navigationBar.isTranslucent = false
-        self.interactivePopGestureRecognizer?.isEnabled = false
+        if let gestureRecognizers = view.gestureRecognizers {
+            for gesture in gestureRecognizers {
+                if let popGesture = gesture as? UIScreenEdgePanGestureRecognizer {
+                    view.removeGestureRecognizer(popGesture)
+                }
+            }
+        }
+        
     }
 
 }
