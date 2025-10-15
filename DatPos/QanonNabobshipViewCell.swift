@@ -37,7 +37,7 @@ class QanonNabobshipViewCell: BaseViewCell {
         nabobessLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(11.5)
             make.left.equalToSuperview().offset(30)
-            make.width.equalTo(200.pix())
+            make.width.equalTo(200.bcPix())
             make.height.equalTo(21)
             make.bottom.equalToSuperview().offset(-16.5)
         }

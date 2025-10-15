@@ -6,7 +6,7 @@ class BaseModifierListView: BaseView {
     
     var liberticideArray = BehaviorRelay<[rubyModel]?>(value: nil)
     
-    let height = 73.pix()
+    let height = 73.bcPix()
     let width = SCREEN_WIDTH * 0.25
     
     var eagernessBlock: (() -> Void)?
@@ -99,12 +99,12 @@ class BaseModifierListView: BaseView {
         }
         thinView.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(231.pix())
+            make.height.equalTo(231.bcPix())
         }
         gabberView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.height.equalTo(53.pix())
-            make.top.equalTo(thinView.snp.bottom).offset(-30.pix())
+            make.height.equalTo(53.bcPix())
+            make.top.equalTo(thinView.snp.bottom).offset(-30.bcPix())
         }
         oakmossBtn.snp.makeConstraints { make in
             make.left.equalToSuperview()
@@ -187,10 +187,20 @@ class BaseModifierListView: BaseView {
     
 }
 
-extension BaseModifierListView: UITableViewDelegate, UITableViewDataSource {
+extension BaseModifierListView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let model = self.liberticideArray.value?[indexPath.row] {
+            self.block?(model)
+        }
+    }
+    
+}
+
+extension BaseModifierListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 188.pix()
+        return 188.bcPix()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -205,10 +215,5 @@ extension BaseModifierListView: UITableViewDelegate, UITableViewDataSource {
         cell.model.accept(model)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let model = self.liberticideArray.value?[indexPath.row] {
-            self.block?(model)
-        }
-    }
+
 }

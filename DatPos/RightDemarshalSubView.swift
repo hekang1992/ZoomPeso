@@ -26,7 +26,7 @@ class RightDemarshalSubView: BaseView {
     lazy var qandaharBtn: UIButton = {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Confirm", for: .normal)
-        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
+        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.bcPix())
         qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
@@ -44,10 +44,11 @@ class RightDemarshalSubView: BaseView {
         jacanaName.placeholder = "Name"
         jacanaName.textColor = .black
         jacanaName.backgroundColor = .white
-        jacanaName.layer.cornerRadius = 10.pix()
+        jacanaName.layer.cornerRadius = 10.bcPix()
         jacanaName.textAlignment = .center
-        jacanaName.layer.borderWidth = 1.pix()
+        jacanaName.layer.borderWidth = 1.bcPix()
         jacanaName.layer.borderColor = UIColor.black.cgColor
+        jacanaName.delegate = self
         return jacanaName
     }()
     
@@ -62,10 +63,11 @@ class RightDemarshalSubView: BaseView {
         yachtswomanFor.placeholder = "ID No."
         yachtswomanFor.textColor = .black
         yachtswomanFor.backgroundColor = .white
-        yachtswomanFor.layer.cornerRadius = 10.pix()
+        yachtswomanFor.layer.cornerRadius = 10.bcPix()
         yachtswomanFor.textAlignment = .center
-        yachtswomanFor.layer.borderWidth = 1.pix()
+        yachtswomanFor.layer.borderWidth = 1.bcPix()
         yachtswomanFor.layer.borderColor = UIColor.black.cgColor
+        yachtswomanFor.delegate = self
         return yachtswomanFor
     }()
     
@@ -78,16 +80,16 @@ class RightDemarshalSubView: BaseView {
     lazy var randomBtn: UIButton = {
         let randomBtn = UIButton(type: .custom)
         randomBtn.backgroundColor = .white
-        randomBtn.layer.cornerRadius = 10.pix()
+        randomBtn.layer.cornerRadius = 10.bcPix()
         randomBtn.setTitleColor(.black, for: .normal)
         randomBtn.contentHorizontalAlignment = .center
-        randomBtn.layer.borderWidth = 1.pix()
+        randomBtn.layer.borderWidth = 1.bcPix()
         randomBtn.layer.borderColor = UIColor.black.cgColor
         return randomBtn
     }()
     
     lazy var accoucheDesclabel: UILabel = {
-        let accoucheDesclabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .semibold), textColor: UIColor.init(cssStr: "#FEA124")!, textAlignment: .center)
+        let accoucheDesclabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.bcPix(), weight: .semibold), textColor: UIColor.init(cssStr: "#FEA124")!, textAlignment: .center)
         accoucheDesclabel.numberOfLines = 0
         accoucheDesclabel.text = "Please carefully check the information, it cannot be changed after uploading."
         return accoucheDesclabel
@@ -115,18 +117,18 @@ class RightDemarshalSubView: BaseView {
         
         oamView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-50.pix())
-            make.size.equalTo(CGSize(width: 288.pix(), height: 461.pix()))
+            make.centerY.equalToSuperview().offset(-50.bcPix())
+            make.size.equalTo(CGSize(width: 288.bcPix(), height: 461.bcPix()))
         }
         gabelleMlabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(44.pix())
-            make.height.equalTo(25.pix())
+            make.top.equalToSuperview().offset(44.bcPix())
+            make.height.equalTo(25.bcPix())
             make.left.equalToSuperview()
         }
         
         linkageNamelabel.snp.makeConstraints { make in
-            make.top.equalTo(gabelleMlabel.snp.bottom).offset(28.pix())
+            make.top.equalTo(gabelleMlabel.snp.bottom).offset(28.bcPix())
             make.left.equalToSuperview()
             make.centerX.equalToSuperview()
             make.height.equalTo(21)
@@ -135,51 +137,51 @@ class RightDemarshalSubView: BaseView {
         jacanaName.snp.makeConstraints { make in
             make.top.equalTo(linkageNamelabel.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 210.pix(), height: 40.pix()))
+            make.size.equalTo(CGSize(width: 210.bcPix(), height: 40.bcPix()))
         }
         
         nabeshimaIdlabel.snp.makeConstraints { make in
-            make.top.equalTo(jacanaName.snp.bottom).offset(12.pix())
+            make.top.equalTo(jacanaName.snp.bottom).offset(12.bcPix())
             make.left.equalToSuperview()
             make.centerX.equalToSuperview()
             make.height.equalTo(21)
         }
         
         yachtswomanFor.snp.makeConstraints { make in
-            make.top.equalTo(nabeshimaIdlabel.snp.bottom).offset(10.pix())
+            make.top.equalTo(nabeshimaIdlabel.snp.bottom).offset(10.bcPix())
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 210.pix(), height: 40.pix()))
+            make.size.equalTo(CGSize(width: 210.bcPix(), height: 40.bcPix()))
         }
         
         caballoTimelabel.snp.makeConstraints { make in
-            make.top.equalTo(yachtswomanFor.snp.bottom).offset(12.pix())
-            make.left.equalToSuperview().offset(15.pix())
+            make.top.equalTo(yachtswomanFor.snp.bottom).offset(12.bcPix())
+            make.left.equalToSuperview().offset(15.bcPix())
             make.centerX.equalToSuperview()
             make.height.equalTo(21)
         }
         
         randomBtn.snp.makeConstraints { make in
-            make.top.equalTo(caballoTimelabel.snp.bottom).offset(10.pix())
+            make.top.equalTo(caballoTimelabel.snp.bottom).offset(10.bcPix())
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 210.pix(), height: 40.pix()))
+            make.size.equalTo(CGSize(width: 210.bcPix(), height: 40.bcPix()))
         }
         
         accoucheDesclabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(randomBtn.snp.bottom).offset(55.pix())
+            make.top.equalTo(randomBtn.snp.bottom).offset(55.bcPix())
             make.left.equalToSuperview().offset(16.5)
         }
         
         qandaharBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
-            make.top.equalTo(oamView.snp.bottom).offset(-30.pix())
+            make.size.equalTo(CGSize(width: 237.bcPix(), height: 47.bcPix()))
+            make.top.equalTo(oamView.snp.bottom).offset(-30.bcPix())
         }
         
         poolingBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(qandaharBtn.snp.bottom).offset(55.pix())
-            make.size.equalTo(CGSize(width: 25.pix(), height: 25.pix()))
+            make.top.equalTo(qandaharBtn.snp.bottom).offset(55.bcPix())
+            make.size.equalTo(CGSize(width: 25.bcPix(), height: 25.bcPix()))
         }
         
         poolingBtn.rx.tap.subscribe(onNext: { [weak self] in
@@ -220,6 +222,15 @@ class RightDemarshalSubView: BaseView {
     
     @MainActor required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension RightDemarshalSubView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

@@ -64,20 +64,20 @@ class DelegationRecordsetCenterView: BaseView {
         architectureView.addSubview(tableView)
         
         qbasicView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30.pix())
-            make.width.equalTo(311.pix())
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30.bcPix())
+            make.width.equalTo(311.bcPix())
             make.centerX.equalToSuperview()
-            make.height.equalTo(101.pix())
+            make.height.equalTo(101.bcPix())
         }
         logoImageView1.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(50.pix())
-            make.top.equalToSuperview().offset(15.pix())
-            make.size.equalTo(CGSize(width: 55.pix(), height: 55.pix()))
+            make.left.equalToSuperview().offset(50.bcPix())
+            make.top.equalToSuperview().offset(15.bcPix())
+            make.size.equalTo(CGSize(width: 55.bcPix(), height: 55.bcPix()))
         }
         xanthinPhonelabel.snp.makeConstraints { make in
-            make.height.equalTo(25.pix())
+            make.height.equalTo(25.bcPix())
             make.centerY.equalTo(logoImageView1.snp.centerY)
-            make.left.equalTo(logoImageView1.snp.right).offset(25.pix())
+            make.left.equalTo(logoImageView1.snp.right).offset(25.bcPix())
         }
         nabobessLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -91,7 +91,7 @@ class DelegationRecordsetCenterView: BaseView {
         }
         
         tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(5.pix())
+            make.top.equalToSuperview().offset(5.bcPix())
             make.left.equalToSuperview()
             make.width.equalTo(SCREEN_WIDTH)
             make.bottom.equalToSuperview().offset(-90)
@@ -141,6 +141,6 @@ class DelegationRecordsetCenterView: BaseView {
 extension DelegationRecordsetCenterView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 101.pix()
+        return 101.bcPix()
     }
 }

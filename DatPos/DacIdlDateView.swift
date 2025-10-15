@@ -39,7 +39,7 @@ class DacIdlDateView: BaseView {
     lazy var qandaharBtn: UIButton = {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Confirm", for: .normal)
-        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
+        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.bcPix())
         qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
@@ -74,30 +74,30 @@ class DacIdlDateView: BaseView {
         }
         dictionariesView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.size.equalTo(CGSize(width: 288.pix(), height: 299.pix()))
+            make.size.equalTo(CGSize(width: 288.bcPix(), height: 299.bcPix()))
         }
         gabelleMlabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(44.pix())
-            make.height.equalTo(25.pix())
+            make.top.equalToSuperview().offset(44.bcPix())
+            make.height.equalTo(25.bcPix())
             make.left.equalToSuperview()
         }
         qandaharBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
-            make.top.equalTo(dictionariesView.snp.bottom).offset(-30.pix())
+            make.size.equalTo(CGSize(width: 237.bcPix(), height: 47.bcPix()))
+            make.top.equalTo(dictionariesView.snp.bottom).offset(-30.bcPix())
         }
         
         poolingBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(qandaharBtn.snp.bottom).offset(55.pix())
-            make.size.equalTo(CGSize(width: 25.pix(), height: 25.pix()))
+            make.top.equalTo(qandaharBtn.snp.bottom).offset(55.bcPix())
+            make.size.equalTo(CGSize(width: 25.bcPix(), height: 25.bcPix()))
         }
         datePicker.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(gabelleMlabel.snp.bottom).offset(21.pix())
-            make.left.equalToSuperview().offset(13.pix())
-            make.height.equalTo(215.pix())
+            make.top.equalTo(gabelleMlabel.snp.bottom).offset(21.bcPix())
+            make.left.equalToSuperview().offset(13.bcPix())
+            make.height.equalTo(215.bcPix())
         }
         
         qandaharBtn.rx.tap.subscribe(onNext: { [weak self] in

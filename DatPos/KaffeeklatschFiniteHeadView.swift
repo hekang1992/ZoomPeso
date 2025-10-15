@@ -12,7 +12,7 @@ class KaffeeklatschFiniteHeadView: BaseView {
     }()
     
     lazy var nabobessLabel: UILabel = {
-        let nabobessLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18.pix())!, textColor: .black, textAlignment: .center)
+        let nabobessLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18.bcPix())!, textColor: .black, textAlignment: .center)
         return nabobessLabel
     }()
     
@@ -22,13 +22,13 @@ class KaffeeklatschFiniteHeadView: BaseView {
         addSubview(nabobessLabel)
         partialBtn.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(7.pix())
-            make.size.equalTo(CGSize(width: 40.pix(), height: 40.pix()))
+            make.left.equalToSuperview().offset(7.bcPix())
+            make.size.equalTo(CGSize(width: 40.bcPix(), height: 40.bcPix()))
         }
         nabobessLabel.snp.makeConstraints { make in
             make.centerY.equalTo(partialBtn.snp.centerY)
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 300.pix(), height: 40.pix()))
+            make.size.equalTo(CGSize(width: 300.bcPix(), height: 40.bcPix()))
         }
         
         partialBtn.rx.tap.subscribe(onNext: { [weak self] in

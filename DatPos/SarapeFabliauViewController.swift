@@ -27,7 +27,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
     
     lazy var m1label: UILabel = {
         let m1label = UILabel.createLabel(font: UIFont(name: kafFont, size: 15)!, textColor: .init(cssStr: "#FE5255")!, textAlignment: .left)
-        m1label.text = "Select An ID To Validate Your Identity"
+        m1label.text = "Select An ID To " + "Validate Your Identity"
         return m1label
     }()
     
@@ -68,7 +68,7 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
     lazy var qandaharBtn: UIButton = {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
-        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
+        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.bcPix())
         qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
@@ -143,43 +143,43 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
         oamView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(5)
-            make.size.equalTo(CGSize(width: 358.pix(), height: 417.pix()))
+            make.size.equalTo(CGSize(width: 358.bcPix(), height: 417.bcPix()))
         }
         oamView.addSubview(gabelleMlabel)
         oamView.addSubview(m1label)
         oamView.addSubview(m2label)
         gabelleMlabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(44.pix())
-            make.height.equalTo(25.pix())
+            make.top.equalToSuperview().offset(44.bcPix())
+            make.height.equalTo(25.bcPix())
         }
         m1label.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(13)
             make.right.equalToSuperview()
-            make.top.equalTo(gabelleMlabel.snp.bottom).offset(28.pix())
+            make.top.equalTo(gabelleMlabel.snp.bottom).offset(28.bcPix())
         }
         m2label.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(13)
             make.right.equalToSuperview()
-            make.top.equalTo(m1label.snp.bottom).offset(10.pix())
+            make.top.equalTo(m1label.snp.bottom).offset(10.bcPix())
         }
         
         bugView.snp.makeConstraints { make in
             make.top.equalTo(oamView.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 345.pix(), height: 333.pix()))
+            make.size.equalTo(CGSize(width: 345.bcPix(), height: 333.bcPix()))
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-70.pix())
+            make.bottom.equalToSuperview().offset(-70.bcPix())
         }
         qandaharBtn.snp.makeConstraints { make in
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
+            make.size.equalTo(CGSize(width: 237.bcPix(), height: 47.bcPix()))
         }
         
         oamView.addSubview(table1View)
         table1View.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(10.pix())
-            make.right.equalToSuperview().offset(-10.pix())
+            make.left.equalToSuperview().offset(10.bcPix())
+            make.right.equalToSuperview().offset(-10.bcPix())
             make.top.equalTo(m2label.snp.bottom).offset(1)
             make.bottom.equalToSuperview().offset(-5)
         }
@@ -189,17 +189,17 @@ class SarapeFabliauViewController: OaklandLibidoViewController {
         m3label.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(13)
             make.right.equalToSuperview()
-            make.top.equalToSuperview().offset(16.pix())
+            make.top.equalToSuperview().offset(16.bcPix())
         }
         m4label.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(13)
             make.right.equalToSuperview()
-            make.top.equalTo(m3label.snp.bottom).offset(10.pix())
+            make.top.equalTo(m3label.snp.bottom).offset(10.bcPix())
         }
         
         table2View.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(5.pix())
-            make.right.equalToSuperview().offset(-5.pix())
+            make.left.equalToSuperview().offset(5.bcPix())
+            make.right.equalToSuperview().offset(-5.bcPix())
             make.bottom.equalToSuperview().offset(-5)
             make.top.equalTo(m4label.snp.bottom).offset(1)
         }

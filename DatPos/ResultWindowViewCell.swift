@@ -29,19 +29,19 @@ class ResultWindowViewCell: BaseViewCell {
         dictionariesView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 345.pix(), height: 95.pix()))
+            make.size.equalTo(CGSize(width: 345.bcPix(), height: 95.bcPix()))
         }
        
         qcbView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-16.pix())
-            make.left.equalToSuperview().offset(14.pix())
-            make.size.equalTo(CGSize(width: 30.pix(), height: 30.pix()))
+            make.bottom.equalToSuperview().offset(-16.bcPix())
+            make.left.equalToSuperview().offset(14.bcPix())
+            make.size.equalTo(CGSize(width: 30.bcPix(), height: 30.bcPix()))
         }
         
         nabobessLabel.snp.makeConstraints { make in
             make.centerY.equalTo(qcbView.snp.centerY)
-            make.height.equalTo(21.pix())
-            make.left.equalTo(qcbView.snp.right).offset(35.pix())
+            make.height.equalTo(21.bcPix())
+            make.left.equalTo(qcbView.snp.right).offset(35.bcPix())
         }
         
     }

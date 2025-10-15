@@ -42,32 +42,32 @@ class CaballeroIncrementalHomeView: BaseView {
     }()
     
     lazy var nabobessLabel: UILabel = {
-        let nabobessLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.pix(), weight: .semibold), textColor: .white, textAlignment: .left)
+        let nabobessLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 18.bcPix(), weight: .semibold), textColor: .white, textAlignment: .left)
         return nabobessLabel
     }()
     
     lazy var pacesetterLabel: UILabel = {
-        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 50.pix())!, textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .left)
+        let pacesetterLabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 50.bcPix())!, textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .left)
         return pacesetterLabel
     }()
     
     
     lazy var babassuLabel: UILabel = {
-        let babassuLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssStr: "#000001")!, textAlignment: .center)
+        let babassuLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.bcPix(), weight: .semibold), textColor: .init(cssStr: "#000001")!, textAlignment: .center)
         return babassuLabel
     }()
     
     lazy var combinatorialLabel: UILabel = {
-        let combinatorialLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.pix(), weight: .semibold), textColor: .init(cssStr: "#000001")!, textAlignment: .center)
+        let combinatorialLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 14.bcPix(), weight: .semibold), textColor: .init(cssStr: "#000001")!, textAlignment: .center)
         return combinatorialLabel
     }()
     
-    lazy var labialView: UIImageView = {
-        let labialView = UIImageView()
-        labialView.image = UIImage(named: "actionImgLoaiimge")
-        labialView.isUserInteractionEnabled = true
-        return labialView
-    }()
+//    lazy var labialView: UIImageView = {
+//        let labialView = UIImageView()
+//        labialView.image = UIImage(named: "actionImgLoaiimge")
+//        labialView.isUserInteractionEnabled = true
+//        return labialView
+//    }()
     
     lazy var ubeView: UIImageView = {
         let ubeView = UIImageView()
@@ -95,15 +95,15 @@ class CaballeroIncrementalHomeView: BaseView {
     lazy var rabbinView: UIView = {
         let rabbinView = UIView()
         rabbinView.backgroundColor = .white
-        rabbinView.layer.cornerRadius = 10.pix()
+        rabbinView.layer.cornerRadius = 10.bcPix()
         rabbinView.layer.masksToBounds = true
         return rabbinView
     }()
     
     lazy var saxView: UIView = {
         let saxView = UIView()
-        saxView.layer.cornerRadius = 25.pix()
-        saxView.layer.borderWidth = 1.pix()
+        saxView.layer.cornerRadius = 25.bcPix()
+        saxView.layer.borderWidth = 1.bcPix()
         saxView.layer.borderColor = UIColor.init(cssStr: "#7B2306")!.cgColor
         saxView.backgroundColor = UIColor.init(cssStr: "#FE5255")
         return saxView
@@ -133,8 +133,8 @@ class CaballeroIncrementalHomeView: BaseView {
         pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "FSPagerViewCell")
         pagerView.isInfinite = true
         pagerView.transformer = FSPagerViewTransformer(type: .linear)
-        pagerView.itemSize = CGSize(width: 340.pix(), height: 160.pix())
-        pagerView.interitemSpacing = 15.pix()
+        pagerView.itemSize = CGSize(width: 340.bcPix(), height: 160.bcPix())
+        pagerView.interitemSpacing = 15.bcPix()
         pagerView.automaticSlidingInterval = 3.0 
         return pagerView
     }()
@@ -151,7 +151,7 @@ class CaballeroIncrementalHomeView: BaseView {
         oamView.addSubview(combinatorialLabel)
         oamView.addSubview(saxView)
         saxView.addSubview(loginLabel)
-        scrollerView.addSubview(labialView)
+//        scrollerView.addSubview(labialView)
         scrollerView.addSubview(ubeView)
         scrollerView.addSubview(jitView)
         scrollerView.addSubview(rabbinView)
@@ -166,59 +166,59 @@ class CaballeroIncrementalHomeView: BaseView {
         oamView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.width.equalTo(375.pix())
-            make.height.equalTo(370.pix())
+            make.width.equalTo(375.bcPix())
+            make.height.equalTo(370.bcPix())
         }
         qbasicView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.left.equalToSuperview().offset(130.pix())
-            make.size.equalTo(CGSize(width: 25.pix(), height: 25.pix()))
+            make.left.equalToSuperview().offset(130.bcPix())
+            make.size.equalTo(CGSize(width: 25.bcPix(), height: 25.bcPix()))
         }
         nabobessLabel.snp.makeConstraints { make in
             make.centerY.equalTo(qbasicView.snp.centerY)
-            make.left.equalTo(qbasicView.snp.right).offset(2.pix())
+            make.left.equalTo(qbasicView.snp.right).offset(2.bcPix())
             make.height.equalTo(25)
         }
         
         
         
         babassuLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(126.pix())
-            make.top.equalTo(oamView.snp.top).offset(108.pix())
-            make.height.equalTo(20.pix())
+            make.left.equalToSuperview().offset(126.bcPix())
+            make.top.equalTo(oamView.snp.top).offset(108.bcPix())
+            make.height.equalTo(20.bcPix())
         }
         
         combinatorialLabel.snp.makeConstraints { make in
-            make.left.equalTo(babassuLabel.snp.right).offset(20.pix())
+            make.left.equalTo(babassuLabel.snp.right).offset(20.bcPix())
             make.centerY.equalTo(babassuLabel.snp.centerY)
-            make.height.equalTo(20.pix())
+            make.height.equalTo(20.bcPix())
         }
         
         
         pacesetterLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(132.pix())
-            make.left.equalToSuperview().offset(41.pix())
-            make.height.equalTo(82.pix())
+            make.top.equalToSuperview().offset(132.bcPix())
+            make.left.equalToSuperview().offset(41.bcPix())
+            make.height.equalTo(82.bcPix())
         }
         
         
-        labialView.snp.makeConstraints { make in
+//        labialView.snp.makeConstraints { make in
+//            make.top.equalTo(oamView.snp.bottom).offset(-25)
+//            make.centerX.equalToSuperview()
+//            make.width.equalTo(345.bcPix())
+//            make.height.equalTo(105.bcPix())
+//        }
+        ubeView.snp.makeConstraints { make in
             make.top.equalTo(oamView.snp.bottom).offset(-25)
             make.centerX.equalToSuperview()
-            make.width.equalTo(345.pix())
-            make.height.equalTo(105.pix())
-        }
-        ubeView.snp.makeConstraints { make in
-            make.top.equalTo(labialView.snp.bottom).offset(10.pix())
-            make.centerX.equalToSuperview()
-            make.width.equalTo(344.pix())
-            make.height.equalTo(165.pix())
+            make.width.equalTo(344.bcPix())
+            make.height.equalTo(165.bcPix())
         }
         jitView.snp.makeConstraints { make in
-            make.top.equalTo(ubeView.snp.bottom).offset(10.pix())
+            make.top.equalTo(ubeView.snp.bottom).offset(10.bcPix())
             make.centerX.equalToSuperview()
-            make.width.equalTo(344.pix())
-            make.height.equalTo(105.pix())
+            make.width.equalTo(344.bcPix())
+            make.height.equalTo(105.bcPix())
         }
         
         jitView.addSubview(oakmossBtn)
@@ -226,33 +226,33 @@ class CaballeroIncrementalHomeView: BaseView {
         
         oakmossBtn.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
-            make.height.equalTo(55.pix())
+            make.height.equalTo(55.bcPix())
         }
         
         eventBtn.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()
-            make.height.equalTo(55.pix())
+            make.height.equalTo(55.bcPix())
         }
         
         rabbinView.snp.makeConstraints { make in
-            make.top.equalTo(jitView.snp.bottom).offset(20.pix())
+            make.top.equalTo(jitView.snp.bottom).offset(20.bcPix())
             make.centerX.equalToSuperview()
-            make.width.equalTo(344.pix())
-            make.height.equalTo(201.pix())
-            make.bottom.equalToSuperview().offset(-95.pix())
+            make.width.equalTo(344.bcPix())
+            make.height.equalTo(201.bcPix())
+            make.bottom.equalToSuperview().offset(-95.bcPix())
         }
         saxView.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-30.pix())
-            make.size.equalTo(CGSize(width: 220.pix(), height: 54.pix()))
-            make.bottom.equalToSuperview().offset(-48.pix())
+            make.right.equalToSuperview().offset(-30.bcPix())
+            make.size.equalTo(CGSize(width: 220.bcPix(), height: 54.bcPix()))
+            make.bottom.equalToSuperview().offset(-48.bcPix())
         }
         loginLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         delegateLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(9.pix())
-            make.left.equalToSuperview().offset(14.pix())
-            make.height.equalTo(25.pix())
+            make.top.equalToSuperview().offset(9.bcPix())
+            make.left.equalToSuperview().offset(14.bcPix())
+            make.height.equalTo(25.bcPix())
         }
         rabbinView.addSubview(pagerView)
         pagerView.snp.makeConstraints { make in
@@ -284,10 +284,10 @@ class CaballeroIncrementalHomeView: BaseView {
             self.redrapeBlock?()
         }).disposed(by: identifierBag)
         
-        labialView.rx.tapGesture().subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            self.redrapeBlock?()
-        }).disposed(by: identifierBag)
+//        labialView.rx.tapGesture().subscribe(onNext: { [weak self] _ in
+//            guard let self = self else { return }
+//            self.redrapeBlock?()
+//        }).disposed(by: identifierBag)
         
         enumFactoringMacaber()
     }
@@ -301,7 +301,7 @@ class CaballeroIncrementalHomeView: BaseView {
         windowsLayer.frame = architectureView.bounds
         let grantArea = self.safeAreaInsets.top
         qbasicView.snp.updateConstraints { make in
-            make.top.equalToSuperview().offset(grantArea - 8.pix())
+            make.top.equalToSuperview().offset(grantArea - 8.bcPix())
         }
         
     }

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ZoomPesoVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ZoomPesoVersionString[];
+FOUNDATION_EXPORT double Pods_DatPosVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_DatPosVersionString[];
 

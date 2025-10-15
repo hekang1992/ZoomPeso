@@ -28,7 +28,7 @@ class DacoitMiddlewareLogView: BaseView {
         addSubview(binaryView)
         binaryView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.size.equalTo(CGSize(width: 278.pix(), height: 313.pix()))
+            make.size.equalTo(CGSize(width: 278.bcPix(), height: 313.bcPix()))
         }
         
         
@@ -44,7 +44,7 @@ class DacoitMiddlewareLogView: BaseView {
         sureBtn.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(poolingBtn.snp.top).offset(-50.pix())
+            make.bottom.equalTo(poolingBtn.snp.top).offset(-50.bcPix())
             make.height.equalTo(50)
         }
         

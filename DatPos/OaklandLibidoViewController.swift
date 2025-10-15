@@ -68,7 +68,7 @@ extension OaklandLibidoViewController {
     func addHeadView() {
         view.addSubview(fontView)
         fontView.snp.makeConstraints { make in
-            make.height.equalTo(40.pix())
+            make.height.equalTo(40.bcPix())
             make.left.right.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(-5)
         }

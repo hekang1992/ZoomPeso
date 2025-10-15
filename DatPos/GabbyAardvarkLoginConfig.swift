@@ -64,7 +64,7 @@ extension GabbyAardvarkLoginConfig {
 
 class DeviceIDManager {
     static let shared = DeviceIDManager()
-    private let zaftigName = "com.zoom.peso"
+    private let zaftigName = "com.dat.pods"
     private let modelingName = "deviceID"
     
     private var vacancyKeychain: Keychain {

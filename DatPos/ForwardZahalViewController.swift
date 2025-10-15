@@ -43,7 +43,7 @@ class ForwardZahalViewController: OaklandLibidoViewController {
         view.addSubview(viewView)
         viewView.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
-            make.height.equalTo(136.pix())
+            make.height.equalTo(136.bcPix())
         }
         self.fontView.nabobessLabel.text = "Settings"
         addHeadView()
@@ -63,19 +63,19 @@ class ForwardZahalViewController: OaklandLibidoViewController {
         
         linkerView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(12)
-            make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
+            make.size.equalTo(CGSize(width: 346.bcPix(), height: 90.bcPix()))
             make.centerX.equalToSuperview()
         }
         
         wadableView.snp.makeConstraints { make in
             make.top.equalTo(linkerView.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
+            make.size.equalTo(CGSize(width: 346.bcPix(), height: 90.bcPix()))
             make.centerX.equalToSuperview()
         }
         
         yachtyView.snp.makeConstraints { make in
             make.top.equalTo(wadableView.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 346.pix(), height: 90.pix()))
+            make.size.equalTo(CGSize(width: 346.bcPix(), height: 90.bcPix()))
             make.centerX.equalToSuperview()
         }
         
@@ -83,7 +83,7 @@ class ForwardZahalViewController: OaklandLibidoViewController {
         linkerView.addSubview(dnaLabel)
         dnaLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-15)
-            make.bottom.equalToSuperview().offset(-27.pix())
+            make.bottom.equalToSuperview().offset(-27.bcPix())
             make.size.equalTo(CGSize(width: 200, height: 15))
         }
         

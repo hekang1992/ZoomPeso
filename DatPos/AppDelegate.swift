@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  ZoomPeso
-//
-//  Created by Quaker on 2025/4/21.
-//
+
 
 import UIKit
 import IQKeyboardManagerSwift
@@ -12,11 +7,9 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupNotificationObserver()
-        IQKeyboardManager.shared.isEnabled = true
-        IQKeyboardManager.shared.resignOnTouchOutside = true
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = FabledLookupViewController()
         window?.makeKeyAndVisible()
@@ -33,14 +26,23 @@ extension AppDelegate {
             name: NSNotification.Name(CHANGE_ROOT_VC),
             object: nil
         )
-    }
-
-    private func initWindow() {
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.resignOnTouchOutside = true
         
     }
-  
-  @objc func goRootVc(_ noti: Notification) {
-      window?.rootViewController = AssociatedScreenNavigationController(rootViewController: PixelDacianBarController())
+    
+    
+    @objc func goRootVc(_ noti: Notification) {
+        
+        if IS_VISIBLE_LOGIN {
+            window?.rootViewController = AssociatedScreenNavigationController(rootViewController: PixelDacianBarController())
+        }else {
+            let loginVc = ChainHabanaViewController()
+            let hierarchyLogin = AssociatedScreenNavigationController(rootViewController: loginVc)
+            loginVc.alphabeticallyView.partialBtn.isHidden = true
+            window?.rootViewController = hierarchyLogin
+        }
     }
-
+    
 }

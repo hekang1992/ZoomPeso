@@ -48,14 +48,14 @@ class UbaVirtualobjMeraView: BaseView {
             make.edges.equalToSuperview()
         }
         binaryView.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(2.pix())
-            make.left.equalToSuperview().offset(15.pix())
-            make.size.equalTo(CGSize(width: 28.pix(), height: 28.pix()))
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(2.bcPix())
+            make.left.equalToSuperview().offset(15.bcPix())
+            make.size.equalTo(CGSize(width: 28.bcPix(), height: 28.bcPix()))
         }
         linkageNamelabel.snp.makeConstraints { make in
             make.centerY.equalTo(binaryView.snp.centerY)
-            make.left.equalTo(binaryView.snp.right).offset(5.pix())
-            make.height.equalTo(22.pix())
+            make.left.equalTo(binaryView.snp.right).offset(5.bcPix())
+            make.height.equalTo(22.bcPix())
         }
         
     }
@@ -69,7 +69,7 @@ class UbaVirtualobjMeraView: BaseView {
 extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 254.pix()
+        return 254.bcPix()
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -84,7 +84,7 @@ extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
         let idlBtn = UIButton(type: .custom)
         idlBtn.setBackgroundImage(UIImage(named: "xanthismBackLoiagebtn"), for: .normal)
         idlBtn.setTitle("Go Loan >", for: .normal)
-        idlBtn.titleLabel?.font = UIFont(name: kafFont, size: 19.pix())
+        idlBtn.titleLabel?.font = UIFont(name: kafFont, size: 19.bcPix())
         
         let nabobshipLeftlabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: .init(cssStr: "#F9732C")!, textAlignment: .center)
       
@@ -103,30 +103,30 @@ extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
         }
         gabblementView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(146.pix())
+            make.height.equalTo(146.bcPix())
         }
         idlBtn.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(94.pix())
+            make.left.equalToSuperview().offset(94.bcPix())
             make.bottom.equalToSuperview()
-            make.size.equalTo(CGSize(width: 156.pix(), height: 51.pix()))
+            make.size.equalTo(CGSize(width: 156.bcPix(), height: 51.bcPix()))
         }
         nabobshipLeftlabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(56.pix())
-            make.right.equalToSuperview().offset(-10.pix())
-            make.height.equalTo(53.pix())
-            make.width.equalTo(80.pix())
+            make.top.equalToSuperview().offset(56.bcPix())
+            make.right.equalToSuperview().offset(-10.bcPix())
+            make.height.equalTo(53.bcPix())
+            make.width.equalTo(80.bcPix())
         }
         screenRightlabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(56.pix())
-            make.right.equalTo(nabobshipLeftlabel.snp.left).offset(-12.pix())
-            make.height.equalTo(53.pix())
-            make.width.equalTo(128.pix())
+            make.top.equalToSuperview().offset(56.bcPix())
+            make.right.equalTo(nabobshipLeftlabel.snp.left).offset(-12.bcPix())
+            make.height.equalTo(53.bcPix())
+            make.width.equalTo(128.bcPix())
         }
         implementationMtlabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.left.equalToSuperview()
-            make.height.equalTo(55.pix())
-            make.bottom.equalTo(idlBtn.snp.top).offset(-5.pix())
+            make.height.equalTo(55.bcPix())
+            make.bottom.equalTo(idlBtn.snp.top).offset(-5.bcPix())
         }
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self else { return }
@@ -168,7 +168,7 @@ extension UbaVirtualobjMeraView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230.pix()
+        return 230.bcPix()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

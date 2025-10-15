@@ -27,14 +27,14 @@ class RecordJacarandaViewController: OaklandLibidoViewController {
     
     lazy var gabelleMlabel: UILabel = {
         let gabelleMlabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18)!, textColor: .white, textAlignment: .center)
-        gabelleMlabel.text = "Step 1"
+        gabelleMlabel.text = "Step 4"
         return gabelleMlabel
     }()
     
     lazy var qandaharBtn: UIButton = {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
-        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
+        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.bcPix())
         qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
@@ -88,27 +88,27 @@ class RecordJacarandaViewController: OaklandLibidoViewController {
         oamView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(fontView.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 358.pix(), height: 448.pix()))
+            make.size.equalTo(CGSize(width: 358.bcPix(), height: 448.bcPix()))
         }
         gabelleMlabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(44.pix())
-            make.height.equalTo(25.pix())
+            make.top.equalToSuperview().offset(44.bcPix())
+            make.height.equalTo(25.bcPix())
         }
         
         view.addSubview(qandaharBtn)
         qandaharBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
-            make.bottom.equalToSuperview().offset(-30.pix())
+            make.size.equalTo(CGSize(width: 237.bcPix(), height: 47.bcPix()))
+            make.bottom.equalToSuperview().offset(-30.bcPix())
         }
         
         view.addSubview(sharedView)
         sharedView.snp.makeConstraints { make in
-            make.top.equalTo(oamView.snp.top).offset(82.pix())
-            make.left.equalTo(oamView.snp.left).offset(6.5.pix())
+            make.top.equalTo(oamView.snp.top).offset(82.bcPix())
+            make.left.equalTo(oamView.snp.left).offset(6.5.bcPix())
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(qandaharBtn.snp.top).offset(-15.pix())
+            make.bottom.equalTo(qandaharBtn.snp.top).offset(-15.bcPix())
         }
         
         sharedView.addSubview(tableView)

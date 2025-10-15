@@ -18,7 +18,7 @@ class EmptyView: UIView {
     }()
     
     lazy var graphLabel: UILabel = {
-        let graphLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.pix(), weight: .medium), textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .center)
+        let graphLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 12.bcPix(), weight: .medium), textColor: .init(cssStr: "#FFFFFF")!, textAlignment: .center)
         graphLabel.text = "You have no orders"
         return graphLabel
     }()
@@ -29,8 +29,8 @@ class EmptyView: UIView {
         addSubview(graphLabel)
         operandView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.left.equalTo((SCREEN_WIDTH - 222.pix()) * 0.5)
-            make.size.equalTo(CGSize(width: 222.pix(), height: 169.pix()))
+            make.left.equalTo((SCREEN_WIDTH - 222.bcPix()) * 0.5)
+            make.size.equalTo(CGSize(width: 222.bcPix(), height: 169.bcPix()))
         }
         graphLabel.snp.makeConstraints { make in
             make.top.equalTo(operandView.snp.bottom)

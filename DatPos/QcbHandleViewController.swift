@@ -20,7 +20,6 @@ class QcbHandleViewController: OaklandLibidoViewController {
     
     var backwardTime: String = ""
     
-   
     lazy var oamView: UIImageView = {
         let oamView = UIImageView()
         oamView.image = UIImage(named: "fabledAddAseuthigme")
@@ -56,7 +55,7 @@ class QcbHandleViewController: OaklandLibidoViewController {
     lazy var qandaharBtn: UIButton = {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
-        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
+        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.bcPix())
         qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
@@ -90,6 +89,7 @@ class QcbHandleViewController: OaklandLibidoViewController {
             }
         }
         
+        backwardTime = ServerSideDeviceInfo.currentTimestamp
         
         view.addSubview(oamView)
         oamView.addSubview(gabelleMlabel)
@@ -97,42 +97,41 @@ class QcbHandleViewController: OaklandLibidoViewController {
         oamView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(fontView.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 358.pix(), height: 448.pix()))
+            make.size.equalTo(CGSize(width: 358.bcPix(), height: 448.bcPix()))
         }
         gabelleMlabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(44.pix())
-            make.height.equalTo(25.pix())
+            make.top.equalToSuperview().offset(44.bcPix())
+            make.height.equalTo(25.bcPix())
         }
         m1label.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(13)
             make.right.equalToSuperview()
-            make.top.equalTo(gabelleMlabel.snp.bottom).offset(28.pix())
+            make.top.equalTo(gabelleMlabel.snp.bottom).offset(28.bcPix())
         }
         oamView.addSubview(triangulationView)
         triangulationView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(m1label.snp.bottom).offset(13)
-            make.size.equalTo(CGSize(width: 313.pix(), height: 167.pix()))
+            make.size.equalTo(CGSize(width: 313.bcPix(), height: 167.bcPix()))
         }
         
         oamView.addSubview(inheritanceView)
         inheritanceView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-15.pix())
-            make.size.equalTo(CGSize(width: 315.pix(), height: 115.pix()))
+            make.bottom.equalToSuperview().offset(-15.bcPix())
+            make.size.equalTo(CGSize(width: 315.bcPix(), height: 115.bcPix()))
         }
         
         view.addSubview(qandaharBtn)
         qandaharBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
-            make.bottom.equalToSuperview().offset(-30.pix())
+            make.size.equalTo(CGSize(width: 237.bcPix(), height: 47.bcPix()))
+            make.bottom.equalToSuperview().offset(-30.bcPix())
         }
         
         triangulationView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
-            backwardTime = ServerSideDeviceInfo.currentTimestamp
             DispatchQueue.main.async {
                 self.showImageSourceSelection()
             }
@@ -141,7 +140,6 @@ class QcbHandleViewController: OaklandLibidoViewController {
         
         qandaharBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
-            backwardTime = ServerSideDeviceInfo.currentTimestamp
             let index = self.isSuccess.value ?? 0
             if index == 1 {
                 let libertineSfc = XanthineDnaViewController()
@@ -165,9 +163,18 @@ class QcbHandleViewController: OaklandLibidoViewController {
             }
         }).disposed(by: identifierBag)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            self.showImageSourceSelection()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            let index = self.isSuccess.value ?? 0
+//            if index == 0 {
+//                self.showImageSourceSelection()
+//            }
+//        }
+        
+        self.isSuccess.asObservable().subscribe(onNext: { index in
+            if index == 0 {
+                self.showImageSourceSelection()
+            }
+        }).disposed(by: identifierBag)
         
     }
     

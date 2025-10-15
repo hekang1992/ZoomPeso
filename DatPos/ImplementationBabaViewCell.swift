@@ -16,7 +16,7 @@ class ImplementationBabaViewCell: BaseViewCell {
     lazy var architectureView: UIView = {
         let architectureView = UIView()
         architectureView.backgroundColor = .init(cssStr: "#FAFAFA")
-        architectureView.layer.cornerRadius = 10.pix()
+        architectureView.layer.cornerRadius = 10.bcPix()
         architectureView.layer.masksToBounds = true
         architectureView.isUserInteractionEnabled = true
         return architectureView
@@ -29,7 +29,7 @@ class ImplementationBabaViewCell: BaseViewCell {
     }()
     
     lazy var iterationLabel: UILabel = {
-        let iterationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssStr: "#CACACA")!, textAlignment: .left)
+        let iterationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.bcPix(), weight: .medium), textColor: .init(cssStr: "#CACACA")!, textAlignment: .left)
         iterationLabel.numberOfLines = 0
         return iterationLabel
     }()
@@ -42,30 +42,30 @@ class ImplementationBabaViewCell: BaseViewCell {
         architectureView.addSubview(iterationLabel)
         
         accoucheDesclabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10.pix())
-            make.left.equalToSuperview().offset(12.pix())
-            make.height.equalTo(21.pix())
-            make.bottom.equalToSuperview().offset(-50.pix())
+            make.top.equalToSuperview().offset(10.bcPix())
+            make.left.equalToSuperview().offset(12.bcPix())
+            make.height.equalTo(21.bcPix())
+            make.bottom.equalToSuperview().offset(-50.bcPix())
         }
         
         architectureView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(accoucheDesclabel.snp.bottom).offset(5.pix())
+            make.top.equalTo(accoucheDesclabel.snp.bottom).offset(5.bcPix())
             make.left.equalTo(accoucheDesclabel.snp.left)
-            make.height.equalTo(44.pix())
+            make.height.equalTo(44.bcPix())
         }
         
         retrieveView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-5.pix())
+            make.right.equalToSuperview().offset(-5.bcPix())
             make.size.equalTo(CGSize(width: 14, height: 14))
         }
         
         iterationLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15.pix())
-            make.right.equalTo(retrieveView.snp.left).offset(-2.pix())
-            make.height.equalTo(44.pix())
+            make.left.equalToSuperview().offset(15.bcPix())
+            make.right.equalTo(retrieveView.snp.left).offset(-2.bcPix())
+            make.height.equalTo(44.bcPix())
         }
         
         model.asObservable().subscribe(onNext: { [weak self] model in

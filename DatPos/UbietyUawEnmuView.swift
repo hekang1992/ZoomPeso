@@ -27,7 +27,7 @@ class UbietyUawEnmuView: BaseView {
     lazy var sexagesimalBtn: UIButton = {
         let sexagesimalBtn = UIButton(type: .custom)
         sexagesimalBtn.setTitle("Confirm", for: .normal)
-        sexagesimalBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
+        sexagesimalBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.bcPix())
         sexagesimalBtn.backgroundColor = .init(cssStr: "#FF3825")
         sexagesimalBtn.setTitleColor(.white, for: .normal)
         sexagesimalBtn.layer.cornerRadius = 23.5
@@ -67,15 +67,15 @@ class UbietyUawEnmuView: BaseView {
         
         dictionariesView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 288.pix(), height: 299.pix()))
-            make.centerY.equalToSuperview().offset(-40.pix())
+            make.size.equalTo(CGSize(width: 288.bcPix(), height: 299.bcPix()))
+            make.centerY.equalToSuperview().offset(-40.bcPix())
         }
         
         architectureView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(87.pix())
-            make.left.equalToSuperview().offset(3.pix())
+            make.top.equalToSuperview().offset(87.bcPix())
+            make.left.equalToSuperview().offset(3.bcPix())
             make.centerX.equalToSuperview()
-            make.height.equalTo(180.pix())
+            make.height.equalTo(180.bcPix())
         }
         
         tableView.snp.makeConstraints { make in
@@ -84,14 +84,14 @@ class UbietyUawEnmuView: BaseView {
         
         sexagesimalBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(dictionariesView.snp.bottom).offset(-23.pix())
-            make.size.equalTo(CGSize(width: 237.pix(), height: 46.pix()))
+            make.top.equalTo(dictionariesView.snp.bottom).offset(-23.bcPix())
+            make.size.equalTo(CGSize(width: 237.bcPix(), height: 46.bcPix()))
         }
         
         poolingBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(sexagesimalBtn.snp.bottom).offset(50.pix())
-            make.size.equalTo(CGSize(width: 26.pix(), height: 26.pix()))
+            make.top.equalTo(sexagesimalBtn.snp.bottom).offset(50.bcPix())
+            make.size.equalTo(CGSize(width: 26.bcPix(), height: 26.bcPix()))
         }
         
         sexagesimalBtn.rx.tap.subscribe(onNext: { [weak self] in

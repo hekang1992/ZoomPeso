@@ -78,7 +78,7 @@ public final class KRProgressHUD {
         /// Default HUD center offset of y axis.
         public var viewOffset = CGFloat(0.0)
         /// Default duration to show HUD.
-        public var duration = Double(1.0)
+        public var duration = Double(3.0)
 
         @available(*, deprecated, message: "Use activityIndicatorColors")
         public var activityIndicatorStyle = KRActivityIndicatorViewStyle.gradationColor(head: .black, tail: .lightGray) {

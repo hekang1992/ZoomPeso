@@ -10,6 +10,7 @@ class InfrastructureUbicationViewController: OaklandLibidoViewController {
     var model = BehaviorRelay<netModel?>(value: nil)
     
     var wsdlTime: String = ""
+    
     var zagreusTime: String = ""
     
     var libertinageNum: String = ""
@@ -133,12 +134,13 @@ extension InfrastructureUbicationViewController: WKScriptMessageHandler, WKNavig
         }else if messageName == "edge" {
             zagreusTime = ServerSideDeviceInfo.currentTimestamp
             ScroPortionPointConfig.pointToPageWithModel(with: "8", discreteKstime: wsdlTime, jstime: zagreusTime, orNo: "")
-            let labefactionPro = model.value?.enlarged?.orifice ?? ""
-            labialiseModelingAaron(from: labefactionPro) { [weak self] model in
-                let pacesettingVitamain = model.pepsis?.rolled ?? ""
-                if pacesettingVitamain.isEmpty {
-                }
-            }
+//            let listModel = model.value
+//            let labefactionPro = listModel?.enlarged?.orifice ?? ""
+//            labialiseModelingAaron(from: labefactionPro) { [weak self] model in
+//                let pacesettingVitamain = model.pepsis?.rolled ?? ""
+//                if pacesettingVitamain.isEmpty {
+//                }
+//            }
         }else if messageName == "backwards" {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                 let librationTime = ServerSideDeviceInfo.currentTimestamp

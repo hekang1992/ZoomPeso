@@ -28,7 +28,7 @@ class XanthineDnaViewController: OaklandLibidoViewController {
     
     lazy var gabelleMlabel: UILabel = {
         let gabelleMlabel = UILabel.createLabel(font: UIFont(name: kafFont, size: 18)!, textColor: .white, textAlignment: .center)
-        gabelleMlabel.text = "Step 1"
+        gabelleMlabel.text = "Step 2"
         return gabelleMlabel
     }()
     
@@ -45,6 +45,14 @@ class XanthineDnaViewController: OaklandLibidoViewController {
         return triangulationView
     }()
     
+    lazy var inzhananceView: UIImageView = {
+        let inzhananceView = UIImageView()
+        inzhananceView.image = UIImage(named: "za_ladf_image")
+        inzhananceView.contentMode = .scaleAspectFit
+        inzhananceView.isUserInteractionEnabled = true
+        return inzhananceView
+    }()
+    
     lazy var inheritanceView: UIImageView = {
         let inheritanceView = UIImageView()
         inheritanceView.image = UIImage(named: "rangeIconCaimgesfa")
@@ -54,7 +62,7 @@ class XanthineDnaViewController: OaklandLibidoViewController {
     lazy var qandaharBtn: UIButton = {
         let qandaharBtn = UIButton(type: .custom)
         qandaharBtn.setTitle("Next", for: .normal)
-        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.pix())
+        qandaharBtn.titleLabel?.font = UIFont(name: kafFont, size: 18.bcPix())
         qandaharBtn.backgroundColor = .init(cssStr: "#FF3825")
         qandaharBtn.setTitleColor(.white, for: .normal)
         qandaharBtn.layer.cornerRadius = 23.5
@@ -85,38 +93,44 @@ class XanthineDnaViewController: OaklandLibidoViewController {
         oamView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(fontView.snp.bottom).offset(10)
-            make.size.equalTo(CGSize(width: 358.pix(), height: 448.pix()))
+            make.size.equalTo(CGSize(width: 358.bcPix(), height: 448.bcPix()))
         }
         gabelleMlabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(44.pix())
-            make.height.equalTo(25.pix())
+            make.top.equalToSuperview().offset(44.bcPix())
+            make.height.equalTo(25.bcPix())
         }
         m1label.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(13)
             make.right.equalToSuperview()
-            make.top.equalTo(gabelleMlabel.snp.bottom).offset(28.pix())
+            make.top.equalTo(gabelleMlabel.snp.bottom).offset(28.bcPix())
         }
         
         oamView.addSubview(triangulationView)
         triangulationView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(m1label.snp.bottom).offset(13)
-            make.size.equalTo(CGSize(width: 313.pix(), height: 167.pix()))
+            make.size.equalTo(CGSize(width: 313.bcPix(), height: 167.bcPix()))
+        }
+        
+        triangulationView.addSubview(inzhananceView)
+        inzhananceView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(CGSize(width: 150.bcPix(), height: 150.bcPix()))
         }
         
         oamView.addSubview(inheritanceView)
         inheritanceView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-15.pix())
-            make.size.equalTo(CGSize(width: 315.pix(), height: 115.pix()))
+            make.bottom.equalToSuperview().offset(-15.bcPix())
+            make.size.equalTo(CGSize(width: 315.bcPix(), height: 115.bcPix()))
         }
         
         view.addSubview(qandaharBtn)
         qandaharBtn.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 237.pix(), height: 47.pix()))
-            make.bottom.equalToSuperview().offset(-30.pix())
+            make.size.equalTo(CGSize(width: 237.bcPix(), height: 47.bcPix()))
+            make.bottom.equalToSuperview().offset(-30.bcPix())
         }
         
         triangulationView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
@@ -258,7 +272,10 @@ extension XanthineDnaViewController: UIImagePickerControllerDelegate, UINavigati
                         self.isSuccess.accept(model.strength ?? 0)
                         let iconUrl = model.sucking ?? ""
                         if let url = URL(string: iconUrl) {
+                            self.inzhananceView.isHidden = true
                             self.triangulationView.af.setImage(withURL: url)
+                        }else {
+                            self.inzhananceView.isHidden = false
                         }
                     }
                 }

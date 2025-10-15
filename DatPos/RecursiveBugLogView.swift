@@ -35,7 +35,7 @@ class RecursiveBugLogView: BaseView {
         addSubview(binaryView)
         binaryView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.size.equalTo(CGSize(width: 278.pix(), height: 518.pix()))
+            make.size.equalTo(CGSize(width: 278.bcPix(), height: 518.bcPix()))
         }
         
         binaryView.addSubview(sureBtn)
@@ -51,14 +51,14 @@ class RecursiveBugLogView: BaseView {
         sureBtn.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(poolingBtn.snp.top).offset(-50.pix())
+            make.bottom.equalTo(poolingBtn.snp.top).offset(-50.bcPix())
             make.height.equalTo(50)
         }
         
         lateBtn.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-140.pix())
-            make.left.equalToSuperview().offset(20.pix())
-            make.size.equalTo(CGSize(width: 22.pix(), height: 22.pix()))
+            make.bottom.equalToSuperview().offset(-140.bcPix())
+            make.left.equalToSuperview().offset(20.bcPix())
+            make.size.equalTo(CGSize(width: 22.bcPix(), height: 22.bcPix()))
         }
         
         poolingBtn.rx.tap.subscribe(onNext: { [weak self] in
@@ -69,7 +69,8 @@ class RecursiveBugLogView: BaseView {
         sureBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
             if lateBtn.isSelected == false {
-                ToastManagerConfig.showToastText(form: self, message: "Please read and confirm the account cancellation agreement.")
+                let infoStr = "Please read and confirm" + " the account cancellation agreement."
+                ToastManagerConfig.showToastText(form: self, message: infoStr)
                 return
             }
             self.block?("1")

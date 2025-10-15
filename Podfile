@@ -7,14 +7,6 @@ target 'DatPos' do
 
   # Pods for DatPos
 
-  pod 'Alamofire'
-  pod 'SnapKit'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'IQKeyboardManagerSwift'
-  pod 'BRPickerView'
-  pod 'FBSDKCoreKit'
-  pod 'AlamofireImage'
   pod 'RxGesture'
   pod 'ESPullToRefresh'
   pod 'DeviceKit'
@@ -25,4 +17,12 @@ target 'DatPos' do
   pod 'ASGradientLabel'
   pod 'FSPagerView'
   pod 'iCarousel'
+  pod 'Alamofire'
+  pod 'SnapKit'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'IQKeyboardManagerSwift'
+  pod 'BRPickerView'
+  pod 'FBSDKCoreKit'
+  pod 'AlamofireImage'
 end

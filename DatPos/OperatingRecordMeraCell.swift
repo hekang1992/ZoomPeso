@@ -15,7 +15,7 @@ class OperatingRecordMeraCell: BaseViewCell {
     
     lazy var qbasicView: UIImageView = {
         let qbasicView = UIImageView()
-        qbasicView.layer.cornerRadius = 2.5.pix()
+        qbasicView.layer.cornerRadius = 2.5.bcPix()
         qbasicView.layer.masksToBounds = true
         return qbasicView
     }()
@@ -70,51 +70,51 @@ class OperatingRecordMeraCell: BaseViewCell {
         dictionariesView.addSubview(rabbahLabel)
         dictionariesView.addSubview(caballerLabel)
         dictionariesView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10.pix())
-            make.size.equalTo(CGSize(width: 352.pix(), height: 220.pix()))
+            make.top.equalToSuperview().offset(10.bcPix())
+            make.size.equalTo(CGSize(width: 352.bcPix(), height: 220.bcPix()))
             make.centerX.equalToSuperview()
         }
         qbasicView.snp.makeConstraints { make in
-            make.size.equalTo(CGSize(width: 22.pix(), height: 22.pix()))
-            make.top.equalToSuperview().offset(15.pix())
-            make.left.equalToSuperview().offset(14.pix())
+            make.size.equalTo(CGSize(width: 22.bcPix(), height: 22.bcPix()))
+            make.top.equalToSuperview().offset(15.bcPix())
+            make.left.equalToSuperview().offset(14.bcPix())
         }
         nabobessLabel.snp.makeConstraints { make in
-            make.height.equalTo(21.pix())
+            make.height.equalTo(21.bcPix())
             make.centerY.equalTo(qbasicView.snp.centerY)
-            make.left.equalTo(qbasicView.snp.right).offset(5.pix())
+            make.left.equalTo(qbasicView.snp.right).offset(5.bcPix())
         }
         sequentialLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-20.pix())
+            make.right.equalToSuperview().offset(-20.bcPix())
             make.centerY.equalTo(nabobessLabel.snp.centerY)
-            make.width.equalTo(150.pix())
+            make.width.equalTo(150.bcPix())
         }
         pacesetterLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(48.pix())
-            make.height.equalTo(60.pix())
+            make.top.equalToSuperview().offset(48.bcPix())
+            make.height.equalTo(60.bcPix())
         }
         zahalLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-34.pix())
-            make.height.equalTo(29.pix())
-            make.top.equalTo(pacesetterLabel.snp.bottom).offset(15.pix())
+            make.right.equalToSuperview().offset(-34.bcPix())
+            make.height.equalTo(29.bcPix())
+            make.top.equalTo(pacesetterLabel.snp.bottom).offset(15.bcPix())
         }
         bottomLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-34.pix())
-            make.height.equalTo(29.pix())
-            make.top.equalTo(zahalLabel.snp.bottom).offset(18.pix())
+            make.right.equalToSuperview().offset(-34.bcPix())
+            make.height.equalTo(29.bcPix())
+            make.top.equalTo(zahalLabel.snp.bottom).offset(18.bcPix())
         }
         rabbahLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(17.pix())
+            make.left.equalToSuperview().offset(17.bcPix())
             make.top.equalTo(pacesetterLabel.snp.bottom)
-            make.height.equalTo(44.pix())
-            make.width.equalTo(124.pix())
+            make.height.equalTo(44.bcPix())
+            make.width.equalTo(124.bcPix())
         }
         caballerLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(17.pix())
-            make.top.equalTo(rabbahLabel.snp.bottom).offset(4.pix())
-            make.height.equalTo(44.pix())
-            make.width.equalTo(85.pix())
+            make.left.equalToSuperview().offset(17.bcPix())
+            make.top.equalTo(rabbahLabel.snp.bottom).offset(4.bcPix())
+            make.height.equalTo(44.bcPix())
+            make.width.equalTo(85.bcPix())
         }
         model.asObservable().subscribe(onNext: { [weak self] model in
             guard let self = self, let model = model else { return }

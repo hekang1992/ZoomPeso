@@ -19,7 +19,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     lazy var architectureView: UIView = {
         let architectureView = UIView()
         architectureView.backgroundColor = .init(cssStr: "#FFFAED")
-        architectureView.layer.cornerRadius = 10.pix()
+        architectureView.layer.cornerRadius = 10.bcPix()
         architectureView.layer.masksToBounds = true
         architectureView.layer.shadowColor = UIColor.init(cssStr: "#B42400")?.withAlphaComponent(0.27).cgColor
         architectureView.layer.shadowOffset = CGSize(width: 0, height: -3.5)
@@ -37,7 +37,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     lazy var fatherlessView: UIView = {
         let fatherlessView = UIView()
         fatherlessView.backgroundColor = .init(cssStr: "#FAFAFA")
-        fatherlessView.layer.cornerRadius = 10.pix()
+        fatherlessView.layer.cornerRadius = 10.bcPix()
         fatherlessView.layer.masksToBounds = true
         return fatherlessView
     }()
@@ -49,7 +49,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     }()
     
     lazy var iterationLabel: UILabel = {
-        let iterationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssStr: "#E2D38B")!, textAlignment: .left)
+        let iterationLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.bcPix(), weight: .medium), textColor: .init(cssStr: "#E2D38B")!, textAlignment: .left)
         return iterationLabel
     }()
     
@@ -61,7 +61,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     lazy var zaftigView: UIView = {
         let zaftigView = UIView()
         zaftigView.backgroundColor = .init(cssStr: "#FAFAFA")
-        zaftigView.layer.cornerRadius = 10.pix()
+        zaftigView.layer.cornerRadius = 10.bcPix()
         zaftigView.layer.masksToBounds = true
         return zaftigView
     }()
@@ -73,7 +73,7 @@ class XanthinAssociativeViewCell: BaseViewCell {
     }()
     
     lazy var filterLabel: UILabel = {
-        let filterLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.pix(), weight: .medium), textColor: .init(cssStr: "#E2D38B")!, textAlignment: .left)
+        let filterLabel = UILabel.createLabel(font: UIFont.systemFont(ofSize: 15.bcPix(), weight: .medium), textColor: .init(cssStr: "#E2D38B")!, textAlignment: .left)
         return filterLabel
     }()
     
@@ -94,59 +94,59 @@ class XanthinAssociativeViewCell: BaseViewCell {
         zaftigView.addSubview(filterLabel)
         
         architectureView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10.pix())
+            make.top.equalToSuperview().offset(10.bcPix())
             make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 345.pix(), height: 218.pix()))
+            make.size.equalTo(CGSize(width: 345.bcPix(), height: 218.bcPix()))
         }
         accoucheDesclabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16.pix())
-            make.left.equalToSuperview().offset(13.pix())
-            make.height.equalTo(21.pix())
+            make.top.equalToSuperview().offset(16.bcPix())
+            make.left.equalToSuperview().offset(13.bcPix())
+            make.height.equalTo(21.bcPix())
         }
         contentLabel.snp.makeConstraints { make in
-            make.top.equalTo(accoucheDesclabel.snp.bottom).offset(10.pix())
-            make.left.equalToSuperview().offset(13.pix())
-            make.height.equalTo(21.pix())
+            make.top.equalTo(accoucheDesclabel.snp.bottom).offset(10.bcPix())
+            make.left.equalToSuperview().offset(13.bcPix())
+            make.height.equalTo(21.bcPix())
         }
         fatherlessView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(contentLabel.snp.bottom).offset(5.pix())
+            make.top.equalTo(contentLabel.snp.bottom).offset(5.bcPix())
             make.left.equalTo(contentLabel.snp.left)
-            make.height.equalTo(44.pix())
+            make.height.equalTo(44.bcPix())
         }
         retrieveView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-5.pix())
+            make.right.equalToSuperview().offset(-5.bcPix())
             make.size.equalTo(CGSize(width: 14, height: 14))
         }
         iterationLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15.pix())
-            make.right.equalTo(retrieveView.snp.left).offset(-2.pix())
-            make.height.equalTo(44.pix())
+            make.left.equalToSuperview().offset(15.bcPix())
+            make.right.equalTo(retrieveView.snp.left).offset(-2.bcPix())
+            make.height.equalTo(44.bcPix())
         }
         
         calendricalLabel.snp.makeConstraints { make in
-            make.top.equalTo(fatherlessView.snp.bottom).offset(10.pix())
-            make.left.equalToSuperview().offset(13.pix())
-            make.height.equalTo(21.pix())
+            make.top.equalTo(fatherlessView.snp.bottom).offset(10.bcPix())
+            make.left.equalToSuperview().offset(13.bcPix())
+            make.height.equalTo(21.bcPix())
         }
         zaftigView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(calendricalLabel.snp.bottom).offset(5.pix())
+            make.top.equalTo(calendricalLabel.snp.bottom).offset(5.bcPix())
             make.left.equalTo(calendricalLabel.snp.left)
-            make.height.equalTo(44.pix())
+            make.height.equalTo(44.bcPix())
         }
         messageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-5.pix())
+            make.right.equalToSuperview().offset(-5.bcPix())
             make.size.equalTo(CGSize(width: 14, height: 14))
         }
         filterLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(15.pix())
-            make.right.equalTo(messageView.snp.left).offset(-2.pix())
-            make.height.equalTo(44.pix())
+            make.left.equalToSuperview().offset(15.bcPix())
+            make.right.equalTo(messageView.snp.left).offset(-2.bcPix())
+            make.height.equalTo(44.bcPix())
         }
         
         fatherlessView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in

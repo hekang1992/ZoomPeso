@@ -15,7 +15,9 @@ class FabledLookupViewController: OaklandLibidoViewController {
     
     let scrollView = UIScrollView()
     let pageControl = UIPageControl()
-    let images = ["CaballerNameHigimageone", "LiteralPicHigimagetwo", "LeftIconHigimagethree"]
+    let images = ["CaballerNameHigimageone",
+                  "LiteralPicHigimagetwo",
+                  "LeftIconHigimagethree"]
     
     var show: String = ""
     

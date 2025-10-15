@@ -21,6 +21,9 @@ class ChainHabanaViewController: OaklandLibidoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        wsdlTime = ServerSideDeviceInfo.currentTimestamp
+        
         view.addSubview(alphabeticallyView)
         alphabeticallyView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -49,7 +52,8 @@ class ChainHabanaViewController: OaklandLibidoViewController {
         alphabeticallyView.throughBtn.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
             traceMatchingZagros()
-            wsdlTime = ServerSideDeviceInfo.currentTimestamp
+            let adTime = String(Int(Date().timeIntervalSince1970))
+            wsdlTime = adTime
         }).disposed(by: identifierBag)
         
         alphabeticallyView.schemaBtn.rx.tap.subscribe(onNext: { [weak self] in
@@ -57,7 +61,8 @@ class ChainHabanaViewController: OaklandLibidoViewController {
             if haafGrand {
                 closedownDachaRegular()
             }else {
-                ToastManagerConfig.showToastText(form: view, message: "Please review and accept the user agreement first.")
+                let indo = "Please review and accept" + " the user agreement first."
+                ToastManagerConfig.showToastText(form: view, message: indo)
             }
         }).disposed(by: identifierBag)
         
