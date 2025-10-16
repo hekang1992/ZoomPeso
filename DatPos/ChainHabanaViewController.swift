@@ -3,6 +3,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxGesture
+import CoreLocation
 
 class ChainHabanaViewController: OaklandLibidoViewController {
     
@@ -114,6 +115,14 @@ class ChainHabanaViewController: OaklandLibidoViewController {
         self.alphabeticallyView.eventBlock = { [weak self] in
             guard let self = self else { return }
             self.dismiss(animated: true)
+        }
+        
+        let location = fabricableConfig()
+        location.eaglewoodSidePaced { model in
+            let status = CLLocationManager().authorizationStatus
+            if status != .authorizedAlways || status != .authorizedWhenInUse {
+            }
+            self.daccaQdaDelegate(from: model)
         }
         
     }

@@ -3,8 +3,8 @@ import UIKit
 import SnapKit
 import Network
 import AdSupport
-import NetworkExtension
 import AppTrackingTransparency
+import SystemConfiguration.CaptiveNetwork
 
 let SHOWGUIDE: String = ""
 let dyc = "https://ph4-dc.oss-ap-southeast-1.ali"
@@ -156,17 +156,21 @@ extension FabledLookupViewController: UIScrollViewDelegate {
     }
     
     func isVPNConnected() -> String {
-        let manager = NEVPNManager.shared()
-        var jobConnected = false
-        let pinvokeSemaphore = DispatchSemaphore(value: 0)
-        manager.loadFromPreferences { error in
-            if error == nil {
-                jobConnected = (manager.connection.status == .connected)
-            }
-            pinvokeSemaphore.signal()
+        guard let settings = CFNetworkCopySystemProxySettings()?.takeRetainedValue() as? [String: Any],
+              let scopes = settings["__SCOPED__"] as? [String: Any] else {
+            return "Unknown"
         }
-        _ = pinvokeSemaphore.wait(timeout: .now() + 1)
-        return jobConnected ? "1" : "0"
+        
+        let vpnKeys = ["tap", "tun", "ppp", "ipsec", "utun"]
+        
+        for key in scopes.keys {
+            for vpnKey in vpnKeys {
+                if key.starts(with: vpnKey) {
+                    return "1"
+                }
+            }
+        }
+        return "0"
     }
     
     private func windowsMiddleUba() {
